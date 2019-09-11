@@ -1,0 +1,1417 @@
+
+<style>
+
+/* Ensure that the demo table scrolls */
+    #table_2_wrapper th, #table_2_wrapper td { white-space: nowrap; }
+    div#table_2_wrapper {
+        width: 800px;
+        /*height: 300px;*/
+        margin: 0 auto;
+    }
+
+    table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkbox {padding: 16px;}
+    table.dataTable tbody td.select-checkbox:before, table.dataTable tbody td.select-checkbox:after, table.dataTable tbody th.select-checkbox:before, table.dataTable tbody th.select-checkbox:after {top: 50%;}
+
+    .icon-link{padding: 13px 13px;display: inline-block;background: url(../../images/right.png) no-repeat 50% 50%;}
+
+    .table-toolbar{text-align: right}
+
+    #togglediv {display: none;}
+
+    /*table*/
+table.dataTable tbody tr {
+    background-color: #ffffff;
+}
+/*table.dataTable tbody th, table.dataTable tbody td {
+    padding: 8px 10px;
+}    */
+
+table.dataTable {
+     margin-top: 0px !important; 
+     margin-bottom: 0px !important; 
+     max-width: none !important; 
+     border-collapse: separate !important; 
+}
+
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th { border-bottom-width: 1px;border: 1px solid #ddd;}
+    /*table end*/
+
+
+    /*box*/
+
+    .box{border:none;}
+
+    /*.table-responsive{overflow: hidden;}*/
+    #table_1 td {
+        display: table-cell;
+        vertical-align: middle;
+        /*word-break: break-word;*/
+        text-align: center;
+    }
+    .table thead tr th{text-align: center;}
+/*进度条*/
+
+.time-graph {  
+    padding-top: 20px;  
+    display:flex;  
+    display:-webkit-flex;  
+    justify-content: center;  
+    align-items: center;  
+}  
+  
+.time-graph-canvas {  
+    width: 50px;  
+    height: 50px;  
+}
+
+.circle{width: 50px; height: 50px; background-color: #efefef; /* Can be set to transparent */ border: 2px #2e6ffd solid; border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;-ms-border-radius: 50%;text-align:center;color:red;}
+
+    /*表头颜色*/
+    table#table_1.dataTable thead > tr > th{background: #153B63;color: #fff;}
+
+    table#table_1.dataTable thead .sorting:after{opacity: 1;}
+
+    table#table_1.dataTable thead .sorting:after, table#table_1.dataTable thead .sorting_asc:after, table#table_1.dataTable thead .sorting_desc:after{opacity: 1;}
+
+</style>
+
+
+<!-- Main content -->
+<section class="content">
+
+      <!-- TABLE: LATEST ORDERS -->
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title"></h3>
+          <div class="box-tools pull-right">
+            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+          </div>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+
+            <form class="form-horizontal" action="" method="post">
+                <div class="form-group">
+                    <label class="col-md-1 control-label" for="">Year</label>
+                    <div class="col-md-3">
+                        <select name="" class="form-control" onchange="">
+                            <option disabled selected>-- All --</option>
+                            <option value="1">2016</option>
+                            <option value="2">2017</option>
+                            <option value="3">2018</option>
+                            <option value="4">2019</option>
+                            <option value="5">2020</option>
+                        </select>
+                    </div>
+
+                    <label class="col-md-1 control-label" for="">Week</label>
+                    <div class="col-md-3">
+                        <select name="" class="form-control" onchange="">
+                            <option disabled selected>-- All --</option>
+                            <option value="1">1</option>
+                            <option value="2">12</option>
+                            <option value="2">32</option>
+                            <option value="2">40</option>
+                        </select>
+                    </div>
+
+                    <label class="col-md-1 control-label" for="">Product</label>
+                    <div class="col-md-3">
+                        <select name="" class="form-control" onchange="">
+                            <option disabled selected>-- All --</option>
+                            <option value="1">ABS</option>
+                            <option value="2">AS</option>
+                            <option value="3">BE</option>
+                            <option value="4">CC-DA</option>
+                            <option value="5">CM-DCU</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Product Group</label>
+                    <div class="col-md-3">
+                        <select name="" class="form-control" onchange="">
+                            <option disabled selected>-- All --</option>
+                            <option value="1">USS4</option>
+                            <option value="2">BK2C</option>
+                            <option value="2">EPSc</option>
+                            <option value="2">ESL3</option>
+                        </select>
+                    </div>
+
+                    <label class="col-md-1 control-label" for="">Location</label>
+                    <div class="col-md-3">
+                        <select name="" class="form-control" onchange="">
+                            <option disabled selected>-- All --</option>
+                            <option value="1">Suzhou</option>
+                            <option value="2">Wujin</option>
+                        </select>
+                    </div>
+
+                </div>
+            </form>
+
+
+        </div><!-- /.box-body -->
+        <div class="box-footer clearfix">
+
+          
+          <button class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>
+          <button class="btn btn-default btn-flat"><i class="fa fa-folder-open"></i> Open List</button>
+          <!-- <a class="btn btn-sm btn-default btn-flat pull-left">Reset <i class="fa fa-refresh"></i></a>
+          <a class="btn btn-sm btn-info btn-flat pull-left">Query <span class="glyphicon glyphicon-search"></span></a> -->
+
+        </div><!-- /.box-footer -->
+      </div><!-- /.box -->
+
+    <!-- BEGIN PAGE CONTENT-->
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <!-- END EXAMPLE TABLE PORTLET-->
+            <div class="portlet box"> <!-- grey-cascade -->
+                <!-- <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-lightbulb-o"></i> Pending My Activity
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse">
+                        </a>
+                    </div>
+                </div> -->
+                <div class="portlet-body">
+                    <!-- <div id="toolbar"></div> -->
+                    <div class="table-toolbar">
+
+                        <a class="btn green btn-sm" id="button" onclick="mergeSubmit();"><i class="fa fa-plus"></i> New</a>
+                        <!-- <div class="btn-group">
+                            <button class="btn green" onclick="location = '/eWorkflow/EForm/MetaDataTable/Add';">
+                                Add New <i class="fa fa-plus"></i>
+                            </button>
+                        </div> -->
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_1" width="100%" cellspacing="0" style="table-layout: auto;">
+                            <thead>
+                                <tr style="white-space: nowrap;">
+                                    <th>
+                                        
+                                    </th>                                
+                                    <th>
+                                        Product产品系列<br>Family/Group产品家族/组
+                                    </th>
+                                    <th>
+                                        PN产品号<br>Ref.参考产品
+                                    </th>
+                                    <th>
+                                        Test Infor.<br>测试信息
+                                    </th>
+                                    <th>
+                                        Sampling Infor.<br>抽样信息
+                                    </th>
+                                    <th>
+                                        Reference
+                                    </th>                                           
+                                    <th>
+                                        Cum. Delay Qty<br>累计待抽样数量
+                                    </th>                                            
+                                    <th>
+                                        WK Exe. Qty<br>本周计划数量
+                                    </th>
+                                    <th>
+                                        WK Sub. Qty<br>已提交数量
+                                    </th>
+                                    <th>
+                                        Application No
+                                    </th>
+                                    <th>
+                                        Qty
+                                    </th>
+                                    <th>
+                                        Alert
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>                
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTENT-->
+
+</section><!-- /.content -->
+
+        <!-- Alert（Modal） -->
+        <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Alert status</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form role="form">            
+                            <!-- type -->
+                            <div class="form-group">
+                                <label for="">Type:</label>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="type" id="optionsRadios1" value="option1">
+                                      1,no production
+                                    </label>
+                                  </div>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="type" id="optionsRadios2" value="option2">
+                                      2,no planning
+                                    </label>
+                                  </div>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="type" id="optionsRadios3" value="option3">
+                                      3,not produced QZ parts
+                                    </label>
+                                  </div>
+                            </div>
+
+                            <!-- action -->
+                            <div class="form-group" id="alert">
+                                <label for="">Alert action:</label>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="action" id="action1" value="option1">
+                                      move to next week
+                                    </label>
+                                  </div>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="action" id="action2" value="option2">
+                                      cancel
+                                    </label>
+                                  </div>
+                                  <div class="radio">
+                                    <label>
+                                      <input type="radio" name="action" id="action3" value="option3">
+                                      pending confirm
+                                    </label>
+                                    <div id="togglediv" style="">
+                                        <label class="control-label">inform QMM engineer</label>
+                                          <select class="form-control" style="width: 250px;display: inline-block;">
+                                            <option>option 1</option>
+                                            <option selected>ATTD</option>
+                                            <option>option 3</option>
+                                            <option>option 4</option>
+                                            <option>option 5</option>
+                                        </select>                                            
+                                    </div>
+
+                                  </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label class="control-label">Inspector Comment：</label>
+                                  <textarea class="form-control" name="" id="" cols="30" rows="3" style="width: 72%"></textarea>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- Detail（Modal） -->
+        <div class="modal fade" id="detailModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" style="width: 1000px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Detail</h4>
+                    </div>
+                    <div class="modal-body">
+                    <!-- <div class="table-responsive"> -->
+                        <table class="table table-bordered table-hover" id="table_2" width="100%" cellspacing="0" style="width: 800px;">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>YTD Qty</th>
+                                    <th>WK1</th>
+                                    <th>WK2</th>
+                                    <th>WK3</th>
+                                    <th>WK4</th>
+                                    <th>WK5</th>
+                                    <th>WK6</th>
+                                    <th>WK7</th>
+                                    <th>WK8</th>
+                                    <th>WK9</th>
+                                    <th>WK10</th>
+                                    <th>WK11</th>
+                                    <th>WK12</th>
+                                    <th>WK13</th>
+                                    <th>WK14</th>
+                                    <th>WK15</th>
+                                    <th>WK16</th>
+                                    <th>WK17</th>
+                                    <th>WK18</th>
+                                    <th>WK19</th>
+                                    <th>WK20</th>
+                                    <th>WK21</th>
+                                    <th>WK22</th>
+                                    <th>WK23</th>
+                                    <th>WK24</th>
+                                    <th>WK25</th>
+                                    <th>WK26</th>
+                                    <th>WK27</th>
+                                    <th>WK28</th>
+                                    <th>WK29</th>
+                                    <th>WK30</th>
+                                    <th>WK31</th>
+                                    <th>WK32</th>
+                                    <th>WK33</th>
+                                    <th>WK34</th>
+                                    <th>WK35</th>
+                                    <th>WK36</th>
+                                    <th>WK37</th>
+                                    <th>WK38</th>
+                                    <th>WK39</th>
+                                    <th>WK40</th>
+                                    <th>WK41</th>
+                                    <th>WK42</th>
+                                    <th>WK43</th>
+                                    <th>WK44</th>
+                                    <th>WK45</th>
+                                    <th>WK46</th>
+                                    <th>WK47</th>
+                                    <th>WK48</th>
+                                    <th>WK49</th>
+                                    <th>WK50</th>
+                                    <th>WK51</th>
+                                    <th>WK52</th>
+                                    <th>WK53</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+                    <!-- </div> -->
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- Test information（Modal） -->
+        <div class="modal fade" id="testinfoModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" style="width: 1000px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Test Information 测试信息</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="" class="col-sm-2 control-label">Test Type 测试类型</label>
+                                  <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="" placeholder="Z" disabled>
+                                </div>
+                                <label for="" class="col-sm-2 control-label">Test Place 测试地点</label>
+                                  <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="" placeholder="AE/QMM8.1-CN" disabled>
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label">Test Spec 测试规格</label>
+                              <div class="col-sm-10">
+                                  <textarea class="form-control" rows="3" placeholder="QZ PV in BOM" disabled></textarea>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label class="col-sm-2 control-label">Test Item 测试项目</label>
+                              <div class="col-sm-10">
+                                  <textarea class="form-control" rows="3" placeholder="Z test" disabled></textarea>
+                              </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- Reference（Modal） -->
+        <div class="modal fade" id="refModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" style="width: 800px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">reference</h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0" width="100%">
+                            <tbody>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Reference P/N</th>
+                                    <th>Production Line</th>
+                                    <th>priority</th>
+                                </tr>
+                                <tr>
+                                    <td>SGM</td>
+                                    <td>XXXX</td>
+                                    <td>10</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>ADJ</td>
+                                    <td>XXXX</td>
+                                    <td>10</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>COM</td>
+                                    <td>Fetchback</td>
+                                    <td>5</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>ACT</td>
+                                    <td>Assigned</td>
+                                    <td>3</td>
+                                    <td>Low</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                        <button type="button" class="btn btn-primary">确 定</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+
+<script type="text/javascript">
+
+
+function drawMain(drawing_elem, percent, forecolor, bgcolor) {
+
+    /* 
+        @drawing_elem: 绘制对象 
+        @percent：绘制圆环百分比, 范围[0, 100] 
+        @forecolor: 绘制圆环的前景色，颜色代码 
+        @bgcolor: 绘制圆环的背景色，颜色代码 
+    */  
+    var context = drawing_elem.getContext("2d");  
+    var center_x = drawing_elem.width / 2;  
+    var center_y = drawing_elem.height / 2;  
+    var rad = Math.PI*2/100;   
+    var speed = 0;  
+      
+    // 绘制背景圆圈  
+    function backgroundCircle(){  
+        context.save();  
+        context.beginPath();  
+        context.lineWidth = 8; //设置线宽  
+        var radius = center_x - context.lineWidth;  
+        context.lineCap = "round";  
+        context.strokeStyle = bgcolor;  
+        context.arc(center_x, center_y, radius, 0, Math.PI*2, false);  
+        context.stroke();  
+        context.closePath();  
+        context.restore();  
+    }  
+  
+    //绘制运动圆环  
+    function foregroundCircle(n){  
+        context.save();  
+        context.strokeStyle = forecolor;  
+        context.lineWidth = 8;  
+        context.lineCap = "round";  
+        var radius = center_x - context.lineWidth;  
+        context.beginPath();  
+        context.arc(center_x, center_y, radius , -Math.PI/2, -Math.PI/2 +n*rad, false); //用于绘制圆弧context.arc(x坐标，y坐标，半径，起始角度，终止角度，顺时针/逆时针)  
+        context.stroke();  
+        context.closePath();  
+        context.restore();  
+    }  
+  
+    //绘制文字  
+    function text(n){  
+        context.save(); //save和restore可以保证样式属性只运用于该段canvas元素  
+        context.fillStyle = forecolor;  
+        var font_size = 40;  
+        context.font = font_size + "px Helvetica";  
+        var text_width = context.measureText(n.toFixed(0)+"%").width;  
+        context.fillText(n.toFixed(0)+"%", center_x-text_width/2, center_y + font_size/2);  
+        context.restore();  
+    }  
+  
+    //执行动画  
+    (function drawFrame(){  
+        window.requestAnimationFrame(drawFrame);  
+        context.clearRect(0, 0, drawing_elem.width, drawing_elem.height);  
+        backgroundCircle();  
+        text(speed);  
+        foregroundCircle(speed);  
+        if(speed >= percent) return;  
+        speed += 1;  
+    }());  
+}
+
+
+var datatable;
+var datatable2;
+var time_canvas = [];
+$(function () {
+
+    var data1 = [
+        {
+            "id": "1",
+            "product": "CC-DA",
+            "PN": "6033MC1108housingType",
+            "test": "Q1",
+            "sampling": "Routing Test Yearly 1PC",
+            "detail": "Detail",            
+            "cumqty": "2017",
+            "exeqty": 2,
+            "subqty": "",
+            "No": "AE/QMM8.1-REQ201***-*** (draft)",
+            "qty": "Xpcs",
+            "status": "0",
+            "alert": "Open",
+            "Auth": false
+        }, {
+            "id": "2",
+            "product": "CC-DA",
+            "PN": "USS4.5",
+            "test": "Q2",
+            "sampling": "Routing Test Yearly Min10pcs",
+            "detail": "Detail",            
+            "cumqty": "2017",
+            "exeqty": 2,
+            "subqty": "",
+            "No": "",
+            "qty": "Xpcs",
+            "status": "25",
+            "alert": "Ongoing",
+            "Auth": false
+        }, {
+            "id": "3",
+            "product": "CC-DA",
+            "PN": "USS4.0",
+            "test": "Z1",
+            "sampling": "Routing Test Yearly 3pcs",
+            "detail": "Detail",
+            "cumqty": "2017",
+            "exeqty": 2,
+            "subqty": "",
+            "No": "AE/QMM8.1-REQ201***-*** (Received)",
+            "qty": "Xpcs",
+            "status": "50",
+            "alert": "Close",
+            "Auth": false
+        }
+
+    ];
+
+    if (datatable) {
+         //datatable.fnClearTable();    //清空数据
+         //datatable.fnDestroy();         //销毁datatable
+        }
+    datatable = $('#table_1').DataTable({//在获取datatable的对象时，datatable的大小写字母要区分开，不然会报错：
+        lengthChange: false,//是否允许用户自定义显示数量
+        autoWidth: true,//自动宽度
+        deferRender: true, // 延迟渲染，加速界面加载.
+        searching: false,
+        processing: true,
+        //"serverSide": true,
+        data: data1,
+        // select: {
+        //     style: 'multi'
+        // },
+        select: {
+            style:    'multi',
+            selector: 'td:first-child'
+        },
+        // select: true,
+        // "responsive": true,
+
+        // "ajax": {
+        //     type:"GET",
+        //     url:"../data.json",
+        //     // data: ajaxPara,
+        //     //async: true, //是否为异步请求，ture为异步请求，false为同步请求 
+        //     dataType: "json",
+        //     // success: function(res) {
+        //     //     console.log(res.data)
+        //     //     // data: res.data
+        //     //     // console.log(result.dataSource)
+        //     //     // currentPageDataSource = result.dataSource;
+        //     //     // itemsTotalCount = result.dataSource;
+        //     //     // params.success(currentPageDataSource, itemsTotalCount);
+        //     // },
+        //     // error:function(XMLHttpRequest, textStatus, errorThrown){  
+        //     //     alert(XMLHttpRequest.status);  
+        //     //     alert(XMLHttpRequest.readyState);  
+        //     //     alert(textStatus);  
+        //     // }  
+
+        //     data: function (d) {
+        //     }
+        // },
+        columns: [
+            {
+                data: 'id',
+                render: function (data, type, row) {
+                    return null;
+                }
+            },
+            {
+                data: 'product',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="color:#333;display: inline-block;margin-bottom:10px;">'+ data +'</label>' + '<br>' + 'USS4';
+                }
+            },
+            {
+                data: 'PN',
+                render: function (data, type, row) {
+                    return data;
+                }
+            },
+            {
+                data: 'test',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="background:#c0edfe;color:#333;padding-left: 15px;padding-right: 15px;display: inline-block;margin-bottom:10px;" onclick="testinfoshow();">'+ data +'</label>' + '<br><a onclick="detailshow();" style="text-decoration: underline;">Detail</a></li>';
+                }
+            },
+            {
+                data: 'sampling',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="background:#c0edfe;color:#333;padding-left: 15px;padding-right: 15px;display: inline-block;margin-bottom:0px;">Routing Test</label>' + '<br>' + '<label class="label label-xs" for="" style="color:#333;display: inline-block;margin-bottom:0px;">Yearly</label>'+ '<br>' + '<label class="label label-xs" for="" style="color:#333;display: inline-block;margin-bottom:0px;">Min 10pcs</label>';
+                }
+
+            },
+            {
+                data: 'Reference',
+                "orderable": false ,
+                "width":"30px",
+                "searchable": false,
+                render: function (data, type, row) {
+                    return '<a class="icon-link" data-toggle="modal" data-target="#refModal"></a>';
+                }
+            },
+            {
+                data: 'cumqty',
+                render: function (data, type, row) {
+                    return '<input type="text" class="circle" value="0">';
+                }
+            },
+            {
+                data: 'exeqty',
+                render: function (data, type, row) {
+                    return '<input type="text" class="circle" value="0">';
+                }
+            },
+            {
+                data: 'subqty',
+                render: function (data, type, row) {
+                    return '<input type="text" class="circle" value="0">';
+                }                
+            },
+            {
+                data: 'No',
+                render: function (data, type, row) {
+                    console.log(data)
+                    return data ? '<span>'+ data +'</span>' : '<a href="../../pages/execute/consignerSheet.html" class="btn green btn-xs"><i class="fa fa-plus"></i> New</a>';
+                }
+
+            },
+            {
+                data: 'qty',
+                render: function (data, type, row) {
+                    return data;
+                }
+            },
+
+            {
+                data: 'alert',
+                render: function (data, type, row) {
+
+                    switch(data)
+                        {
+                        case 'Open':
+                        return '<a class="" data-toggle="modal" data-target="#alertModal" style="color:red;">'+ data +'('+1+')</a>';
+                          break;
+                        case 'Ongoing':
+                          return '<a class="" data-toggle="modal" data-target="#alertModal" style="color:#f39c12;">'+ data +'('+1+')</a>';
+                          break;
+                        case 'Close':
+                          return '<a class="" data-toggle="modal" data-target="#alertModal">'+ data +'('+1+')</a>';
+                          break;
+                        default:
+                            return false;
+                            break;
+                        }
+                    
+                }
+            },
+            {
+                data: 'status',
+                render: function (data, type, row) {
+                    percent = data;
+                    console.log(data)
+                    return '<canvas class="time-graph-canvas" width="160" height="160"></canvas>';
+                },
+
+                createdCell: function (td, cellData, rowData, row, col) {
+                    // console.log(cellData)
+
+
+
+                }, 
+
+            },
+
+            // {
+            //     data: 'Actions',
+            //     render: function (data, type, row) {
+            //         // if (row.visible) {
+            //             var ret = '<div class="btn-group">';
+            //             ret += '<button type="button" class="btn btn-xs blue dropdown-toggle" data-toggle="dropdown">Actions <i class="fa fa-angle-down"></i></button>';
+            //             ret += '<ul class="dropdown-menu bottom-up" role="menu">';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Overview/' + data + '"><i class="fa fa-eye"></i> Overview</a></li>';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Export/' + data + '"><i class="fa fa-file-pdf-o"></i> Export to PDF</a></li>';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Copy/' + data + '"><i class="fa fa-copy"></i> Copy</a></li>';
+            //             if (row.CanEdit || row.CanApprove) {
+            //                 ret += '<li class="divider"></li><li><li><a href="/eWorkflow/EForm/FormRequest/Edit/' + data + '"><i class="fa fa-edit"></i> Edit</a></li>';
+            //             }
+            //             if (row.CanDelete && !row.WasFinished) {
+            //                 ret += '<li class="divider"></li><li><a href="javascript:;" onclick="TableManaged.remove(\'' + data + '\')"><i class="fa fa-times"></i> Delete</a></li>';
+            //             }
+            //             ret += '</ul>';
+            //             ret += '</div>'
+
+            //             return ret;
+            //         // } else {
+            //         //     return "";
+            //         // }
+            //     },
+            //     "sortable": false
+            // }
+        ],
+        columnDefs: [
+
+            {
+                orderable: false,
+                className: 'select-checkbox',
+                targets:   0
+            },
+            {
+                orderable: false,
+
+                targets: 10 }
+            // {
+            //     orderable: false,
+
+            //     targets: 1 }
+        ],//第一列与第二列禁止排序
+        dom: 'Bfrtip',  //Buttons用字符 B代表
+        // "dom": "<'row'<'col-xs-2'l><'col-xs-6'f><'col-xs-2'r><'#toolbar.col-xs-2'>>" +
+        //         "t" +
+        //         "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+        initComplete: function () {
+
+            // $("#toolbar").append('<button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Create Plan</button>');
+            // $("#datainit").on("click", initData);
+        },
+
+        buttons: [  //不起作用
+            'copy', 'excel', 'pdf'
+        ],
+
+        // sorting: [[4, "desc"]],
+        // 
+        // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        // "displayLength": 10
+    });
+
+
+    // datatable.on( 'user-select', function ( e, dt, type, cell, originalEvent ) {
+    //         if ( $(originalEvent.target).index() === 0 ) {
+    //             e.preventDefault();
+    //         }
+    //     } );
+
+    // $('#table_1 tbody').on( 'click', 'tr', function () {
+    //     $(this).toggleClass('selected');
+    // } );
+ 
+    // datatable.on( 'click', 'tr', function () {
+    //     $(this).toggleClass('selected');
+    // } );
+
+    $('#button').click( function () {
+        // console.log( datatable.rows('.selected').data() );
+    } );
+
+
+    // $('button').click(function () {
+    //     //单行删除
+    //     //Dtable.row('.selected').remove().draw(false);
+    //     //多行删除
+    //     Dtable.rows('.selected').remove().draw(false);
+    // });
+
+
+    time_canvas = document.querySelectorAll(".time-graph-canvas");
+    var percent;
+    $.each(time_canvas,function (index, v) {
+
+        percent = data1[index].status;
+        drawMain(time_canvas[index], percent, "#2ba0fb", "#e5f1fa"); 
+
+    });
+
+
+});
+
+$(".checkall").click(function () {
+      var check = $(this).prop("checked");
+      $(".checkchild").prop("checked", check);
+});
+
+
+function mergeSubmit(){
+
+// console.log(datatable.rows( { selected: true } ).count())
+    
+    // var checkbox = $("input.checkchild:checked");
+    // var rowid = [];
+
+    // for(var i=0;i<checkbox.length;i++){
+    //     if(checkbox[i].checked){
+    //         rowid.push(checkbox[i].value);
+
+    //     }
+    // }
+    var rows = datatable.rows('.selected').data().length;
+    console.log(datatable.rows('.selected').data())
+    if(rows<2){
+        layer.alert('至少选择两个',{
+            title: '提示', //不显示标题
+        });
+
+    } else {
+
+        window.location.href = '../../pages/execute/consignerSheet.html';
+    }
+
+}
+
+
+
+
+function detailshow(){
+
+    $('#detailModal').modal('show');
+
+
+    var data2 = [
+        {
+            "id": "1",
+            "type": "PLN",
+            "Qty": "868",
+            "w1": "2",
+            "w2": "9",
+            "w3": "10",
+            "w4": "2",
+            "w5": "8",
+            "w6": "10",
+            "w7": "10",
+            "w8": "2",
+            "w9": "8",
+            "w10": "8",
+            "w11": "8",
+            "w12": "2",
+            "w13": "8",
+            "w14": "23",
+            "w15": "2",
+            "w16": "23",
+            "w17": "8",
+            "w18": "2",
+            "w19": "9",
+            "w20": "8",
+            "w21": "8",
+            "w22": "8",
+            "w23": "2",
+            "w24": "9",
+            "w25": "10",
+            "w26": "23",
+            "w27": "8",
+            "w28": "10",
+            "w29": "9",
+            "w30": "23",
+            "w31": "9",
+            "w32": "23",
+            "w33": "9",
+            "w34": "10",
+            "w35": "23",
+            "w36": "6",
+            "w37": "23",
+            "w38": "6",
+            "w39": "8",
+            "w40": "23",
+            "w41": "6",
+            "w42": "3",
+            "w43": "3",
+            "w44": "3",
+            "w45": "3",
+            "w46": "23",
+            "w47": "3",
+            "w48": "23",
+            "w49": "6",
+            "w50": "3",
+            "w51": "3",
+            "w52": "3",
+            "w53": "6",
+            "Auth": false
+        }, {
+            "id": "2",
+            "type": "ADJ",
+            "Qty": "868",
+            "w1": "2",
+            "w2": "9",
+            "w3": "10",
+            "w4": "2",
+            "w5": "8",
+            "w6": "10",
+            "w7": "10",
+            "w8": "2",
+            "w9": "8",
+            "w10": "8",
+            "w11": "8",
+            "w12": "2",
+            "w13": "8",
+            "w14": "23",
+            "w15": "2",
+            "w16": "23",
+            "w17": "8",
+            "w18": "2",
+            "w19": "9",
+            "w20": "8",
+            "w21": "8",
+            "w22": "8",
+            "w23": "2",
+            "w24": "9",
+            "w25": "10",
+            "w26": "23",
+            "w27": "8",
+            "w28": "10",
+            "w29": "9",
+            "w30": "23",
+            "w31": "9",
+            "w32": "23",
+            "w33": "9",
+            "w34": "10",
+            "w35": "23",
+            "w36": "6",
+            "w37": "23",
+            "w38": "6",
+            "w39": "8",
+            "w40": "23",
+            "w41": "6",
+            "w42": "3",
+            "w43": "3",
+            "w44": "3",
+            "w45": "3",
+            "w46": "23",
+            "w47": "3",
+            "w48": "23",
+            "w49": "6",
+            "w50": "3",
+            "w51": "3",
+            "w52": "3",
+            "w53": "6",
+            "Auth": false
+        }, {
+            "id": "3",
+            "type": "COM",
+            "Qty": "88",
+            "w1": "2",
+            "w2": "9",
+            "w3": "10",
+            "w4": "2",
+            "w5": "8",
+            "w6": "10",
+            "w7": "10",
+            "w8": "2",
+            "w9": "8",
+            "w10": "8",
+            "w11": "8",
+            "w12": "2",
+            "w13": "8",
+            "w14": "23",
+            "w15": "2",
+            "w16": "23",
+            "w17": "8",
+            "w18": "2",
+            "w19": "9",
+            "w20": "8",
+            "w21": "8",
+            "w22": "8",
+            "w23": "2",
+            "w24": "9",
+            "w25": "10",
+            "w26": "23",
+            "w27": "8",
+            "w28": "10",
+            "w29": "9",
+            "w30": "23",
+            "w31": "9",
+            "w32": "23",
+            "w33": "9",
+            "w34": "10",
+            "w35": "23",
+            "w36": "6",
+            "w37": "23",
+            "w38": "6",
+            "w39": "8",
+            "w40": "23",
+            "w41": "6",
+            "w42": "3",
+            "w43": "3",
+            "w44": "3",
+            "w45": "3",
+            "w46": "23",
+            "w47": "3",
+            "w48": "23",
+            "w49": "6",
+            "w50": "3",
+            "w51": "3",
+            "w52": "3",
+            "w53": "6",
+            "Auth": false
+        }, {
+            "id": "4",
+            "type": "ACT",
+            "Qty": "118",
+            "w1": "2",
+            "w2": "9",
+            "w3": "10",
+            "w4": "2",
+            "w5": "8",
+            "w6": "10",
+            "w7": "10",
+            "w8": "2",
+            "w9": "8",
+            "w10": "8",
+            "w11": "8",
+            "w12": "2",
+            "w13": "8",
+            "w14": "23",
+            "w15": "2",
+            "w16": "23",
+            "w17": "8",
+            "w18": "2",
+            "w19": "9",
+            "w20": "8",
+            "w21": "8",
+            "w22": "8",
+            "w23": "2",
+            "w24": "9",
+            "w25": "10",
+            "w26": "23",
+            "w27": "8",
+            "w28": "10",
+            "w29": "9",
+            "w30": "23",
+            "w31": "9",
+            "w32": "23",
+            "w33": "9",
+            "w34": "10",
+            "w35": "23",
+            "w36": "6",
+            "w37": "23",
+            "w38": "6",
+            "w39": "8",
+            "w40": "23",
+            "w41": "6",
+            "w42": "3",
+            "w43": "3",
+            "w44": "3",
+            "w45": "3",
+            "w46": "23",
+            "w47": "3",
+            "w48": "23",
+            "w49": "6",
+            "w50": "3",
+            "w51": "3",
+            "w52": "3",
+            "w53": "6",
+            "Auth": false
+        }, {
+            "id": "4",
+            "type": "DLY",
+            "Qty": "118",
+            "w1": "2",
+            "w2": "9",
+            "w3": "10",
+            "w4": "2",
+            "w5": "8",
+            "w6": "10",
+            "w7": "10",
+            "w8": "2",
+            "w9": "8",
+            "w10": "8",
+            "w11": "8",
+            "w12": "2",
+            "w13": "8",
+            "w14": "23",
+            "w15": "2",
+            "w16": "23",
+            "w17": "8",
+            "w18": "2",
+            "w19": "9",
+            "w20": "8",
+            "w21": "8",
+            "w22": "8",
+            "w23": "2",
+            "w24": "9",
+            "w25": "10",
+            "w26": "23",
+            "w27": "8",
+            "w28": "10",
+            "w29": "9",
+            "w30": "23",
+            "w31": "9",
+            "w32": "23",
+            "w33": "9",
+            "w34": "10",
+            "w35": "23",
+            "w36": "6",
+            "w37": "23",
+            "w38": "6",
+            "w39": "8",
+            "w40": "23",
+            "w41": "6",
+            "w42": "3",
+            "w43": "3",
+            "w44": "3",
+            "w45": "3",
+            "w46": "23",
+            "w47": "3",
+            "w48": "23",
+            "w49": "6",
+            "w50": "3",
+            "w51": "3",
+            "w52": "3",
+            "w53": "6",
+            "Auth": false
+        }
+
+    ];
+
+        if (datatable2) {
+            datatable2.destroy();
+        }
+
+        datatable2 = $('#table_2').DataTable({
+
+            lengthChange: false,//是否允许用户自定义显示数量
+            autoWidth: true,//自动宽度
+            deferRender: true, // 延迟渲染，加速界面加载.
+            searching: false,
+            // processing: true,
+            ordering: false,
+            info: false,
+            data: data2,
+            columns: [
+                // {
+                //     data: 'id'
+                // },
+                {
+                    data: 'type'
+                },
+                {
+                    data: 'Qty',
+                    render: function (data, type, row) {
+                        return data;
+                    }
+                },
+                { data: 'w1' },
+                { data: 'w2' },
+                { data: 'w3' },
+                { data: 'w4' },
+                { data: 'w5' },
+                { data: 'w6' },
+                { data: 'w7' },
+                { data: 'w8' },
+                { data: 'w9' },
+                { data: 'w10' },
+                { data: 'w11' },
+                { data: 'w12' },
+                { data: 'w13' },
+                { data: 'w14' },
+                { data: 'w15' },
+                { data: 'w16' },
+                { data: 'w17' },
+                { data: 'w18' },
+                { data: 'w19' },
+                { data: 'w20' },
+                { data: 'w21' },
+                { data: 'w22' },
+                { data: 'w23' },
+                { data: 'w24' },
+                { data: 'w25' },
+                { data: 'w26' },
+                { data: 'w27' },
+                { data: 'w28' },
+                { data: 'w29' },
+                { data: 'w30' },
+                { data: 'w31' },
+                { data: 'w32' },
+                { data: 'w33' },
+                { data: 'w34' },
+                { data: 'w35' },
+                { data: 'w36' },
+                { data: 'w37' },
+                { data: 'w38' },
+                { data: 'w39' },
+                { data: 'w40' },
+                { data: 'w41' },
+                { data: 'w42' },
+                { data: 'w43' },
+                { data: 'w44' },
+                { data: 'w45' },
+                { data: 'w46' },
+                { data: 'w47' },
+                { data: 'w48' },
+                { data: 'w49' },
+                { data: 'w50' },
+                { data: 'w51' },
+                { data: 'w52' },
+                { data: 'w53' }
+
+            ],
+            // dom:            "Bfrtip",
+            scrollY:        false,
+            scrollX:        true,
+            scrollCollapse: true,
+            paging:         false,
+
+            fixedColumns:   {
+                leftColumns: 2
+            }
+            
+        });
+
+    // $('#detailModal').on('shown.bs.modal', function (e) {
+    //   datatable2.columns.adjust().draw();//table代表表格
+    // })
+
+}
+// 调整表格宽度 解决datatable缩在一起
+$('#detailModal').on('show.bs.modal', function (e) {
+    setTimeout(
+        function(){datatable2.columns.adjust().draw(); 
+    }, 200); 
+  
+})
+
+
+function testinfoshow(){
+
+    $('#testinfoModal').modal('show')
+
+}
+
+    $('#alert input[type="radio"]').click(function() {
+
+        if ($('#action3').is(':checked')) {
+            // $('#part1').slideDown();
+            $('#togglediv').slideDown().css('display','inline-block');
+
+        } else {
+            // $('#togglediv').slideUp();
+            $('#togglediv').slideUp();
+        }
+
+    })
+
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" class="form-control" value="" placeholder="1"></td><td>--</td><td><input type="text" class="form-control" value="" placeholder="53"></td><td><textarea name="" id="" cols="30" rows="2"></textarea></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><input type="text" class="form-control" value=""></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><i class="fa  fa-remove" onclick="deltr1(this)"></i></td></tr>'
+            );
+
+
+    })
+
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+
+
+    $(function() {
+
+        $('.datetime').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+        //Date range picker
+        $('#timeperiod').daterangepicker();
+
+    });
+</script>

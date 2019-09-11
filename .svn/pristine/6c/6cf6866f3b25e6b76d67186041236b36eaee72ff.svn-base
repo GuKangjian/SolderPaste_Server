@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>UI Template | Template List</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="shortcut icon" href="../../dist/img/theme/favicon.png">
+    <!-- <link rel="stylesheet" href="../../dist/css/main.css"> -->
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../../plugins/ionicons/css/ionicons.css" />
+    <!-- <link rel="stylesheet" href="../../dist/css/style.css"> -->
+    <link rel="stylesheet" href="../../static/components.css">
+    <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../../bootstrap/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+    .autocomplete_completionListElement {
+        visibility: hidden;
+        margin: 0px !important;
+        background-color: #fcfcfc;
+        color: windowtext;
+        border: buttonshadow;
+        border-width: 1px;
+        border-style: solid;
+        cursor: pointer;
+        overflow: auto;
+        height: 200px;
+        text-align: left;
+        list-style-type: none;
+        width: 280px !important;
+    }
+
+    .autocomplete_completionListElement2 {
+        visibility: hidden;
+        margin: 0px !important;
+        background-color: #fcfcfc;
+        color: windowtext;
+        border: buttonshadow;
+        border-width: 1px;
+        border-style: solid;
+        cursor: pointer;
+        overflow: auto;
+        height: 200px;
+        text-align: left;
+        list-style-type: none;
+        width: 180px !important;
+    }
+    /* AutoComplete highlighted item */
+
+    .autocomplete_highlightedListItem {
+        background-color: #c3f0f8;
+        color: black;
+        padding: 1px;
+        margin-left: -40px;
+    }
+    /* AutoComplete item */
+
+    .autocomplete_listItem {
+        background-color: window;
+        color: windowtext;
+        padding: 2px;
+        margin-left: -40px;
+    }
+
+    .auto-style1 {
+        width: 340px;
+    }
+    .box.box-solid {
+        padding: 15px;
+        border: 1px solid #cecece;
+    }
+    </style>
+
+</head>
+
+<body class="skin-bosch-alt sidebar-mini">
+
+    <section class="content" style="width: 1200px;margin: 0 auto;">
+
+<div class="row">
+        <div class="col-lg-12">
+            <div class="box box-solid">
+                <div class="box-header">
+                     <!--div class="box-tools pull-right">
+                        <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                        <a class="closebox"><i class="fa fa-times"></i></a>
+                    </div-->
+                </div>
+                <div class="box-body">
+
+                    <form method="post" action="/" id="form1">
+                        <!-- <div class="aspNetHidden">
+                            <input type="hidden" name="ContentPlaceHolder_ScriptManager2_HiddenField" id="ContentPlaceHolder_ScriptManager2_HiddenField" value="" />
+                            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+                            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+                            <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+                        </div>
+                        <div class="aspNetHidden">
+                            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D33A2A2C" />
+                        </div> -->
+                        <div class="raised">
+                            <div id="divhead1" class="divhead1">
+                            </div>
+                        </div>
+                        <div class="raised">
+                            <div id="divmain" class="divmain">
+                                <div class="myform">
+                                    <div id="formhead" class="formhead">
+                                        <span id="ContentPlaceHolder_Label" style="font-size:Large;font-weight:bold;">1) The below is filled by consigner 下栏由测试委托者填写：</span>
+                                        <input type="submit" name="ctl00$ContentPlaceHolder$ButtonAttachment" value="Attachment" onclick="this.form.target=&#39;_blank;" id="ContentPlaceHolder_ButtonAttachment" />
+                                    </div>
+                                    <div class="tabA">
+                                        <div id="ContentPlaceHolder_UpdatePanel1">
+                                            <table class="table table-bordered table-hover" style="width: 100%;" cellpadding="4px">
+                                                <tr>
+                                                    <td colspan="4" align="left">
+                                                        <span id="ContentPlaceHolder_LabelBasicInfo" style="font-weight:bold;">1. Basic information for test sample 测试样件的基本信息：</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelApplicationNo">ApplicationNo 编号</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxAppNo" type="text" value="AE/QMM8.1-REQ201804-060" id="ContentPlaceHolder_TextBoxAppNo" disabled="disabled" class="aspNetDisabled inputB" style="width:205px;" />
+                                                    </td>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelFrom">From Dept. 自：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxFrom" type="text" value="AE/QMM1.9-CN" id="ContentPlaceHolder_TextBoxFrom" disabled="disabled" class="aspNetDisabled inputB" style="width:205px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelPartName">Part/Material Name 零件/材料名：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <select name="ctl00$ContentPlaceHolder$DropDownListPorduct" id="ContentPlaceHolder_DropDownListPorduct" disabled="disabled" class="aspNetDisabled inputB" style="width:205px;">
+                                                            <option value=""></option>
+                                                            <option value="AB">AB</option>
+                                                            <option value="APLM">APLM</option>
+                                                            <option value="AS8">AS8</option>
+                                                            <option value="AS9">AS9</option>
+                                                            <option value="BCD1">BCD1</option>
+                                                            <option value="BE">BE</option>
+                                                            <option value="BE-BCM">BE-BCM</option>
+                                                            <option value="BE-CGM">BE-CGM</option>
+                                                            <option value="BE-Immo">BE-Immo</option>
+                                                            <option value="BE-RFA">BE-RFA</option>
+                                                            <option value="BE-SDLC">BE-SDLC</option>
+                                                            <option value="BE-SGW">BE-SGW</option>
+                                                            <option value="BK2A">BK2A</option>
+                                                            <option value="BRM">BRM</option>
+                                                            <option value="CMC">CMC</option>
+                                                            <option value="E-scooter">E-scooter</option>
+                                                            <option value="EBS">EBS</option>
+                                                            <option value="ED-FED">ED-FED</option>
+                                                            <option value="ED-FPC5">ED-FPC5</option>
+                                                            <option value="ED-FPG2">ED-FPG2</option>
+                                                            <option value="ED-PAD2">ED-PAD2</option>
+                                                            <option value="ED-PCE">ED-PCE</option>
+                                                            <option value="ED-SunRoof">ED-SunRoof</option>
+                                                            <option value="ED-WSM2">ED-WSM2</option>
+                                                            <option value="ED-WSM3">ED-WSM3</option>
+                                                            <option value="EPSc">EPSc</option>
+                                                            <option value="ESL3">ESL3</option>
+                                                            <option value="GCD1">GCD1</option>
+                                                            <option value="MPC2">MPC2</option>
+                                                            <option value="MRR">MRR</option>
+                                                            <option value="MRR4">MRR4</option>
+                                                            <option value="MS">MS</option>
+                                                            <option value="other">other</option>
+                                                            <option value="Others">Others</option>
+                                                            <option value="PAS6">PAS6</option>
+                                                            <option value="PMA-ECU">PMA-ECU</option>
+                                                            <option value="PP-ECU">PP-ECU</option>
+                                                            <option value="PPS3">PPS3</option>
+                                                            <option value="RRT">RRT</option>
+                                                            <option value="RVC">RVC</option>
+                                                            <option value="SDC">SDC</option>
+                                                            <option value="SGW">SGW</option>
+                                                            <option value="SVC2">SVC2</option>
+                                                            <option value="UMS">UMS</option>
+                                                            <option value="USS4">USS4</option>
+                                                            <option selected="selected" value="USS5">USS5</option>
+                                                        </select>
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HFProduct" id="ContentPlaceHolder_HFProduct" />
+                                                    </td>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelPNNo">PN 零件号：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <textarea name="ctl00$ContentPlaceHolder$TextBoxPNNo" rows="2" cols="20" id="ContentPlaceHolder_TextBoxPNNo" class="aspNetDisabled inputB" style="width:205px;">
+                                                            0263013713: FA Line1;0263053436: FA Line2;0263033271: FA Line3;0263053466: FA Line4;0263033463: FA Line5;0263033508: FA Line6;0263023712: FA Line7;</textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelPDU">Product's Direct User 产品的直接客户：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <select name="" id="" class="form-control inputB" style="width:205px;">
+                                                            <option value="">NON SGM/GM &amp; GM</option>
+                                                        </select>
+
+                                                        <!-- <input name="ctl00$ContentPlaceHolder$TextBoxPDU" type="text" value="NON SGM/GM &amp; GM" id="ContentPlaceHolder_TextBoxPDU" disabled="disabled" class="aspNetDisabled inputB" style="width:205px;" /> -->
+                                                    </td>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelQty">Quantity 数量：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxQty" type="text" value="14" id="ContentPlaceHolder_TextBoxQty" class="aspNetDisabled inputB" style="width:205px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelProdDate">Production Date 日期：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input type="date" style="width:205px;">
+                                                        <!-- <input name="ctl00$ContentPlaceHolder$TextBoxProdDate" type="text" value="4/3/2018 12:00:00 AM" id="ContentPlaceHolder_TextBoxProdDate" disabled="disabled" class="aspNetDisabled inputB" style="width:205px;" /> -->
+                                                    </td>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelSPDate">Sampling Date 抽样日期：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxSPDate" type="text" value="4/4/2018 12:00:00 AM" id="ContentPlaceHolder_TextBoxSPDate" disabled="disabled" class="aspNetDisabled inputB" style="width:205px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelSPMan">Sampling Person 抽样人：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxSPMan" type="text" value="Shi Yunyun" id="ContentPlaceHolder_TextBoxSPMan" disabled="disabled" class="aspNetDisabled inputB" style="width:205px;" />
+                                                    </td>
+                                                    <td class="tdA">
+                                                        <span id="ContentPlaceHolder_LabelEXPDate">Expected Date 期望完成日期：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input type="date" style="width:205px;">
+                                                        <!-- <input name="ctl00$ContentPlaceHolder$TextBoxEXPDate" type="text" value="6/8/2018 12:00:00 AM" id="ContentPlaceHolder_TextBoxEXPDate" disabled="disabled" class="aspNetDisabled inputB" style="width:205px;" /> -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HiddenFieldCurApprover" id="ContentPlaceHolder_HiddenFieldCurApprover" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="ContentPlaceHolder_UpdatePanel2">
+                                            <table class="table table-bordered table-hover" style="width: 100%;" cellpadding="4px">
+                                                <tr>
+                                                    <td colspan="4" valign="middle">
+                                                        <span id="ContentPlaceHolder_LabelDMCDESC" style="font-weight:bold;">2. Please Input Sample DMC Codes 请输入样品DMC码：</span>
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxDMCInput" type="text" id="ContentPlaceHolder_TextBoxDMCInput" class="aspNetDisabled inputB" onkeyPress="var key = window.event ? event.keyCode : event.which; if (key == 13){document.getElementById(&#39;ContentPlaceHolder_ButtonUpdateQty&#39;).click();}" style="width:300px;" />
+                                                        <input type="submit" name="ctl00$ContentPlaceHolder$ButtonUpdateQty" value="Add" id="ContentPlaceHolder_ButtonUpdateQty" class="aspNetDisabled" />
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$btnFlag" id="ContentPlaceHolder_btnFlag" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <select size="4" name="ctl00$ContentPlaceHolder$ListBoxDMC" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder$ListBoxDMC\&#39;,\&#39;\&#39;)&#39;, 0)" id="ContentPlaceHolder_ListBoxDMC" style="height:100%;width:50%;">
+                                                            <option value="00008E">00008E</option>
+                                                            <option value="00004E">00004E</option>
+                                                            <option value="02667I">02667I</option>
+                                                            <option value="02668I">02668I</option>
+                                                            <option value="02372K">02372K</option>
+                                                            <option value="02365K">02365K</option>
+                                                            <option value="03107M">03107M</option>
+                                                            <option value="03101M">03101M</option>
+                                                            <option value="06049Q">06049Q</option>
+                                                            <option value="06055Q">06055Q</option>
+                                                            <option value="17795R">17795R</option>
+                                                            <option value="17802R">17802R</option>
+                                                            <option value="07052S">07052S</option>
+                                                            <option value="07058S">07058S</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <span id="ContentPlaceHolder_LabelRetain" style="font-weight:bold;">3. Shall samples be returned to consigner or scrapped after test? 测试结束后是否返还给委托者或报废?</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width>
+                                                        <span class="aspNetDisabled" style="font-weight:bold;"><input id="ContentPlaceHolder_RadioButtonRY" type="radio" name="ctl00$ContentPlaceHolder$Retention" value="RadioButtonRY" checked="checked" /><label for="ContentPlaceHolder_RadioButtonRY">Return to Consigner 返回给委托者</label></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="aspNetDisabled" style="font-weight:bold;"><input id="ContentPlaceHolder_RadioButtonRN" type="radio" name="ctl00$ContentPlaceHolder$Retention" value="RadioButtonRN" /><label for="ContentPlaceHolder_RadioButtonRN">Scrap 报废</label></span>
+                                                    </td>
+                                                    <td align="right">
+                                                        <span id="ContentPlaceHolder_LabelRetention" style="font-weight:bold;">Retention Period Limit 保留期限：</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxRetention" type="text" value="Days" id="ContentPlaceHolder_TextBoxRetention" disabled="disabled" class="aspNetDisabled inputB" style="width:270px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <span id="ContentPlaceHolder_LabelOutside" style="font-weight:bold;">4. Does test need to be done by outside lab 试验是否需要在外部实验室进行？</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span class="aspNetDisabled" style="font-weight:bold;"><input id="ContentPlaceHolder_RadioButtonON" type="radio" name="ctl00$ContentPlaceHolder$Outside" value="RadioButtonON" /><label for="ContentPlaceHolder_RadioButtonON">No 否</label></span>
+                                                    </td>
+                                                    <td width="200px">
+                                                        <span class="aspNetDisabled" style="font-weight:bold;"><input id="ContentPlaceHolder_RadioButtonOY" type="radio" name="ctl00$ContentPlaceHolder$Outside" value="RadioButtonOY" /><label for="ContentPlaceHolder_RadioButtonOY">Yes 是</label></span>
+                                                    </td>
+                                                    <td align="right">
+                                                        <span id="ContentPlaceHolder_LabelCostCenter" style="font-weight:bold;">Cost Center(支付外部测试的成本中心):</span>
+                                                    </td>
+                                                    <td class="tdB">
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxCostCenter" type="text" id="ContentPlaceHolder_TextBoxCostCenter" disabled="disabled" class="aspNetDisabled inputB" style="width:270px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="ContentPlaceHolder_LabelTP" style="font-weight:bold;">5. Test Purpose 测试目的：</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5">
+                                                        <table class="table table-bordered table-hover" id="ContentPlaceHolder_CheckBoxListTP" class="aspNetDisabled">
+                                                            <tr>
+                                                                <td><span class="aspNetDisabled"><input id="ContentPlaceHolder_CheckBoxListTP_0" type="checkbox" name="ctl00$ContentPlaceHolder$CheckBoxListTP$0" checked="checked" disabled="disabled" value="Routine" /><label for="ContentPlaceHolder_CheckBoxListTP_0">Routine</label></span></td>
+                                                                <td><span class="aspNetDisabled"><input id="ContentPlaceHolder_CheckBoxListTP_1" type="checkbox" name="ctl00$ContentPlaceHolder$CheckBoxListTP$1" disabled="disabled" value="Product Release" /><label for="ContentPlaceHolder_CheckBoxListTP_1">Product Release</label></span></td>
+                                                                <td><span class="aspNetDisabled"><input id="ContentPlaceHolder_CheckBoxListTP_2" type="checkbox" name="ctl00$ContentPlaceHolder$CheckBoxListTP$2" disabled="disabled" value="Production Line Release" /><label for="ContentPlaceHolder_CheckBoxListTP_2">Production Line Release</label></span></td>
+                                                                <td><span class="aspNetDisabled"><input id="ContentPlaceHolder_CheckBoxListTP_3" type="checkbox" name="ctl00$ContentPlaceHolder$CheckBoxListTP$3" disabled="disabled" value="Quality Analysis" /><label for="ContentPlaceHolder_CheckBoxListTP_3">Quality Analysis</label></span></td>
+                                                                <td><span class="aspNetDisabled"><input id="ContentPlaceHolder_CheckBoxListTP_4" type="checkbox" name="ctl00$ContentPlaceHolder$CheckBoxListTP$4" disabled="disabled" value="Others" /><label for="ContentPlaceHolder_CheckBoxListTP_4">Others</label></span></td>
+                                                                <td>
+                                                                    <input name="ctl00$ContentPlaceHolder$TextBoxTP" type="text" value="Q1+Z1+Z2" id="ContentPlaceHolder_TextBoxTP" disabled="disabled" class="aspNetDisabled inputB" style="width:270px;" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <span id="ContentPlaceHolder_LabelTestItem" style="font-weight:bold;">6. Test Items 测试项目：</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <input type="button" name="ctl00$ContentPlaceHolder$ButtonAddTestItem" value="Add Test Item" id="ContentPlaceHolder_ButtonAddTestItem" disabled="disabled" class="aspNetDisabled" />
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HiddenFieldTestSpec" id="ContentPlaceHolder_HiddenFieldTestSpec" />
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HiddenFieldTestVersion" id="ContentPlaceHolder_HiddenFieldTestVersion" />
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HiddenFieldTestSWVersion" id="ContentPlaceHolder_HiddenFieldTestSWVersion" />
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HiddenFieldTestConditionReq" id="ContentPlaceHolder_HiddenFieldTestConditionReq" />
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HiddenFieldRemark" id="ContentPlaceHolder_HiddenFieldRemark" />
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HiddenFieldEdit" id="ContentPlaceHolder_HiddenFieldEdit" />
+                                                        <input type="hidden" name="ctl00$ContentPlaceHolder$HiddenFieldItemNo" id="ContentPlaceHolder_HiddenFieldItemNo" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div>
+                                                            <table class="table table-bordered table-hover" cellspacing="0" cellpadding="5" rules="all" id="ContentPlaceHolder_GridViewTestItem">
+                                                                <tr align="center" style="background-color:#D7F4F1;border-width:1px;border-style:Solid;">
+                                                                    <th scope="col">Check</th>
+                                                                    <th scope="col">ItemNo</th>
+                                                                    <th scope="col">TestSpecification</th>
+                                                                    <th scope="col">TestSpecVersion</th>
+                                                                    <th scope="col">TestSoftwareVersion</th>
+                                                                    <th scope="col">TestConditionRequirements</th>
+                                                                    <th scope="col">Remark</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <input id="ContentPlaceHolder_GridViewTestItem_checkboxMutiPick_0" type="checkbox" name="ctl00$ContentPlaceHolder$GridViewTestItem$ctl02$checkboxMutiPick" disabled="disabled" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder$GridViewTestItem$ctl02$checkboxMutiPick\&#39;,\&#39;\&#39;)&#39;, 0)" />
+                                                                    </td>
+                                                                    <td>
+                                                                        <span id="ContentPlaceHolder_GridViewTestItem_labelItemNo_0">1</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span id="ContentPlaceHolder_GridViewTestItem_labelTestSpec_0">6033M080PY</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" value="V07">
+                                                                        <!-- <span id="ContentPlaceHolder_GridViewTestItem_labelTestSpecVersion_0">V07</span> -->
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" value="NA">
+                                                                        <!-- <span id="ContentPlaceHolder_GridViewTestItem_labelTestSWVersion_0">NA</span> -->
+                                                                    </td>
+                                                                    <td>
+                                                                        <input type="text" value="6033M080PY">
+                                                                        <!-- <span id="ContentPlaceHolder_GridViewTestItem_labelTestConditionReq_0">6033M080PY</span> -->
+                                                                    </td>
+                                                                    <td>
+                                                                        <textarea name="" id="" cols="30" rows="1">NA</textarea>
+                                                                        <!-- <span id="ContentPlaceHolder_GridViewTestItem_labelRemark_0">NA</span> -->
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <span id="ContentPlaceHolder_labelBOMDate"> * Please write the BOM data here if the version of test spec and test software for PS refer to BOM.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <span id="ContentPlaceHolder_label4"> * 请注明BOM日期，如果测试规范的版本和PS的测试软件版本参照BOM.</span>
+                                                    </td>
+                                                    <td>
+                                                        <span id="ContentPlaceHolder_labelBOMDateInfo">Date/日期：</span>
+                                                        <input type="date" style="width:200px;" />
+                                                        <!-- <input name="ctl00$ContentPlaceHolder$textboxBomDate" type="text" value="4/4/2018 12:00:00 AM" id="ContentPlaceHolder_textboxBomDate" disabled="disabled" class="aspNetDisabled inputB" style="width:200px;" /> -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <span id="ContentPlaceHolder_label1">Remarks:1)Please provide the drawings if applicable.  2)Please mark the test item if it needs to be done outside.</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <span id="ContentPlaceHolder_label3">备注:1)如果有图纸，请附上相应的图纸  2)请在需要外部实验室进行的试验的项目上标注</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="DivApprovalHead" class="formhead">
+                                            <span id="ContentPlaceHolder_label7" style="font-size:Small;font-weight:bold;"> Approval Process </span>
+                                        </div>
+                                        <div>
+                                            <table class="table table-bordered table-hover" style="width: 100%;" cellpadding="4px">
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <input type="button" name="ctl00$ContentPlaceHolder$Button1" value="Show Approval History" onclick="ShowChangeUserDialogWindow(); return false;__doPostBack(&#39;ctl00$ContentPlaceHolder$Button1&#39;,&#39;&#39;)" id="ContentPlaceHolder_Button1" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="ContentPlaceHolder_LabelSupervisor">Supervisor</span>
+                                                    </td>
+                                                    <td style="width: 300px">
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxSupervisor" type="text" value="Tang Jiajing(AE/QMM1.1-CN)-TJA1SZH" id="ContentPlaceHolder_TextBoxSupervisor" disabled="disabled" class="aspNetDisabled" style="width:100%;" />
+                                                    </td>
+                                                    <td>
+                                                        <span id="ContentPlaceHolder_LabelEmail">Status</span></td>
+                                                    <td>
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxStatusSup" type="text" value="Approved" id="ContentPlaceHolder_TextBoxStatusSup" disabled="disabled" class="aspNetDisabled" style="width:216px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="ContentPlaceHolder_Label9">Additional Approver1</span>
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxAdd1" type="text" id="ContentPlaceHolder_TextBoxAdd1" disabled="disabled" class="aspNetDisabled" style="width:300px;" />
+                                                    </td>
+                                                    <td>
+                                                        <span id="ContentPlaceHolder_Label10">Status</span></td>
+                                                    <td>
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxAdd1Status" type="text" id="ContentPlaceHolder_TextBoxAdd1Status" disabled="disabled" class="aspNetDisabled" style="width:216px;" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span id="ContentPlaceHolder_Label11">Additional Approver2</span>
+                                                    </td>
+                                                    <td>
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxAdd2" type="text" id="ContentPlaceHolder_TextBoxAdd2" disabled="disabled" class="aspNetDisabled" style="width:300px;" />
+                                                    </td>
+                                                    <td>
+                                                        <span id="ContentPlaceHolder_Label12">Status</span></td>
+                                                    <td>
+                                                        <input name="ctl00$ContentPlaceHolder$TextBoxAdd2Status" type="text" id="ContentPlaceHolder_TextBoxAdd2Status" disabled="disabled" class="aspNetDisabled" style="width:216px;" />
+                                                    </td>
+                                                </tr>
+                                                <!-- <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr> -->
+                                            </table>
+                                            <!-- <table class="table table-bordered table-hover" style="width: 100%;" cellpadding="4px">
+                                                <tr>
+                                                    <td colspan="4" align="right">
+                                                        <input type="submit" name="ctl00$ContentPlaceHolder$ButtonSaveasSubmit" value="" id="ContentPlaceHolder_ButtonSaveasSubmit" align="right" style="display: none" />
+                                                    </td>
+                                                </tr>
+                                            </table> -->
+                                        </div>
+                                    </div>
+                                    <div id="saveasdialog" title="Add Test Item" style="display: none">
+                                        <table class="table table-bordered table-hover">
+                                            <tr>
+                                                <td nowrap>
+                                                    <span id="ContentPlaceHolder_Label23">Test Specification</span>
+                                                </td>
+                                                <td class="tdB">
+                                                    <input name="ctl00$ContentPlaceHolder$TextBoxTestSpec" type="text" autocomplete="off" id="ContentPlaceHolder_TextBoxTestSpec" style="width:180px;" />
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap>
+                                                    <span id="ContentPlaceHolder_Label2">Test Spec Version</span>
+                                                </td>
+                                                <td class="tdB">
+                                                    <input name="ctl00$ContentPlaceHolder$TextBoxSpecVersion" type="text" autocomplete="off" id="ContentPlaceHolder_TextBoxSpecVersion" style="width:180px;" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap>
+                                                    <span id="ContentPlaceHolder_Label5">Test Software Version for OS</span>
+                                                </td>
+                                                <td class="tdB">
+                                                    <input name="ctl00$ContentPlaceHolder$TextBoxTestSW" type="text" autocomplete="off" id="ContentPlaceHolder_TextBoxTestSW" style="width:180px;" />
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap>
+                                                    <span id="ContentPlaceHolder_Label6">Test Condition Requirements</span>
+                                                </td>
+                                                <td class="tdB">
+                                                    <input name="ctl00$ContentPlaceHolder$TextBoxTestReq" type="text" autocomplete="off" id="ContentPlaceHolder_TextBoxTestReq" style="width:180px;" />
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap>
+                                                    <span id="ContentPlaceHolder_Label8">Remark</span>
+                                                </td>
+                                                <td class="tdB">
+                                                    <input name="ctl00$ContentPlaceHolder$TextBoxRemark" type="text" autocomplete="off" id="ContentPlaceHolder_TextBoxRemark" style="width:180px;" />
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="ChangeUserDialog" title="Approval History" style="display: none">
+                                        <div id="ContentPlaceHolder_UpdatePanel3">
+                                            <table class="table table-bordered table-hover">
+                                                <tr>
+                                                    <td nowrap>
+                                                        <div>
+                                                            <table class="gridcss" cellspacing="0" cellpadding="5" rules="all" id="ContentPlaceHolder_GridViewApprovalHis" style="border-color:Silver;border-width:2px;border-style:Solid;width:480px;border-collapse:collapse;">
+                                                                <tr style="border-color:Gray;border-style:Solid;">
+                                                                    <th scope="col">Approval History</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span id="ContentPlaceHolder_GridViewApprovalHis_labelAction_0">Add request by [EQZ] Shi Yunyun on 2018/4/4 9:36:32</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span id="ContentPlaceHolder_GridViewApprovalHis_labelAction_1">Submit request by inq1szh on 4/4/2018 9:38:52 AM.</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span id="ContentPlaceHolder_GridViewApprovalHis_labelAction_2">Approve request by TJA1SZH on 4/4/2018 11:07:16 AM.</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <img id="ContentPlaceHolder_ImageLoading" src="images/loading.gif" style="display: none" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="raised">
+                            <div id="footer" class="footer">
+                                <img alt="" src="Images/BoschLogo.png" />
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-9">
+<button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Save</button>
+
+                        <!-- <button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Submit</button>                          -->
+
+<button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Link to smartlab</button>  
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </section><!-- /.content -->
+
+    <script type="text/javascript">
+        function SubmitValidator() {
+            var fromDept = $.trim($("[id$=TextBoxFrom]").val());
+            var PN = $.trim($("[id$=TextBoxPNNo]").val());
+            var qty = $.trim($("[id$=TextBoxQty]").val());
+            var expDate = $.trim($("[id$=TextBoxEXPDate]").val());
+            var spMan = $.trim($("[id$=TextBoxSPMan]").val());
+            var testPurpose = $.trim($("[id$=TextBoxTP]").val());
+            var supervisor = $.trim($("[id$=TextBoxSupervisor]").val());
+
+            if (fromDept.length == 0) {
+                alert("Please input from department!")
+                return false;
+            }
+            if (PN.length == 0) {
+                alert("Please input PN!")
+                return false;
+            }
+            if (qty.length == 0) {
+                alert("Please input Quantity!")
+                return false;
+            }
+            if (expDate.length == 0) {
+                alert("Please input Except Date!")
+                return false;
+            }
+            if (spMan.length == 0) {
+                alert("Please input Sampling Person!")
+                return false;
+            }
+
+            if (supervisor.length == 0) {
+                alert("Please choose supervisor!")
+                return false;
+            }
+            return true;
+        }
+
+        function AddApprover() {
+            if ($("[id$=TextBoxAdd1]").val() == "") {
+                $("[id$=trAdd1]").show();
+            }
+            if ($("[id$=TextBoxAdd2]").val() == "") {
+
+                if ($("[id$=TextBoxAdd1]").val() != "") {
+                    $("[id$=trAdd2]").show();
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

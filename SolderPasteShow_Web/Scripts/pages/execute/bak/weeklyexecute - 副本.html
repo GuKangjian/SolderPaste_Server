@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>UI Template | Template List</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="shortcut icon" href="../../dist/img/theme/favicon.png">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../../plugins/ionicons/css/ionicons.css" />
+    <link rel="stylesheet" href="../../dist/css/main.css">
+    <link rel="stylesheet" href="../../dist/css/style.css">
+    <!-- spread.sheets -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Sheets/css/gc.spread.sheets.11.0.0.css" /> -->
+    <!-- spread.views -->
+    <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/gc.spread.views.dataview.11.0.0.css" />
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/theme/gc.spread.views.dataview.flat.11.0.0.css" /> -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.trellisgrouping.11.0.0.css" /> -->
+    <!-- <link rel="stylesheet" href="../../dist/css/jquery-ui.css"> -->
+    <link rel="stylesheet" href="../../plugins/jqgrid/jquery-ui.css">
+    <link rel="stylesheet" href="../../dist/css/grid/jquery.multiselect.css">
+    <link rel="stylesheet" href="../../dist/css/grid/jquery.multiselect.filter.css">
+    <link rel="stylesheet" href="../../plugins/jqgrid/ui.jqgrid.css">
+    <!-- <link rel="stylesheet" href="../../dist/css/jquery-ui.css"> -->
+    <!-- <link rel="stylesheet" href="../../dist/css/bootstrap-datetimepicker.css"> -->
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+    <!-- select2 -->
+    <link rel="stylesheet" href="../../plugins/select2/select2.css">
+    <link rel="stylesheet" href="../../plugins/select3/normalize.css">
+    <link rel="stylesheet" href="../../plugins/select3/fm.selectator.jquery.css">
+    <link rel="stylesheet" href="../../plugins/webuploader/webuploader.css">
+    <style>
+
+    .form-control{padding: 6px 3px;}
+
+    label {
+        display: inline-block;
+        width: 200px;
+    }
+
+    .icon-link{padding: 13px 0;display: block;background: url(../../images/right.png) no-repeat 50% 50%;}
+
+    /*.gc-column input{width: 100%;}*/
+    
+    .modal-dialog{ width: 1000px; }
+
+    .gc-column-header-cell, .gc-corner-header-cell{background: #225ba1;/*background: rgb(56, 146, 211);*/color: #fff;/*font-size: 1.2rem;*/white-space: normal;text-align: center;word-break: break-word;}
+    
+    .gc-column-header{line-height: 20px;}
+    /*表格bug*/
+    .gc-inline-editor-container{height: 45px;line-height: 43px;background: transparent;color: transparent;}  
+
+    .align-left{text-align: center;}
+/*table*/
+    #list tr:nth-child(1) {
+        background: #225ba1;color: #fff;
+    }
+
+    .select2-container .select2-selection--single{height: 34px!important;}
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered{line-height: 32px!important;}
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow{height: 32px!important;}
+
+    /*.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{padding: 4px 5px!important;}*/
+
+    .select2-container--default .select2-selection--single{border: 1px solid #ccc!important;}
+
+    .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+        vertical-align: middle;
+    }
+    table tr td a {
+        color: #12517D;
+    }
+
+
+    .table {
+        border-collapse: collapse;
+        border: none;
+        background-color: #fff;
+        table-layout: fixed;
+    }
+
+    .modal-body{overflow: hidden;}
+
+    /*.btn.btn-flat{float: right;}*/
+
+    .table-bordered>tbody>tr>td{border: none;}
+
+    .table textarea{height: 34px;}
+    
+    .act{margin: 0 auto 10px;}
+
+    /*table end*/
+
+
+.gc-action-area{
+    text-align: center;
+}
+
+.gc-header-row-cell {
+    background-color: #eaeaea;
+}
+
+
+.action-btn {
+    display: inline-block;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.action-btn span {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+#btnAddNew span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gc-row {
+    line-height: 36px;
+}
+
+.page-part-left {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 6px;
+}
+
+.page-part-right {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 3px 6px;
+    float: right;
+}
+
+.button {
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    color: #000000;
+}
+
+.button:not(.intangible):hover {
+    background-color: #d7d7d7;
+}
+
+.content {
+    padding: 6px 6px;
+}
+
+
+.divider {
+    height: 20px;
+    width: 0;
+    border-left: 1px solid #c2c2c2;
+}
+
+.intangible {
+    cursor: inherit;
+    opacity: 0.3;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    box-sizing: border-box;
+    border: solid rgba(0, 0, 0, 0.2);
+    border-width: 0 1px 1px 1px;
+    padding: 3px 0;
+    text-align: left;
+    height: 42px;
+    width: 100%;
+    font-size: 16px;
+}
+
+    /*box*/
+
+    .box{border:none;}
+
+    .table-responsive{overflow: hidden;}
+
+    /*.box-header{background: #95a5a6;}
+
+    .btn-box-tool{color: #fff;}
+
+    .open .btn-box-tool, .btn-box-tool:hover{color: #fff;}*/
+
+</style>
+
+</head>
+
+<body class="skin-bosch-alt sidebar-mini">
+
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="../../index.html" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="../../dist/img/theme/visual-bic-sm.png" alt="Bosch IoT Cloud"/></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="../../dist/img/theme/visual-bic-key.png" alt="Bosch IoT Cloud"/></span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Bosch Logo -->
+                            <li>
+                                <img src="../../dist/img/theme/bosch_logo_english.png" alt="Bosch" class="bosch-logo"/>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <ul class="sidebar-menu user-panel">
+                        <li class="user-menu treeview image">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                              <span class="hidden-xs">Alexander <strong>Pierce</strong></span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                                <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>
+                            </ul>
+                      </li>
+                  </ul>
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <span class="input-group-btn">
+                                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="header">MAIN NAVIGATION</li>
+
+                        <li>
+                            <a href="../../index.html">
+                                <i class="fa fa-th"></i> <span>Dashboard</span> <!-- <small class="label pull-right bg-green">new</small> -->
+                            </a>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Planning Management</span><i class="fa fa-angle-left pull-right"></i>
+                                <ul class="treeview-menu">
+                                    <li><a href="/pages/yearlyplan/planlist.html"><i class="fa fa-circle-o"></i> Yearly Plan List</a></li>
+                                    <!-- <li><a href="./PPZ.html"><i class="fa fa-circle-o"></i> PPZ Maintenance</a></li> -->
+                                    <!-- <li><a href="index2.html"><i class="fa fa-circle-o"></i> Monthly Volume Update</a></li> -->
+                                </ul>
+                            </a>
+                        </li>
+
+<!--                         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Work Instruction</span></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                            </ul>
+                        </li> -->
+
+                        <li class="treeview active">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Executive Management</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="/pages/execute/weeklyexecute.html"><i class="fa fa-circle-o"></i> Weekly Plan Execution</a></li>
+                                <li><a href="/pages/execute/yearexecution.html"><i class="fa fa-circle-o"></i> Yearly Plan List Execution</a></li>
+                            </ul>
+                        </li>
+
+<!--                         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Work Instruction</span></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>Layout Options</span>
+                                <span class="label label-primary pull-right">4</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Charts</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>UI Elements</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+                                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+                                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+                                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+                                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+                                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-share"></i> <span>Multilevel</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
+                                            <ul class="treeview-menu">
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                            </ul>
+                        </li> -->
+
+                        <li class="header">LABELS</li>
+                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Weekly Plan -Execution
+                        <small></small>
+                    </h1>
+
+                    <!-- <ul class="nav nav-tabs tabs" id="myTab">
+                        <li class="active"><a href="#Basic" data-target="#Basic" data-toggle="tab">Form</a></li>
+                        <li><a href="#Training" data-target="#Training" data-toggle="tab">Approvers</a></li> 
+                    </ul> -->
+
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Year Plan Edit</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content tab-content">
+                <!-- part1 Basic-->
+                <!-- <div class="part1 tab-pane fade in active" id="Basic"> -->
+
+
+
+              <!-- TABLE: LATEST ORDERS -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"></h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <div class="table-responsive">
+
+                    <form class="form-horizontal" action="" method="post">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="">Year</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">2016</option>
+                                    <option value="2">2017</option>
+                                    <option value="3">2018</option>
+                                    <option value="4">2019</option>
+                                    <option value="5">2020</option>
+                                </select>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="">Week</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">1</option>
+                                    <option value="2">12</option>
+                                    <option value="2">32</option>
+                                    <option value="2">40</option>
+                                </select>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="">Product</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">ABS</option>
+                                    <option value="2">AS</option>
+                                    <option value="3">BE</option>
+                                    <option value="4">CC-DA</option>
+                                    <option value="5">CM-DCU</option>
+                                </select>
+                            </div>
+
+
+
+                        </div>
+                        <div class="form-group">
+
+
+                            <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Product Group</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">USS4</option>
+                                    <option value="2">BK2C</option>
+                                    <option value="2">EPSc</option>
+                                    <option value="2">ESL3</option>
+                                </select>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="">Location</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">Suzhou</option>
+                                    <option value="2">Wujin</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+                  </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+
+                  
+                  <button class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>
+                  <button class="btn btn-default btn-flat"><i class="fa fa-folder-open"></i> Open List</button>
+                  <!-- <a class="btn btn-sm btn-default btn-flat pull-left">Reset <i class="fa fa-refresh"></i></a>
+                  <a class="btn btn-sm btn-info btn-flat pull-left">Query <span class="glyphicon glyphicon-search"></span></a> -->
+
+                </div><!-- /.box-footer -->
+              </div><!-- /.box -->
+
+
+                    <!-- <div class="clearfix"></div> -->
+                    <div class="spreadviews">
+                        <!-- SpreadJS -->
+                        <!-- <div id="grid1" style="width: 100%;height:500px;"></div> -->
+
+                        <div id="grid1" style="height:500px;outline:none"></div>
+                        <div id="page-nav" class="container"></div>
+                        
+                        <div style="display: none;">
+                            <span id="loadFailed"><%= loadFailed %></span>
+                            <span id="addFailed"><%= addFailed %></span>
+                            <span id="deleteFailed"><%= deleteFailed %></span>
+                            <span id="updateFailed"><%= updateFailed %></span>
+                            <span id="addNew">Create Plan</span>
+                        </div>
+
+                    </div>
+
+                    <div class="PPMplan">
+                        <!-- <h1>
+                            Plan PPM
+                            <small></small>
+                        </h1> -->
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="box">
+                            <div class="box-header">
+                              <h3 class="box-title">PPM</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                              <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>Test Type</th>
+                                    <th>Product Family/Group</th>
+                                    <th>Target PPM</th>
+                                    <th>Planned Volume</th>
+                                    <th>Planned QZ Qty</th>
+                                    <th>Planned PPM</th>
+                                    <th>Remark</th>
+                                    <th width="40"></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>   
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">Q</option>
+                                            <option value="L2">Q + Z</option>
+                                        </select>
+                                    </td>
+                                    <td>   
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">AB 10</option>
+                                            <option value="L2">BK2A</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                   <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                   <td>
+                                        <textarea name="" id="" cols="30"></textarea>
+                                    </td>
+                                    <td>
+                                        <button class="delete-btn action-btn"><span>✖</span></button>
+                                    </td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <select name="" id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">Q</option>
+                                            <option value="L2">Q + Z</option>
+                                        </select>
+                                    </td>
+                                    <td>   
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">AB 10</option>
+                                            <option value="L2">BK2A</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <textarea name="" id="" cols="30"></textarea>
+                                    </td>
+                                    <td>
+                                        <button class="delete-btn action-btn"><span>✖</span></button>
+                                    </td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <select name="" id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">Q</option>
+                                            <option value="L2">Q + Z</option>
+                                        </select>
+                                    </td>
+                                    <td>   
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">AB 10</option>
+                                            <option value="L2">BK2A</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <textarea name="" id="" cols="30"></textarea>
+                                    </td>  
+                                    <td>
+                                        <button class="delete-btn action-btn"><span>✖</span></button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <select name="" id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">Q</option>
+                                            <option value="L2">Q + Z</option>
+                                        </select>
+                                    </td>
+                                    <td>   
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">AB 10</option>
+                                            <option value="L2">BK2A</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control">
+                                    </td>
+                                    <td>
+                                        <textarea name="" id="" cols="30"></textarea>
+                                    </td>  
+                                    <td>
+                                        <button class="delete-btn action-btn"><span>✖</span></button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><!-- /.box-body -->
+                          </div><!-- /.box -->
+                            </div><!-- /.col -->
+                      </div><!-- /.row -->
+
+                    </div><!-- PPM -->
+
+
+                    <div class="comment">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="box">
+                            <div class="box-header">
+                              <h3 class="box-title">Comments</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">                        
+
+                                <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+
+                            </div><!-- /.box-body -->
+                          </div><!-- /.box -->
+                            </div><!-- /.col -->
+                      </div><!-- /.row -->
+
+
+                    </div>
+
+                <!-- </div> -->
+                <!-- part2 Action-->
+                <!-- <div class="part2 tab-pane fade" id="Training"> -->
+
+
+                    <div class="PPMplan">
+                        <!-- <h1>
+                            Plan PPM
+                            <small></small>
+                        </h1> -->
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="box">
+                            <div class="box-header">
+                              <h3 class="box-title">Approvers</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                              <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                  <tr>
+                                    <th>Account</th>
+                                    <th>Approver</th>
+                                    <th>Department</th>
+                                    <th>Approval Status</th>
+                                    <th>Approval Date/Time</th>
+                                    <th>Comments</th>
+                                    <th class="col-xs-2"></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>   
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">88012662</option>
+                                            <option value="L2">88012663</option>
+                                        </select>
+                                    </td>
+                                    <td>   
+                                        <!-- <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">AB 10</option>
+                                            <option value="L2">BK2A</option>
+                                        </select> -->
+                                    </td>
+                                    <td></td>
+
+                                    <td></td>
+                                        
+                                    <td></td>
+                                    
+                                    <td></td>
+                                    
+                                    <td>
+                                        <button class="delete-btn action-btn"><span>✖</span></button>
+                                    </td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">88012662</option>
+                                            <option value="L2">88012663</option>
+                                        </select>
+                                    </td>
+                                    <td>   
+                                        
+                                    </td>
+                                    <td></td>
+
+                                    <td></td>
+                                        
+                                    <td></td>
+                                    
+                                    <td></td>
+                                    <td>
+                                        <button class="delete-btn action-btn"><span>✖</span></button>
+                                    </td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">88012662</option>
+                                            <option value="L2">88012663</option>
+                                        </select>
+                                    </td>
+                                    <td>   
+                                        
+                                    </td>
+                                    <td></td>
+
+                                    <td></td>
+                                        
+                                    <td></td>
+                                    
+                                    <td></td>
+                                    <td>
+                                        <button class="delete-btn action-btn"><span>✖</span></button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                        <select id="" class="form-control">
+                                            <option disabled selected>-- All --</option>
+                                            <option value="L1">88012662</option>
+                                            <option value="L2">88012663</option>
+                                        </select>
+                                    </td>
+                                    <td>   
+                                        
+                                    </td>
+                                    <td></td>
+
+                                    <td></td>
+                                        
+                                    <td></td>
+                                    
+                                    <td></td>
+                                    <td>
+                                        <button class="delete-btn action-btn"><span>✖</span></button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><!-- /.box-body -->
+                          </div><!-- /.box -->
+                            </div><!-- /.col -->
+                      </div><!-- /.row -->
+                      
+                    </div><!-- PPM -->
+
+                <!-- </div> -->
+                <!-- part2 -->
+
+                </section><!-- /.content -->
+
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <!-- <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4> -->
+                            </div>
+                            <div class="modal-body">
+                                
+                                    <!-- <form class="form-horizontal" action="" method="post"> -->
+                                    <div class="col-md-12">
+                                        <div class="act">
+                                            <a id="add" class="btn" style="background: #35aa47;color: #fff;"><i class="fa fa-plus "></i></a>
+                                            <a id="btnAddNew" class="btn btn-primary"><i class="fa fa-download"></i></a>                                  
+                                        </div>
+                                        <table id="list" class="table table-hover table-bordered" border="0" cellpadding="0" cellspacing="0" width="60%" align="center">
+                                            <tr>
+                                                <td>From week</td>
+                                                <td width="10"></td>
+                                                <td>To week</td>
+                                                <td>Desciption</td>
+                                                <td>Priority</td>
+                                                <td>Reference PN</td>
+                                                <td>Production Line</td>
+                                                <td width="10%">Action</td>
+                                            </tr>
+                                            <tr align="center">
+                                                <td>
+                                                    <input type="text" class="form-control" value="" placeholder="1">
+                                                </td>
+                                                <td>--</td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="" placeholder="53">
+                                                </td>
+                                                <td>
+                                                    <textarea name="" id="" cols="30"></textarea>
+                                                </td>
+                                                <td>
+                                                    <select name="" id="" class="form-control">
+                                                        <option disabled selected>-- All --</option>
+                                                        <option value="L1">High</option>
+                                                        <option value="L2">Medium</option>
+                                                        <option value="L2">Low</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>                                               
+                                                <td>
+                                                    <select name="" id="" class="form-control">
+                                                        <option disabled selected>-- All --</option>
+                                                        <option value="L1">ABS9M Line</option>
+                                                        <option value="L2">Dip Coating1</option>
+                                                    </select>
+                                                </td>
+                                                <td><i class="fa  fa-remove " onclick="deltr1(this)"></i></td>
+                                                <!-- <td><button class="btn" onclick="deltr1(this)"><i class="fa  fa-remove "></i></button></td> -->
+                                            </tr>
+                                        </table>
+                                        <!-- table -->
+                                    </div>
+                                    <!-- </form> -->
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-primary">确 定</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="WIModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <!-- <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4> -->
+                            </div>
+                            <div class="modal-body">
+                                
+                                    <!-- <form class="form-horizontal" action="" method="post"> -->
+                                    <div class="col-md-12">
+                                        <div class="act">
+                                            <a id="add" class="btn" style="background: #35aa47;color: #fff;"><i class="fa fa-plus "></i></a>
+                                            <!-- <a id="btnAddNew" class="btn btn-primary"><i class="fa fa-download"></i></a>   -->                                
+                                        </div>
+                                        <table id="list" class="table table-hover table-bordered" border="0" cellpadding="0" cellspacing="0" width="60%" align="center">
+                                            <tr>
+                                                <td>Description</td>
+                                                <!-- <td width="10"></td> -->
+                                                <td>Path</td>
+                                                <td width="30%">Action</td>
+                                            </tr>
+                                            <tr align="center">
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>                                            
+                                                <td><a class="btn"><i class="fa  fa-search"></i></a><a class="btn"><i class="fa  fa-remove " onclick="deltr1(this)"></i></a></td>
+                                                <!-- <td><button class="btn" onclick="deltr1(this)"><i class="fa  fa-remove "></i></button></td> -->
+                                            </tr>
+                                        </table>
+                                        <!-- table -->
+                                    </div>
+                                    <!-- </form> -->
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-primary">确 定</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+            </div><!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 2.0
+                </div>
+                <strong>Copyright &copy; 2016 <a href="http://www.bosch-si.com">Bosch Software Innovations</a>.</strong> All rights reserved.
+            </footer>
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Create the tabs -->
+                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                    <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Home tab content -->
+                    <div class="tab-pane" id="control-sidebar-home-tab">
+                        <h3 class="control-sidebar-heading">Recent Activity</h3>
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                        <p>Will be 23 on April 24th</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-user bg-yellow"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                                        <p>New phone +1(800)555-1234</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+                                        <p>nora@example.com</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-file-code-o bg-green"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+                                        <p>Execution time 5 seconds</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Custom Template Design
+                                        <span class="label label-danger pull-right">70%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Update Resume
+                                        <span class="label label-success pull-right">95%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Laravel Integration
+                                        <span class="label label-warning pull-right">50%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Back End Framework
+                                        <span class="label label-primary pull-right">68%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                    </div><!-- /.tab-pane -->
+                    <!-- Stats tab content -->
+                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+                    <!-- Settings tab content -->
+                    <div class="tab-pane" id="control-sidebar-settings-tab">
+                        <form method="post">
+                            <h3 class="control-sidebar-heading">General Settings</h3>
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Report panel usage
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Some information about this general settings option
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Allow mail redirect
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Other sets of options are available
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Expose author name in posts
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Allow the user to show his name in blog posts
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Show me as online
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Turn off notifications
+                                    <input type="checkbox" class="pull-right" />
+                                </label>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Delete chat history
+                                    <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                                </label>
+                            </div><!-- /.form-group -->
+                        </form>
+                    </div><!-- /.tab-pane -->
+                </div>
+            </aside><!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+                     immediately after the control sidebar -->
+            <div class='control-sidebar-bg'></div>
+        </div><!-- ./wrapper -->
+
+            <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+            <script src="../../bootstrap/js/bootstrap.min.js"></script>
+            <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+            <script src="../../plugins/fastclick/fastclick.js"></script>
+            <script src="../../dist/js/app.js" type="text/javascript"></script>
+            <script src="../../dist/js/demo.js" type="text/javascript"></script>
+            <!-- 公共js -->
+            <script src="../../dist/js/common.js" type="text/javascript"></script>
+            <!-- jqgrid -->
+            <script src="../../plugins/jqgrid/jquery.jqGrid.min.js" type="text/javascript"></script>
+            <script src="../../plugins/jQueryUI/jquery-ui.js" type="text/javascript"></script>
+            <script src="../../dist/js/grid/jquery.multiselect.js" type="text/javascript"></script>
+            <script src="../../dist/js/grid/jquery.multiselect.filter.js" type="text/javascript"></script>
+            <!-- <script src="../../dist/js/grid/i18n.js" type="text/javascript"></script> -->
+            <script src="../../plugins/jqgrid/i18n/grid.locale-cn.js" type="text/javascript"></script>
+            <script src="../../plugins/jqgrid/i18n/grid.locale-en.js" type="text/javascript"></script>
+            <script src="../../dist/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+            <script src="../../plugins/select2/select2.min.js" type="text/javascript"></script>
+            <script src="../../plugins/select2/i18n/zh-CN.js"></script>
+            <script src="../../plugins/select3/fm.selectator.jquery.js" type="text/javascript"></script>
+            <script src="../../plugins/webuploader/webuploader.html5only.min.js" type="text/javascript"></script>
+            <!-- layer弹出层插件 -->
+            <script src="../../plugins/layer/layer.js" type="text/javascript"></script>
+            <!-- date-range-picker -->
+            <script src="../../plugins/daterangepicker/moment.min.js"></script>
+            <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+            <!-- spread.sheets -->
+            <!-- <script src="../../plugins/SpreadJS/Spread.Sheets/scripts/gc.spread.sheets.all.11.0.0.min.js" type="text/javascript"></script>
+        <script src="../../plugins/SpreadJS/Spread.Sheets/scripts/resources/zh/gc.spread.sheets.resources.zh.11.0.0.min.js" type="text/javascript"></script> -->
+            <!-- spread.views -->
+            <script src="../../plugins/SpreadJS/Spread.Views/common/gc.spread.common.11.0.0.min.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/gc.spread.views.dataview.11.0.0.min.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.gridlayout.11.0.0.min.js" type="text/javascript"></script>
+            <!-- <script src="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.horizontallayout.11.0.0.min.js" type="text/javascript"></script> -->
+<!-- <script src="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.trellisgrouping.11.0.0.min.js" type="text/javascript"></script> -->
+
+            <script src="../../plugins/SpreadJS/Spread.Views/samples/demo/js/license.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/locale/gc.spread.views.dataView.locale.zh-CN.11.0.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+// var loadFailedStr = document.getElementById('loadFailed').innerText;
+// var addFailedStr = document.getElementById('addFailed').innerText;
+// var deleteFailedStr = document.getElementById('deleteFailed').innerText;
+// var updateFailedStr = document.getElementById('updateFailed').innerText;
+// var addNewStr = document.getElementById('addNew').innerText;
+
+// var descriptionPresenter = '<a href="#" class="icon-link"></a>';
+
+// var ProductPresenter = '<select class="form-control normal">{{~it.Product:value:index}}' +
+//                             '<option value="{{=value.id}}">{{=value.option}}</option>' +
+//                         '{{~}}</select>';
+
+// var testtypePresenter = '<select class="form-control normal">{{~it.testtype:value:index}}' +
+//                             '<option value="{{=value.id}}">{{=value.option}}</option>' +
+//                         '{{~}}</select>';
+
+// var TestplacePresenter = '<select class="form-control normal">{{~it.TestPlace:value:index}}' +
+//                             '<option value="{{=value.id}}">{{=value.option}}</option>' +
+//                         '{{~}}</select>';
+
+// var FrequencyPresenter = '<select class="form-control normal">{{~it.Frequency:value:index}}' +
+//                             '<option value="{{=value.id}}">{{=value.option}}</option>' +
+//                         '{{~}}</select>';
+
+var columns = [
+    {
+        id: 'Product', caption: 'Product产品系列<br>Family/Group产品家族/组', dataField: 'Product', width: 160, editor: productEditor 
+    },  //visible: false 隐藏
+    { id: 'pn', caption: 'PN产品号<br>Ref.参考产品', dataField: 'PN', width: '*', editor: pnEditor },
+    { id: 'reference', caption: 'Reference', dataField: 'reference', width: '*',allowEditing: false, presenter: '<a class="icon-link" data-toggle="modal" data-target="#myModal"></a>' },
+    { id: 'sc', caption: 'S/C', dataField: 'sc', width: '*' , editor: scEditor},
+    { id: 'Test Item', caption: 'Test Infor.<br>测试信息', dataField: 'Test Item', width: '*',editor: testItemEditor },
+    { id: 'Frequency', caption: 'Sampling Infor.<br>抽样信息', dataField: 'Frequency', width: '*',editor: FrequencyEditor },
+    { id: 'Sampling Plan', caption: 'Cum. Delay Qty<br>累计待抽样数量', dataField: 'Sampling Plan', width: '*',editor: planEditor },
+    { id: 'Sampling Type', caption: 'WK Exe. Qty<br>本周计划数量', dataField: 'Sampling Type', width: '*' },  //footer: '<div>Comments: {{=it.eval("=average([price])", "0.0")}}</div>'
+    { id: 'PPM', caption: 'WK Sub. Qty<br>已提交数量', dataField: 'PPM', width: '*', allowEditing: false, presenter: '<input type="checkbox">' },
+    // {id: 'editCol',caption: 'Edit',width: 70,
+    //     action: [{
+    //         name: 'edit',
+    //         presenter: '<button class="edit-btn action-btn" data-action="edit"><i class="fa fa-edit"></i></button>'
+    //     }]
+    // },
+    {id: 'action',caption: 'Actions',dataField: 'action', width: 50,   //delete
+        action: [{
+            name: 'delete',
+            presenter: '<button class="delete-btn action-btn" data-action="delete"><span>✖</span></button>',
+            handler: deleteItem
+        }]
+    }
+];
+
+var dataView;
+var currentPageDataSource;
+var itemsTotalCount;
+var baseUrl = '//spread.grapecity.com/remotedata/api/records';
+
+var dataSource = [{}];
+
+// var dataSource = [
+//     {
+//         // "Product": '',
+//         "testtype": '',
+//         "PN": 0203214889520,
+//         "reference": '<a class="icon-link" data-toggle="modal" data-target="#myModal"></a>',
+//         "sc": '',
+//         "Test Item": 'Electrical testing (temperature dependent)Visual check Plugibility checkX-Ray check',
+//         "TestSpec": 'QZ spec in SAP',
+//         "TestPlace": '',
+//         "Frequency": '',
+//         // "PPM": '',
+//         "W01": 18,
+//         "W02": 1,
+//         "W03": 0,
+//         "W04": 0,
+//         "W05": 3,
+//         "W06": 0,
+//         "W07":0,
+//         "W08":1,
+//         "W09":0,
+//         "W10":1,
+//         "W11":2,
+//         "W12":0,
+//     },
+//     {
+//         // "Product": '',
+//         "testtype": '',
+//         "PN": 0203214889521,
+//         "reference": '<a class="icon-link" data-toggle="modal" data-target="#myModal"></a>',
+//         "sc": '',
+//         "Test Item": '',
+//         "TestSpec": 'QZ spec in SAP',
+//         "TestPlace": '',
+//         "Frequency": '',
+//         // "PPM": '',
+//         "Jan": 3,
+//         "Feb": 0,
+//         "Mar": 0,
+//         "Apr": 0,
+//         "May": 1,
+//         "Jun": 0,
+//         "Jul":5,
+//         "Aug":1,
+//         "Sep":0,
+//         "Oct":0,
+//         "Nov":0,
+//         "Dec":0
+//     }
+
+// ];
+
+
+$(document).ready(function() {
+
+        dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+            rowHeight: 40,
+            colHeaderHeight: 60,
+            // footerRow: {            //添加一个摘要行在表格的底部
+            //     visible: true,
+            //     height: 40
+            // },
+            allowEditing: true,
+            //editMode: 'popup',
+            //allowAutoAddRow: true,  //helps you input new data quickly on the interface.
+            autoAddRowPosition: 'bottom',
+            selectionMode: 'row',
+            editUnit: 'cell',
+            //selectionUnit: 'cell',   //选中单元格
+            //autoRowHeight: true,   //导致错误Cannot read property 'node' of null
+            // rowTemplate: '#rowTmpl',
+            // showColHeader: false,  //导航栏
+            showRowHeader: false,  //左侧边栏
+            // colHeaderTemplate: "#colHeaderTemplate",
+            // colHeaderHeight: 90,
+        }));
+
+        // dataView.editing.addHandler(function(sender, args) {
+        //     if (args.status === 'beforeStartEditing' && args.isNewRow) {
+        //         args.oldItem = {
+        //             id: dataSource.length,
+        //             country: null,
+        //             date: new Date(),
+        //             amount: 0,
+        //             active: false
+        //         };
+        //     }
+        // });
+        dataView.editing.addHandler(function(sender, args) {
+            if (args.status === 'endEditing' && args.isNewRow || args.status === 'cancelEditing') {
+                if (dataView.options.allowAutoAddRow) {
+                    dataView.options.allowAutoAddRow = false;
+                    dataView.invalidate();
+                }
+            }
+        });
+
+        $('#btnAddNew').on('click', function() {
+            var isEditing = !!document.getElementById(dataView.uid + '-inline-editing-area');
+            if (!isEditing) {
+                dataView.options.allowAutoAddRow = true;
+                dataView.invalidate();
+                var autoRow = $('#' + dataView.uid + '-autorow');
+                // autoRow.find('[data-action="save"]').css('display', 'inline-block');
+                // autoRow.find('[data-action="cancel"]').css('display', 'inline-block');
+                // autoRow.find('[data-action="edit"]').css('display', 'none');
+                // autoRow.find('[data-action="delete"]').css('display', 'none');
+                dataView.startEditing(0);
+            }
+        });
+
+    // var pageController = dataView.data.pageController;
+    // var pager = new PageUI('#page-nav', pageController.getStatus());
+
+    // pager.goToFirstEvent.addHandler(function() {
+    //     pageController.first();
+    // });
+
+    // pager.goToPreviousEvent.addHandler(function() {
+    //     pageController.previous();
+    // });
+
+    // pager.goToNextEvent.addHandler(function() {
+    //     pageController.next();
+    // });
+
+    // pager.goToLastEvent.addHandler(function() {
+    //     pageController.last();
+    // });
+
+    // pager.goToPageEvent.addHandler(function(e) {
+    //     pageController.goToPage(e.newPage);
+    // });
+
+    // pageController.statusChanged.addHandler(function(sender, newStatus) {
+    //     pager.updateStatus(newStatus);
+    // });
+});
+
+
+    // 表格重新加载事件
+    // $(window).resize(function() {
+    //     if (dataView) {
+    //         dataView.destroy();
+    //     }
+    //     dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+    //             rowHeight: 40,
+    //             colHeaderHeight: 60,
+    //             footerRow: {
+    //                 visible: true,
+    //                 height: 40
+    //             },
+    //             allowEditing: true,
+    //             // editMode: 'popup',
+    //             autoAddRowPosition: 'bottom',
+    //             selectionMode: 'row',
+    //             editUnit: 'cell',
+    //             //autoRowHeight: true,
+    //                 // rowTemplate: '#rowTmpl',
+    //             // showColHeader: false,  //导航栏
+    //             showRowHeader: false,  //左侧边栏
+    //             // colHeaderTemplate: "#colHeaderTemplate",
+    //             // colHeaderHeight: 90,
+
+    //     }));
+    // });
+
+    $('.sidebar-toggle').click(function(){
+        setTimeout(function(){
+            if (dataView) {
+                dataView.destroy();
+            }
+
+            dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+                    rowHeight: 40,
+                    colHeaderHeight: 60,
+                    footerRow: {
+                        visible: true,
+                        height: 40
+                    },
+                    allowEditing: true,
+                    // editMode: 'popup',
+                    autoAddRowPosition: 'bottom',
+                    // selectionMode: 'none',
+                    selectionMode: 'row',
+                    editUnit: 'cell',
+                    //autoRowHeight: true,
+                        // rowTemplate: '#rowTmpl',
+                    // showColHeader: false,  //导航栏
+                    showRowHeader: false,  //左侧边栏
+                    // colHeaderTemplate: "#colHeaderTemplate",
+                    // colHeaderHeight: 90,
+
+            }));
+            // if($('.main-sidebar').width()>50){
+            // }
+        }, 300 )
+    });  
+
+//action column handler
+function deleteItem(args) {
+    var rowId = dataView.getRowId(args.hitInfo);
+    var dataItem = dataView.getItem(rowId);
+    if (dataItem && dataItem.item) {
+        var sourceIndex = dataItem.item.sourceIndex;
+        if (sourceIndex >= 0) {
+            dataView.data.removeDataItems(sourceIndex);
+        }
+    }
+}
+
+function getRecords(start, count) {
+    var result = [];
+    if (start != undefined) {
+        result.push('start=' + start);
+    }
+    if (count != undefined) {
+        result.push('count=' + count);
+    }
+
+    if (result.length > 0) {
+        return baseUrl + '?' + result.join('&');
+    }
+    return baseUrl;
+}
+
+
+// 行编辑
+function pnEditor(options) {
+    this.options = options;
+}
+
+pnEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var pn = options.value;
+        container.innerHTML = '<input type="text" class="pn form-control gc-inline-editor" value="' + pn + '">';
+        this.pnInput = container.querySelector("input.pn");
+        this.focus();
+    },
+
+    focus: function() {
+        this.pnInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.pnInput.value)
+        return this.pnInput.value;
+    }
+};
+
+function productEditor(options) {
+    this.options = options;
+}
+
+productEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['ABS', 'AS', 'BE', 'CC-DA', 'CM', 'DCU', 'EC', 'ED'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="product form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.product = container.querySelector("select.product");
+        // this.focus();
+    },
+
+    focus: function() {
+        this.product.focus();
+    },
+
+    serialize: function() {
+
+        return this.product.value;
+    }
+};
+
+function typeEditor(options) {
+    this.options = options;
+}
+
+typeEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['Q', 'Q+Z'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="type form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.type = container.querySelector("select.type");
+        // this.focus();
+    },
+
+    focus: function() {
+        this.type.focus();
+    },
+
+    serialize: function() {
+
+        return this.type.value;
+    }
+};
+
+function scEditor(options) {
+    this.options = options;
+}
+
+scEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var sc = options.value;
+        container.innerHTML = '<input type="text" class="sc form-control gc-inline-editor" value="' + sc + '">';
+        this.scInput = container.querySelector("input.sc");
+        this.focus();
+    },
+
+    focus: function() {
+        this.scInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.scInput.value)
+        return this.scInput.value;
+    }
+};
+
+function testItemEditor(options) {
+    this.options = options;
+}
+
+testItemEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var testItem = options.value;
+        container.innerHTML = '<textarea id="" cols="30" rows="2" class="testItem form-control gc-inline-editor">' + testItem + '</textarea>';
+        this.testItemInput = container.querySelector("textarea.testItem");
+        this.focus();
+    },
+
+    focus: function() {
+        this.testItemInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.scInput.value)
+        return this.testItemInput.value;
+    }
+};
+
+function testSpecEditor(options) {
+    this.options = options;
+}
+
+testSpecEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var spec = options.value;
+        container.innerHTML = '<textarea id="" cols="30" rows="2" class="spec form-control gc-inline-editor">' + spec + '</textarea>';
+        this.specInput = container.querySelector("textarea.spec");
+        this.focus();
+    },
+
+    focus: function() {
+        this.specInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.scInput.value)
+        return this.specInput.value;
+    }
+};
+
+function testPlaceEditor(options) {
+    this.options = options;
+}
+
+testPlaceEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['AE/QMM1.9-CN', 'AE/QMS-CN'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="place form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.place = container.querySelector("select.place");
+        // this.focus();
+    },
+
+    focus: function() {
+        this.place.focus();
+    },
+
+    serialize: function() {
+
+        return this.place.value;
+    }
+};
+
+function FrequencyEditor(options) {
+    this.options = options;
+}
+
+FrequencyEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['Daily', 'Half yearly', 'Monthly', 'One time', 'Weekly', 'Yearly'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="freq form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.freq = container.querySelector("select.freq");
+        this.focus();
+    },
+
+    focus: function() {
+        this.freq.focus();
+    },
+
+    serialize: function() {
+
+        return this.freq.value;
+    }
+};
+
+function planEditor(options) {
+    this.options = options;
+}
+
+planEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var plan = options.value;
+        container.innerHTML = '<input type="text" class="plan form-control gc-inline-editor" value="' + plan + '">';
+        this.planInput = container.querySelector("input.plan");
+        this.focus();
+    },
+
+    focus: function() {
+        this.planInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.pnInput.value)
+        return this.planInput.value;
+    }
+};
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" class="form-control" value="" placeholder="1"></td><td>--</td><td><input type="text" class="form-control" value="" placeholder="53"></td><td><textarea name="" id="" cols="30" rows="2"></textarea></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><input type="text" class="form-control" value=""></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><i class="fa  fa-remove" onclick="deltr1(this)"></i></td></tr>'
+            );
+
+        $('.plandate').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            initialDate: new Date(), //初始化当前日期
+            // startDate:new Date()
+        });
+        // $("select").select2();
+    })
+    // })
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+
+
+    $(function() {
+        $('.datetime').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+        // var para = GetRequest(); //获取传递过来的templete id
+
+        // // 日期控件
+        // datepicker();
+        // rolloutdate();
+        // 文件上传
+        // iniFileUploader();
+        // 下拉选择select2
+        //$("select:not('.normal')").select2(); //select2与selectator会有冲突
+
+
+        //Date range picker
+        $('#timeperiod').daterangepicker();
+
+    });
+</script>
+</body>
+
+</html>

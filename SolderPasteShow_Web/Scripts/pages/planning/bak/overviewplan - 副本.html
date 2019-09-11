@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>UI Template | Template List</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="shortcut icon" href="../../dist/img/theme/favicon.png">
+    <link rel="stylesheet" href="../../dist/css/main.css">
+
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../../plugins/ionicons/css/ionicons.css" />
+
+    <link rel="stylesheet" href="../../dist/css/style.css">
+    <link rel="stylesheet" href="../../static/components.css">
+    <!-- spread.sheets -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Sheets/css/gc.spread.sheets.11.0.0.css" /> -->
+    <!-- spread.views -->
+    <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/gc.spread.views.dataview.11.0.0.css" />
+    <!-- <link rel="stylesheet" href="../../dist/css/jquery-ui.css"> -->
+    <link rel="stylesheet" href="../../plugins/jqgrid/jquery-ui.css">
+    <link rel="stylesheet" href="../../dist/css/grid/jquery.multiselect.css">
+    <link rel="stylesheet" href="../../dist/css/grid/jquery.multiselect.filter.css">
+    <link rel="stylesheet" href="../../plugins/jqgrid/ui.jqgrid.css">
+    <!-- <link rel="stylesheet" href="../../dist/css/bootstrap-datetimepicker.css"> -->
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+    <!-- select2 -->
+    <link rel="stylesheet" href="../../plugins/select2/select2.css">
+    <!-- <link rel="stylesheet" href="../../plugins/select3/normalize.css"> -->
+    <link rel="stylesheet" href="../../plugins/select3/fm.selectator.jquery.css">
+    <link rel="stylesheet" href="../../plugins/webuploader/webuploader.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+
+    <style>
+
+    .nav-tabs>li>a{color: #fff;}
+
+    /*.form-control{padding: 6px 3px;}*/
+
+    .icon-link{padding: 13px 0;display: block;background: url(../../images/right.png) no-repeat 50% 50%;}
+
+    /*.gc-column input{width: 100%;}*/
+    
+    .modal-dialog{ width: 1000px; }
+
+    .gc-column-header-cell, .gc-corner-header-cell{background: #225ba1;/*background: rgb(56, 146, 211);*/color: #fff;/*font-size: 1.2rem;*/white-space: normal;text-align: center;word-break: break-word;}
+    
+    .gc-column-header{line-height: 20px;}
+    /*表格bug*/
+    .gc-inline-editor-container{height: 45px;line-height: 43px;background: transparent;color: transparent;}  
+
+
+
+
+
+/*.gc-action-area{
+    text-align: center;
+}
+
+.gc-header-row-cell {
+    background-color: #eaeaea;
+}
+
+
+.action-btn {
+    display: inline-block;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.action-btn span {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+#btnAddNew span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gc-row {
+    line-height: 36px;
+}
+
+.page-part-left {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 6px;
+}
+
+.page-part-right {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 3px 6px;
+    float: right;
+}
+
+.button {
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    color: #000000;
+}
+
+.button:not(.intangible):hover {
+    background-color: #d7d7d7;
+}
+
+.content {
+    padding: 6px 6px;
+}
+
+
+.divider {
+    height: 20px;
+    width: 0;
+    border-left: 1px solid #c2c2c2;
+}
+
+.intangible {
+    cursor: inherit;
+    opacity: 0.3;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    box-sizing: border-box;
+    border: solid rgba(0, 0, 0, 0.2);
+    border-width: 0 1px 1px 1px;
+    padding: 3px 0;
+    text-align: left;
+    height: 42px;
+    width: 100%;
+    font-size: 16px;
+}*/
+
+    /*box*/
+
+    .box{border:none;}
+
+    .table-responsive{overflow: hidden;}
+
+    </style>
+</head>
+
+<body class="skin-bosch-alt sidebar-mini">
+
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="../../index.html" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="../../dist/img/theme/visual-bic-sm.png" alt="Bosch IoT Cloud"/></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="../../dist/img/theme/visual-bic-key.png" alt="Bosch IoT Cloud"/></span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Bosch Logo -->
+                            <li>
+                                <img src="../../dist/img/theme/bosch_logo_english.png" alt="Bosch" class="bosch-logo"/>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <ul class="sidebar-menu user-panel">
+                        <li class="user-menu treeview image">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                              <span class="hidden-xs">Alexander <strong>Pierce</strong></span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                                <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>
+                            </ul>
+                      </li>
+                  </ul>
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <span class="input-group-btn">
+                                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="header">MAIN NAVIGATION</li>
+
+                        <li>
+                            <a href="../../index.html">
+                                <i class="fa fa-th"></i> <span>Dashboard</span> <!-- <small class="label pull-right bg-green">new</small> -->
+                            </a>
+                        </li>
+
+                        <li class="treeview active">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Planning Management</span><i class="fa fa-angle-left pull-right"></i>
+                                <ul class="treeview-menu">
+                                    <li><a href="./planlist.html"><i class="fa fa-circle-o"></i> Yearly Plan List</a></li>
+                                    <li><a href="./PPZ.html"><i class="fa fa-circle-o"></i> PPZ Maintenance</a></li>
+                                    <!-- <li><a href="index2.html"><i class="fa fa-circle-o"></i> Monthly Volume Update</a></li> -->
+                                </ul>
+                            </a>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Executive Management</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../../pages/execute/yearexecution.html"><i class="fa fa-circle-o"></i> Yearly Plan List Execution</a></li>
+                                <li><a href="../../pages/execute/weeklyexecute.html"><i class="fa fa-circle-o"></i> Weekly Plan Execution</a></li>
+                            </ul>
+                        </li>
+
+<!--                         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Work Instruction</span></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>Layout Options</span>
+                                <span class="label label-primary pull-right">4</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Charts</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>UI Elements</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+                                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+                                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+                                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+                                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+                                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-share"></i> <span>Multilevel</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
+                                            <ul class="treeview-menu">
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                            </ul>
+                        </li> -->
+
+                        <li class="header">LABELS</li>
+                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                            <h3 class="page-title">
+                                Yearly Plan <small></small>
+                            </h3>
+                            <ul class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <i class="fa fa-home"></i>
+                                    <a href="/eWorkflow/">Home</a>
+                                    <i class="fa fa-angle-right"></i>
+                                </li>
+                                
+                                <li>
+                                    <i class="fa fa-tasks"></i>
+                                    <a href="javascript:;">Planning</a>
+                                    <i class="fa fa-angle-right"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-home"></i>
+                                    <a href="/eWorkflow/EForm/Home/Dashboard">Yearly Plan</a>
+                                </li>
+
+                            </ul>
+                            <!-- END PAGE TITLE & BREADCRUMB-->
+                        </div>
+                    </div>
+                    <!-- <h1>
+                        Yearly Plan List - Planning
+                    </h1> -->
+                    <!-- <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Dashboard</li>
+                    </ol> -->
+                </section>
+
+                <!-- Content Header (Page header) -->
+                <!-- <section class="content-header">
+
+
+                    <ul class="nav nav-tabs tabs" id="myTab">
+
+                        <li><a href="#instruction" data-target="#instruction" data-toggle="tab">Working Instruction</a></li>
+                        <li><a href="#history" data-target="#history" data-toggle="tab">Histories</a></li>
+                        <li class="active"><a href="#main" data-target="#main" data-toggle="tab">Main Detail</a></li>
+                        <li><a href="#PPM" data-target="#PPM" data-toggle="tab">Plan PPM</a></li>
+                        <li><a href="#workflow" data-target="#workflow" data-toggle="tab">Workflow Logs</a></li>
+                    </ul>
+
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="active">Year Plan Edit</li>
+                    </ol>
+                </section> -->
+
+                <!-- Main content -->
+                <section class="content">
+
+
+
+            <!-- BEGIN PAGE CONTENT-->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <div class="portlet box grey-cascade">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-globe"></i>Overview -00052
+                            </div>
+                            <div class="tools">
+                                <ul class="nav nav-tabs tabs" id="myTab">
+                                    <li class="active"><a data-target="#instruction" data-toggle="tab">Working Instruction</a></li>
+                                    <li><a data-target="#history" data-toggle="tab">Histories</a></li>
+                                    <li><a data-target="#main" data-toggle="tab">Main Detail</a></li>
+                                    <!-- <li><a data-target="#PPM" data-toggle="tab">Plan PPM</a></li> -->
+                                    <li><a data-target="#workflow" data-toggle="tab">Workflow Logs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portlet-body tab-content">
+
+                <!-- part1 -->
+                <div class="part1 tab-pane fade in active" id="instruction">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_1">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Path
+                                    </th>
+                                    <th>
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div><!-- part1 -->
+
+                <!-- part2 -->
+                <div class="part2 tab-pane fade" id="history">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_2">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Version
+                                    </th>
+                                    <th>
+                                        Actions
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div><!-- part2 -->
+
+
+                <!-- part3 spreadjs-->
+                <div class="part3 tab-pane fade" id="main">
+
+                    <!-- <div class="row"> -->
+                        <div class="box box-default">
+                            <div class="box-header with-border">
+                            </div>
+                            <div class="box-body">
+
+                            <form class="form-horizontal" action="" method="post">
+                                <div class="form-group">
+                                    <label class="col-md-1 control-label" for="">Product</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" placeholder="ABS" type="text" name="" disabled>
+                                    </div>
+                                    <label class="col-md-1 control-label" for="">Family/Group</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" placeholder="BK2C" type="text" name="" disabled>
+                                    </div>
+                                    <label class="col-md-1 control-label" for="">Year</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" placeholder="2018" type="text" name="" disabled>
+                                    </div>
+                                    <label class="col-md-1 control-label" for="">Status</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" placeholder="InActive" type="text" name="" disabled>
+                                    </div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Approval Status</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" placeholder="Approved" type="text" name="" disabled>
+                                    </div>
+                                    <label class="col-md-1 control-label" for="">Location</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" placeholder="Suzhou" type="text" name="" disabled>
+                                    </div>
+                                    <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Effective Date</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" placeholder="2018/03/22" type="text" name="" disabled>
+                                    </div>
+
+                                    <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Expire Date</label>
+                                    <div class="col-md-2">
+                                        <input class="form-control" placeholder="2018/03/29" type="text" name="" disabled>
+                                    </div>
+
+                                </div>
+                            </form>
+
+                            </div>
+                        </div>
+                    <!-- </div> -->
+
+
+
+
+                      <!-- TABLE: LATEST ORDERS -->
+                      <div class="box box-info">
+                        <div class="box-header with-border">
+                          <h3 class="box-title"></h3>
+                          <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                          </div>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+
+                            <form class="" action="" method="post">
+                                <div class="form-group col-lg-12">
+                                    <div class="row">
+                                        <div class="col-xs-3 form-group">
+                                            <label>Family/Group</label>
+                                            <select name="" class="form-control" onchange="">
+                                                <option disabled>-- All --</option>
+                                                <option value="1" selected>BK2A</option>
+                                                <option value="2">BK2C</option>
+                                                <option value="2">EPSc</option>
+                                                <option value="2">ESL3</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-3 form-group">
+                                            <label>Test Type</label>
+                                            <select name="" class="form-control" onchange="">
+                                                <option disabled>-- All --</option>
+                                                <option value="1" selected>BK2A</option>
+                                                <option value="2">BK2C</option>
+                                                <option value="2">EPSc</option>
+                                                <option value="2">ESL3</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-3 form-group">
+                                            <label>Test Place</label>
+                                            <select name="" class="form-control" onchange="">
+                                                <option disabled selected>-- All --</option>
+                                                <option value="1">2016</option>
+                                                <option value="2">2017</option>
+                                                <option value="3" selected>2018</option>
+                                                <option value="4">2019</option>
+                                                <option value="5">2020</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-3 form-group">
+                                            <label>Reference PN</label>
+                                            <input class="form-control" placeholder="Reference PN" type="text" name="cvc">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-lg-12">
+                                    <div class="row">
+                                        <div class="col-xs-3 form-group">
+                                            <label>Sampling Type</label>
+                                            <select name="" class="form-control" onchange="">
+                                                <option disabled selected>-- All --</option>
+                                                <option value="1">2016</option>
+                                                <option value="2">2017</option>
+                                                <option value="3" selected>2018</option>
+                                                <option value="4">2019</option>
+                                                <option value="5">2020</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div><!-- /.box-body -->
+                        <div class="box-footer clearfix">
+                          <button type="reset" class="btn btn-default btn-flat"><i class="fa fa-refresh"></i> Reset</button>
+                          <button type="button" class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>
+
+                          <!-- <a class="btn btn-sm btn-default btn-flat pull-left">Reset <i class="fa fa-refresh"></i></a>
+                          <a class="btn btn-sm btn-info btn-flat pull-left">Query <span class="glyphicon glyphicon-search"></span></a> -->
+
+                        </div><!-- /.box-footer -->
+                      </div><!-- /.box -->
+
+                    <div class="btnbox">
+                        <ul >
+                            <!-- <li><a class="btn btn-block btn-primary search"><span class="glyphicon glyphicon-import"></span> Import</a></li>
+                            <li><a class="btn btn-block btn-primary search"><span class="glyphicon glyphicon-export"></span> Export</a></li> -->
+                            <li><a class="btn btn-block btn-primary search" id="submitButton">Send back</a></li>
+                            <li><a class="btn btn-block btn-primary search" id="submitButton">Reject</a></li>
+                            <li><a class="btn btn-block btn-primary search" id="submitButton">Approve</a></li>
+                            <li><a class="btn btn-block btn-primary search" id="submitButton">widthdraw</a></li>
+                            <!-- <li><a class="btn btn-block btn-primary search" id="submitButton"><span class="glyphicon glyphicon-search"></span> Query</a></li> -->
+                        </ul>   
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="spreadviews">
+                        <!-- SpreadJS -->
+                        <!-- <div id="grid1" style="width: 100%;height:500px;"></div> -->
+
+                        <div id="grid1" style="height:500px;outline:none"></div>
+                        <div id="page-nav" class="container"></div>
+                        
+                        <div style="display: none;">
+                            <span id="loadFailed"><%= loadFailed %></span>
+                            <span id="addFailed"><%= addFailed %></span>
+                            <span id="deleteFailed"><%= deleteFailed %></span>
+                            <span id="updateFailed"><%= updateFailed %></span>
+                            <span id="addNew">Create Plan</span>
+                        </div>
+
+                    </div>
+
+                    <div class="PPMplan">
+                        <!-- <h1>
+                            Plan PPM
+                            <small></small>
+                        </h1> -->
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="box">
+                            <div class="box-header">
+                              <!-- <h3 class="box-title">PPM</h3> -->
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover" id="table_3" width="100%" cellpadding="0" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Test Type
+                                                </th>
+                                                <th>
+                                                    Product Family/Group
+                                                </th>
+                                                <th>
+                                                    Target PPM
+                                                </th>
+                                                <th>
+                                                    Planned Volume
+                                                </th>
+                                                <th>
+                                                    Planned QZ Qty
+                                                </th> 
+                                                <th>
+                                                    Planned PPM
+                                                </th>
+                                                <th>
+                                                    Remark
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+
+                            </div><!-- /.box-body -->
+                          </div><!-- /.box -->
+                            </div><!-- /.col -->
+                      </div><!-- /.row -->
+
+                    </div><!-- PPM -->
+
+
+                    <div class="comment">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="box">
+                            <div class="box-header">
+                              <h3 class="box-title">Comments</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">                        
+
+                                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled></textarea>
+
+                            </div><!-- /.box-body -->
+                          </div><!-- /.box -->
+                            </div><!-- /.col -->
+                      </div><!-- /.row -->
+
+                    </div>
+                </div>
+
+
+                <!-- part4 Action-->
+                <div class="part4 tab-pane fade" id="workflow">
+
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div class="box">
+                            <div class="box-header">
+                              <h3 class="box-title">Approvers</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+
+                                    <table class="table table-striped table-bordered table-hover" id="table_4" width="100%" cellpadding="0" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Account
+                                                </th>
+                                                <th>
+                                                    Approver
+                                                </th>
+                                                <th>
+                                                    Department
+                                                </th>
+                                                <th>
+                                                    Approval Status
+                                                </th>
+                                                <th>
+                                                    Approval Date/Time
+                                                </th> 
+                                                <th>
+                                                    Comments
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+
+                            </div><!-- /.box-body -->
+                          </div><!-- /.box -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                      
+                </div><!-- part4 -->
+
+
+                        </div>
+                    </div>
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                </div>
+            </div>
+            <!-- END PAGE CONTENT-->
+
+
+
+
+
+                </section><!-- /.content -->
+
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <!-- <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4> -->
+                            </div>
+                            <div class="modal-body">
+                                
+                                    <!-- <form class="form-horizontal" action="" method="post"> -->
+                                    <div class="col-md-12">
+                                        <table id="list" class="table table-hover table-bordered" border="0" cellpadding="0" cellspacing="0" width="60%" align="center">
+                                            <thead>
+                                            <tr>
+                                                <th>From week</th>
+                                                <th width="10"></th>
+                                                <th>To week</th>
+                                                <th>Desciption</th>
+                                                <th>Priority</th>
+                                                <th>Reference PN</th>
+                                                <th>Production Line</th>
+                                                <!-- <td width="10%">Action</td> -->
+                                            </tr>                                                
+
+                                            </thead>
+
+                                            <tbody>
+                                                <tr align="center">
+                                                    <td>1</td>
+                                                    <td>--</td>
+                                                    <td>2</td>
+                                                    <td>DesciptionDesciptionDesciptionDesciption</td>                           
+                                                    <td>High</td>
+                                                    <td>278005674324356</td>
+                                                    <td>ABS9M Line</td>
+                                                </tr>              
+                                            </tbody>
+                                        </table>
+                                        <!-- table -->
+                                    </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">确 定</button>
+                                <!-- <button type="button" class="btn btn-primary">确 定</button> -->
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+
+
+            </div><!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 2.0
+                </div>
+                <strong>Copyright &copy; 2016 <a href="http://www.bosch-si.com">Bosch Software Innovations</a>.</strong> All rights reserved.
+            </footer>
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Create the tabs -->
+                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                    <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Home tab content -->
+                    <div class="tab-pane" id="control-sidebar-home-tab">
+                        <h3 class="control-sidebar-heading">Recent Activity</h3>
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                        <p>Will be 23 on April 24th</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-user bg-yellow"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                                        <p>New phone +1(800)555-1234</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+                                        <p>nora@example.com</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-file-code-o bg-green"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+                                        <p>Execution time 5 seconds</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Custom Template Design
+                                        <span class="label label-danger pull-right">70%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Update Resume
+                                        <span class="label label-success pull-right">95%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Laravel Integration
+                                        <span class="label label-warning pull-right">50%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Back End Framework
+                                        <span class="label label-primary pull-right">68%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                    </div><!-- /.tab-pane -->
+                    <!-- Stats tab content -->
+                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+                    <!-- Settings tab content -->
+                    <div class="tab-pane" id="control-sidebar-settings-tab">
+                        <form method="post">
+                            <h3 class="control-sidebar-heading">General Settings</h3>
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Report panel usage
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Some information about this general settings option
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Allow mail redirect
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Other sets of options are available
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Expose author name in posts
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Allow the user to show his name in blog posts
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Show me as online
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Turn off notifications
+                                    <input type="checkbox" class="pull-right" />
+                                </label>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Delete chat history
+                                    <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                                </label>
+                            </div><!-- /.form-group -->
+                        </form>
+                    </div><!-- /.tab-pane -->
+                </div>
+            </aside><!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+                     immediately after the control sidebar -->
+            <div class='control-sidebar-bg'></div>
+        </div><!-- ./wrapper -->
+
+            <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+            <script src="../../bootstrap/js/bootstrap.min.js"></script>
+            <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+            <script src="../../plugins/fastclick/fastclick.js"></script>
+            <script src="../../dist/js/app.js" type="text/javascript"></script>
+            <script src="../../dist/js/demo.js" type="text/javascript"></script>
+            <!-- 公共js -->
+            <script src="../../dist/js/common.js" type="text/javascript"></script>
+
+            <!-- DataTables -->
+            <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+            <!-- jqgrid -->
+            <script src="../../plugins/jqgrid/jquery.jqGrid.min.js" type="text/javascript"></script>
+            <script src="../../plugins/jQueryUI/jquery-ui.js" type="text/javascript"></script>
+            <script src="../../dist/js/grid/jquery.multiselect.js" type="text/javascript"></script>
+            <script src="../../dist/js/grid/jquery.multiselect.filter.js" type="text/javascript"></script>
+            <!-- <script src="../../dist/js/grid/i18n.js" type="text/javascript"></script> -->
+            <script src="../../plugins/jqgrid/i18n/grid.locale-cn.js" type="text/javascript"></script>
+            <script src="../../plugins/jqgrid/i18n/grid.locale-en.js" type="text/javascript"></script>
+            <script src="../../dist/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+            <script src="../../plugins/select2/select2.min.js" type="text/javascript"></script>
+            <script src="../../plugins/select2/i18n/zh-CN.js"></script>
+            <script src="../../plugins/select3/fm.selectator.jquery.js" type="text/javascript"></script>
+            <script src="../../plugins/webuploader/webuploader.html5only.min.js" type="text/javascript"></script>
+            <!-- layer弹出层插件 -->
+            <script src="../../plugins/layer/layer.js" type="text/javascript"></script>
+            <!-- date-range-picker -->
+            <script src="../../plugins/daterangepicker/moment.min.js"></script>
+            <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+            <!-- spread.sheets -->
+            <!-- <script src="../../plugins/SpreadJS/Spread.Sheets/scripts/gc.spread.sheets.all.11.0.0.min.js" type="text/javascript"></script>
+        <script src="../../plugins/SpreadJS/Spread.Sheets/scripts/resources/zh/gc.spread.sheets.resources.zh.11.0.0.min.js" type="text/javascript"></script> -->
+            <!-- spread.views -->
+            <script src="../../plugins/SpreadJS/Spread.Views/common/gc.spread.common.11.0.0.min.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/gc.spread.views.dataview.11.0.0.min.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.gridlayout.11.0.0.min.js" type="text/javascript"></script>
+            <!-- <script src="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.horizontallayout.11.0.0.min.js" type="text/javascript"></script> -->
+<!-- <script src="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.trellisgrouping.11.0.0.min.js" type="text/javascript"></script> -->
+
+            <script src="../../plugins/SpreadJS/Spread.Views/samples/demo/js/license.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/locale/gc.spread.views.dataView.locale.zh-CN.11.0.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+var loadFailedStr = document.getElementById('loadFailed').innerText;
+var addFailedStr = document.getElementById('addFailed').innerText;
+var deleteFailedStr = document.getElementById('deleteFailed').innerText;
+var updateFailedStr = document.getElementById('updateFailed').innerText;
+var addNewStr = document.getElementById('addNew').innerText;
+
+// var descriptionPresenter = '<a href="#" class="icon-link"></a>';
+
+var ProductPresenter = '<select class="form-control normal">{{~it.Product:value:index}}' +
+                            '<option value="{{=value.id}}">{{=value.option}}</option>' +
+                        '{{~}}</select>';
+
+var testtypePresenter = '<select class="form-control normal">{{~it.testtype:value:index}}' +
+                            '<option value="{{=value.id}}">{{=value.option}}</option>' +
+                        '{{~}}</select>';
+
+var TestplacePresenter = '<select class="form-control normal">{{~it.TestPlace:value:index}}' +
+                            '<option value="{{=value.id}}">{{=value.option}}</option>' +
+                        '{{~}}</select>';
+
+var FrequencyPresenter = '<select class="form-control normal">{{~it.Frequency:value:index}}' +
+                            '<option value="{{=value.id}}">{{=value.option}}</option>' +
+                        '{{~}}</select>';
+
+var columns = [{
+        id: 'Product', caption: 'Product Family/Group', dataField: 'Product', width: 120, pinned: 'left'
+    },  //visible: false 隐藏
+    { id: 'testtype', caption: 'Test Type', dataField: 'testtype', width: 80, pinned: 'left' }, 
+    { id: 'pn', caption: 'PN', dataField: 'PN', width: 100, pinned: 'left' },
+    { id: 'reference', caption: 'Reference', dataField: 'reference', width: 40, pinned: 'left' },
+    { id: 'sc', caption: 'S/C', dataField: 'sc', width: 50 , pinned: 'left'},
+    { id: 'Test Item', caption: 'Test Item', dataField: 'Test Item', width: 100, pinned: 'left' },
+    { id: 'TestSpec', caption: 'Test Spec', dataField: 'TestSpec', width: 120, pinned: 'left' },
+    { id: 'TestPlace', caption: 'Test Place', dataField: 'TestPlace', width: 100, pinned: 'left' },
+    { id: 'Frequency', caption: 'Sampling Frequency', dataField: 'Frequency', width: 80, pinned: 'left' },
+    { id: 'Sampling Plan', caption: 'Sampling Plan', dataField: 'Sampling Plan', width: 80, pinned: 'left' },
+    { id: 'Sampling Type', caption: 'Sampling Type', dataField: 'Sampling Type', width: 80, 
+    pinned: 'left'}, //footer: '<div>Comments: {{=it.eval("=average([price])", "0.0")}}</div>' 
+    { id: 'PPM', caption: 'In PPM', dataField: 'PPM', width: 50, pinned: 'left', allowEditing: false, dataType: 'boolean', presenter: '<input type="checkbox">' },
+    // { id: 'supplier', caption: 'Supplier', dataField: 'Supplier.CompanyName', width: 120 },
+    // { id: 'location', caption: 'Address', dataField: 'Supplier.Address' , width: 120 },
+    // { id: 'telephone', caption: 'Telephone', dataField: 'Supplier.Telephone', width: 120 },
+
+        { id: 'W01', caption: 'W01</br>0101</br>0107', dataField: 'W01', width: 40, dataType: 'string' },
+        { id: 'W02', caption: 'W02</br>0108</br>0114', dataField: 'W02', width: 40, dataType: 'string' },
+        { id: 'W03', caption: 'W03</br>0115</br>0121', dataField: 'W03', width: 40, dataType: 'string' },
+        { id: 'W04', caption: 'W04</br>0122</br>0128', dataField: 'W04', width: 40, dataType: 'string' },
+        { id: 'W05', caption: 'W05</br>0129</br>0204', dataField: 'W05', width: 40, dataType: 'string' },
+        { id: 'W06', caption: 'W06</br>0205</br>0211', dataField: 'W06', width: 40, dataType: 'string' },
+        { id: 'W07', caption: 'W07</br>0212</br>0218', dataField: 'W07', width: 40, dataType: 'string' },
+        { id: 'W08', caption: 'W08</br>0219</br>0225', dataField: 'W08', width: 40, dataType: 'string' },
+        { id: 'W09', caption: 'W09</br>0226</br>0304', dataField: 'W09', width: 40, dataType: 'string' },
+        { id: 'W10', caption: 'W10</br>0305</br>0311', dataField: 'W10', width: 40, dataType: 'string' },
+        { id: 'W11', caption: 'W11</br>0312</br>0318', dataField: 'W11', width: 40, dataType: 'string' },
+        { id: 'W12', caption: 'W12</br>0319</br>0325', dataField: 'W12', width: 40, dataType: 'string' },
+        { id: 'W13', caption: 'W13</br>0326</br>0401', dataField: 'W13', width: 40, dataType: 'string' },
+        { id: 'W14', caption: 'W14</br>0402</br>0408', dataField: 'W14', width: 40, dataType: 'string' },
+        { id: 'W15', caption: 'W15</br>0409</br>0415', dataField: 'W15', width: 40, dataType: 'string' },
+        { id: 'W16', caption: 'W16</br>0416</br>0422', dataField: 'W16', width: 40, dataType: 'string' },
+        { id: 'W17', caption: 'W17</br>0423</br>0429', dataField: 'W17', width: 40, dataType: 'string' },
+        { id: 'W18', caption: 'W18</br>0430</br>0506', dataField: 'W18', width: 40, dataType: 'string' },
+        { id: 'W19', caption: 'W19</br>0507</br>0513', dataField: 'W19', width: 40, dataType: 'string' },
+        { id: 'W20', caption: 'W20</br>0514</br>0520', dataField: 'W20', width: 40, dataType: 'string' },
+        { id: 'W21', caption: 'W21</br>0521</br>0527', dataField: 'W21', width: 40, dataType: 'string' },
+        { id: 'W22', caption: 'W22</br>0528</br>0603', dataField: 'W22', width: 40, dataType: 'string' },
+        { id: 'W23', caption: 'W23</br>0604</br>0610', dataField: 'W23', width: 40, dataType: 'string' },
+        { id: 'W24', caption: 'W24</br>0611</br>0617', dataField: 'W24', width: 40, dataType: 'string' },
+        { id: 'W25', caption: 'W25</br>0618</br>0624', dataField: 'W25', width: 40, dataType: 'string' },
+        { id: 'W26', caption: 'W26</br>0625</br>0701', dataField: 'W26', width: 40, dataType: 'string' },
+        { id: 'W27', caption: 'W27</br>0702</br>0708', dataField: 'W27', width: 40, dataType: 'string' },
+        { id: 'W28', caption: 'W28</br>0709</br>0715', dataField: 'W28', width: 40, dataType: 'string' },
+        { id: 'W29', caption: 'W29</br>0716</br>0722', dataField: 'W29', width: 40, dataType: 'string' },
+        { id: 'W30', caption: 'W30</br>0723</br>0729', dataField: 'W30', width: 40, dataType: 'string' },
+        { id: 'W31', caption: 'W31</br>0730</br>0805', dataField: 'W31', width: 40, dataType: 'string' },
+        { id: 'W32', caption: 'W32</br>0806</br>0812', dataField: 'W32', width: 40, dataType: 'string' },
+        { id: 'W33', caption: 'W33</br>0813</br>0819', dataField: 'W33', width: 40, dataType: 'string' },
+        { id: 'W34', caption: 'W34</br>0820</br>0826', dataField: 'W34', width: 40, dataType: 'string' },
+        { id: 'W35', caption: 'W35</br>0827</br>0902', dataField: 'W35', width: 40, dataType: 'string' },
+        { id: 'W36', caption: 'W36</br>0903</br>0909', dataField: 'W36', width: 40, dataType: 'string' },
+        { id: 'W37', caption: 'W37</br>0910</br>0916', dataField: 'W37', width: 40, dataType: 'string' },
+        { id: 'W38', caption: 'W38</br>0917</br>0923', dataField: 'W38', width: 40, dataType: 'string' },
+        { id: 'W39', caption: 'W39</br>0924</br>0930', dataField: 'W39', width: 40, dataType: 'string' },
+        { id: 'W40', caption: 'W40</br>1001</br>1007', dataField: 'W40', width: 40, dataType: 'string' },
+        { id: 'W41', caption: 'W41</br>1008</br>1014', dataField: 'W41', width: 40, dataType: 'string' },
+        { id: 'W42', caption: 'W42</br>1015</br>1021', dataField: 'W42', width: 40, dataType: 'string' },
+        { id: 'W43', caption: 'W43</br>1022</br>1028', dataField: 'W43', width: 40, dataType: 'string' },
+        { id: 'W44', caption: 'W44</br>1029</br>1104', dataField: 'W44', width: 40, dataType: 'string' },
+        { id: 'W45', caption: 'W45</br>1105</br>1111', dataField: 'W45', width: 40, dataType: 'string' },
+        { id: 'W46', caption: 'W46</br>1112</br>1118', dataField: 'W46', width: 40, dataType: 'string' },
+        { id: 'W47', caption: 'W47</br>1119</br>1125', dataField: 'W47', width: 40, dataType: 'string' },
+        { id: 'W48', caption: 'W48</br>1126</br>1202', dataField: 'W48', width: 40, dataType: 'string' },
+        { id: 'W49', caption: 'W49</br>1203</br>1209', dataField: 'W49', width: 40, dataType: 'string' },
+        { id: 'W50', caption: 'W50</br>1210</br>1216', dataField: 'W50', width: 40, dataType: 'string' },
+        { id: 'W51', caption: 'W51</br>1217</br>1223', dataField: 'W51', width: 40, dataType: 'string' },
+        { id: 'W52', caption: 'W52</br>1224</br>1230', dataField: 'W52', width: 40, dataType: 'string' },
+        { id: 'W53', caption: 'W53</br>1231</br>0106', dataField: 'W53', width: 40, dataType: 'string' },
+
+        // { id: 'total', caption: 'Total Leave', dataType: 'number', dataField: '=[Jan]+[Feb]+[Mar]+[Apr]+[May]+[Jun]+[Jul]+[Aug]+[Sep]+[Oct]+[Nov]+[Dec]', width: 120 }
+
+];
+
+var dataView;
+var currentPageDataSource;
+var itemsTotalCount;
+var baseUrl = '//spread.grapecity.com/remotedata/api/records';
+
+var dataSource = {
+    loadRange: function(params) {
+        $.ajax({
+            type:"GET",
+            url:"../data.json",
+            //async: true, //是否为异步请求，ture为异步请求，false为同步请求 
+            dataType: "json",
+            crossDomain: true,
+            success: function(result) {
+                // console.log(result.dataSource)
+                currentPageDataSource = result.dataSource;
+                itemsTotalCount = result.dataSource;
+                params.success(currentPageDataSource, itemsTotalCount);
+            },
+            error:function(XMLHttpRequest, textStatus, errorThrown){  
+                alert(XMLHttpRequest.status);  
+                alert(XMLHttpRequest.readyState);  
+                alert(textStatus);  
+            }  
+        });
+    }
+    // create: function(params) {
+    //     var dataItem = _.clone(params.dataItem);
+    //     $.ajax({
+    //         url: baseUrl,
+    //         type: 'POST',
+    //         data: JSON.stringify(dataItem),
+    //         success: function(data) {
+    //             dataItem['Transaction_Id'] = data['Transaction_Id'];
+    //             params.success(dataItem);
+    //         },
+    //         error: function(xhr, status) {
+    //             params.failed();
+    //             alert(addFailedStr);
+    //         }
+    //     });
+    // },
+    // delete: function(params) {
+    //     $.ajax({
+    //         url: baseUrl + '/' + params.dataItem['Transaction_Id'],
+    //         type: 'DELETE',
+    //         success: function(data) {
+    //             params.success();
+    //         },
+    //         error: function(xhr, status) {
+    //             params.failed();
+    //             alert(deleteFailedStr);
+    //         }
+    //     });
+    // },
+    // update: function(params) {
+    //     $.ajax({
+    //         url: baseUrl + '/' + params.dataItem['Transaction_Id'],
+    //         type: 'PUT',
+    //         data: JSON.stringify(params.dataItem),
+    //         success: function(data) {
+    //             params.success();
+    //         },
+    //         error: function(xhr, status) {
+    //             params.failed();
+    //             alert(updateFailedStr);
+    //         }
+    //     });
+    // }
+};
+
+
+
+
+
+$(document).ready(function() {
+
+        dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+            rowHeight: 40,
+            colHeaderHeight: 60,
+            // footerRow: {            //添加一个摘要行在表格的底部
+            //     visible: true,
+            //     height: 40
+            // },
+            //allowEditing: true,
+            // editMode: 'popup',
+            autoAddRowPosition: 'top',
+            selectionMode: 'row',
+            // editUnit: 'cell',
+            //selectionUnit: 'cell',   //选中单元格
+            autoRowHeight: true,
+                // rowTemplate: '#rowTmpl',
+            // showColHeader: false,  //导航栏
+            showRowHeader: false,  //左侧边栏
+            // colHeaderTemplate: "#colHeaderTemplate",
+            // colHeaderHeight: 90,
+        }));
+
+    // dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+    //     colWidth: 80,
+    //     showColHeader: false,
+    //     showRowHeader: false,
+    //     rowHeight: 36,
+    //     pageSize: 10,
+    //     //selectionUnit: 'cell',   //选中单元格
+    //     allowEditing: true,
+    //     editMode: 'popup',
+    //     autoAddRowPosition: 'top',
+    //     footerRow: {               //添加一个摘要行在表格的底部
+    //         visible: true,
+    //         height: 40
+    //     },
+
+    //     headerRow: {
+    //         visible: true,
+    //         height: 40,
+    //         separateColumn: false,
+    //         renderer: '<button id="btnAddNew"><span class="add-icon"></span><span>' + addNewStr + '</span></button>'
+    //     }
+    // }));
+
+    // dataView.editing.addHandler(function(sender, args) {
+    //     if (args.status === 'endEditing' && args.isNewRow || args.status === 'cancelEditing') {
+    //         if (dataView.options.allowAutoAddRow) {
+    //             dataView.options.allowAutoAddRow = false;
+    //             dataView.invalidate();
+    //         }
+    //     }
+    // });
+
+    // $('#btnAddNew').on('click', function() {
+    //     var addNewRecordID = dataView.uid + '-autorow';
+    //     dataView.startEditing(addNewRecordID);
+    // });
+
+    // var pageController = dataView.data.pageController;
+    // var pager = new PageUI('#page-nav', pageController.getStatus());
+
+    // pager.goToFirstEvent.addHandler(function() {
+    //     pageController.first();
+    // });
+
+    // pager.goToPreviousEvent.addHandler(function() {
+    //     pageController.previous();
+    // });
+
+    // pager.goToNextEvent.addHandler(function() {
+    //     pageController.next();
+    // });
+
+    // pager.goToLastEvent.addHandler(function() {
+    //     pageController.last();
+    // });
+
+    // pager.goToPageEvent.addHandler(function(e) {
+    //     pageController.goToPage(e.newPage);
+    // });
+
+    // pageController.statusChanged.addHandler(function(sender, newStatus) {
+    //     pager.updateStatus(newStatus);
+    // });
+});
+
+
+    // 表格重新加载事件
+    $(window).resize(function() {
+        if (dataView) {
+            dataView.destroy();
+        }
+        dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+            rowHeight: 40,
+            colHeaderHeight: 60,
+            footerRow: {            //添加一个摘要行在表格的底部
+                visible: true,
+                height: 40
+            },
+            //allowEditing: true,
+            // editMode: 'popup',
+            autoAddRowPosition: 'top',
+            selectionMode: 'row',
+            // editUnit: 'cell',
+            //selectionUnit: 'cell',   //选中单元格
+            autoRowHeight: true,
+                // rowTemplate: '#rowTmpl',
+            // showColHeader: false,  //导航栏
+            showRowHeader: false,  //左侧边栏
+            // colHeaderTemplate: "#colHeaderTemplate",
+            // colHeaderHeight: 90,
+
+        }));
+    });
+
+    $('.sidebar-toggle, .nav-tabs li').click(function(){
+        setTimeout(function(){
+            if (dataView) {
+                dataView.destroy();
+            }
+
+            dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+                    rowHeight: 40,
+                    colHeaderHeight: 60,
+                    footerRow: {            //添加一个摘要行在表格的底部
+                        visible: true,
+                        height: 40
+                    },
+                    //allowEditing: true,
+                    // editMode: 'popup',
+                    autoAddRowPosition: 'top',
+                    selectionMode: 'row',
+                    // editUnit: 'cell',
+                    //selectionUnit: 'cell',   //选中单元格
+                    autoRowHeight: true,
+                        // rowTemplate: '#rowTmpl',
+                    // showColHeader: false,  //导航栏
+                    showRowHeader: false,  //左侧边栏
+                    // colHeaderTemplate: "#colHeaderTemplate",
+                    // colHeaderHeight: 90,
+
+            }));
+            // if($('.main-sidebar').width()>50){
+            // }
+        }, 300 )
+    });  
+
+
+
+//action column handler
+function deleteItem(args) {
+    var rowId = dataView.getRowId(args.hitInfo);
+    var dataItem = dataView.getItem(rowId);
+    if (dataItem && dataItem.item) {
+        var sourceIndex = dataItem.item.sourceIndex;
+        if (sourceIndex >= 0) {
+            dataView.data.removeDataItems(sourceIndex);
+        }
+    }
+}
+
+function getRecords(start, count) {
+    var result = [];
+    if (start != undefined) {
+        result.push('start=' + start);
+    }
+    if (count != undefined) {
+        result.push('count=' + count);
+    }
+
+    if (result.length > 0) {
+        return baseUrl + '?' + result.join('&');
+    }
+    return baseUrl;
+}
+
+
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" class="form-control" value=""></td><td><input type="text" class="form-control" value=""></td><td><textarea name="" id="" cols="30" rows="2"></textarea></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><a href="javascript:;" onclick="deltr1(this)">删除</a></td></tr>'
+            );
+
+        $('.plandate').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            initialDate: new Date(), //初始化当前日期
+            // startDate:new Date()
+        });
+        $("select").select2();
+    })
+    // })
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+
+
+// var table;
+$(function () {
+
+    var table1 = $('#table_1').dataTable();
+    var table2 = $('#table_2').dataTable();
+    var table3 = $('#table_3').dataTable();
+    var table4 = $('#table_4').dataTable();
+
+
+});
+
+
+    $(function() {
+        $('.datetime').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+        // var para = GetRequest(); //获取传递过来的templete id
+
+        // // 日期控件
+        // datepicker();
+        // rolloutdate();
+        // 文件上传
+        // iniFileUploader();
+        // 下拉选择select2
+        $("select:not('.normal')").select2(); //select2与selectator会有冲突
+
+
+        //Date range picker
+        $('#timeperiod').daterangepicker();
+
+    });
+</script>
+</body>
+
+</html>

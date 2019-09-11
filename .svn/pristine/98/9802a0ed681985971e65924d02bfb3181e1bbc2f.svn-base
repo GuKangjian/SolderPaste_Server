@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>UI Template | Template List</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="shortcut icon" href="../../dist/img/theme/favicon.png">
+    <link rel="stylesheet" href="../../dist/css/main.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../../plugins/ionicons/css/ionicons.css" />
+    <link rel="stylesheet" href="../../dist/css/style.css">
+    <link rel="stylesheet" href="../../static/components.css">
+    <!-- spread.sheets -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Sheets/css/gc.spread.sheets.11.0.0.css" /> -->
+    <!-- spread.views -->
+    <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/gc.spread.views.dataview.11.0.0.css" />
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/theme/gc.spread.views.dataview.flat.11.0.0.css" /> -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.trellisgrouping.11.0.0.css" /> -->
+    <!-- <link rel="stylesheet" href="../../dist/css/jquery-ui.css"> -->
+    <link rel="stylesheet" href="../../plugins/jqgrid/jquery-ui.css">
+    <link rel="stylesheet" href="../../dist/css/grid/jquery.multiselect.css">
+    <link rel="stylesheet" href="../../dist/css/grid/jquery.multiselect.filter.css">
+    <link rel="stylesheet" href="../../plugins/jqgrid/ui.jqgrid.css">
+    <!-- <link rel="stylesheet" href="../../dist/css/jquery-ui.css"> -->
+    <!-- <link rel="stylesheet" href="../../dist/css/bootstrap-datetimepicker.css"> -->
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+    <!-- select2 -->
+    <link rel="stylesheet" href="../../plugins/select2/select2.css">
+    <link rel="stylesheet" href="../../plugins/select3/normalize.css">
+    <link rel="stylesheet" href="../../plugins/select3/fm.selectator.jquery.css">
+    <link rel="stylesheet" href="../../plugins/webuploader/webuploader.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../../plugins/datatables/extensions/Buttons-1.5.1/css/buttons.dataTables.css">
+    <!-- radialIndicator -->
+    <link rel="stylesheet" href="../../plugins/radialIndicator/css/radialindicator.css">
+    <style>
+
+
+/*table*/
+/*    #list tr:nth-child(1) {
+        background: #225ba1;color: #fff;
+    }
+
+    .select2-container .select2-selection--single{height: 34px!important;}
+
+    .select2-container--default .select2-selection--single .select2-selection__rendered{line-height: 32px!important;}
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow{height: 32px!important;}
+
+    .select2-container--default .select2-selection--single{border: 1px solid #ccc!important;}
+
+    .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+        vertical-align: middle;
+    }
+    table tr td a {
+        color: #12517D;
+    }
+
+
+    .table {
+        border-collapse: collapse;
+        border: none;
+        background-color: #fff;
+        table-layout: fixed;
+    }
+
+    .table textarea{height: 34px;}*/
+    
+    /*table end*/
+
+
+
+    /*box*/
+
+    .box{border:none;}
+
+    /*.table-responsive{overflow: hidden;}*/
+    #table_1 td {
+        /*word-break: break-word;*/
+        text-align: center;
+    }
+    .table thead tr th{text-align: center;}
+/*进度条*/
+#progress{
+            width: 50%;
+            height: 30px;
+            border:1px solid #ccc;
+            border-radius: 15px;
+            margin: 50px 0 0 100px;
+            overflow: hidden;
+            box-shadow: 0 0 5px 0px #ddd inset;
+        }
+        #progress span {
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+            background: #2989d8; /* Old browsers */
+            background: -moz-linear-gradient(45deg, #2989d8 33%, #7db9e8 34%, #7db9e8 59%, #2989d8 60%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left bottom, right top, color-stop(33%,#2989d8), color-stop(34%,#7db9e8), color-stop(59%,#7db9e8), color-stop(60%,#2989d8)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* IE10+ */
+            background: linear-gradient(45deg, #2989d8 33%,#7db9e8 34%,#7db9e8 59%,#2989d8 60%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2989d8', endColorstr='#2989d8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            background-size: 60px 30px;
+            text-align: center;
+            color:#fff;
+            -webkit-animation:load 3s ease-in;
+        }
+        @-webkit-keyframes load{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width:50%;
+            }
+        }
+
+.time-graph {  
+    padding-top: 20px;  
+    display:flex;  
+    display:-webkit-flex;  
+    justify-content: center;  
+    align-items: center;  
+}  
+  
+.time-graph-canvas {  
+    width: 50px;  
+    height: 50px;  
+} 
+
+</style>
+
+</head>
+
+<body class="skin-bosch-alt sidebar-mini">
+
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="../../index.html" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="../../dist/img/theme/visual-bic-sm.png" alt="Bosch IoT Cloud"/></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="../../dist/img/theme/visual-bic-key.png" alt="Bosch IoT Cloud"/></span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Bosch Logo -->
+                            <li>
+                                <img src="../../dist/img/theme/bosch_logo_english.png" alt="Bosch" class="bosch-logo"/>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <ul class="sidebar-menu user-panel">
+                        <li class="user-menu treeview image">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                              <span class="hidden-xs">Alexander <strong>Pierce</strong></span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                                <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>
+                            </ul>
+                      </li>
+                  </ul>
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <span class="input-group-btn">
+                                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="header">MAIN NAVIGATION</li>
+
+                        <li>
+                            <a href="../../index.html">
+                                <i class="fa fa-th"></i> <span>Dashboard</span> <!-- <small class="label pull-right bg-green">new</small> -->
+                            </a>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Planning Management</span><i class="fa fa-angle-left pull-right"></i>
+                                <ul class="treeview-menu">
+                                    <li><a href="/pages/yearlyplan/planlist.html"><i class="fa fa-circle-o"></i> Yearly Plan List</a></li>
+                                    <!-- <li><a href="./PPZ.html"><i class="fa fa-circle-o"></i> PPZ Maintenance</a></li> -->
+                                    <!-- <li><a href="index2.html"><i class="fa fa-circle-o"></i> Monthly Volume Update</a></li> -->
+                                </ul>
+                            </a>
+                        </li>
+
+<!--                         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Work Instruction</span></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                            </ul>
+                        </li> -->
+
+                        <li class="treeview active">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Executive Management</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="/pages/execute/weeklyexecute.html"><i class="fa fa-circle-o"></i> Weekly Plan Execution</a></li>
+                                <li><a href="/pages/execute/yearexecution.html"><i class="fa fa-circle-o"></i> Yearly Plan List Execution</a></li>
+                            </ul>
+                        </li>
+
+<!--                         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Work Instruction</span></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>Layout Options</span>
+                                <span class="label label-primary pull-right">4</span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                                <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+                                <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                                <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Charts</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+                                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-laptop"></i>
+                                <span>UI Elements</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+                                <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+                                <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+                                <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+                                <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+                                <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-share"></i> <span>Multilevel</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                                        <li>
+                                            <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
+                                            <ul class="treeview-menu">
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                            </ul>
+                        </li> -->
+
+                        <li class="header">LABELS</li>
+                        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+                        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                            <h3 class="page-title">
+                                Weekly Plan Execution <small></small>
+                            </h3>
+                            <ol class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <i class="fa fa-home"></i>
+                                    <a href="/index.html">Home</a>
+                                    <i class="fa fa-angle-right spacing"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-tasks"></i>
+                                    <a href="javascript:;">Executive Management</a>
+                                    <i class="fa fa-angle-right spacing"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-table"></i>
+                                    <a href="/pages/execute/weeklyexecute.html">Weekly Plan Execution</a>
+                                </li>
+                            </ol>
+                            <!-- END PAGE TITLE & BREADCRUMB-->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+              <!-- TABLE: LATEST ORDERS -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"></h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+
+                    <form class="form-horizontal" action="" method="post">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="">Year</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">2016</option>
+                                    <option value="2">2017</option>
+                                    <option value="3">2018</option>
+                                    <option value="4">2019</option>
+                                    <option value="5">2020</option>
+                                </select>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="">Week</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">1</option>
+                                    <option value="2">12</option>
+                                    <option value="2">32</option>
+                                    <option value="2">40</option>
+                                </select>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="">Product</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">ABS</option>
+                                    <option value="2">AS</option>
+                                    <option value="3">BE</option>
+                                    <option value="4">CC-DA</option>
+                                    <option value="5">CM-DCU</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Product Group</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">USS4</option>
+                                    <option value="2">BK2C</option>
+                                    <option value="2">EPSc</option>
+                                    <option value="2">ESL3</option>
+                                </select>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="">Location</label>
+                            <div class="col-md-3">
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">Suzhou</option>
+                                    <option value="2">Wujin</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+
+                  
+                  <button class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>
+                  <button class="btn btn-default btn-flat"><i class="fa fa-folder-open"></i> Open List</button>
+                  <!-- <a class="btn btn-sm btn-default btn-flat pull-left">Reset <i class="fa fa-refresh"></i></a>
+                  <a class="btn btn-sm btn-info btn-flat pull-left">Query <span class="glyphicon glyphicon-search"></span></a> -->
+
+                </div><!-- /.box-footer -->
+              </div><!-- /.box -->
+
+
+
+            <!-- BEGIN PAGE CONTENT-->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                    <div class="portlet box"> <!-- grey-cascade -->
+                        <!-- <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-lightbulb-o"></i> Pending My Activity
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                            </div>
+                        </div> -->
+                        <div class="portlet-body">
+                            <!-- <div id="toolbar"></div> -->
+                            <div class="table-toolbar">
+                                <!-- <div class="btn-group">
+                                    <button class="btn green" onclick="location = '/eWorkflow/EForm/MetaDataTable/Add';">
+                                        Add New <i class="fa fa-plus"></i>
+                                    </button>
+                                </div> -->
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="table_1" width="100%" cellspacing="0" style="table-layout: auto;">
+                                    <thead>
+                                        <tr style="white-space: nowrap;">
+                                            <th>
+                                                Product产品系列<br>Family/Group产品家族/组
+                                            </th>
+                                            <th>
+                                                PN产品号<br>Ref.参考产品
+                                            </th>
+                                            <th>
+                                                Test Infor.<br>测试信息
+                                            </th>
+                                            <th>
+                                                Sampling Infor.<br>抽样信息
+                                            </th>
+                                            <th>
+                                                Detail
+                                            </th>                                           
+                                            <th>
+                                                Cum. Delay Qty<br>累计待抽样数量
+                                            </th>                                            
+                                            <th>
+                                                WK Exe. Qty<br>本周计划数量
+                                            </th>
+                                            <th>
+                                                WK Sub. Qty<br>已提交数量
+                                            </th>
+                                            <th>
+                                                Application No
+                                            </th>
+                                            <th>
+                                                Qty
+                                            </th>
+                                            <th>
+                                                Status
+                                            </th>
+                                            <th>
+                                                Alert
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT-->
+
+
+                </section><!-- /.content -->
+
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <!-- <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4> -->
+                            </div>
+                            <div class="modal-body">
+                                
+                                    <!-- <form class="form-horizontal" action="" method="post"> -->
+                                    <div class="col-md-12">
+                                        <div class="act">
+                                            <a id="add" class="btn" style="background: #35aa47;color: #fff;"><i class="fa fa-plus "></i></a>
+                                            <a id="btnAddNew" class="btn btn-primary"><i class="fa fa-download"></i></a>                                  
+                                        </div>
+                                        <table id="list" class="table table-hover table-bordered" border="0" cellpadding="0" cellspacing="0" width="60%" align="center">
+                                            <tr>
+                                                <td>From week</td>
+                                                <td width="10"></td>
+                                                <td>To week</td>
+                                                <td>Desciption</td>
+                                                <td>Priority</td>
+                                                <td>Reference PN</td>
+                                                <td>Production Line</td>
+                                                <td width="10%">Action</td>
+                                            </tr>
+                                            <tr align="center">
+                                                <td>
+                                                    <input type="text" class="form-control" value="" placeholder="1">
+                                                </td>
+                                                <td>--</td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="" placeholder="53">
+                                                </td>
+                                                <td>
+                                                    <textarea name="" id="" cols="30"></textarea>
+                                                </td>
+                                                <td>
+                                                    <select name="" id="" class="form-control">
+                                                        <option disabled selected>-- All --</option>
+                                                        <option value="L1">High</option>
+                                                        <option value="L2">Medium</option>
+                                                        <option value="L2">Low</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>                                               
+                                                <td>
+                                                    <select name="" id="" class="form-control">
+                                                        <option disabled selected>-- All --</option>
+                                                        <option value="L1">ABS9M Line</option>
+                                                        <option value="L2">Dip Coating1</option>
+                                                    </select>
+                                                </td>
+                                                <td><i class="fa  fa-remove " onclick="deltr1(this)"></i></td>
+                                                <!-- <td><button class="btn" onclick="deltr1(this)"><i class="fa  fa-remove "></i></button></td> -->
+                                            </tr>
+                                        </table>
+                                        <!-- table -->
+                                    </div>
+                                    <!-- </form> -->
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-primary">确 定</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="WIModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <!-- <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4> -->
+                            </div>
+                            <div class="modal-body">
+                                
+                                    <!-- <form class="form-horizontal" action="" method="post"> -->
+                                    <div class="col-md-12">
+                                        <div class="act">
+                                            <a id="add" class="btn" style="background: #35aa47;color: #fff;"><i class="fa fa-plus "></i></a>
+                                            <!-- <a id="btnAddNew" class="btn btn-primary"><i class="fa fa-download"></i></a>   -->                                
+                                        </div>
+                                        <table id="list" class="table table-hover table-bordered" border="0" cellpadding="0" cellspacing="0" width="60%" align="center">
+                                            <tr>
+                                                <td>Description</td>
+                                                <!-- <td width="10"></td> -->
+                                                <td>Path</td>
+                                                <td width="30%">Action</td>
+                                            </tr>
+                                            <tr align="center">
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="">
+                                                </td>                                            
+                                                <td><a class="btn"><i class="fa  fa-search"></i></a><a class="btn"><i class="fa  fa-remove " onclick="deltr1(this)"></i></a></td>
+                                                <!-- <td><button class="btn" onclick="deltr1(this)"><i class="fa  fa-remove "></i></button></td> -->
+                                            </tr>
+                                        </table>
+                                        <!-- table -->
+                                    </div>
+                                    <!-- </form> -->
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-primary">确 定</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+            </div><!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 2.0
+                </div>
+                <strong>Copyright &copy; 2016 <a href="http://www.bosch-si.com">Bosch Software Innovations</a>.</strong> All rights reserved.
+            </footer>
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Create the tabs -->
+                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                    <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Home tab content -->
+                    <div class="tab-pane" id="control-sidebar-home-tab">
+                        <h3 class="control-sidebar-heading">Recent Activity</h3>
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                        <p>Will be 23 on April 24th</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-user bg-yellow"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                                        <p>New phone +1(800)555-1234</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+                                        <p>nora@example.com</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-file-code-o bg-green"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+                                        <p>Execution time 5 seconds</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Custom Template Design
+                                        <span class="label label-danger pull-right">70%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Update Resume
+                                        <span class="label label-success pull-right">95%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Laravel Integration
+                                        <span class="label label-warning pull-right">50%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Back End Framework
+                                        <span class="label label-primary pull-right">68%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                    </div><!-- /.tab-pane -->
+                    <!-- Stats tab content -->
+                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+                    <!-- Settings tab content -->
+                    <div class="tab-pane" id="control-sidebar-settings-tab">
+                        <form method="post">
+                            <h3 class="control-sidebar-heading">General Settings</h3>
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Report panel usage
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Some information about this general settings option
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Allow mail redirect
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Other sets of options are available
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Expose author name in posts
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Allow the user to show his name in blog posts
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Show me as online
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Turn off notifications
+                                    <input type="checkbox" class="pull-right" />
+                                </label>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Delete chat history
+                                    <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                                </label>
+                            </div><!-- /.form-group -->
+                        </form>
+                    </div><!-- /.tab-pane -->
+                </div>
+            </aside><!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+                     immediately after the control sidebar -->
+            <div class='control-sidebar-bg'></div>
+        </div><!-- ./wrapper -->
+
+            <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+            <script src="../../bootstrap/js/bootstrap.min.js"></script>
+            <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+            <script src="../../plugins/fastclick/fastclick.js"></script>
+            <script src="../../dist/js/app.js" type="text/javascript"></script>
+            <script src="../../dist/js/demo.js" type="text/javascript"></script>
+            <!-- 公共js -->
+            <script src="../../dist/js/common.js" type="text/javascript"></script>
+            <!-- jqgrid -->
+            <script src="../../plugins/jqgrid/jquery.jqGrid.min.js" type="text/javascript"></script>
+            <script src="../../plugins/jQueryUI/jquery-ui.js" type="text/javascript"></script>
+            <script src="../../dist/js/grid/jquery.multiselect.js" type="text/javascript"></script>
+            <script src="../../dist/js/grid/jquery.multiselect.filter.js" type="text/javascript"></script>
+            <!-- <script src="../../dist/js/grid/i18n.js" type="text/javascript"></script> -->
+            <script src="../../plugins/jqgrid/i18n/grid.locale-cn.js" type="text/javascript"></script>
+            <script src="../../plugins/jqgrid/i18n/grid.locale-en.js" type="text/javascript"></script>
+            <script src="../../dist/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+            <script src="../../plugins/select2/select2.min.js" type="text/javascript"></script>
+            <script src="../../plugins/select2/i18n/zh-CN.js"></script>
+            <script src="../../plugins/select3/fm.selectator.jquery.js" type="text/javascript"></script>
+            <script src="../../plugins/webuploader/webuploader.html5only.min.js" type="text/javascript"></script>
+            <!-- layer弹出层插件 -->
+            <script src="../../plugins/layer/layer.js" type="text/javascript"></script>
+            <!-- date-range-picker -->
+            <script src="../../plugins/daterangepicker/moment.min.js"></script>
+            <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+
+            <!-- DataTables -->
+            <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+
+            <script src="../../plugins/datatables/extensions/Buttons-1.5.1/js/dataTables.buttons.js"></script>
+            <script src="../../plugins/datatables/extensions/Buttons-1.5.1/js/buttons.print.js"></script>
+            <script src="../../dist/js/bootstrap-hover-dropdown.min.js"></script>
+            <!-- radialIndicator -->
+            <script src="../../plugins/radialIndicator/js/radialIndicator.js"></script>
+            <!-- spread.views -->
+            <script src="../../plugins/SpreadJS/Spread.Views/common/gc.spread.common.11.0.0.min.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/gc.spread.views.dataview.11.0.0.min.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.gridlayout.11.0.0.min.js" type="text/javascript"></script>
+
+            <script src="../../plugins/SpreadJS/Spread.Views/samples/demo/js/license.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/locale/gc.spread.views.dataView.locale.zh-CN.11.0.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+
+
+
+
+function drawMain(drawing_elem, percent, forecolor, bgcolor) {
+
+    /* 
+        @drawing_elem: 绘制对象 
+        @percent：绘制圆环百分比, 范围[0, 100] 
+        @forecolor: 绘制圆环的前景色，颜色代码 
+        @bgcolor: 绘制圆环的背景色，颜色代码 
+    */  
+    var context = drawing_elem.getContext("2d");  
+    var center_x = drawing_elem.width / 2;  
+    var center_y = drawing_elem.height / 2;  
+    var rad = Math.PI*2/100;   
+    var speed = 0;  
+      
+    // 绘制背景圆圈  
+    function backgroundCircle(){  
+        context.save();  
+        context.beginPath();  
+        context.lineWidth = 8; //设置线宽  
+        var radius = center_x - context.lineWidth;  
+        context.lineCap = "round";  
+        context.strokeStyle = bgcolor;  
+        context.arc(center_x, center_y, radius, 0, Math.PI*2, false);  
+        context.stroke();  
+        context.closePath();  
+        context.restore();  
+    }  
+  
+    //绘制运动圆环  
+    function foregroundCircle(n){  
+        context.save();  
+        context.strokeStyle = forecolor;  
+        context.lineWidth = 8;  
+        context.lineCap = "round";  
+        var radius = center_x - context.lineWidth;  
+        context.beginPath();  
+        context.arc(center_x, center_y, radius , -Math.PI/2, -Math.PI/2 +n*rad, false); //用于绘制圆弧context.arc(x坐标，y坐标，半径，起始角度，终止角度，顺时针/逆时针)  
+        context.stroke();  
+        context.closePath();  
+        context.restore();  
+    }  
+  
+    //绘制文字  
+    function text(n){  
+        context.save(); //save和restore可以保证样式属性只运用于该段canvas元素  
+        context.fillStyle = forecolor;  
+        var font_size = 40;  
+        context.font = font_size + "px Helvetica";  
+        var text_width = context.measureText(n.toFixed(0)+"%").width;  
+        context.fillText(n.toFixed(0)+"%", center_x-text_width/2, center_y + font_size/2);  
+        context.restore();  
+    }  
+  
+    //执行动画  
+    (function drawFrame(){  
+        window.requestAnimationFrame(drawFrame);  
+        context.clearRect(0, 0, drawing_elem.width, drawing_elem.height);  
+        backgroundCircle();  
+        text(speed);  
+        foregroundCircle(speed);  
+        if(speed >= percent) return;  
+        speed += 1;  
+    }());  
+}
+
+
+var table;
+var initValue;
+$(function () {
+
+    var data1 = [
+        {
+            "id": "1",
+            "product": "CC-DA",
+            "PN": "6033MC1108housingType",
+            "test": "Test Type Q1",
+            "sampling": "Routing Test Yearly 1PC",
+            "detail": "Detail",            
+            "cumqty": "2017",
+            "exeqty": 2,
+            "subqty": "July 14, 2016",
+            "No": "AE/QMM8.1-REQ201***-*** (draft)",
+            "qty": "Xpcs",
+            "status": "0",
+            "alert": "Open",
+            "Auth": false
+        }, {
+            "id": "2",
+            "product": "CC-DA",
+            "PN": "USS4.5",
+            "test": "Test Type Q2",
+            "sampling": "Routing Test Yearly Min10pcs",
+            "detail": "Detail",            
+            "cumqty": "2017",
+            "exeqty": 2,
+            "subqty": "July 14, 2016",
+            "No": "AE/QMM8.1-REQ201***-*** (approved)",
+            "qty": "Xpcs",
+            "status": "25",
+            "alert": "Ongoing",
+            "Auth": false
+        }, {
+            "id": "3",
+            "product": "CC-DA",
+            "PN": "USS4.0",
+            "test": "Test Type Z1",
+            "sampling": "Routing Test Yearly 3pcs",
+            "detail": "Detail",
+            "cumqty": "2017",
+            "exeqty": 2,
+            "subqty": "July 14, 2016",
+            "No": "AE/QMM8.1-REQ201***-*** (Received)",
+            "qty": "Xpcs",
+            "status": "50",
+            "alert": "Close",
+            "Auth": false
+        }
+
+    ];
+
+
+    table = $('#table_1').dataTable({
+        "lengthChange": false,//是否允许用户自定义显示数量
+        "autoWidth": true,//自动宽度
+        "deferRender": true, // 延迟渲染，加速界面加载.
+        "searching": false,
+        "processing": true,
+        //"serverSide": true,
+        "data": data1,
+        // "responsive": true,
+
+        // "ajax": {
+        //     type:"GET",
+        //     url:"../data.json",
+        //     // data: ajaxPara,
+        //     //async: true, //是否为异步请求，ture为异步请求，false为同步请求 
+        //     dataType: "json",
+        //     // success: function(res) {
+        //     //     console.log(res.data)
+        //     //     // data: res.data
+        //     //     // console.log(result.dataSource)
+        //     //     // currentPageDataSource = result.dataSource;
+        //     //     // itemsTotalCount = result.dataSource;
+        //     //     // params.success(currentPageDataSource, itemsTotalCount);
+        //     // },
+        //     // error:function(XMLHttpRequest, textStatus, errorThrown){  
+        //     //     alert(XMLHttpRequest.status);  
+        //     //     alert(XMLHttpRequest.readyState);  
+        //     //     alert(textStatus);  
+        //     // }  
+
+        //     data: function (d) {
+        //     }
+        // },
+        "columns": [
+            {
+                data: 'product',
+                render: function (data, type, row) {
+                    return data + '<br>' + 'USS4<br>'+'1034';
+                }
+            },
+            {
+                data: 'PN',
+                render: function (data, type, row) {
+                    return data;
+                }
+            },
+            {
+                data: 'test',
+                render: function (data, type, row) {
+                    return data + '<br><a href="/eWorkflow/EForm/FormRequest/Overview/' + data + '" style="text-decoration: underline;">Reference</a></li>';
+                }
+            },
+            {
+                data: 'sampling',
+            },
+            {
+                data: 'detail',
+                render: function (data, type, row) {
+                    return '<a href="/eWorkflow/EForm/FormRequest/Overview/' + data + '" style="text-decoration: underline;">'+ data +'</a></li>';
+                }
+            },
+            {
+                data: 'cumqty',
+                render: function (data, type, row) {
+                    return '<input type="text" class="circle" value="0" style="width: 40px; height: 40px; background-color: #efefef; /* Can be set to transparent */ border: 2px #2e6ffd solid; -webkit-border-radius: 50%;text-align:center;color:red;">';
+                }
+            },
+            {
+                data: 'exeqty',
+                render: function (data, type, row) {
+                    return '<input type="text" class="circle" value="0" style="width: 40px; height: 40px; background-color: #efefef; /* Can be set to transparent */ border: 2px #2e6ffd solid; -webkit-border-radius: 50%;text-align:center;">';
+                }
+            },
+            {
+                data: 'subqty',
+                render: function (data, type, row) {
+                    return '<input type="text" class="circle" value="0" style="width: 40px; height: 40px; background-color: #efefef; /* Can be set to transparent */ border: 2px #2e6ffd solid; -webkit-border-radius: 50%;text-align:center;">';
+                }                
+            },
+            {
+                data: 'No'
+            },
+            {
+                data: 'qty',
+                render: function (data, type, row) {
+                    return data;
+                }
+            },
+            {
+                data: 'status',
+                render: function (data, type, row) {
+                    // console.log(row.id)
+                    initValue = data;
+                    return '<canvas class="time-graph-canvas" width="160" height="160"></canvas>';
+                },
+
+                createdCell: function (td, cellData, rowData, row, col) {
+                    // console.log(cellData)
+
+
+
+                }, 
+
+            },
+            {
+                data: 'alert',
+                render: function (data, type, row) {
+                    
+                    return data+'(' + 1 + ')';
+                }
+            },
+            // {
+            //     data: 'Actions',
+            //     render: function (data, type, row) {
+            //         // if (row.visible) {
+            //             var ret = '<div class="btn-group">';
+            //             ret += '<button type="button" class="btn btn-xs blue dropdown-toggle" data-toggle="dropdown">Actions <i class="fa fa-angle-down"></i></button>';
+            //             ret += '<ul class="dropdown-menu bottom-up" role="menu">';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Overview/' + data + '"><i class="fa fa-eye"></i> Overview</a></li>';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Export/' + data + '"><i class="fa fa-file-pdf-o"></i> Export to PDF</a></li>';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Copy/' + data + '"><i class="fa fa-copy"></i> Copy</a></li>';
+            //             if (row.CanEdit || row.CanApprove) {
+            //                 ret += '<li class="divider"></li><li><li><a href="/eWorkflow/EForm/FormRequest/Edit/' + data + '"><i class="fa fa-edit"></i> Edit</a></li>';
+            //             }
+            //             if (row.CanDelete && !row.WasFinished) {
+            //                 ret += '<li class="divider"></li><li><a href="javascript:;" onclick="TableManaged.remove(\'' + data + '\')"><i class="fa fa-times"></i> Delete</a></li>';
+            //             }
+            //             ret += '</ul>';
+            //             ret += '</div>'
+
+            //             return ret;
+            //         // } else {
+            //         //     return "";
+            //         // }
+            //     },
+            //     "sortable": false
+            // }
+        ],
+        "columnDefs": [
+            {
+                orderable: false,
+
+                targets: 10 }
+            // {
+            //     orderable: false,
+
+            //     targets: 1 }
+        ],//第一列与第二列禁止排序
+
+        // "dom": "<'row'<'col-xs-2'l><'col-xs-6'f><'col-xs-2'r><'#toolbar.col-xs-2'>>" +
+        //         "t" +
+        //         "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+        initComplete: function () {
+            $("#toolbar").append('<button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Create Plan</button>');
+            // $("#datainit").on("click", initData);
+        },
+        "buttons": [
+            'copy', 'excel', 'pdf'
+        ],
+
+        "sorting": [[4, "desc"]],
+        // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        // "displayLength": 10
+    });
+
+    // radialIndicator.defaults.initValue = 50;
+    // $('.indicatorContainer').radialIndicator({
+    //     barColor: '#87CEEB',
+    //     barWidth: 10,
+    //     // initValue: 50,
+    //     roundCorner : true,
+    //     percentage: true
+    // });
+
+
+});
+
+
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" class="form-control" value="" placeholder="1"></td><td>--</td><td><input type="text" class="form-control" value="" placeholder="53"></td><td><textarea name="" id="" cols="30" rows="2"></textarea></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><input type="text" class="form-control" value=""></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><i class="fa  fa-remove" onclick="deltr1(this)"></i></td></tr>'
+            );
+
+
+    })
+
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+
+var time_canvas = [];
+    $(function() {
+
+        time_canvas = document.querySelectorAll(".time-graph-canvas");
+
+        $.each(time_canvas,function (index, v) {
+
+            drawMain(time_canvas[index], 70, "#85d824", "#eef7e4"); 
+
+        });
+
+        
+        $('.datetime').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+        //Date range picker
+        $('#timeperiod').daterangepicker();
+
+    });
+</script>
+</body>
+
+</html>

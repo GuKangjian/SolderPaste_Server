@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>UI Template | Dashboard</title>
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+		<link rel="shortcut icon" href="dist/img/theme/favicon.png">
+		 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css" />
+		<link rel="stylesheet" href="plugins/ionicons/css/ionicons.css" />
+		<link rel="stylesheet" href="dist/css/main.css">
+		  <!-- iCheck -->
+		  <link rel="stylesheet" href="plugins/iCheck/flat/blue.css">
+		  <!-- Morris chart -->
+		  <!-- <link rel="stylesheet" href="plugins/morris/morris.css"> -->
+		  <!-- jvectormap -->
+		  <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+		  <!-- Date Picker -->
+		  <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+		  <!-- Daterange picker -->
+		  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+		  <!-- bootstrap wysihtml5 - text editor -->
+		  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+	 	<style>
+	 		.small-box {position: relative;height: 127px;}
+ 			.boxleft {float: left;position: relative;width: 30%;height: 100%;}
+ 			.boxright {float: right;width: 70%;height: 100%;background: #fff;position: relative;}
+ 			.small-box .iconimg img {
+ 				position: absolute;
+		        top: 50%;
+		        left: 50%;
+    			transform: translate(-50%, -50%);width: 100%;
+    		}
+			.contentbox {overflow: hidden;height: 100%;box-sizing: border-box;}
+			.small-box h3, .small-box p{color: #000;font-size: 2rem;text-align: center;position: absolute;transform: translate(-50%, -50%);top: 50%;left: 50%;white-space: nowrap;}
+			a.small-box-footer{position: absolute;right: 5px;bottom: 5px;}
+			.box {
+			    border: none;
+			}
+
+	 	</style>
+		
+	</head>
+	<body class="skin-bosch-alt sidebar-mini">
+		<div class="wrapper">
+
+			<header class="main-header">
+				<!-- Logo -->
+				<a href="./index.html" class="logo">
+                    <h3 class="page-logo" style="font-weight: bold;">
+                         EQZ
+                        <small style="font-size: 2rem;font-weight: 300;color: #00386c;">system</small>
+                    </h3>
+				</a>
+				<!-- Header Navbar: style can be found in header.less -->
+				<nav class="navbar navbar-static-top" role="navigation">
+					<!-- Sidebar toggle button-->
+					<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+						<span class="sr-only">Toggle navigation</span>
+					</a>
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+							<!-- Bosch Logo -->
+							<li>
+								<img src="dist/img/theme/bosch_logo_english.png" alt="Bosch" class="bosch-logo"/>
+							</li>
+						
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<!-- Left side column. contains the logo and sidebar -->
+			<aside class="main-sidebar">
+				<section class="sidebar">
+					<!-- Sidebar user panel -->
+					<ul class="sidebar-menu user-panel">
+			            <li class="user-menu treeview image">
+			                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			                  <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/> -->
+			                  <span class="hidden-xs">User <strong>Name</strong></span>
+			                  <i class="fa fa-angle-left pull-right"></i>
+			                </a>
+			                <ul class="treeview-menu">
+								<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+								<li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>
+							</ul>
+		              </li>
+		          </ul>
+					<!-- search form -->
+
+					<!-- sidebar menu: : style can be found in sidebar.less -->
+					<ul class="sidebar-menu">
+
+						<li class="header">INDEX</li>
+						<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Pending Approval</span></a></li>
+						<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Alert Confirming</span></a></li>
+						<li><a href="./pages/overview/myqzplan.html"><i class="fa fa-circle-o text-aqua"></i> <span>My QZ Plan Overview </span></a></li>
+
+
+						<li class="header">CONTENT</li>
+
+						<li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Planning Management</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+							<ul class="treeview-menu">
+                                <li><a href="./pages/planning/planlist.html"><i class="fa fa-circle-o"></i> Yearly Plan List</a></li>
+                                <!-- <li><a href="index2.html"><i class="fa fa-circle-o"></i> Monthly Volume Update</a></li> -->
+                            </ul>
+						</li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-tasks"></i> <span>Executive Management</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                            	<!-- <li><a href="./pages/execute/QZoverview2.html"><i class="fa fa-circle-o"></i> My QZ Overview</a></li> -->
+                                <li><a href="./pages/execute/weeklyexecute.html"><i class="fa fa-circle-o"></i> Weekly Plan Execution</a></li>
+                                <li><a href="./pages/execute/yearexecution.html"><i class="fa fa-circle-o"></i> Yearly Plan List Execution</a></li>
+                                <li><a href="./pages/execute/masterlist.html"><i class="fa fa-circle-o"></i> QZ Routine Test List</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i> <span>Reporting</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                            	<li><a href="./pages/reporting/planVSactual.html"><i class="fa fa-circle-o"></i> QZ Plan VS Actual Report</a></li>
+                                <li><a href="./pages/reporting/monthlyreport.html"><i class="fa fa-circle-o"></i> PPM By Monthly Report</a></li>
+                                <!-- <li><a href="./pages/reporting/weeklyreport.html"><i class="fa fa-circle-o"></i> Weekly report</a></li> -->
+                            </ul>
+                        </li>
+					</ul>
+				</section>
+				<!-- /.sidebar -->
+			</aside>
+
+			<!-- Content Wrapper. Contains page content -->
+			<div class="content-wrapper">
+				<!-- Content Header (Page header) -->
+				<section class="content-header">
+					<h1>
+						Dashboard
+						<small>Control panel</small>
+					</h1>
+					<!-- <ol class="breadcrumb">
+						<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+						<li class="active">Dashboard</li>
+					</ol> -->
+				</section>
+
+				<!-- Main content -->
+				<section class="content">
+
+                  <!-- Info boxes -->
+                  <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="info-box">
+                        <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text">CPU Traffic</span>
+                          <span class="info-box-number">90<small>%</small></span>
+                        </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="info-box">
+                        <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text">Likes</span>
+                          <span class="info-box-number">41,410</span>
+                        </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+
+                    <!-- fix for small devices only -->
+                    <div class="clearfix visible-sm-block"></div>
+
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="info-box">
+                        <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text">Sales</span>
+                          <span class="info-box-number">760</span>
+                        </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                      <div class="info-box">
+                        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text">New Members</span>
+                          <span class="info-box-number">2,000</span>
+                        </div><!-- /.info-box-content -->
+                      </div><!-- /.info-box -->
+                    </div><!-- /.col -->
+                  </div><!-- /.row -->
+
+
+              <!-- TABLE: LATEST ORDERS -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"></h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+
+                    <div class="row">
+                        <form id="searchform">
+                            <div class="form-group col-lg-12">
+                                <div class="row">
+                                    
+                                    <div class="form-group col-xs-2">
+                                        <label for="">Product</label>
+                                        <select name="" class="form-control" onchange="">
+                                            <option disabled="">-- All --</option>
+                                            <option value="1">ABS</option>
+                                            <option value="2">AS</option>
+                                            <option value="3">BE</option>
+                                            <option value="4">CC-DA</option>
+                                            <option value="5">CM-DCU</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xs-2">
+                                        <label for="">Family/Group</label>
+                                        <select name="" class="form-control" onchange="">
+                                            <option disabled="">-- All --</option>
+                                            <option value="1">ABS9</option>
+                                            <option value="2">BK2C</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xs-2">
+                                        <label for="">Test Type</label>
+                                        <select name="" class="form-control" onchange="">
+                                            <option disabled="">-- All --</option>
+                                            <option value="1">Z1</option>
+                                            <option value="2">Q2</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xs-2">
+                                        <label for="">Location</label>
+                                        <select name="" class="form-control" onchange="">
+                                            <option disabled="">-- All --</option>
+                                            <option value="1">Suzhou</option>
+                                            <option value="2">Wujing</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xs-2">
+                                        <label for="">Year</label>
+                                        <select name="" class="form-control" onchange="">
+                                            <option disabled="">-- All --</option>
+                                            <option value="1">2016</option>
+                                            <option value="2">2017</option>
+                                            <option value="2" selected>2018</option>
+                                            <option value="2">2019</option>
+                                            <option value="2">2020</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-xs-2">
+                                        <label for="">Week</label>
+                                        <select name="" class="form-control" onchange="">
+                                            <option disabled="">-- All --</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="2" selected>17</option>
+                                            <option value="2">4</option>
+                                            <option value="2">5</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+					<div class="col-md-3">
+                  
+                  		<button class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>
+              		</div>
+
+					<div class="btn-group pull-right">
+                    <button class="btn btn-info btn-flat" type="button" onclick="compare();">
+                        <!-- <i class="fa fa-floppy-o"></i> -->
+                        PPM Summary Report
+                    </button>
+          			<button class="btn btn-info btn-flat" style="margin-left: 15px;"><!-- <i class="fa fa-file-pdf-o"></i> --> PPM By Monthly Report</button>							
+					</div>
+
+                  <!-- <a class="btn btn-sm btn-default btn-flat pull-left">Reset <i class="fa fa-refresh"></i></a>
+                  <a class="btn btn-sm btn-info btn-flat pull-left">Query <span class="glyphicon glyphicon-search"></span></a> -->
+
+                </div><!-- /.box-footer -->
+              </div><!-- /.box -->
+
+			<!-- echarts -->
+
+			<div class="box box-default">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">AE-CN Q/Z Test Monthly Report-2018-3 PPM YTD Overview:CC-DA</h3>
+	            </div>
+	            <div class="box-body">
+
+					<div id="monthly" style="width: 100%; height:500px;"></div>
+
+	            </div><!-- /.box-body -->
+          	</div>
+
+
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="contentbox">
+                                    <div class="iconimg boxleft">
+                                        <img src="./images/1.png" alt="">
+                                    </div>
+                                    <div class="inner boxright">
+                                        <p>Yearly Plan Planning</p>
+                                        <a href="./pages/yearlyplan/planlist.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                    </div>                                  
+                                </div>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="contentbox">
+                                    <div class="iconimg boxleft">
+                                        <img src="./images/4-1.png" alt="">
+                                    </div>
+                                    <div class="inner boxright">
+                                        <p>Yearly Plan Execution</p>
+                                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                    </div>                                  
+                                </div>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                    <div class="iconimg boxleft">
+                                        <img src="./images/2-1.png" alt="">
+                                    </div>
+                                    <div class="inner boxright">
+                                        <p>Weekly Plan Execution</p>
+                                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                    </div>
+                            </div>
+                        </div><!-- ./col -->
+
+                    </div><!-- /.row -->
+
+                    <div class="row">
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                    <div class="iconimg boxleft">
+                                        <img src="./images/3-1.png" alt="">
+                                    </div>
+                                    <div class="inner boxright">
+                                        <p>QZ Routine Test List</p>
+                                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                    </div>  
+                            </div>
+                        </div><!-- ./col -->
+
+                        <div class="col-lg-4 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                    <div class="iconimg boxleft">
+                                        <img src="./images/5-1.png" alt="">
+                                    </div>
+                                    <div class="inner boxright">
+                                        <p>PPM Dashboard</p>
+                                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                    </div>  
+                            </div>
+                        </div><!-- ./col -->
+                    </div>
+
+
+                        <div class="col-md-6">
+                            <!-- Chat box -->
+                            <div class="box box-success">
+                                <div class="box-header">
+                                    <i class="fa fa-comments-o"></i>
+                                    <h3 class="box-title">Chat</h3>
+                                    <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
+                                        <div class="btn-group" data-toggle="btn-toggle" >
+                                            <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i></button>
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-body chat" id="chat-box">
+                                    <!-- chat item -->
+                                    <div class="item">
+                                        <img src="dist/img/user4-128x128.jpg" alt="user image" class="online"/>
+                                        <p class="message">
+                                            <a href="#" class="name">
+                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
+                                                Mike Doe
+                                            </a>
+                                            I would like to meet you to discuss the latest news about
+                                            the arrival of the new theme. They say it is going to be one the
+                                            best themes on the market
+                                        </p>
+                                        <div class="attachment">
+                                            <h4>Attachments:</h4>
+                                            <p class="filename">
+                                                Theme-thumbnail-image.jpg
+                                            </p>
+                                            <div class="pull-right">
+                                                <button class="btn btn-primary btn-sm btn-flat">Open</button>
+                                            </div>
+                                        </div><!-- /.attachment -->
+                                    </div><!-- /.item -->
+                                    <!-- chat item -->
+                                    <div class="item">
+                                        <img src="dist/img/user3-128x128.jpg" alt="user image" class="offline"/>
+                                        <p class="message">
+                                            <a href="#" class="name">
+                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
+                                                Alexander Pierce
+                                            </a>
+                                            I would like to meet you to discuss the latest news about
+                                            the arrival of the new theme. They say it is going to be one the
+                                            best themes on the market
+                                        </p>
+                                    </div><!-- /.item -->
+                                    <!-- chat item -->
+                                    <div class="item">
+                                        <img src="dist/img/user2-160x160.jpg" alt="user image" class="offline"/>
+                                        <p class="message">
+                                            <a href="#" class="name">
+                                                <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
+                                                Susan Doe
+                                            </a>
+                                            I would like to meet you to discuss the latest news about
+                                            the arrival of the new theme. They say it is going to be one the
+                                            best themes on the market
+                                        </p>
+                                    </div><!-- /.item -->
+                                </div><!-- /.chat -->
+                                <div class="box-footer">
+                                    <div class="input-group">
+                                        <input class="form-control" placeholder="Type message..."/>
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-success"><i class="fa fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.box (chat box) -->
+                        </div><!-- /.col -->
+
+                        <div class="col-md-6">
+                          <!-- USERS LIST -->
+                          <div class="box box-danger">
+                            <div class="box-header with-border">
+                              <h3 class="box-title">Latest Members</h3>
+                              <div class="box-tools pull-right">
+                                <span class="label label-danger">8 New Members</span>
+                                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                              </div>
+                            </div><!-- /.box-header -->
+                            <div class="box-body no-padding">
+                              <ul class="users-list clearfix">
+                                <li>
+                                  <img src="dist/img/user1-128x128.jpg" alt="User Image"/>
+                                  <a class="users-list-name" href="#">Alexander Pierce</a>
+                                  <span class="users-list-date">Today</span>
+                                </li>
+                                <li>
+                                  <img src="dist/img/user8-128x128.jpg" alt="User Image"/>
+                                  <a class="users-list-name" href="#">Norman</a>
+                                  <span class="users-list-date">Yesterday</span>
+                                </li>
+                                <li>
+                                  <img src="dist/img/user7-128x128.jpg" alt="User Image"/>
+                                  <a class="users-list-name" href="#">Jane</a>
+                                  <span class="users-list-date">12 Jan</span>
+                                </li>
+                                <li>
+                                  <img src="dist/img/user6-128x128.jpg" alt="User Image"/>
+                                  <a class="users-list-name" href="#">John</a>
+                                  <span class="users-list-date">12 Jan</span>
+                                </li>
+                                <li>
+                                  <img src="dist/img/user2-160x160.jpg" alt="User Image"/>
+                                  <a class="users-list-name" href="#">Alexander</a>
+                                  <span class="users-list-date">13 Jan</span>
+                                </li>
+                                <li>
+                                  <img src="dist/img/user5-128x128.jpg" alt="User Image"/>
+                                  <a class="users-list-name" href="#">Sarah</a>
+                                  <span class="users-list-date">14 Jan</span>
+                                </li>
+                                <li>
+                                  <img src="dist/img/user4-128x128.jpg" alt="User Image"/>
+                                  <a class="users-list-name" href="#">Nora</a>
+                                  <span class="users-list-date">15 Jan</span>
+                                </li>
+                                <li>
+                                  <img src="dist/img/user3-128x128.jpg" alt="User Image"/>
+                                  <a class="users-list-name" href="#">Nadia</a>
+                                  <span class="users-list-date">15 Jan</span>
+                                </li>
+                              </ul><!-- /.users-list -->
+                            </div><!-- /.box-body -->
+                            <div class="box-footer text-center">
+                              <a href="javascript::" class="uppercase">View All Users</a>
+                            </div><!-- /.box-footer -->
+                          </div><!--/.box -->
+                        </div><!-- /.col -->
+
+				</section><!-- /.content -->
+			</div><!-- /.content-wrapper -->
+			<footer class="main-footer">
+				<div class="pull-right hidden-xs">
+					<b>Version</b> 2.0
+				</div>
+				<strong>Copyright &copy; 2016 <a href="http://www.bosch-si.com">Bosch Software Innovations</a>.</strong> All rights reserved.
+			</footer>
+
+			<!-- Control Sidebar -->
+			<aside class="control-sidebar control-sidebar-dark">
+				<!-- Create the tabs -->
+				<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+					<li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+					<li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+				</ul>
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<!-- Home tab content -->
+					<div class="tab-pane" id="control-sidebar-home-tab">
+						<h3 class="control-sidebar-heading">Recent Activity</h3>
+						<ul class='control-sidebar-menu'>
+							<li>
+								<a href='javascript::;'>
+									<i class="menu-icon fa fa-birthday-cake bg-red"></i>
+									<div class="menu-info">
+										<h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+										<p>Will be 23 on April 24th</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href='javascript::;'>
+									<i class="menu-icon fa fa-user bg-yellow"></i>
+									<div class="menu-info">
+										<h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+										<p>New phone +1(800)555-1234</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href='javascript::;'>
+									<i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+									<div class="menu-info">
+										<h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+										<p>nora@example.com</p>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href='javascript::;'>
+									<i class="menu-icon fa fa-file-code-o bg-green"></i>
+									<div class="menu-info">
+										<h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+										<p>Execution time 5 seconds</p>
+									</div>
+								</a>
+							</li>
+						</ul><!-- /.control-sidebar-menu -->
+
+						<h3 class="control-sidebar-heading">Tasks Progress</h3>
+						<ul class='control-sidebar-menu'>
+							<li>
+								<a href='javascript::;'>
+									<h4 class="control-sidebar-subheading">
+										Custom Template Design
+										<span class="label label-danger pull-right">70%</span>
+									</h4>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href='javascript::;'>
+									<h4 class="control-sidebar-subheading">
+										Update Resume
+										<span class="label label-success pull-right">95%</span>
+									</h4>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-success" style="width: 95%"></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href='javascript::;'>
+									<h4 class="control-sidebar-subheading">
+										Laravel Integration
+										<span class="label label-warning pull-right">50%</span>
+									</h4>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href='javascript::;'>
+									<h4 class="control-sidebar-subheading">
+										Back End Framework
+										<span class="label label-primary pull-right">68%</span>
+									</h4>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+									</div>
+								</a>
+							</li>
+						</ul><!-- /.control-sidebar-menu -->
+
+					</div><!-- /.tab-pane -->
+					<!-- Stats tab content -->
+					<div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+					<!-- Settings tab content -->
+					<div class="tab-pane" id="control-sidebar-settings-tab">
+						<form method="post">
+							<h3 class="control-sidebar-heading">General Settings</h3>
+							<div class="form-group">
+								<label class="control-sidebar-subheading">
+									Report panel usage
+									<input type="checkbox" class="pull-right" checked />
+								</label>
+								<p>
+									Some information about this general settings option
+								</p>
+							</div><!-- /.form-group -->
+
+							<div class="form-group">
+								<label class="control-sidebar-subheading">
+									Allow mail redirect
+									<input type="checkbox" class="pull-right" checked />
+								</label>
+								<p>
+									Other sets of options are available
+								</p>
+							</div><!-- /.form-group -->
+
+							<div class="form-group">
+								<label class="control-sidebar-subheading">
+									Expose author name in posts
+									<input type="checkbox" class="pull-right" checked />
+								</label>
+								<p>
+									Allow the user to show his name in blog posts
+								</p>
+							</div><!-- /.form-group -->
+
+							<h3 class="control-sidebar-heading">Chat Settings</h3>
+
+							<div class="form-group">
+								<label class="control-sidebar-subheading">
+									Show me as online
+									<input type="checkbox" class="pull-right" checked />
+								</label>
+							</div><!-- /.form-group -->
+
+							<div class="form-group">
+								<label class="control-sidebar-subheading">
+									Turn off notifications
+									<input type="checkbox" class="pull-right" />
+								</label>
+							</div><!-- /.form-group -->
+
+							<div class="form-group">
+								<label class="control-sidebar-subheading">
+									Delete chat history
+									<a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+								</label>
+							</div><!-- /.form-group -->
+						</form>
+					</div><!-- /.tab-pane -->
+				</div>
+			</aside><!-- /.control-sidebar -->
+			<!-- Add the sidebar's background. This div must be placed
+					 immediately after the control sidebar -->
+			<div class='control-sidebar-bg'></div>
+		</div><!-- ./wrapper -->
+
+		<!-- jQuery 2.2.3 -->
+		<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+		<!-- jQuery UI 1.11.4 -->
+		<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+		<script>
+		  $.widget.bridge('uibutton', $.ui.button);
+		</script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<!-- Morris.js charts -->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> -->
+		<!-- <script src="plugins/morris/morris.min.js"></script> -->
+		<!-- Sparkline -->
+		<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+		<!-- jvectormap -->
+		<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+		<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+		<!-- jQuery Knob Chart -->
+		<script src="plugins/knob/jquery.knob.js"></script>
+		<!-- daterangepicker -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+		<script src="plugins/daterangepicker/daterangepicker.js"></script>
+		<!-- datepicker -->
+		<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+		<!-- Bootstrap WYSIHTML5 -->
+		<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+		<!-- Slimscroll -->
+		<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="plugins/fastclick/fastclick.js"></script>
+		<!-- AdminLTE App -->
+		<script src="dist/js/app.min.js"></script>
+		<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+		<!-- <script src="dist/js/pages/dashboard.js"></script> -->
+		<!-- AdminLTE for demo purposes -->
+		<script src="dist/js/demo.js"></script>
+		<script src="plugins/echarts/echarts.min.js"></script>
+
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('monthly'));
+
+        // 指定图表的配置项和数据
+        var option = {
+
+    // title: {
+    //     text: 'AE-CN Q/Z Test Monthly Report-2018-3 PPM YTD Overview:CC-DA',
+    //     textStyle: {
+    //         // color: '#FFFFFF',
+    //         fontSize: 16
+    //     },
+    //     // backgroundColor: '#507796',
+    // },
+
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            crossStyle: {
+                color: '#999'
+            }
+        }
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    legend: {
+        bottom: 10,
+        left: 'center',
+        data:['Plan PPM','Actual PPM','Target PPM']
+    },
+    grid: {
+        left: '3%',
+        right: '3%',
+        bottom: '25%',
+        // width: '100%',
+        containLabel: false
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['MPC2 plus_Q','MPC2 plus_Z','MRR4_Q','MRR4_Z','PP ECU Gen5_Q','PP ECU Gen5_Z','PP ECU Gen6_Q','PP ECU Gen6_Z','RVC-CHRYSLER_Q','RVC-CHRYSLER_Z','SVC2_Q','SVC2_Z','USS4_Q','USS4_Z','USS5_Q','USS5_Z'],
+            axisPointer: {
+                type: 'shadow'
+            },
+            axisLabel: {
+            	interval:0,
+	            rotate:45,
+	            margin:2
+	        }
+        }
+    ],
+    yAxis: {
+        
+            type: 'value',
+            name: 'Plan PPM',
+            min: 0,
+            max: 800,
+            interval: 200,
+    //         axisLabel: {
+				// textStyle: {
+				// 	color: '#6287ad'
+				//     fontSize: 14
+				// },
+    //             formatter: '{value} ml'
+    //         }
+    },
+    series: [
+        {
+            name:'Plan PPM',
+            type:'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    // formatter: '{c}%'
+                }
+            },
+            itemStyle: {
+                normal: { color: '#9a9a9a' }
+            },            
+            data:[105, 105, 134, 126, 106, 109, 106, 225, 125, 208, 185, 185, 798, 249, 118, 125],  //变量接收
+            barWidth: 20,
+            barMaxWidth: 50,  //解决问题：在柱子数量少的时候，剩下的柱子不要太粗
+            // barGap:'10%'
+        },
+        {
+            name:'Actual PPM',
+            type:'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    // formatter: '{c}%'
+                }
+            },
+            itemStyle: {
+                normal: { color: '#08427e' }
+            },
+            data:[98, 98, 142, 113, 196, 209, 0, 0, 434, 694, 0, 0, 551, 163, 91, 98],  //变量接收
+        	barWidth: 20,
+        	barMaxWidth: 50,  //解决问题：在柱子数量少的时候，剩下的柱子不要太粗
+        	// barGap:'10%'
+        },
+        {
+            name:'Target PPM',
+            type:'line',
+            yAxisIndex: 0,   //使用的 y 轴的 index，在单个图表实例中存在多个 y轴的时候有用。[ default: 0 ]
+            data:[102, 102, 138, 120, 151, 106, 100, 125, 265, 451, 185, 185, 675, 206, 105, 112]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+		//根据窗口大小调整图表
+        window.onresize = myChart.resize; //解决问题：如果窗口大小变化，图表可以自动进行调整；
+
+
+
+    	$(document).on('click', '.sidebar-toggle', function(){
+    		var tempWidth = document.documentElement.clientWidth;  
+			var sideWidth = $(".main-sidebar").width();
+
+			if (sideWidth == "265") {//侧边栏为伸出状态
+				$("#monthly").width(tempWidth - 50 - 30);  
+			} else {//侧边栏为收缩状态  
+				$("#monthly").width(tempWidth - 250 - 30);  
+			}
+        	myChart.resize();
+        })
+
+
+
+            // $.ajax({
+            //     url: '/QS/mergeHighscore',
+            //     type: 'post',
+            //     data: { allid: '@Request.QueryString["allid"]' },
+            //     datatype: 'json',
+            //     success: function (result) {
+            //         //console.log(result);
+            //         var choiceinfo = result.choiceinfo;
+            //         var totala = result.totala;
+            //         var totalb = result.totalb;
+            //         var totalc = result.totalc;
+            //         // 基于准备好的dom，初始化echarts实例
+            //         var myChart = echarts.init(document.getElementById('stackchat1'));
+            //         // 基于准备好的dom，初始化echarts实例
+            //         //app.title = '堆叠条形图';
+
+            //         option = {
+
+            //             title: {
+            //                 text: 'ECharts High score top5',
+            //                 textStyle: {
+            //                     color: '#FFFFFF',
+            //                     fontSize: 16
+            //                 },
+            //                 backgroundColor: '#507796',
+            //             },
+            //             tooltip: {
+            //                 trigger: 'axis',
+            //                 axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            //                     type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            //                 }
+            //             },
+            //             legend: {
+            //                 x: 'right',
+            //                 data: ['满意', '不确定', '不满意']
+            //             },
+            //             grid: {
+            //                 left: '40%',
+            //                 right: '2%',
+            //                 bottom: '10%',
+            //                 //width: '100%',
+            //                 containLabel: false
+            //             },
+            //             xAxis: {
+            //                 type: 'value',
+            //                 axisLabel: {
+            //                     formatter: '{value} %'
+            //                 }
+            //             },
+            //             yAxis: {
+            //                 axisLabel: {
+            //                     show: true,
+            //                     margin: 390,
+            //                     textStyle: {
+            //                         align: 'left',
+            //                         fontSize: 14
+            //                     },
+            //                     formatter: function (c) {
+            //                         for (i in c) {
+            //                             return c.substring(0, 80);
+            //                         }
+            //                     }
+            //                 },
+            //                 //offset:200,
+            //                 type: 'category',
+            //                 data: choiceinfo
+            //             },
+            //             series: [{
+            //                 name: '满意',
+            //                 type: 'bar',
+            //                 stack: '总量',
+            //                 label: {
+            //                     normal: {
+            //                         show: true,
+            //                         position: 'insideRight',
+            //                         formatter: '{c}%'
+            //                     }
+            //                 },
+            //                 itemStyle: {
+            //                     normal: { color: 'green' }
+            //                 },
+            //                 data: totala,
+            //                 barWidth: 30
+            //             }, {
+            //                 name: '不确定',
+            //                 type: 'bar',
+            //                 stack: '总量',
+            //                 label: {
+            //                     normal: {
+            //                         show: true,
+            //                         position: 'insideRight',
+            //                         formatter: '{c}%'
+            //                     }
+            //                 },
+            //                 itemStyle: {
+            //                     normal: { color: 'gray' }
+            //                 },
+            //                 data: totalb,
+            //                 barWidth: 30
+            //             }, {
+            //                 name: '不满意',
+            //                 type: 'bar',
+            //                 stack: '总量',
+            //                 label: {
+            //                     normal: {
+            //                         show: true,
+            //                         position: 'insideRight',
+            //                         formatter: '{c}%'
+            //                     }
+            //                 },
+            //                 itemStyle: {
+            //                     normal: { color: 'red' }
+            //                 },
+            //                 data: totalc,
+            //                 barWidth: 30
+            //             }]
+            //         };
+
+            //         // 使用刚指定的配置项和数据显示图表。
+            //         myChart.setOption(option);
+            //     }
+            // });
+
+
+
+    </script>
+
+
+	</body>
+</html>

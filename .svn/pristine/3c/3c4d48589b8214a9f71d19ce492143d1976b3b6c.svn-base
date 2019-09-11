@@ -1,0 +1,501 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+ul.btn-item,
+ul.items {
+    float: right;
+    background: transparent;
+    margin-top: 0px;
+    margin-bottom: 0;
+    font-size: 12px;
+    /*padding: 7px 5px;*/
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.btnbox{
+    float: right;
+    background: transparent;
+    bottom: 0;
+    /*margin-right: 10px;*/
+    /*margin-right: 15px;*/
+}
+
+ul.portal {
+    width: 1200px;
+    margin: 10% auto;
+}
+
+ul.portal li {
+    list-style: none;
+    float: left;
+    width: 30%;
+    height: 250px;
+    background: inherit;
+    background-color: rgba(25, 158, 216, 0.349019607843137);
+    padding: 50px 0;
+    margin: 10px 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.portal p {
+    padding-top: 10px;
+}
+
+.portalmenu{float: left;margin: 10px 2% 0 45%;width: 30%;}
+
+.portalmenu img{width: 15px;}
+
+.portalmenu li{    
+    list-style: none;
+    display: inline-block;
+    padding: 0 10px;
+    position: relative;
+    width: 38px;
+}
+
+.portalmenu p{display: none;white-space: nowrap;}
+ /*小图标hover展示说明*/
+.portalmenu li:nth-child(1):hover p{display: block;position: absolute;left: -5px;top: 18px;}  
+.portalmenu li:nth-child(2):hover p{display: block;position: absolute;left: -18px;top: 18px;}
+.portalmenu li:nth-child(3):hover p{display: block;position: absolute;left: -15px;top: 18px;}
+.portalmenu li:nth-child(4):hover p{display: block;position: absolute;left: 2px;top: 18px;}
+.portalmenu li:nth-child(5):hover p{display: block;position: absolute;left: -20px;top: 18px;}
+.portalmenu li:nth-child(6):hover p{display: block;position: absolute;left: 2px;top: 18px;}
+.portalmenu li:nth-child(7):hover p{display: block;position: absolute;left: 4px;top: 18px;}
+.portalmenu li:nth-child(8):hover p{display: block;position: absolute;left: -15px;top: 18px;}
+.portalmenu li:nth-child(9):hover p{display: block;position: absolute;left: -2px;top: 18px;}
+
+
+
+.categories{width: 1200px;margin: 10% auto;}
+.categories ul{margin: 0 -1%;}
+.categories ul li {
+    list-style: none;
+    float: left;
+    width: 48%;
+    height: 160px;
+    background: inherit;
+    background-color: rgba(25, 158, 216, 0.349019607843137);
+    padding: 50px 0;
+    margin: 0 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.categories p {
+    padding-top: 10px;
+}
+
+.contentwp {
+    width: 100%;
+}
+
+ul.btn-item li,
+ul.items li,
+ul.btnbox li,
+.editbtn li {
+    list-style: none;
+    display: inline-block;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.part1 ,.part2 ,.part3 ,.part4 {width: 100%;}
+
+/*.table {
+    border-collapse: collapse;
+    border: none;
+    background-color: #fff;
+    table-layout: fixed;
+}*/
+
+
+.spec th,
+.workstation th {
+    text-align: center;
+    vertical-align: middle!important;
+}
+
+/*.table th,
+.table td {
+    border: 1px solid #cecece!important;
+    word-wrap: break-word
+}*/
+
+.spec tbody>tr:nth-child(1) {
+    text-align: center;
+    vertical-align: middle!important;
+}
+
+.spec tbody>tr:last-child td,
+.fg tbody>tr:last-child td {
+    border: none!important;
+    text-align: center;
+}
+
+.spec input.checkbox,
+.fg input.checkbox {
+    margin: 0 auto;
+}
+
+.bjcolor {
+    background-color: #C0C0C0;
+}
+
+/*tbody>tr>td:nth-child(2) div {
+    padding-left: 200px;
+}*/
+
+.tablebtn {
+    /*border-width: 0px;*/
+    width: 74px;
+    height: 34px;
+    /*background: inherit;*/
+    background-color: rgba(22, 155, 213, 1);
+    border: none;
+    color: #fff;
+    border-radius: 5px!important;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+input,
+select,
+button,
+textarea {
+    border: none;
+    outline: none;
+}
+
+#tab input[type=text]{background: transparent;}
+
+textarea {
+    width: 100%;
+    border: 1px solid #cecece;
+}
+
+.workstation input[type="text"]{width: 100%;text-align: center;}
+
+
+/*select {
+    border: solid 1px #cecece;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    background: url(../../dist/img/arrow.png) no-repeat scroll 90% center transparent;
+    padding-right: 14px;
+    background-color: #fff;
+    outline: none;
+}
+
+select.option {
+    font-size: 18px;
+    height: 34px;
+    width: 200px;
+    padding-left: 10px;
+    color: #727272;
+}*/
+
+/*select.option,
+.search {
+    width: 200px;
+    display: inline-block;
+}*/
+
+/*.btn-default:hover, .btn-default:active, .btn-default.hover{background-color: #46b8da!important;}*/
+
+.btns{color: #fff;text-align: center;}
+
+a.btn{/*color: #fff!important;*//*width: 100px;*/}
+
+a.more{width: 100px;}
+
+/*.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td{vertical-align: middle;}*/
+
+
+.content-header > .btn{float: left;position: absolute;right: 500px;top: 22px;}
+
+.tab-content .btn{font-weight: normal;}
+
+.nav>li>a{font-size: 14px;}
+
+/*.form-group{overflow: hidden;}*/
+
+.searchbox{margin: 30px auto;}
+
+.actionbox{margin: 2% auto;}
+
+.btnbox li{display: inline-block;}
+
+.btn-box{text-align: center;width: 100%;margin: 2% auto 0;}
+
+.alertbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.alert{
+    width: 600px;
+    margin: 10% auto;    
+}
+
+#search-box {display: none;}
+
+.toggleicon i{font-size: 24px;}
+
+.toggleicon .fa-angle-up{display: none;}
+
+@media screen and (max-width: 1500px) {
+
+    .portalmenu {
+        margin: 15px 2% 0 37%;
+        width: 38%;
+    }
+
+}
+
+@media screen and (max-width: 1200px){
+
+    .portalmenu {
+        margin: 15px 2% 0 27%;
+        width: 45%;
+    }
+}
+
+
+div#tab2 {
+    overflow: hidden;
+}
+
+/*.select2-container--default.select2-container--focus .select2-selection--multiple{border: 1px solid #aaa!important;}*/
+
+.modal table{margin: 0 auto;}
+
+.ms2side__options, .ms2side__updown{margin: 50px auto !important;}
+
+
+select[multiple], select[size]{height: 200px !important;}
+
+.ms2side__header {
+    height: 34px  !important;
+    line-height: 34px;
+}
+
+.ms2side__header input{height: 18px !important;}
+
+/*input.public_bdr_color {
+    border-color: #FF0000!important;
+}*/
+
+
+a.btn.btn-block.disabled {
+    background: rgba(0,0,0,0.6);
+}
+
+.btn[disabled]{cursor: default;}
+
+table#tab{
+     border-collapse:collapse;
+     background: #fff;
+     /*margin: 0 auto;*/
+}
+
+.tasktable {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*#tab td{border: none;}*/
+
+/*#tab tr{border-top:1px solid #cecece;border-bottom:1px solid #cecece;line-height: 34px;}*/
+
+
+.input-group[class*=col-]{float: left;}
+
+#taskowner{display: none;}
+
+
+/*.table>tbody>tr>td{border-top: 1px solid #ddd;}*/
+
+.tasktable .btn{width: 100px;padding: 3px 12px;}
+
+.required.public_bdr_color{border-color: #FF0000!important;}
+
+.actiontab{overflow: hidden;margin: 10px auto;}
+
+
+/*Web Uploader插件*/
+.deletefile {
+    position: absolute;
+    top: -2px;
+    right: 3px;
+    text-align: left;
+    height: 19px;
+    font-size: 17px;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.deletefile:hover {
+    cursor: pointer;
+    /*background: red;*/
+}
+
+.fileinfo {
+    float: left;
+    /*margin-top: 0px;*/
+}
+
+.myfileitem {
+    position: relative;
+    min-width: 150px;
+    height: 34px;
+    display: inline-block;
+    margin-left: 3px;
+    margin-top: 2px;
+    background: aliceblue;
+    padding-right: 2%;
+}
+
+        .uploader-list {
+    float: left;
+    margin-right: 20px;
+    width: 100%;
+    border: 1px solid #cecece;
+    min-height: 50px;
+}
+
+.url {
+    margin-top: 20px;
+}
+
+/*#filepicker{float: left;}*/
+
+.thumbnail{margin-bottom: 0;}
+
+/*.subselect{margin:15px 90px;overflow: hidden;min-height: 60px;}*/
+
+
+/*动态创建table*/
+
+.thcolor{background-color:#0090d9; }
+.trcolor{background-color: #99FFFF;}
+
+.ui-jqgrid-labels{background-color:#0090d9!important;}
+
+.title span{line-height: 32px;}
+
+.Overallstatus a{line-height: 32px;}
+
+.files a{line-height: 36px;margin-right: 25px;}
+
+.related .checkbox{display: inline-block;}
+
+/*.table-bordered > tbody > tr > td{text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}*/
+
+#tasklist tr:nth-child(1), #tasks tr:nth-child(1){background: #39CCCC;color: #fff;}
+
+
+.select#department{width: 200px!important;}
+
+span#select2-department-container{width: 300px;}
+
+#verify{margin-top: 20px;float: right;}
+
+#verify a{margin-left: 20px;}
+
+#verify label{font-weight: 600;padding: 0 10px;}
+
+label.tasktitle{margin-left: 24%;}
+
+#department{font-weight: 600;}
+
+a.attachment{line-height: 34px;}
+
+.uploader-list{min-height: 50px;}
+
+.upload .control-label {text-align: left!important;}
+
+div#uploadfile_div {
+    margin-left: 20px;
+}
+
+.url a{line-height: 34px;}
+
+
+#details{position: fixed;z-index: 9999;top: 0;left: 0;font-size: 16px;padding: 5px 10px;background: rgba(0,0,0,0.4);color: #fff;}
+
+
+
+/*修改jqgrid*/
+/*图标切换*/
+.ui-icon-comment {
+    background-position: -65px 0px!important;
+} 
+
+#search_menu{display: none;}
+
+#column_menu{display: none;}
+
+.ui-search-toolbar {background: #fff;/*display: none;*/}
+
+/*.ui-tooltip{display: none!important;}*/  /*不显示select2 title*/
+body .ui-tooltip{border-width: 1px!important;}
+
+.tips{color: #999;font-size: 12px;line-height: 34px;margin-left: 50px;}
+
+.btn_box{margin: 0 auto 1%;}
+
+.select2-container{width: 250px;}
+
+textarea{resize: none;}
+
+
+/*eqz*/
+
+.dataTables_empty{text-align: center;}
+/*导航栏/*/
+.breadcrumb>li+li:before {content: none}
+/*去掉导航下划线*/
+.nav-tabs {border-bottom:none;}
+
+.breadcrumb .spacing{margin:0 10px;}
+
+/*表格布局算法为固定（列宽由表格宽度和列宽度设定）*/
+table {
+
+        table-layout:fixed;
+}
+
+.breadcrumb>li a {color: inherit;}
+

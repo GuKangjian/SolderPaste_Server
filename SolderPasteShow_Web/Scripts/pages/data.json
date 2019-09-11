@@ -1,0 +1,348 @@
+{
+    "list": {
+        "surveyname": "###调查问卷",
+        "data": [
+            {
+                "id": 28,
+                "title": "问题1问题1问题1问题1问题1问题1问题1问题1",
+                "answer": [
+                    {
+                        "id": 1,
+                        "txt": "目标人群要求：（注：如果您的问卷对目标人群有要求，必须在此指定，以作为判断有效答卷标准之一）",
+                        "select": false
+                    },
+                    {
+                        "id": 2,
+                        "txt": "需求数量（均为有效样本）：",
+                        "select": false
+                    },
+                    {
+                        "id": 3,
+                        "txt": "c",
+                        "select": false
+                    },
+                    {
+                        "id": 4,
+                        "txt": "d",
+                        "select": true
+                    }
+                ]
+
+            },
+            {
+                "id": 2,
+                "title": "问题2问题2问题2问题2问题2问题2问题2问题2问题2问题2问题2",
+                "answer": [
+                    {
+                        "id": 1,
+                        "txt": "怎么称呼您：",
+                        "select": false
+                    },
+                    {
+                        "id": 2,
+                        "txt": "符合您在样本服务订单中对目标人群的要求",
+                        "select": true
+                    },
+                    {
+                        "id": 3,
+                        "txt": "问卷星严格按照有效样本来计价。",
+                        "select": false
+                    },
+                    {
+                        "id": 4,
+                        "txt": "d",
+                        "select": false
+                    }
+                ]
+
+            },
+            {
+                "id": 3,
+                "title": "问题3问题3问题3问题3问题3问题3问题3问题3问题3问题3问题3题3问题3问题3问题3题3问题3问题3问题3题3问题3问题3问题3题3问题3问题3问题3问题3问题3问题3问题3问题3问题3问题3问题3问题3问题3问题3",
+                "answer": [
+                    {
+                        "id": 1,
+                        "txt": "a",
+                        "select": false
+                    },
+                    {
+                        "id": 2,
+                        "txt": "b",
+                        "select": false
+                    },
+                    {
+                        "id": 3,
+                        "txt": "统单独计算某一维度上的总分，均分。",
+                        "select": true
+                    },
+                    {
+                        "id": 4,
+                        "txt": "d",
+                        "select": false
+                    }
+                ]
+
+            }
+        ],
+        "count": 10
+        
+    },
+
+    "dataSource": [
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        },
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        },
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        },
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        },
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        },
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        },
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        },
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        },
+        {
+            "Product": "BK2A",
+            "testtype": "Q+Z",
+            "PN": "0203214889520",
+            "sc": "/",
+            "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+            "TestSpec": "QZ spec in SAP",
+            "TestPlace": "AE/QMM1.9-CN",
+            "Frequency": "Monthly",
+            "W01": 18,
+            "W02": 1,
+            "W03": 0,
+            "W04": 0,
+            "W05": 3,
+            "W06": 0,
+            "W07": 0,
+            "W08": 1,
+            "W09": 0,
+            "W10": 1,
+            "W11": 2,
+            "W12": 0
+        }
+    ],
+
+    "data": [
+        {
+            "id": "1",
+            "Name": "AS_EPSc_Plan_2017_1",
+            "Status": "InActive",
+            "ApprovalStatus": "Approved",
+            "Product": "AS",
+            "FamilyGroup": "EPSc",
+            "Year": "2017",
+            "Revision": 2,
+            "Effective": "July 14, 2016",
+            "Expire": "July 14, 2016",
+            "Creation": "July 14, 2016",
+            "Location": "车间1",
+            "By": "Allen",
+            "Action": false,
+            "Auth": false
+        }, {
+
+            "id": "2",
+            "Name": "AS_BK2A_Plan_2017_2",
+            "Status": "InActive",
+            "ApprovalStatus": "draft",
+            "Product": "BE",
+            "FamilyGroup": "BK2A",
+            "Year": "2018",
+            "Revision": 2,
+            "Effective": "July 14, 2016",
+            "Expire": "July 14, 2016",
+            "Creation": "July 14, 2016",
+            "Location": "车间2",
+            "By": "Allen",
+            "Action": true,
+            "Auth": true
+        }, {
+
+            "id": "3",
+            "Name": "AS_BK2A_Plan_2017_2",
+            "Status": "InActive",
+            "ApprovalStatus": "Approved",
+            "Product": "BE",
+            "FamilyGroup": "BK2A",
+            "Year": "2018",
+            "Revision": 2,
+            "Effective": "July 14, 2016",
+            "Expire": "July 14, 2016",
+            "Creation": "July 14, 2016",
+            "Location": "车间5",
+            "By": "Allen",
+            "Action": false,
+            "Auth": false
+        }
+
+    ]
+
+
+}

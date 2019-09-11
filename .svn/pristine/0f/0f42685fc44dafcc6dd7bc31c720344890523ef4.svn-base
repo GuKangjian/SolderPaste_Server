@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>UI Template | Template List</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <link rel="shortcut icon" href="../../dist/img/theme/favicon.png">
+    <link rel="stylesheet" href="../../dist/css/main.css">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../../plugins/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../../plugins/ionicons/css/ionicons.css" />
+    <link rel="stylesheet" href="../../dist/css/style.css">
+    <link rel="stylesheet" href="../../static/components.css">
+    <!-- spread.sheets -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Sheets/css/gc.spread.sheets.11.0.0.css" /> -->
+    <!-- spread.views -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/gc.spread.views.dataview.11.0.0.css" /> -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/theme/gc.spread.views.dataview.flat.11.0.0.css" /> -->
+    <!-- <link rel="styleSheet" href="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.trellisgrouping.11.0.0.css" /> -->
+    <!-- <link rel="stylesheet" href="../../dist/css/jquery-ui.css"> -->
+    <link rel="stylesheet" href="../../plugins/jqgrid/jquery-ui.css">
+    <link rel="stylesheet" href="../../dist/css/grid/jquery.multiselect.css">
+    <link rel="stylesheet" href="../../dist/css/grid/jquery.multiselect.filter.css">
+    <link rel="stylesheet" href="../../plugins/jqgrid/ui.jqgrid.css">
+    <!-- <link rel="stylesheet" href="../../dist/css/jquery-ui.css"> -->
+    <!-- <link rel="stylesheet" href="../../dist/css/bootstrap-datetimepicker.css"> -->
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
+    <!-- select2 -->
+    <link rel="stylesheet" href="../../plugins/select2/select2.css">
+    <link rel="stylesheet" href="../../plugins/select3/normalize.css">
+    <link rel="stylesheet" href="../../plugins/select3/fm.selectator.jquery.css">
+    <link rel="stylesheet" href="../../plugins/webuploader/webuploader.css">
+    <!-- DataTables -->
+    <!-- <link rel="stylesheet" href="../../plugins/datatables/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../../plugins/datatables/extensions/FixedColumns-3.2.4/css/fixedColumns.dataTables.min.css">
+    <!-- <link rel="stylesheet" href="../../plugins/datatables/extensions/Buttons-1.5.1/css/buttons.dataTables.css"> -->
+    <link rel="stylesheet" href="../../plugins/datatables/extensions/Select/css/select.dataTables.min.css">
+    <style>
+
+    table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkbox {padding: 16px;}
+    table.dataTable tbody td.select-checkbox:before, table.dataTable tbody td.select-checkbox:after, table.dataTable tbody th.select-checkbox:before, table.dataTable tbody th.select-checkbox:after {top: 50%;}
+
+    .icon-link{padding: 13px 13px;display: inline-block;background: url(../../images/right.png) no-repeat 50% 50%;}
+
+    .table-toolbar{text-align: right}
+
+    #togglediv {display: none;}
+
+    /*table*/
+table.dataTable tbody tr {
+    background-color: #ffffff;
+}
+/*table.dataTable tbody th, table.dataTable tbody td {
+    padding: 8px 10px;
+}    */
+
+table.dataTable {
+     margin-top: 0px !important; 
+     margin-bottom: 0px !important; 
+     max-width: none !important; 
+     border-collapse: separate !important; 
+}
+
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th { border-bottom-width: 1px;border: 1px solid #ddd;}
+    /*table end*/
+
+
+    /*box*/
+
+    .box{border:none;}
+
+    /*.table-responsive{overflow: hidden;}*/
+    #table_1 td {
+        display: table-cell;
+        vertical-align: middle;
+        /*word-break: break-word;*/
+        text-align: center;
+    }
+    .table thead tr th{text-align: center;}
+
+    /*表头颜色*/
+    table#table_1.dataTable thead > tr > th{background: #153B63;color: #fff;}
+
+    table#table_1.dataTable thead .sorting:after{opacity: 1;}
+
+    table#table_1.dataTable thead .sorting:after, table#table_1.dataTable thead .sorting_asc:after, table#table_1.dataTable thead .sorting_desc:after{opacity: 1;}
+
+</style>
+
+</head>
+
+<body class="skin-bosch-alt sidebar-mini">
+
+        <div class="wrapper">
+
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="../../index.html" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="../../dist/img/theme/visual-bic-sm.png" alt="Bosch IoT Cloud"/></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="../../dist/img/theme/visual-bic-key.png" alt="Bosch IoT Cloud"/></span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Bosch Logo -->
+                            <li>
+                                <img src="../../dist/img/theme/bosch_logo_english.png" alt="Bosch" class="bosch-logo"/>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <!-- Sidebar user panel -->
+                    <ul class="sidebar-menu user-panel">
+                        <li class="user-menu treeview image">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                              <span class="hidden-xs">Alexander <strong>Pierce</strong></span>
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                                <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>
+                            </ul>
+                      </li>
+                  </ul>
+                    <!-- search form -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <span class="input-group-btn">
+                                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+                    <ul class="sidebar-menu">
+                        <li class="header">MAIN NAVIGATION</li>
+
+                        <li>
+                            <a href="../../index.html">
+                                <i class="fa fa-th"></i> <span>Dashboard</span> <!-- <small class="label pull-right bg-green">new</small> -->
+                            </a>
+                        </li>
+
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Planning Management</span><i class="fa fa-angle-left pull-right"></i>
+                                <ul class="treeview-menu">
+                                    <li><a href="../../pages/yearlyplan/planlist.html"><i class="fa fa-circle-o"></i> Yearly Plan List</a></li>
+                                    <!-- <li><a href="./PPZ.html"><i class="fa fa-circle-o"></i> PPZ Maintenance</a></li> -->
+                                    <!-- <li><a href="index2.html"><i class="fa fa-circle-o"></i> Monthly Volume Update</a></li> -->
+                                </ul>
+                            </a>
+                        </li>
+
+<!--                         <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Work Instruction</span></a></li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                            </ul>
+                        </li> -->
+
+                        <li class="treeview active">
+                            <a href="#">
+                                <i class="fa fa-calendar"></i> <span>Executive Management</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../../pages/execute/weeklyexecute.html"><i class="fa fa-circle-o"></i> Weekly Plan Execution</a></li>
+                                <li><a href="../../pages/execute/yearexecution.html"><i class="fa fa-circle-o"></i> Yearly Plan List Execution</a></li>
+                                <li class="active"><a href="../../pages/execute/masterlist.html"><i class="fa fa-circle-o"></i> QZ routine test master list</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i> <span>Reporting</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="../../pages/reporting/planVSactual.html"><i class="fa fa-circle-o"></i> QZ Plan VS Actual Report</a></li>
+                                <!-- <li class="active"><a href="../../pages/reporting/monthlyreport.html"><i class="fa fa-circle-o"></i> Monthly report</a></li> -->
+                                <li><a href="../../pages/reporting/monthlyreport.html"><i class="fa fa-circle-o"></i> PPM By Monthly Report</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                            <h3 class="page-title">
+                                Routine test master list <small></small>
+                            </h3>
+                            <ol class="page-breadcrumb breadcrumb">
+                                <li>
+                                    <i class="fa fa-home"></i>
+                                    <a href="/index.html">Home</a>
+                                    <i class="fa fa-angle-right spacing"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-tasks"></i>
+                                    <a href="javascript:;">Executive Management</a>
+                                    <i class="fa fa-angle-right spacing"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-table"></i>
+                                    <a href="/pages/execute/weeklyexecute.html">Routine test master list</a>
+                                </li>
+                            </ol>
+                            <!-- END PAGE TITLE & BREADCRUMB-->
+                        </div>
+                    </div>
+
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li><a href="./eqzoverview.html">Weekly Plan Execution</a></li>
+                        <li><a href="./yearexecution1.html">Yearly Plan List Execution</a></li>
+                        <li class="active"><a href="./masterlist1.html">QZ Routine Test List</a></li>
+                        <li><a href="javascript:;">PPM Report</a></li>
+                    </ul>
+
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+              <!-- TABLE: LATEST ORDERS -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"></h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+
+                    <div class="row">
+                        <form id="searchform">
+                        <div class="form-group col-lg-12">
+                            <div class="row">
+                                
+                                <div class="form-group col-xs-2">
+                                    <label for="">Product</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="">-- All --</option>
+                                        <option value="1">ABS</option>
+                                        <option value="2">AS</option>
+                                        <option value="3">BE</option>
+                                        <option value="4">CC-DA</option>
+                                        <option value="5">CM-DCU</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Product Group</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="">-- All --</option>
+                                        <option value="1">BK2A</option>
+                                        <option value="2">BK2C</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Customer</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="form-group col-xs-2">
+                                    <label for="">PN</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Location</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="">-- All --</option>
+                                        <option value="1">Suzhou</option>
+                                        <option value="2">Wujing</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Test Type</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="">-- All --</option>
+                                        <option value="1">Z1</option>
+                                        <option value="2">Q2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <div class="row">
+                                
+                                <div class="form-group col-xs-2">
+                                    <label for="">Year/Week</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="">-- All --</option>
+                                        <option value="1">2016</option>
+                                        <option value="2">2017</option>
+                                        <option value="3">2018</option>
+                                        <option value="4">2019</option>
+                                        <option value="5">2020</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-3">
+                                    <label for="">From Date</label>
+                                    <div class="input-group date datetime">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-xs-1">
+                                    <label for="">Week</label>
+                                    <span class="form-control">13</span>
+                                </div>
+
+                                <div class="form-group col-xs-1">
+                                    <label for=""></label>
+                                    <div>~</div>
+                                </div>
+
+                                <div class="form-group col-xs-3">
+                                    <label for="">To Date</label>
+                                    <div class="input-group date datetime">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-xs-1">
+                                    <label for="">Week</label>
+                                    <span class="form-control">15</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-lg-12">
+                            <div class="row">
+                                <div class="form-group col-xs-2">
+                                    <label for="">Test Consignation Nr.</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Consignation Status</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="">-- All --</option>
+                                        <option value="1">Received</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Test Status</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="">-- All --</option>
+                                        <option value="1">OnTesting</option>
+                                        <option value="2">TestDone</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-xs-2">
+                                    <label for="">DMC</label>
+                                    <input type="text" class="form-control" value="0110G">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">PPM</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="">-- All --</option>
+                                        <option value="1">In PPM</option>
+                                        <option value="2">Not In PPM</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>
+                                    <button class="btn btn-default btn-flat"><span class="glyphicon glyphicon-export"></span> Export Report</button>
+                                </div>
+
+                                <!-- <div class="form-group col-xs-2">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox"> In PPM
+                                      </label>
+                                    </div>                   
+                                </div> -->
+                
+                                <div class="form-group col-xs-2">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" id="scrap"> Scrapped
+                                      </label>
+                                    </div>                    
+                                </div>
+
+                                <div class="form-group col-xs-2">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" id="testResult"> Show Test Result
+                                      </label>
+                                    </div>                 
+                                </div>
+
+                            </div>
+                        </div>
+                  <!-- <a class="btn btn-sm btn-default btn-flat pull-left">Reset <i class="fa fa-refresh"></i></a>
+                  <a class="btn btn-sm btn-info btn-flat pull-left">Query <span class="glyphicon glyphicon-search"></span></a> -->
+
+                </div><!-- /.box-footer -->
+              </div><!-- /.box -->
+
+
+
+            <!-- BEGIN PAGE CONTENT-->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                    <div class="portlet box"> <!-- grey-cascade -->
+                        <!-- <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-lightbulb-o"></i> Pending My Activity
+                            </div>
+                            <div class="tools">
+                                <a href="javascript:;" class="collapse">
+                                </a>
+                            </div>
+                        </div> -->
+                        <div class="portlet-body">
+                            <!-- <div id="toolbar"></div> -->
+                            <div class="table-toolbar">
+
+                                <!-- <div class="btn-group">
+                                    <a class="btn green btn-sm" id="button" onclick="mergeSubmit();"><i class="fa fa-plus"></i> New</a>
+                                </div> -->
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="table_1" width="100%" cellspacing="0" style="table-layout: auto;">
+                                    <thead>
+                                        <tr style="white-space: nowrap;">
+                                            <th>
+                                                序号
+                                            </th> 
+                                            <th>
+                                                Week<br>周别
+                                            </th>                                
+                                            <th>
+                                                Sampling Date<br>抽样日期
+                                            </th>
+                                            <th>
+                                                Customer<br>客户
+                                            </th>
+                                            <th>
+                                                Product<br>产品
+                                            </th>
+                                            <th>
+                                                Family/Group<br>家族
+                                            </th>
+                                            <th>
+                                                Reference<br>PN
+                                            </th>                                           
+                                            <th>
+                                                Part No/Line<br>产品型号/线别
+                                            </th>                                            
+                                            <th>
+                                                DMC<br>序列号
+                                            </th>
+                                            <th>
+                                                Test Type<br>测试类型
+                                            </th>
+                                            <th>
+                                                Quantity<br>数量
+                                            </th>
+                                            <th>
+                                                Test Consigner<br>送样人
+                                            </th>
+                                            <th>
+                                                Test Consignation Application Nr.<br>委托单编号
+                                            </th>
+                                            <th>
+                                                Request Status<br>委托单状态
+                                            </th>
+                                            <th>
+                                                Plan Finished Date<br>计划完成日期
+                                            </th>  
+                                            <th>
+                                                Act. Finished Date<br>实际完成日期
+                                            </th>
+                                            <th>
+                                                Progress Status<br>进度状态
+                                            </th>
+                                            <th>
+                                                Test Report Nr.<br>报告编号
+                                            </th>
+                                            <th>
+                                                Test Status<br>测试状态
+                                            </th>
+                                            <th>
+                                                In PPM
+                                            </th>
+                                            <th>
+                                                Expect Scrap Date<br>计划报废日期
+                                            </th>
+                                            <th>
+                                                Actual Scrap Date<br>实际报废日期
+                                            </th>
+                                            <th>
+                                                Test Item<br>测试项目
+                                            </th>
+                                            <th>
+                                                Test Result<br>测试结果
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT-->
+
+
+                </section><!-- /.content -->
+
+                <!-- Alert（Modal） -->
+                <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Alert status</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <form role="form">            
+                                    <!-- type -->
+                                    <div class="form-group">
+                                        <label for="">Type:</label>
+                                          <div class="radio">
+                                            <label>
+                                              <input type="radio" name="type" id="optionsRadios1" value="option1">
+                                              1,no production
+                                            </label>
+                                          </div>
+                                          <div class="radio">
+                                            <label>
+                                              <input type="radio" name="type" id="optionsRadios2" value="option2">
+                                              2,no planning
+                                            </label>
+                                          </div>
+                                          <div class="radio">
+                                            <label>
+                                              <input type="radio" name="type" id="optionsRadios3" value="option3">
+                                              3,not produced QZ parts
+                                            </label>
+                                          </div>
+                                    </div>
+
+                                    <!-- action -->
+                                    <div class="form-group" id="alert">
+                                        <label for="">Alert action:</label>
+                                          <div class="radio">
+                                            <label>
+                                              <input type="radio" name="action" id="action1" value="option1">
+                                              move to next week
+                                            </label>
+                                          </div>
+                                          <div class="radio">
+                                            <label>
+                                              <input type="radio" name="action" id="action2" value="option2">
+                                              cancel
+                                            </label>
+                                          </div>
+                                          <div class="radio">
+                                            <label>
+                                              <input type="radio" name="action" id="action3" value="option3">
+                                              pending confirm
+                                            </label>
+                                            <div id="togglediv" style="">
+                                                <label class="control-label">inform QMM engineer</label>
+                                                  <select class="form-control" style="width: 250px;display: inline-block;">
+                                                    <option>option 1</option>
+                                                    <option selected>ATTD</option>
+                                                    <option>option 3</option>
+                                                    <option>option 4</option>
+                                                    <option>option 5</option>
+                                                </select>                                            
+                                            </div>
+
+                                          </div>
+                                    </div>
+
+                                    <!-- <div class="form-group">
+                                      <label class="control-label">inform QMM engineer</label>
+                                          <select class="form-control" style="width: 250px;">
+                                            <option>option 1</option>
+                                            <option selected>ATTD</option>
+                                            <option>option 3</option>
+                                            <option>option 4</option>
+                                            <option>option 5</option>
+                                          </select>
+                                    </div> -->
+                                    <div class="form-group">
+                                      <label class="control-label">Inspector Comment：</label>
+                                          <textarea class="form-control" name="" id="" cols="30" rows="3" style="width: 72%"></textarea>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+                <!-- Test information（Modal） -->
+                <div class="modal fade" id="testinfoModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" style="width: 1000px;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Test Information 测试信息</h4>
+                            </div>
+                            <div class="modal-body">
+                            <!-- <div class="row"> -->
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-2 control-label">Test Type 测试类型</label>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="" placeholder="Z" disabled>
+                                        </div>
+                                        <label for="" class="col-sm-2 control-label">Test Place 测试地点</label>
+                                          <div class="col-sm-4">
+                                            <input type="text" class="form-control" id="" placeholder="AE/QMM8.1-CN" disabled>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label class="col-sm-2 control-label">Test Spec 测试规格</label>
+                                      <div class="col-sm-10">
+                                          <textarea class="form-control" rows="3" placeholder="QZ PV in BOM" disabled></textarea>
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                      <label class="col-sm-2 control-label">Test Item 测试项目</label>
+                                      <div class="col-sm-10">
+                                          <textarea class="form-control" rows="3" placeholder="Z test" disabled></textarea>
+                                      </div>
+                                    </div>
+
+                                </form>
+
+                                <!-- </div> -->
+
+
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+                <!-- Reference（Modal） -->
+                <div class="modal fade" id="refModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" style="width: 800px;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">reference</h4>
+                            </div>
+                            <div class="modal-body">
+                                
+                                <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <th>Description</th>
+                                            <th>Reference P/N</th>
+                                            <th>Production Line</th>
+                                            <th>priority</th>
+                                        </tr>
+                                        <tr>
+                                            <td>SGM</td>
+                                            <td>XXXX</td>
+                                            <td>10</td>
+                                            <td>High</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ADJ</td>
+                                            <td>XXXX</td>
+                                            <td>10</td>
+                                            <td>Medium</td>
+                                        </tr>
+                                        <tr>
+                                            <td>COM</td>
+                                            <td>Fetchback</td>
+                                            <td>5</td>
+                                            <td>Low</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ACT</td>
+                                            <td>Assigned</td>
+                                            <td>3</td>
+                                            <td>Low</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                                <button type="button" class="btn btn-primary">确 定</button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+
+            </div><!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> 2.0
+                </div>
+                <strong>Copyright &copy; 2016 <a href="http://www.bosch-si.com">Bosch Software Innovations</a>.</strong> All rights reserved.
+            </footer>
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Create the tabs -->
+                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                    <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Home tab content -->
+                    <div class="tab-pane" id="control-sidebar-home-tab">
+                        <h3 class="control-sidebar-heading">Recent Activity</h3>
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                        <p>Will be 23 on April 24th</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-user bg-yellow"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                                        <p>New phone +1(800)555-1234</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+                                        <p>nora@example.com</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <i class="menu-icon fa fa-file-code-o bg-green"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+                                        <p>Execution time 5 seconds</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                        <ul class='control-sidebar-menu'>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Custom Template Design
+                                        <span class="label label-danger pull-right">70%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Update Resume
+                                        <span class="label label-success pull-right">95%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Laravel Integration
+                                        <span class="label label-warning pull-right">50%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='javascript::;'>
+                                    <h4 class="control-sidebar-subheading">
+                                        Back End Framework
+                                        <span class="label label-primary pull-right">68%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                    </div><!-- /.tab-pane -->
+                    <!-- Stats tab content -->
+                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+                    <!-- Settings tab content -->
+                    <div class="tab-pane" id="control-sidebar-settings-tab">
+                        <form method="post">
+                            <h3 class="control-sidebar-heading">General Settings</h3>
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Report panel usage
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Some information about this general settings option
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Allow mail redirect
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Other sets of options are available
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Expose author name in posts
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                                <p>
+                                    Allow the user to show his name in blog posts
+                                </p>
+                            </div><!-- /.form-group -->
+
+                            <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Show me as online
+                                    <input type="checkbox" class="pull-right" checked />
+                                </label>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Turn off notifications
+                                    <input type="checkbox" class="pull-right" />
+                                </label>
+                            </div><!-- /.form-group -->
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Delete chat history
+                                    <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                                </label>
+                            </div><!-- /.form-group -->
+                        </form>
+                    </div><!-- /.tab-pane -->
+                </div>
+            </aside><!-- /.control-sidebar -->
+            <!-- Add the sidebar's background. This div must be placed
+                     immediately after the control sidebar -->
+            <div class='control-sidebar-bg'></div>
+        </div><!-- ./wrapper -->
+
+            <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+            <script src="../../bootstrap/js/bootstrap.min.js"></script>
+            <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+            <script src="../../plugins/fastclick/fastclick.js"></script>
+            <script src="../../dist/js/app.js" type="text/javascript"></script>
+            <script src="../../dist/js/demo.js" type="text/javascript"></script>
+            <!-- 公共js -->
+            <script src="../../dist/js/common.js" type="text/javascript"></script>
+            <!-- jqgrid -->
+            <script src="../../plugins/jqgrid/jquery.jqGrid.min.js" type="text/javascript"></script>
+            <script src="../../plugins/jQueryUI/jquery-ui.js" type="text/javascript"></script>
+            <script src="../../dist/js/grid/jquery.multiselect.js" type="text/javascript"></script>
+            <script src="../../dist/js/grid/jquery.multiselect.filter.js" type="text/javascript"></script>
+            <!-- <script src="../../dist/js/grid/i18n.js" type="text/javascript"></script> -->
+            <script src="../../plugins/jqgrid/i18n/grid.locale-cn.js" type="text/javascript"></script>
+            <script src="../../plugins/jqgrid/i18n/grid.locale-en.js" type="text/javascript"></script>
+            <script src="../../dist/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+            <script src="../../plugins/select2/select2.min.js" type="text/javascript"></script>
+            <script src="../../plugins/select2/i18n/zh-CN.js"></script>
+            <script src="../../plugins/select3/fm.selectator.jquery.js" type="text/javascript"></script>
+            <script src="../../plugins/webuploader/webuploader.html5only.min.js" type="text/javascript"></script>
+            <!-- layer弹出层插件 -->
+            <script src="../../plugins/layer/layer.js" type="text/javascript"></script>
+            <!-- date-range-picker -->
+            <script src="../../plugins/daterangepicker/moment.min.js"></script>
+            <script src="../../plugins/daterangepicker/daterangepicker.js"></script>
+
+            <!-- DataTables -->
+            <script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+            <!-- <script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script> -->
+            <script src="../../plugins/datatables/extensions/Select/js/dataTables.select.min.js"></script>
+            <script src="../../plugins/datatables/extensions/Buttons-1.5.1/js/dataTables.buttons.js"></script>
+
+            <script src="../../plugins/datatables/extensions/FixedColumns-3.2.4/js/dataTables.fixedColumns.min.js"></script>
+            <!-- <script src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script> -->
+
+
+            <script src="../../dist/js/bootstrap-hover-dropdown.min.js"></script>
+            <!-- spread.views -->
+            <script src="../../plugins/SpreadJS/Spread.Views/common/gc.spread.common.11.0.0.min.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/gc.spread.views.dataview.11.0.0.min.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/plugins/gc.spread.views.gridlayout.11.0.0.min.js" type="text/javascript"></script>
+
+            <script src="../../plugins/SpreadJS/Spread.Views/samples/demo/js/license.js" type="text/javascript"></script>
+            <script src="../../plugins/SpreadJS/Spread.Views/locale/gc.spread.views.dataView.locale.zh-CN.11.0.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+var datatable;
+
+$(function () {
+
+    var data1 = [
+        {
+            "id": "1",
+            "week": "18",
+            "samplingdate": "2018/03/30",
+            "customer": "NON",
+            "product": "CC-DA",
+            "family": "USS4",
+            "PN": "USS4.0",
+            "noLine": "0263023633",
+            "DMC": "0112G",
+            "testtype": "Q1",
+            "quantity": "10",
+            "consigner": "Alen",
+            "consignationNr": "AE/QMM8.1-REQ201803-376",
+            "requeststatus": "Received",
+            "planfinish": "2018/04/06",
+            "actfinish": "2018/04/08",
+            "progress": "Ongoing",
+            "reportNr": "AE/QMM8.1-A201804-020",
+            "teststatus": "OnTesting",
+            "PPM": false,
+            "ExpectScrapdate": "2018/05/01",
+            "actScrapdate": "",
+            "testItem": "1.2 Temperature Cycles(passive)",
+            "testResult": "通过"
+        }, {
+            "id": "2",
+            "week": "18",
+            "samplingdate": "2018/03/30",
+            "customer": "NON",
+            "product": "CC-DA",
+            "family": "USS4",
+            "PN": "USS4.5",
+            "noLine": "0263023633",
+            "DMC": "0112G",
+            "testtype": "Q2",
+            "quantity": "10",
+            "consigner": "Alen",
+            "consignationNr": "AE/QMM8.1-REQ201803-376",
+            "requeststatus": "Received",
+            "planfinish": "2018/04/06",
+            "actfinish": "2018/04/08",
+            "progress": "Ongoing",
+            "reportNr": "AE/QMM8.1-A201804-020",
+            "teststatus": "TestDone",
+            "PPM": true,
+            "ExpectScrapdate": "2018/05/01",
+            "actScrapdate": "2018/05/09",
+            "testItem": "1.2 Temperature Cycles(passive)",
+            "testResult": "不通过"
+        }, {
+            "id": "3",
+            "week": "18",
+            "samplingdate": "2018/03/30",
+            "customer": "NON",
+            "product": "CC-DA",
+            "family": "USS4",
+            "PN": "USS4.0",
+            "noLine": "0263023633",
+            "DMC": "0112G",
+            "testtype": "Z1",
+            "quantity": "10",
+            "consigner": "Alen",
+            "consignationNr": "AE/QMM8.1-REQ201803-376",
+            "requeststatus": "Received",
+            "planfinish": "2018/04/06",
+            "actfinish": "",
+            "progress": "Closed(Delay)",
+            "reportNr": "AE/QMM8.1-A201804-020",
+            "teststatus": "OnTesting",
+            "PPM": true,
+            "ExpectScrapdate": "2018/05/01",
+            "actScrapdate": "2018/05/09",
+            "testItem": "1.2 Temperature Cycles(passive)",
+            "testResult": "通过"
+        }
+
+    ];
+
+    if (datatable) {
+         datatable.fnClearTable();    //清空数据
+         datatable.fnDestroy();         //销毁datatable
+        }
+    datatable = $('#table_1').DataTable({//在获取datatable的对象时，datatable的大小写字母要区分开，不然会报错：
+        lengthChange: false,//是否允许用户自定义显示数量
+        autoWidth: true,//自动宽度
+        deferRender: true, // 延迟渲染，加速界面加载.
+        // searching: false,
+        processing: true,
+        //"serverSide": true,
+        data: data1,
+        // select: {
+        //     style: 'multi'
+        // },
+        // select: {
+        //     style:    'multi',
+        //     selector: 'td:first-child'
+        // },
+        // select: true,
+        // "responsive": true,
+
+        // "ajax": {
+        //     type:"GET",
+        //     url:"../data.json",
+        //     // data: ajaxPara,
+        //     //async: true, //是否为异步请求，ture为异步请求，false为同步请求 
+        //     dataType: "json",
+        //     // success: function(res) {
+        //     //     console.log(res.data)
+        //     //     // data: res.data
+        //     //     // console.log(result.dataSource)
+        //     //     // currentPageDataSource = result.dataSource;
+        //     //     // itemsTotalCount = result.dataSource;
+        //     //     // params.success(currentPageDataSource, itemsTotalCount);
+        //     // },
+        //     // error:function(XMLHttpRequest, textStatus, errorThrown){  
+        //     //     alert(XMLHttpRequest.status);  
+        //     //     alert(XMLHttpRequest.readyState);  
+        //     //     alert(textStatus);  
+        //     // }  
+
+        //     data: function (d) {
+        //     }
+        // },
+        columns: [
+            {
+                data: 'id',visible: false
+            },
+            {
+                data: 'week'
+            },
+            {
+                data: 'samplingdate'
+            },
+            {
+                data: 'customer',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="color:#333;display: inline-block;margin-bottom:10px;">'+ data +'</label>' + '<br>' + 'GM/SGM';
+                }
+            },
+            {
+                data: 'product',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="color:#333;display: inline-block;margin-bottom:10px;">'+ data +'</label>';
+                }
+            },
+            {
+                data: 'family'
+            },
+            {
+                data: 'PN',
+                render: function (data, type, row) {
+                    return data;
+                }
+            },
+            {
+                data: 'noLine',
+                render: function (data, type, row) {
+                    return data +':' + 'FALine7';
+                }
+            },
+            {
+                data: 'DMC',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="color:#333;padding-left: 15px;padding-right: 15px;display: inline-block;margin-bottom:10px;">'+ data +'</label>' + '<br>' + '0100G';
+                }
+            },
+            {
+                data: 'testtype'
+            },
+
+            {
+                data: 'quantity'
+            },
+            {
+                data: 'consigner'
+            },            
+            {
+                data: 'consignationNr',
+                render: function (data, type, row) {
+                    return '<a style="text-decoration: underline;">'+ data +'</a>';
+                }
+            },
+            {
+                data: 'requeststatus',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="background:#c0edfe;color:#333;padding-left: 15px;padding-right: 15px;display: inline-block;margin-bottom:10px;" onclick="testinfoshow();">'+ data +'</label>';
+                }
+            },
+
+            {
+                data: 'planfinish'
+            },            
+            {
+                data: 'actfinish'
+            },
+            {
+                data: 'progress',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="background:#c0edfe;color:#333;padding-left: 15px;padding-right: 15px;display: inline-block;margin-bottom:10px;" onclick="testinfoshow();">'+ data +'</label>';
+                }
+            },
+            {
+                data: 'reportNr',
+                render: function (data, type, row) {
+                    return '<a style="text-decoration: underline;">'+ data +'</a>';
+                }
+            }, 
+            {
+                data: 'teststatus'
+            },
+            {
+                data: 'PPM',
+                render: function (data, type, row) {
+                    if(data == true){
+                        return '<input type="checkbox" checked />';
+                    }else{
+                        return '<input type="checkbox" />';
+                    }
+                }
+
+            },
+            {
+                data: 'ExpectScrapdate'
+            },            
+            {
+                data: 'actScrapdate'
+            },
+            {
+                data: 'testItem'
+            },           
+            {
+                data: 'testResult',visible: false
+            }
+
+            // {
+            //     data: 'Actions',
+            //     render: function (data, type, row) {
+            //         // if (row.visible) {
+            //             var ret = '<div class="btn-group">';
+            //             ret += '<button type="button" class="btn btn-xs blue dropdown-toggle" data-toggle="dropdown">Actions <i class="fa fa-angle-down"></i></button>';
+            //             ret += '<ul class="dropdown-menu bottom-up" role="menu">';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Overview/' + data + '"><i class="fa fa-eye"></i> Overview</a></li>';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Export/' + data + '"><i class="fa fa-file-pdf-o"></i> Export to PDF</a></li>';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Copy/' + data + '"><i class="fa fa-copy"></i> Copy</a></li>';
+            //             if (row.CanEdit || row.CanApprove) {
+            //                 ret += '<li class="divider"></li><li><li><a href="/eWorkflow/EForm/FormRequest/Edit/' + data + '"><i class="fa fa-edit"></i> Edit</a></li>';
+            //             }
+            //             if (row.CanDelete && !row.WasFinished) {
+            //                 ret += '<li class="divider"></li><li><a href="javascript:;" onclick="TableManaged.remove(\'' + data + '\')"><i class="fa fa-times"></i> Delete</a></li>';
+            //             }
+            //             ret += '</ul>';
+            //             ret += '</div>'
+
+            //             return ret;
+            //         // } else {
+            //         //     return "";
+            //         // }
+            //     },
+            //     "sortable": false
+            // }
+        ],
+        columnDefs: [
+
+            // {
+            //     orderable: false,
+            //     className: 'select-checkbox',
+            //     targets:   0
+            // },
+            {
+                orderable: false,
+
+                targets: 10 }
+            // {
+            //     orderable: false,
+
+            //     targets: 1 }
+        ],//第一列与第二列禁止排序
+        dom: 'Bfrtip',  //Buttons用字符 B代表
+        // "dom": "<'row'<'col-xs-2'l><'col-xs-6'f><'col-xs-2'r><'#toolbar.col-xs-2'>>" +
+        //         "t" +
+        //         "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+        initComplete: function () {
+
+            // $("#toolbar").append('<button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Create Plan</button>');
+            // $("#datainit").on("click", initData);
+        },
+
+        buttons: [  //不起作用
+            'copy', 'excel', 'pdf'
+        ],
+
+        // sorting: [[4, "desc"]],
+        // 
+        // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        // "displayLength": 10
+    });
+
+
+    // datatable.on( 'user-select', function ( e, dt, type, cell, originalEvent ) {
+    //         if ( $(originalEvent.target).index() === 0 ) {
+    //             e.preventDefault();
+    //         }
+    //     } );
+
+    // $('#table_1 tbody').on( 'click', 'tr', function () {
+    //     $(this).toggleClass('selected');
+    // } );
+ 
+    // datatable.on( 'click', 'tr', function () {
+    //     $(this).toggleClass('selected');
+    // } );
+
+    $('#button').click( function () {
+        // console.log( datatable.rows('.selected').data() );
+    } );
+
+
+    // $('button').click(function () {
+    //     //单行删除
+    //     //Dtable.row('.selected').remove().draw(false);
+    //     //多行删除
+    //     Dtable.rows('.selected').remove().draw(false);
+    // });
+
+
+
+
+});
+
+
+$('#scrap').on('click',function(){
+    var val = $(this).prop("checked");
+
+
+var filteredData = datatable
+     .column( 21 )
+     .data()
+     .filter( function ( value, index ) {
+         return value !== '' ? true : false;
+     } );
+
+    console.log(filteredData)
+
+    datatable.draw();
+    // $.each(data,function(index,item){  
+    //     console.log(data[index])
+    // });
+    // datatable.column( 21 ).search( ' ' ).draw();
+})
+
+$('#testResult').on('click',function(){
+    if($(this).prop("checked") == true){
+        datatable.column( 23 ).visible( true );
+    }else{
+
+        datatable.column( 23 ).visible( false );
+    }
+
+})
+
+
+
+
+
+function mergeSubmit(){
+
+// console.log(datatable.rows( { selected: true } ).count())
+    
+    // var checkbox = $("input.checkchild:checked");
+    // var rowid = [];
+
+    // for(var i=0;i<checkbox.length;i++){
+    //     if(checkbox[i].checked){
+    //         rowid.push(checkbox[i].value);
+
+    //     }
+    // }
+    var rows = datatable.rows('.selected').data().length;
+    console.log(datatable.rows('.selected').data())
+    if(rows<2){
+        layer.alert('至少选择两个',{
+            title: '提示', //不显示标题
+        });
+
+    } else {
+
+        window.location.href = '../../pages/execute/consignerSheet.html';
+    }
+
+}
+
+
+// 调整表格宽度 解决datatable缩在一起
+// $('#detailModal').on('show.bs.modal', function (e) {
+//     setTimeout(
+//         function(){datatable2.columns.adjust().draw(); 
+//     }, 200); 
+  
+// })
+
+
+function testinfoshow(){
+
+    $('#testinfoModal').modal('show')
+
+}
+
+    $('#alert input[type="radio"]').click(function() {
+
+        if ($('#action3').is(':checked')) {
+            // $('#part1').slideDown();
+            $('#togglediv').slideDown().css('display','inline-block');
+
+        } else {
+            // $('#togglediv').slideUp();
+            $('#togglediv').slideUp();
+        }
+
+    })
+
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" class="form-control" value="" placeholder="1"></td><td>--</td><td><input type="text" class="form-control" value="" placeholder="53"></td><td><textarea name="" id="" cols="30" rows="2"></textarea></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><input type="text" class="form-control" value=""></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><i class="fa  fa-remove" onclick="deltr1(this)"></i></td></tr>'
+            );
+
+
+    })
+
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+
+
+    $(function() {
+
+        $('.datetime').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+        //Date range picker
+        $('#timeperiod').daterangepicker();
+
+    });
+</script>
+</body>
+
+</html>

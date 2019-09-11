@@ -1,0 +1,2127 @@
+    <style>
+        #toolbar .btn { margin-left: 10px;float: right; }
+        
+        .gc-column-header .gc-cell-border{border-bottom: none;}
+        /*.box-header{background: #f2f2f2;}*/
+
+        /*.dropdown-menu{left: -113px;}*/
+
+        .dropdown-menu.bottom-up{top:21px;bottom: auto;}
+
+        .gc-calc-cell, .gc-cell{overflow: inherit;}
+
+        /*.nav-tabs>li>a{color: #fff;}*/
+
+        .icon-link{padding: 13px 0;display: block;background: url(../../images/right.png) no-repeat 50% 50%;}
+
+        .modal-dialog{ width: 1000px; }
+
+        .gc-column-header-cell, .gc-corner-header-cell{background: #008ecf;/*background: rgb(56, 146, 211);*/color: #fff;/*font-size: 1.2rem;*/white-space: normal;text-align: center;word-break: break-word;}
+        
+        .gc-column-header{line-height: 20px;}
+        /*表格bug*/
+        .gc-inline-editor-container{height: 45px;line-height: 43px;background: transparent;color: transparent;}  
+
+        .align-left{text-align: center;}
+
+        .gc-calc-cell, .gc-cell{white-space: normal;word-break: break-all;}
+        
+        .btn-group .btn{margin-right: 5px;margin-top: 0px;margin-left: 0px;}
+        
+        .form-horizontal .control-label{text-align: left;}
+
+        #SpreadViews {
+            margin-bottom: 10px;
+        }
+
+        table#list th:last-child, table#list td:last-child {vertical-align: middle;}
+
+        /*.tab-content{padding: 10px;}*/
+
+        /*.box-header{background: #95a5a6;}
+
+        .btn-box-tool{color: #fff;}
+
+        .open .btn-box-tool, .btn-box-tool:hover{color: #fff;}*/
+
+        #list input, #list select {
+            display: block;
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        }
+        #list textarea{border: none;}
+        #list>tbody>tr>td{padding: 0px;}
+
+        #adjModal .form-control{margin-left: 15px;}
+
+        .table thead > tr > th {white-space: nowrap;text-align: center;}
+        /*表头颜色*/
+        /*table.dataTable thead > tr > th{background: #225ba1;color: #fff;}*/
+
+        table.dataTable thead .sorting:after{opacity: 1;}
+
+        table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after{opacity: 1;}
+
+        /*modal*/
+        #form_1 select, #form_1 input{
+            font-size: 14px;
+            font-weight: normal;
+            height: 34px;
+            padding: 6px 12px;
+            border-radius: 5px;
+            color: #333333;
+            background-color: white;
+            border: 1px solid #e5e5e5;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+        #form_1 input {width: 80px;}
+
+        #form_1 .control-label {width: 12%;margin-left: 15px;}
+
+        .addto {width: 100px;height: 34px;border-radius: 5px;display: inline-block;background: url(../../images/addto.png) no-repeat 50% #567f9f;margin-left: 15px;vertical-align: top;}
+
+
+        .gc-cell a {width: 100%;height: 100%;line-height: 27px;display: block;}
+
+        /*单元格背景色*/
+        .percent-complete-bar {
+            display: inline-block;
+            height: 6px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+        }
+
+        .bg-low {
+            background-color: #FE4A49;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        .bg-middle {
+            background-color: #FED766;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: #fff;
+
+        }
+
+        .bg-high {
+            background-color: #009FB7;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        .bg-closed {
+            background-color: #a3d979;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: #fff;
+        }
+
+        .bg-current {
+            background-color: #fbbc00;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            /*color: #fff;*/
+        }
+
+        [data-column="percentComplete"] {
+            text-align: left;
+        }
+
+
+        span.label{
+            background: #fff;
+            color: #333333;
+            display: block;
+            border: 1px solid #cecece;
+            border-radius: 0;
+            line-height: 25px;
+        }
+
+
+        #grid1 .gc-cell {
+            text-align: center;
+            vertical-align: middle;
+            /*display: table-cell;*/
+        }
+
+        .table thead tr th{font-size: 1rem;}
+
+        .gc-cell a {color: inherit;} /*单元格a字体颜色*/
+
+        .gc-calc-cell, .gc-cell {padding: 0;}
+    </style>
+
+    <!-- Main content -->
+    <section class="content">
+        <!--  SpreadJS-->
+            <div class="row">
+                <div class="col-md-12">
+
+                    <form class="form-horizontal" action="" method="post">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="">Product</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="ABS" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="">Family/Group</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="BK2C" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="">Year</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="2018" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="">Status</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="Active" type="text" name="" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Approval Status</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="Approved" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="">Location</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="Suzhou" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Effective Date</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="2018/03/22" type="text" name="" disabled>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Expire Date</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="2018/03/29" type="text" name="" disabled>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+              <!-- TABLE: LATEST ORDERS -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title"></h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+
+                    <form role="form" id="resetform">  <!-- 可放在box-body外 -->
+                        <!-- <div class="col-lg-12"> -->
+                            <div class="row">
+                                <div class="form-group col-xs-2">
+                                    <label for="">Family/Group</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled>-- All --</option>
+                                        <option value="1" selected>BK2A</option>
+                                        <option value="2">BK2C</option>
+                                        <option value="2">EPSc</option>
+                                        <option value="2">ESL3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Test Type</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled>-- All --</option>
+                                        <option value="1" selected>BK2A</option>
+                                        <option value="2">BK2C</option>
+                                        <option value="2">EPSc</option>
+                                        <option value="2">ESL3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Test Place</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled selected>-- All --</option>
+                                        <option value="1">Suzhou</option>
+                                        <option value="2">Wujing</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-xs-2">
+                                    <label for="">Reference PN</label>
+                                    <input class="form-control" placeholder="Reference PN" type="text" name="cvc">
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="" style="white-space: nowrap;">Sampling Type</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled selected>-- All --</option>
+                                        <option value="1">Q1</option>
+                                        <option value="2">Z1</option>
+                                        <option value="3" selected>Q2</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-xs-2">
+                                    <label for="">Location</label>
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled selected>-- All --</option>
+                                        <option value="1">Suzhou</option>
+                                        <option value="2">Wujin</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        <!-- </div> -->
+                    </form>
+
+                </div><!-- /.box-body -->
+                <div class="box-footer clearfix">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+
+                              <button type="reset" class="btn btn-default btn-flat" form="resetform"><i class="fa fa-refresh"></i> Reset</button>
+                              <button type="button" class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>    
+                            </div>
+
+                                <div class="col-xs-2">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" id="tstatus"> Test Status
+                                      </label>
+                                    </div>                    
+                                </div>
+
+                                <div class="col-xs-2">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox" id="testResult"> Test Result
+                                      </label>
+                                    </div>                 
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                </div><!-- /.box-footer -->
+              </div><!-- /.box -->
+
+
+
+            <div class="btnbox">
+                <ul>
+                    <!-- <li><a class="btn btn-block btn-primary search"><span class="glyphicon glyphicon-import"></span> Import</a></li>
+                    <li><a class="btn btn-block btn-primary search"><span class="glyphicon glyphicon-export"></span> Export</a></li> -->
+
+                    <li>
+                        <button class="btn btn-block btn-primary" type="button" onclick="compare();">
+                            <!-- <i class="fa fa-floppy-o"></i> -->
+                            Plan VS Actual PPM
+                        </button>                        
+                    </li>
+                    <li><a class="btn btn-block bg-green" id="sendback"><span class="glyphicon glyphicon-export"></span> Export</a></li>
+                    <li><a class="btn btn-block bg-green" id="reject"><span class="glyphicon glyphicon-import"></span> Import Ref.</a></li>
+                    <li><a class="btn btn-block btn-primary" id="history"><i class="fa fa-clock-o"></i> Adj.History</a></li>
+                    <li><a class="btn btn-block bg-green" id="btnAddNew"><i class="fa fa-plus"></i> Add</a></li>
+
+                </ul>   
+            </div>
+
+            <div class="clearfix"></div>
+            <div id="SpreadViews">
+                <div id="grid1" style="height:600px;outline:none" class="grid"></div>
+                <template id="rowTmpl" style="display: none" type="text/dataView-template">
+                <div style='height:100%;'>
+                    <!-- <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='id' data-taborder='0'></div> -->
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='Product' data-taborder='0'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='testtype' data-taborder='1'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='PN' data-taborder='2'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:50px;height:100px;text-align:center' data-column='reference' data-taborder='3'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:50px;height:100px;text-align:center' data-column='sc' data-taborder='4'></div>
+
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='Test Item' data-taborder='5'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='TestSpec' data-taborder='6'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='TestPlace' data-taborder='7'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='Frequency' data-taborder='8'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='Sampling Plan' data-taborder='9'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:80px;height:100px;text-align:center' data-column='Sampling Type' data-taborder='10'></div>
+                    <div class="gc-cell gc-cell-border" style='display:inline-block;vertical-align:top;width:50px;height:100px;text-align:center' data-column='PLN' data-taborder='11'></div>
+
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN1' data-taborder='12'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ1' data-taborder='13'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT1' data-taborder='14'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN2' data-taborder='15'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ2' data-taborder='16'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT2' data-taborder='17'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN3' data-taborder='18'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ3' data-taborder='19'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT3' data-taborder='20'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN4' data-taborder='21'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ4' data-taborder='22'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT4' data-taborder='23'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN5' data-taborder='24'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ5' data-taborder='25'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT5' data-taborder='26'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN6' data-taborder='27'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ6' data-taborder='28'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT6' data-taborder='29'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN7' data-taborder='30'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ7' data-taborder='31'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT7' data-taborder='32'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN8' data-taborder='33'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ8' data-taborder='34'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT8' data-taborder='35'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN9' data-taborder='36'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ9' data-taborder='37'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT9' data-taborder='38'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN10' data-taborder='39'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ10' data-taborder='40'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT10' data-taborder='41'></div>
+                    </div>
+
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN11' data-taborder='42'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ11' data-taborder='43'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT11' data-taborder='44'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN12' data-taborder='45'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ12' data-taborder='46'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT12' data-taborder='47'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN13' data-taborder='48'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ13' data-taborder='49'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT13' data-taborder='50'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN14' data-taborder='51'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ14' data-taborder='52'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT14' data-taborder='53'></div>
+                    </div>
+
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN15' data-taborder='54'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ15' data-taborder='55'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT15' data-taborder='56'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN16' data-taborder='57'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ16' data-taborder='58'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT16' data-taborder='59'></div>
+                    </div>
+
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN17' data-taborder='60'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ17' data-taborder='61'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT17' data-taborder='62'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN18' data-taborder='63'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ18' data-taborder='64'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT18' data-taborder='65'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN19' data-taborder='66'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ19' data-taborder='67'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT19' data-taborder='68'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN20' data-taborder='69'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ20' data-taborder='70'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT20' data-taborder='71'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN21' data-taborder='72'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ21' data-taborder='73'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT21' data-taborder='74'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN22' data-taborder='75'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ22' data-taborder='76'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT22' data-taborder='77'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN23' data-taborder='78'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ23' data-taborder='79'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT23' data-taborder='80'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN24' data-taborder='81'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ24' data-taborder='82'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT24' data-taborder='83'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN25' data-taborder='84'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ25' data-taborder='85'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT25' data-taborder='86'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN26' data-taborder='87'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ26' data-taborder='88'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT26' data-taborder='89'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN27' data-taborder='90'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ27' data-taborder='91'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT27' data-taborder='92'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN28' data-taborder='93'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ28' data-taborder='94'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT28' data-taborder='95'></div>
+                    </div>
+
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN29' data-taborder='96'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ29' data-taborder='97'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT29' data-taborder='98'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN30' data-taborder='99'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ30' data-taborder='100'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT30' data-taborder='101'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN31' data-taborder='102'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ31' data-taborder='103'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT31' data-taborder='104'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN32' data-taborder='105'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ32' data-taborder='106'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT32' data-taborder='107'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN33' data-taborder='108'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ33' data-taborder='109'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT33' data-taborder='110'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN34' data-taborder='111'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ34' data-taborder='112'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT34' data-taborder='113'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN35' data-taborder='114'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ35' data-taborder='115'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT35' data-taborder='116'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN35' data-taborder='117'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ35' data-taborder='118'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT35' data-taborder='119'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN36' data-taborder='120'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ36' data-taborder='121'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT36' data-taborder='122'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN37' data-taborder='123'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ37' data-taborder='124'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT37' data-taborder='125'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN38' data-taborder='126'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ38' data-taborder='127'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT38' data-taborder='128'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN39' data-taborder='129'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ39' data-taborder='130'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT39' data-taborder='131'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN40' data-taborder='132'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ40' data-taborder='133'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT40' data-taborder='134'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN41' data-taborder='135'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ41' data-taborder='136'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT41' data-taborder='137'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN42' data-taborder='138'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ42' data-taborder='139'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT42' data-taborder='140'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN43' data-taborder='141'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ43' data-taborder='142'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT43' data-taborder='143'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN44' data-taborder='144'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ44' data-taborder='145'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT44' data-taborder='146'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN45' data-taborder='147'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ45' data-taborder='148'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT45' data-taborder='149'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN46' data-taborder='150'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ46' data-taborder='151'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT46' data-taborder='152'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN47' data-taborder='153'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ47' data-taborder='154'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT47' data-taborder='155'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN48' data-taborder='156'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ48' data-taborder='157'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT48' data-taborder='158'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN49' data-taborder='159'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ49' data-taborder='160'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT49' data-taborder='161'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN50' data-taborder='162'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ50' data-taborder='163'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT50' data-taborder='164'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN51' data-taborder='165'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ51' data-taborder='166'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT51' data-taborder='167'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN52' data-taborder='168'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ52' data-taborder='169'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT52' data-taborder='170'></div>
+                    </div>
+                    <div style='display: inline-block;vertical-align:top;height:100%;line-height: 27px;' data-column-group>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='PLN53' data-taborder='171'></div>
+                        <div class="gc-cell gc-cell-border" style='height:34px;width:50px;' data-column='ADJ53' data-taborder='172'></div>
+                        <div class="gc-cell gc-cell-border" style='height:33px;width:50px;' data-column='ACT53' data-taborder='173'></div>
+                    </div>
+                </div>
+            </template>
+        </div>
+<!-- col-md-offset-3 --> 
+        <!-- <div class="row">
+            <div class="col-md-9">
+
+
+                <button id="comments" class="btn btn-flat green" type="button" onclick="comments();">
+                    <i class="fa fa-floppy-o"></i>
+                    Comments
+                </button>
+
+            </div>
+        </div> -->
+
+    </section><!-- /.content -->
+
+        <!-- ADJ（Modal） -->
+        <div class="modal fade" id="adjModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">ADJ</h4>
+                    </div>
+                    <div class="modal-body" style="padding: 15px 25px;">
+
+                    <form class="form-horizontal" id="form_1" method="post" style="white-space: nowrap;">
+                        <div class="form-group">
+                            <label for="" class="control-label">From Week</label>
+                            <select name="" id="">
+                                <option disabled selected>-- All --</option>
+                                <option value="L1">1</option>
+                                <option value="L2">2</option>
+                                <option value="L2">3</option>
+                                <option value="L2">4</option>
+                            </select>
+                            <label for="" class="control-label">EXE Qty</label>
+                            <input type="text" class="" id="" placeholder="" style="background: #c0edfe;">
+
+                        </div>
+
+                        <div class="form-group">
+                          <label for="" class="control-label">To Week</label>
+                            <select name="" id="">
+                                <option disabled selected>-- All --</option>
+                                <option value="L1">1</option>
+                                <option value="L2">2</option>
+                                <option value="L2">3</option>
+                                <option value="L2">4</option>
+                            </select>
+
+                            <label for="" class="control-label">EXE Qty</label>
+                            <input type="text" id="" placeholder="" style="background: #c0edfe;">
+
+                            <label for="" class="control-label">Comp.Qty</label>
+                            <input type="text" id=""  placeholder="" style="background: #c0edfe;">
+
+                            <label for="" class="control-label" style="background: url(../../images/to.png) no-repeat 95% 50%;width: 15%;">After adjusted</label>
+                                <input type="text" class="" id=""  placeholder="" style="background: #c0edfe;">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="control-label">Adjust Type</label>
+                            <input type="text" id="" placeholder="" style="width: 200px;">
+
+                            <label for="" class="control-label">Adjust Qty</label>
+                            <input type="text" id="" placeholder="" style="width: 150px;background: #f6fad3;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="control-label" style="vertical-align: top;">Adjust Reason</label>
+                            <textarea name="" id="" cols="30" rows="5" placeholder="Adjust Reason" style="background: #f6fad3;width: 83%;padding:10px 15px;"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="control-label">Notice to</label>
+                            <select name="" id="noticeTo" style="width: 180px;">
+                                <option disabled selected>-- All --</option>
+                                <option value="Xifan.XIE@cn.bosch.com">Xifan.XIE@cn.bosch.com</option>
+                                <option value="external.Chunhong.Lian@cn.bosch.com">external.Chunhong.Lian@cn.bosch.com</option>
+                            </select>
+                            <button type="button" class="addto" onclick="addEmail();"></button>
+
+                            <textarea name="" id="emailbox" cols="30" rows="5" placeholder="Email address" style="vertical-align: top;margin-left: 15px;background: #f6fad3;width: 50%;padding:10px 15px;"></textarea>
+
+                        </div>
+
+                    </form>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- ACT（Modal） -->
+        <div class="modal fade" id="actModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" style="width: 1200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <!-- <h4 class="modal-title" id="myModalLabel"></h4> -->
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="table_1" width="100%" cellspacing="0" style="table-layout: auto;">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Week<br>周别
+                                        </th>
+                                        <th>
+                                            Test Consignation Application Nr.<br>委托单编号
+                                        </th>
+                                        <th>
+                                            Request Status<br>委托单状态
+                                        </th>
+                                        <th>
+                                            Qty<br>委托数量
+                                        </th>
+                                        <th>
+                                            Plan Finished Date<br>计划完成日期
+                                        </th>
+
+                                        <th>
+                                            Act. Finished Date<br>实际完成日期
+                                        </th>                                          
+                                        <th>
+                                            Progress Status<br>进度状态
+                                        </th>                                            
+                                        <th>
+                                            Test Report Nr.<br>报告编号
+                                        </th>
+                                        <th>
+                                            Test Status<br>测试状态
+                                        </th>
+                                        <th>
+                                            Test Result<br>测试结果
+                                        </th>
+                                        <th>
+                                            Scrap Date<br>报废日期
+                                        </th>                                             
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- comment（Modal） -->
+        <div class="modal fade" id="commentModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" style="width: 1200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <!-- <h4 class="modal-title" id="myModalLabel"></h4> -->
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3 class="box-title">Comments</h3>
+                                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled></textarea>
+                            </div><!-- /.col -->
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- Adjhistory（Modal） -->
+        <div class="modal fade" id="historyModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" style="width: 1200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Adj History</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="table_2" width="100%" cellspacing="0" style="table-layout: auto;">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Product
+                                        </th>
+                                        <th>
+                                            Family/Group
+                                        </th>
+                                        <th>
+                                            Test Type
+                                        </th>
+                                        <th>
+                                            Adjust Type
+                                        </th>
+                                        <th>
+                                            Reason
+                                        </th>
+
+                                        <th>
+                                            Week
+                                        </th>                                          
+                                        <th>
+                                            Remark
+                                        </th>                                            
+                                        <th>
+                                            Created By
+                                        </th>
+                                        <th>
+                                            Created Date
+                                        </th>                                            
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- reference（Modal） -->
+        <div class="modal fade" id="referModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <!-- <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4> -->
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            
+                            <div class="col-md-12">
+                                <div style="margin-bottom: 10px;">
+                                    <a id="add" class="btn" style="background: #35aa47;color: #fff;"><i class="fa fa-plus "></i></a>
+                                    <a class="btn btn-primary"><i class="fa fa-download"></i></a>                                  
+                                </div>
+                                <table id="list" class="table table-hover table-bordered" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>From week</th>
+                                            <th width="5%"></th>
+                                            <th>To week</th>
+                                            <th>Desciption</th>
+                                            <th>Priority</th>
+                                            <th>Reference PN</th>
+                                            <th>Production Line</th>
+                                            <th width="10%">Action</th>
+                                        </tr>                                
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="text" value="" placeholder="1">
+                                            </td>
+                                            <td style="vertical-align:middle">--></td>
+                                            <td>
+                                                <input type="text" value="" placeholder="53">
+                                            </td>
+                                            <td>
+                                                <textarea name="" id="" cols="30"></textarea>
+                                            </td>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option disabled selected>-- All --</option>
+                                                    <option value="L1">High</option>
+                                                    <option value="L2">Medium</option>
+                                                    <option value="L2">Low</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" value="">
+                                            </td>                                               
+                                            <td>
+                                                <select name="" id="">
+                                                    <option disabled selected>-- All --</option>
+                                                    <option value="L1">ABS9M Line</option>
+                                                    <option value="L2">Dip Coating1</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-xs"><i class="fa fa-copy"></i></button>
+                                                <button type="button" class="btn btn-xs" onclick="deltr1(this)"><i class="fa fa-remove"></i></button>
+                                            </td>
+                                        </tr>                                
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+        <!-- Plan VS Actual PPM（Modal） -->
+        <div class="modal fade" id="compareModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" style="width: 1200px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <!-- <h4 class="modal-title" id="myModalLabel"></h4> -->
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">       
+                                <label class="col-md-1 control-label" for="" style="white-space: nowrap;">YTD Month</label>
+                                <div class="col-md-2">
+                                    <select name="" class="form-control" onchange="">
+                                        <option disabled="" selected="">-- All --</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="table_3" width="100%" cellspacing="0" style="table-layout: auto;">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Year Number
+                                        </th>
+                                        <th>
+                                            Product
+                                        </th>
+                                        <th>
+                                            Product Family/Group
+                                        </th>
+                                        <th>
+                                            Test Type
+                                        </th>
+                                        <th>
+                                            Planned Volume
+                                        </th>
+                                        <th>
+                                            Planned QZ Qty
+                                        </th>                                          
+                                        <th>
+                                            Planned PPM
+                                        </th>                                            
+                                        <th>
+                                            Target PPM
+                                        </th>
+                                        <th>
+                                            YTD volume
+                                        </th>
+                                        <th>
+                                            YTD ACT Qty
+                                        </th>
+                                        <th>
+                                            YTD PPM
+                                        </th>
+                                        <th>
+                                            Forecast PPM
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+
+<script type="text/javascript">
+
+var data = [{
+    "id": 1,
+    "Product": "BK2A",
+    "testtype": "Q+Z",
+    "PN": "0203214520",   //10位字符
+    "sc": "/",
+    "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling",
+    "TestSpec": "QZ spec in SAP",
+    "TestPlace": "AE/QMM1.9-CN",
+    "Frequency": "Monthly",    
+    "ProductName": "Chai",
+    "QuantityPerUnit": "10 boxes x 20 bags",
+    "UnitPrice": 18.0000,
+    "UnitsInStock": 39,
+    "UnitsOnOrder": 0,
+    "ReorderLevel": 10,
+    "Discontinued": false,
+    "Category": {
+        "CategoryId": 1,
+        "CategoryName": "Beverages",
+        "Description": "Soft drinks, coffees, teas, beers, and ales"
+    },
+    "week1": {
+        "PLN": {
+                "ctx": 10,
+                "current": false
+            },
+        "ADJ": {
+                "ctx": 6,
+                "current": false
+            },
+        "ACT": {
+                "ctx": 5,
+                "status": "Closed",
+                "current": false
+            }
+    },
+    "week6": {
+        "PLN": {
+                "ctx": 10,
+                "current": true
+            },
+        "ADJ": {
+                "ctx": 8,
+                "current": true
+            },
+        "ACT": {
+                "ctx": 2,
+                "status": "Closed",
+                "current": true
+            }
+    }
+
+
+}, {
+    "id": 2,
+    "Product": "BK2A",
+    "testtype": "Q+Z",
+    "PN": "0203214520",
+    "sc": "/",
+    "Test Item": "Z I-A: Vibration testZ I-B: Temperature",
+    "TestSpec": "QZ spec in SAP",
+    "TestPlace": "AE/QMM1.9-CN",
+    "Frequency": "Monthly",
+    "ProductName": "Chang",
+    "QuantityPerUnit": "24 - 12 oz bottles",
+    "UnitPrice": 19.0000,
+    "UnitsInStock": 17,
+    "UnitsOnOrder": 40,
+    "ReorderLevel": 25,
+    "Discontinued": false,
+    "Category": {
+        "CategoryId": 1,
+        "CategoryName": "Beverages",
+        "Description": "Soft drinks, coffees, teas, beers, and ales"
+    },
+    "week1": {
+        "PLN": {
+                "ctx": 10,
+                "current": false
+            },
+        "ADJ": {
+                "ctx": 6,
+                "current": false
+            },
+        "ACT": {
+                "ctx": 5,
+                "status": "OnTesting",
+                "current": false
+            }
+    },
+    "week6": {
+        "PLN": {
+                "ctx": 10,
+                "current": true
+            },
+        "ADJ": {
+                "ctx": 6,
+                "current": true
+            },
+        "ACT": {
+                "ctx": 5,
+                "status": "Closed",
+                "current": true
+            }
+    }
+
+}, {
+    "id": 3,
+    "Product": "BK2A",
+    "testtype": "Q+Z",
+    "PN": "0203214520",
+    "sc": "/",
+    "Test Item": "Z I-A: Vibration testZ I-B: Temperature",
+    "TestSpec": "QZ spec in SAP",
+    "TestPlace": "AE/QMM1.9-CN",
+    "Frequency": "Monthly", 
+    "ProductName": "Aniseed Syrup",
+    "QuantityPerUnit": "12 - 550 ml bottles",
+    "UnitPrice": 10.0000,
+    "UnitsInStock": 13,
+    "UnitsOnOrder": 70,
+    "ReorderLevel": 25,
+    "Discontinued": false,
+    "Category": {
+        "CategoryId": 2,
+        "CategoryName": "Condiments",
+        "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+    },
+    "week1": {
+        "PLN": {
+                "ctx": 10,
+                "current": false
+            },
+        "ADJ": {
+                "ctx": 6,
+                "current": false
+            },
+        "ACT": {
+                "ctx": 5,
+                "status": "Closed",
+                "current": false
+            }
+    },
+
+    "week6": {
+        "PLN": {
+                "ctx": 20,
+                "current": true
+            },
+        "ADJ": {
+                "ctx": 16,
+                "current": true
+            },
+        "ACT": {
+                "ctx": 18,
+                "status": "Closed",
+                "current": true
+            }
+    }
+
+}, {
+    "id": 4,
+    "Product": "BK2A",
+    "testtype": "Q+Z",
+    "PN": "0203214520",
+    "sc": "/",
+    "Test Item": "Z I-A: Vibration testZ I-B: Temperature",
+    "TestSpec": "QZ spec in SAP",
+    "TestPlace": "AE/QMM1.9-CN",
+    "Frequency": "Monthly",  
+    "ProductName": "Chef Anton's Cajun Seasoning",
+    "QuantityPerUnit": "48 - 6 oz jars",
+    "UnitPrice": 22.0000,
+    "UnitsInStock": 53,
+    "UnitsOnOrder": 0,
+    "ReorderLevel": 0,
+    "Discontinued": false,
+    "Category": {
+        "CategoryId": 2,
+        "CategoryName": "Condiments",
+        "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+    },
+    "week1": {
+        "PLN": {
+                "ctx": 10,
+                "current": false
+            },
+        "ADJ": {
+                "ctx": 6,
+                "current": false
+            },
+        "ACT": {
+                "ctx": 5,
+                "status": "Closed",
+                "current": false
+            }
+    },
+    "week6": {
+        "PLN": {
+                "ctx": 10,
+                "current": true
+            },
+        "ADJ": {
+                "ctx": 6,
+                "current": true
+            },
+        "ACT": {
+                "ctx": 5,
+                "status": "Closed",
+                "current": true
+            }
+    }
+
+
+}, {
+    "id": 5,
+    "Product": "BK2A",
+    "testtype": "Q+Z",
+    "PN": "0203214520",
+    "sc": "/",
+    "Test Item": "Z I-A: Vibration",
+    "TestSpec": "QZ spec in SAP",
+    "TestPlace": "AE/QMM1.9-CN",
+    "Frequency": "Monthly",
+    "ProductName": "Chef Anton's Gumbo Mix",
+    "QuantityPerUnit": "36 boxes",
+    "UnitPrice": 21.3500,
+    "UnitsInStock": 0,
+    "UnitsOnOrder": 0,
+    "ReorderLevel": 0,
+    "Discontinued": true,
+    "Category": {
+        "CategoryId": 2,
+        "CategoryName": "Condiments",
+        "Description": "Sweet and savory sauces, relishes, spreads, and seasonings"
+    },
+    "week1": {
+        "PLN": {
+                "ctx": 10,
+                "current": false
+            },
+        "ADJ": {
+                "ctx": 6,
+                "current": false
+            },
+        "ACT": {
+                "ctx": 5,
+                "status": "Closed",
+                "current": false
+            }
+    },
+    "week6": {
+        "PLN": {
+                "ctx": 12,
+                "current": true
+            },
+        "ADJ": {
+                "ctx": 9,
+                "current": true
+            },
+        "ACT": {
+                "ctx": 8,
+                "status": "OnTesting",
+                "current": true
+            }
+    }
+
+}];
+
+
+    var PAAColPresenter = '<span class="label label-default">PLN</span><span class="label label-default">ADJ</span><span class="label label-default">ACT</span>';
+
+        // var colFormatter = '<span>{{? it.discontinued}}✔{{??}}✖{{?}}</span>';
+        var columns = [
+        { id: 'Product', caption: 'Product Family/Group', dataField: 'Product', width: 120, pinned: 'left' , editor: productEditor},   //allowEditing: false不可编辑
+        { id: 'testtype', caption: 'Test Type', dataField: 'testtype', width: 80, pinned: 'left', editor: typeEditor}, 
+        { id: 'PN', caption: 'PN', dataField: 'PN', width: 100, pinned: 'left'},
+        { id: 'reference', caption: 'Reference', dataField: 'reference', width: 30, allowEditing: false, pinned: 'left', presenter: '<a class="icon-link" data-toggle="modal" data-target="#referModal"></a>'},
+        { id: 'sc', caption: 'S/C', dataField: 'sc', width: 30, pinned: 'left'},
+        { id: 'Test Item', caption: 'Test Item', dataField: 'Test Item', width: 100, pinned: 'left'},
+        { id: 'TestSpec', caption: 'Test Spec', dataField: 'TestSpec', width: 120, pinned: 'left'},
+        { id: 'TestPlace', caption: 'Test Place', dataField: 'TestPlace', width: 100, pinned: 'left'},
+        { id: 'Frequency', caption: 'Sampling Frequency', dataField: 'Frequency', width: 80, pinned: 'left'},
+        { id: 'Sampling Plan', caption: 'Sampling Plan', dataField: 'Sampling Plan', width: 80, pinned: 'left'},
+        { id: 'Sampling Type', caption: 'Sampling Type', dataField: 'Sampling Type', width: 80, pinned: 'left'},
+
+        {id: 'PLN',caption: '',dataField: 'PLN', allowEditing: false, width: 60,pinned: 'left',presenter: PAAColPresenter},    
+
+        {id: 'PLN1',caption: 'W01',dataField: 'week1.PLN.ctx'},
+        // {id: 'ADJ1',caption: '0101',dataField: 'week1.ADJ.ctx', cssClass: getAdjClass},
+        // {id: 'ACT1',caption: '0107',dataField: 'week1.ACT.ctx', cssClass: getColClass},
+        {id: 'ADJ1',caption: '0101',dataField: 'week1.ADJ', presenter: '<a data-toggle="modal" data-target="#adjModal">{{=it.ADJ1.ctx}}</a>', cssClass: getAdjClass},
+        {id: 'ACT1',caption: '0107',dataField: 'week1.ACT', presenter: '<a data-toggle="modal" data-target="#actModal">{{=it.ACT1.ctx}}</a>', cssClass: getColClass},
+        
+        {id: 'PLN2',caption: 'W02',dataField: 'week2.PLN'},
+        {id: 'ADJ2',caption: '0108',dataField: 'week2.ADJ'}, 
+        {id: 'ACT2',caption: '0114',dataField: 'week2.ACT'},
+
+        {id: 'PLN3',caption: 'W03',dataField: 'week3.PLN'},
+        {id: 'ADJ3',caption: '0115',dataField: 'week3.ADJ'}, 
+        {id: 'ACT3',caption: '0121',dataField: 'week3.ACT'},       
+            
+        {id: 'PLN4',caption: 'W04',dataField: 'week4.PLN'},
+        {id: 'ADJ4',caption: '0122',dataField: 'week4.ADJ'}, 
+        {id: 'ACT4',caption: '0128',dataField: 'week4.ACT'},            
+
+        {id: 'PLN5',caption: 'W05',dataField: 'week5.PLN'},
+        {id: 'ADJ5',caption: '0129',dataField: 'week5.ADJ'}, 
+        {id: 'ACT5',caption: '0204',dataField: 'week5.ACT'},           
+
+        {id: 'PLN6',caption: 'W06',dataField: 'week6.PLN', presenter: '<a data-toggle="modal" data-target="#adjModal">{{=it.PLN6.ctx}}</a>',cssClass: getPlnClass},
+        {id: 'ADJ6',caption: '0205',dataField: 'week6.ADJ', presenter: '<a data-toggle="modal" data-target="#adjModal">{{=it.ADJ6.ctx}}</a>', cssClass: getAdjClass}, 
+        {id: 'ACT6',caption: '0211',dataField: 'week6.ACT', presenter: '<a data-toggle="modal" data-target="#actModal">{{=it.ACT6.ctx}}</a>', cssClass: getColClass},
+
+        {id: 'PLN7',caption: 'W07',dataField: 'week7.PLN'},
+        {id: 'ADJ7',caption: '0212',dataField: 'week7.ADJ'}, 
+        {id: 'ACT7',caption: '0218',dataField: 'week7.ACT'},
+
+        {id: 'PLN8',caption: 'W08',dataField: 'week8.PLN'},
+        {id: 'ADJ8',caption: '0219',dataField: 'week8.ADJ'}, 
+        {id: 'ACT8',caption: '0225',dataField: 'week8.ACT'},
+
+        {id: 'PLN9',caption: 'W09',dataField: 'week9.PLN'},
+        {id: 'ADJ9',caption: '0226',dataField: 'week9.ADJ'},
+        {id: 'ACT9',caption: '0304',dataField: 'week9.ACT'},
+
+        {id: 'PLN10',caption: 'W10',dataField: 'week10.PLN'},
+        {id: 'ADJ10',caption: '0305',dataField: 'week10.ADJ'},
+        {id: 'ACT10',caption: '0311',dataField: 'week10.ACT'},
+
+        {id: 'PLN11',caption: 'W11',dataField: 'week11.PLN'},
+        {id: 'ADJ11',caption: '0312',dataField: 'week11.ADJ'},
+        {id: 'ACT11',caption: '0318',dataField: 'week11.ACT'},
+
+        {id: 'PLN12',caption: 'W12',dataField: 'week12.PLN'},
+        {id: 'ADJ12',caption: '0319',dataField: 'week12.ADJ'},
+        {id: 'ACT12',caption: '0325',dataField: 'week12.ACT'},
+
+        {id: 'PLN13',caption: 'W13',dataField: 'week13.PLN'},
+        {id: 'ADJ13',caption: '0326',dataField: 'week13.ADJ'},
+        {id: 'ACT13',caption: '0401',dataField: 'week13.ACT'},
+
+        {id: 'PLN14',caption: 'W14',dataField: 'week14.PLN'},
+        {id: 'ADJ14',caption: '0402',dataField: 'week14.ADJ'},
+        {id: 'ACT14',caption: '0408',dataField: 'week14.ACT'},
+
+        {id: 'PLN15',caption: 'W15',dataField: 'week15.PLN'},
+        {id: 'ADJ15',caption: '0409',dataField: 'week15.ADJ'},
+        {id: 'ACT15',caption: '0415',dataField: 'week15.ACT'},
+
+        {id: 'PLN16',caption: 'W16',dataField: 'week16.PLN'},
+        {id: 'ADJ16',caption: '0416',dataField: 'week16.ADJ'},
+        {id: 'ACT16',caption: '0422',dataField: 'week16.ACT'},
+
+        {id: 'PLN17',caption: 'W17',dataField: 'week17.PLN'},
+        {id: 'ADJ17',caption: '0423',dataField: 'week17.ADJ'},
+        {id: 'ACT17',caption: '0429',dataField: 'week17.ACT'},
+
+        {id: 'PLN18',caption: 'W18',dataField: 'week18.PLN'},
+        {id: 'ADJ18',caption: '0430',dataField: 'week18.ADJ'},
+        {id: 'ACT18',caption: '0506',dataField: 'week18.ACT'},
+
+        {id: 'PLN19',caption: 'W19',dataField: 'week19.PLN'},
+        {id: 'ADJ19',caption: '0507',dataField: 'week19.ADJ'},
+        {id: 'ACT19',caption: '0513',dataField: 'week19.ACT'},
+
+        {id: 'PLN20',caption: 'W20',dataField: 'week20.PLN'},
+        {id: 'ADJ20',caption: '0514',dataField: 'week20.ADJ'},
+        {id: 'ACT20',caption: '0520',dataField: 'week20.ACT'},
+
+        {id: 'PLN21',caption: 'W21',dataField: 'week21.PLN'},
+        {id: 'ADJ21',caption: '0521',dataField: 'week21.ADJ'},
+        {id: 'ACT21',caption: '0527',dataField: 'week21.ACT'},
+
+        {id: 'PLN22',caption: 'W22',dataField: 'week22.PLN'},
+        {id: 'ADJ22',caption: '0528',dataField: 'week22.ADJ'},
+        {id: 'ACT22',caption: '0603',dataField: 'week22.ACT'},
+
+        {id: 'PLN23',caption: 'W23',dataField: 'week23.PLN'},
+        {id: 'ADJ23',caption: '0604',dataField: 'week23.ADJ'},
+        {id: 'ACT23',caption: '0610',dataField: 'week23.ACT'},
+
+        {id: 'PLN23',caption: 'W23',dataField: 'week23.PLN'},
+        {id: 'ADJ23',caption: '0604',dataField: 'week23.ADJ'},
+        {id: 'ACT23',caption: '0610',dataField: 'week23.ACT'},
+
+        {id: 'PLN24',caption: 'W24',dataField: 'week24.PLN'},
+        {id: 'ADJ24',caption: '0611',dataField: 'week24.ADJ'},
+        {id: 'ACT24',caption: '0617',dataField: 'week24.ACT'},
+
+        {id: 'PLN25',caption: 'W25',dataField: 'week25.PLN'},
+        {id: 'ADJ25',caption: '0618',dataField: 'week25.ADJ'},
+        {id: 'ACT25',caption: '0624',dataField: 'week25.ACT'},
+
+        {id: 'PLN26',caption: 'W26',dataField: 'week26.PLN'},
+        {id: 'ADJ26',caption: '0625',dataField: 'week26.ADJ'},
+        {id: 'ACT26',caption: '0701',dataField: 'week26.ACT'},
+
+        {id: 'PLN27',caption: 'W27',dataField: 'week27.PLN'},
+        {id: 'ADJ27',caption: '0702',dataField: 'week27.ADJ'},
+        {id: 'ACT27',caption: '0708',dataField: 'week27.ACT'},
+
+        {id: 'PLN28',caption: 'W28',dataField: 'week28.PLN'},
+        {id: 'ADJ28',caption: '0709',dataField: 'week28.ADJ'},
+        {id: 'ACT28',caption: '0715',dataField: 'week28.ACT'},
+
+        {id: 'PLN29',caption: 'W29',dataField: 'week29.PLN'},
+        {id: 'ADJ29',caption: '0716',dataField: 'week29.ADJ'},
+        {id: 'ACT29',caption: '0722',dataField: 'week29.ACT'},
+
+        {id: 'PLN30',caption: 'W30',dataField: 'week30.PLN'},
+        {id: 'ADJ30',caption: '0723',dataField: 'week30.ADJ'},
+        {id: 'ACT30',caption: '0729',dataField: 'week30.ACT'},
+
+        {id: 'PLN31',caption: 'W31',dataField: 'week31.PLN'},
+        {id: 'ADJ31',caption: '0730',dataField: 'week31.ADJ'},
+        {id: 'ACT31',caption: '0805',dataField: 'week31.ACT'},
+
+        {id: 'PLN32',caption: 'W32',dataField: 'week32.PLN'},
+        {id: 'ADJ32',caption: '0806',dataField: 'week32.ADJ'},
+        {id: 'ACT32',caption: '0812',dataField: 'week32.ACT'},
+
+        {id: 'PLN33',caption: 'W33',dataField: 'week33.PLN'},
+        {id: 'ADJ33',caption: '0813',dataField: 'week33.ADJ'},
+        {id: 'ACT33',caption: '0819',dataField: 'week33.ACT'},
+
+        {id: 'PLN34',caption: 'W34',dataField: 'week34.PLN'},
+        {id: 'ADJ34',caption: '0820',dataField: 'week34.ADJ'},
+        {id: 'ACT34',caption: '0826',dataField: 'week34.ACT'},
+
+        {id: 'PLN35',caption: 'W35',dataField: 'week35.PLN'},
+        {id: 'ADJ35',caption: '0827',dataField: 'week35.ADJ'},
+        {id: 'ACT35',caption: '0902',dataField: 'week35.ACT'},
+
+        {id: 'PLN36',caption: 'W36',dataField: 'week36.PLN'},
+        {id: 'ADJ36',caption: '0903',dataField: 'week36.ADJ'},
+        {id: 'ACT36',caption: '0909',dataField: 'week36.ACT'},
+
+        {id: 'PLN37',caption: 'W37',dataField: 'week37.PLN'},
+        {id: 'ADJ37',caption: '0910',dataField: 'week37.ADJ'},
+        {id: 'ACT37',caption: '0916',dataField: 'week37.ACT'},
+
+        {id: 'PLN38',caption: 'W38',dataField: 'week38.PLN'},
+        {id: 'ADJ38',caption: '0917',dataField: 'week38.ADJ'},
+        {id: 'ACT38',caption: '0923',dataField: 'week38.ACT'},
+
+        {id: 'PLN39',caption: 'W39',dataField: 'week39.PLN'},
+        {id: 'ADJ39',caption: '0924',dataField: 'week39.ADJ'},
+        {id: 'ACT39',caption: '0930',dataField: 'week39.ACT'},
+
+        {id: 'PLN40',caption: 'W40',dataField: 'week40.PLN'},
+        {id: 'ADJ40',caption: '1001',dataField: 'week40.ADJ'},
+        {id: 'ACT40',caption: '1007',dataField: 'week40.ACT'},
+
+        {id: 'PLN41',caption: 'W41',dataField: 'week41.PLN'},
+        {id: 'ADJ41',caption: '1008',dataField: 'week41.ADJ'},
+        {id: 'ACT41',caption: '1014',dataField: 'week41.ACT'},
+
+        {id: 'PLN42',caption: 'W42',dataField: 'week42.PLN'},
+        {id: 'ADJ42',caption: '1015',dataField: 'week42.ADJ'},
+        {id: 'ACT42',caption: '1021',dataField: 'week42.ACT'},
+
+        {id: 'PLN43',caption: 'W43',dataField: 'week43.PLN'},
+        {id: 'ADJ43',caption: '1022',dataField: 'week43.ADJ'},
+        {id: 'ACT43',caption: '1028',dataField: 'week43.ACT'},
+
+        {id: 'PLN44',caption: 'W44',dataField: 'week44.PLN'},
+        {id: 'ADJ44',caption: '1029',dataField: 'week44.ADJ'},
+        {id: 'ACT44',caption: '1104',dataField: 'week44.ACT'},
+
+        {id: 'PLN45',caption: 'W45',dataField: 'week45.PLN'},
+        {id: 'ADJ45',caption: '1105',dataField: 'week45.ADJ'},
+        {id: 'ACT45',caption: '1111',dataField: 'week45.ACT'},
+
+        {id: 'PLN46',caption: 'W46',dataField: 'week46.PLN'},
+        {id: 'ADJ46',caption: '1112',dataField: 'week46.ADJ'},
+        {id: 'ACT46',caption: '1118',dataField: 'week46.ACT'},
+
+        {id: 'PLN47',caption: 'W47',dataField: 'week47.PLN'},
+        {id: 'ADJ47',caption: '1119',dataField: 'week47.ADJ'},
+        {id: 'ACT47',caption: '1125',dataField: 'week47.ACT'},
+
+        {id: 'PLN48',caption: 'W48',dataField: 'week48.PLN'},
+        {id: 'ADJ48',caption: '1126',dataField: 'week48.ADJ'},
+        {id: 'ACT48',caption: '1202',dataField: 'week48.ACT'},
+
+        {id: 'PLN49',caption: 'W49',dataField: 'week49.PLN'},
+        {id: 'ADJ49',caption: '1203',dataField: 'week49.ADJ'},
+        {id: 'ACT49',caption: '1209',dataField: 'week49.ACT'},
+
+        {id: 'PLN50',caption: 'W50',dataField: 'week50.PLN'},
+        {id: 'ADJ50',caption: '1210',dataField: 'week50.ADJ'},
+        {id: 'ACT50',caption: '1216',dataField: 'week50.ACT'},
+
+        {id: 'PLN51',caption: 'W51',dataField: 'week51.PLN'},
+        {id: 'ADJ51',caption: '1217',dataField: 'week51.ADJ'},
+        {id: 'ACT51',caption: '1223',dataField: 'week51.ACT'},
+
+        {id: 'PLN52',caption: 'W52',dataField: 'week52.PLN'},
+        {id: 'ADJ52',caption: '1224',dataField: 'week52.ADJ'},
+        {id: 'ACT52',caption: '1230',dataField: 'week52.ACT'},
+
+        {id: 'PLN53',caption: 'W53',dataField: 'week53.PLN'},
+        {id: 'ADJ53',caption: '1231',dataField: 'week53.ADJ'},
+        {id: 'ACT53',caption: '0106',dataField: 'week53.ACT'}
+    ];
+
+    function getColClass(args) {
+        var status = args.value.status;
+
+        if($('#tstatus').prop("checked")){
+
+            if(status == 'Closed'){
+                return 'bg-closed';
+            }else{
+
+                if(args.value.current == true){
+                    return 'bg-current';
+                }else{
+                    return 'bg-normal';    
+                }
+            }
+
+        }else{
+                if(args.value.current == true){
+                    return 'bg-current';
+                }else{
+                    return 'bg-normal';    
+                }
+        }
+    }
+
+    function getAdjClass(args) {
+
+        // console.log(args.value.current)
+        if(args.value.current == true){
+
+            return 'bg-current';
+
+        } 
+    }
+
+    function getPlnClass(args) {
+
+        // console.log(args.value.current)
+        if(args.value.current == true){
+
+            return 'bg-current';
+
+        } 
+    }
+
+
+var dataView;
+var indexArr = [1, 2, 3];
+function initdataView(){
+
+        dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), data, columns, new GC.Spread.Views.Plugins.GridLayout({
+            rowHeight: 100,
+            colHeaderHeight: 100,
+            rowTemplate: '#rowTmpl',
+            showRowHeader: false,  //左侧边栏
+            selectionMode: 'row',
+            editUnit: 'cell',
+            allowEditing: true,
+            // allowAutoAddRow: true,
+            autoAddRowPosition: 'bottom'
+        }));
+
+        dataView.editing.addHandler(function(sender, args) {
+
+            // console.log(args)
+            // console.log(args.isNewRow)
+
+            if (args.status === 'beforeStartEditing') {
+
+                if(args.isNewRow) {
+                    args.oldItem = {
+                        id: data.length,
+                        Product: 'ww',
+                        country: null,
+                        date: new Date(),
+                        amount: 0,
+                        active: false
+                    };    
+                }else{
+
+                    if (indexArr.indexOf(args.oldItem.id) != -1) {
+
+                        args.cancel = true;
+                    }
+
+                }
+            }
+
+            // if (args.status === 'beforeStartEditing' && indexArr.indexOf(args.oldItem.id) != -1) {
+
+            //     args.cancel = true;
+
+            // }
+            // if (args.status === 'endEditing' && args.isNewRow || args.status === 'cancelEditing') {
+
+            //     if (dataView.options.allowAutoAddRow) {
+            //         dataView.options.allowAutoAddRow = false;
+            //         dataView.invalidate();   //使无效 (rebuildDOMTree)Invalidates the entire control.saveBatchEdit(callback)setSelections(sourceRow, columns)Set selection.
+            //     }
+            // }
+
+        });
+
+        $('#btnAddNew').on('click', function() {
+
+            var isEditing = !!document.getElementById(dataView.uid + '-inline-editing-area');
+            if (!isEditing) {
+                dataView.options.allowAutoAddRow = true;
+                dataView.invalidate();
+                var autoRow = $('#' + dataView.uid + '-autorow');
+                // autoRow.find('[data-action="save"]').css('display', 'inline-block');
+                // autoRow.find('[data-action="cancel"]').css('display', 'inline-block');
+                // autoRow.find('[data-action="edit"]').css('display', 'none');
+                // autoRow.find('[data-action="delete"]').css('display', 'none');
+                dataView.startEditing(0);
+            }
+        });
+
+        //focus data.view by default
+        // document.querySelector('#grid1').focus();    //大坑 表格会始终显示在当前视角 会滑到底部
+
+}
+
+
+function productEditor(options) {
+    this.options = options;
+}
+
+productEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['ABS', 'AS', 'BE', 'CC-DA', 'CM', 'DCU', 'EC', 'ED'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="product form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.product = container.querySelector("select.product");
+        // this.focus();
+    },
+
+    focus: function() {
+        this.product.focus();
+    },
+
+    serialize: function() {
+
+        return this.product.value;
+    }
+};
+
+function typeEditor(options) {
+    this.options = options;
+}
+
+typeEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['Q', 'Q+Z'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="type form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.type = container.querySelector("select.type");
+        // this.focus();
+    },
+
+    focus: function() {
+        this.type.focus();
+    },
+
+    serialize: function() {
+
+        return this.type.value;
+    }
+};
+
+
+$(document).ready(function() {
+
+    initdataView();
+
+});
+
+
+
+$('.sidebar-toggle').on('click', function(){
+
+    setTimeout(function(){
+        if (dataView) {
+            dataView.destroy();
+        }
+
+        initdataView();
+
+    }, 300 )
+});  
+
+
+
+var datatable;
+$(function () {
+
+    var data1 = [
+        {
+            "id": "1",
+            "week": "12",
+            "testNo": "AE/QMM8.1-REQ201803-298",
+            "requestStatus": "Received",
+            "Qty": "40",
+            "plandate": "5/14/2018",
+            "actdate": "",
+            "progressStatus": "Ongoing",
+            "reportNo": "AE/QMM8.1-REQ201803-298",
+            "teststatus": "Ontesting",
+            "result": "",
+            "scrapdate": "5/14/2019"
+        }, {
+
+            "id": "2",
+            "week": "13",
+            "testNo": "AE/QMM8.1-REQ201803-299",
+            "requestStatus": "Received",
+            "Qty": "40",
+            "plandate": "5/14/2018",
+            "actdate": "",
+            "progressStatus": "Ongoing",
+            "reportNo": "AE/QMM8.1-REQ201803-298",
+            "teststatus": "Ontesting",
+            "result": "",
+            "scrapdate": ""
+        }
+
+    ];
+
+
+    datatable = $('#table_1').DataTable({
+            "paging": false, // 禁止分页
+            "bInfo" : false,
+            "lengthChange": false,//是否允许用户自定义显示数量
+            "autoWidth": true,//自动宽度
+            "deferRender": true, // 延迟渲染，加速界面加载.
+            "searching": false,
+            "processing": true,
+            'ordering':false,
+            //"serverSide": true,
+            "data": data1,
+            // "responsive": true,
+
+            "columns": [
+                {
+                    data: 'week',
+                },
+                {
+                    data: 'testNo',
+
+                },
+                {
+                    data: 'requestStatus',
+
+                },
+                {
+                    data: 'Qty',
+                },
+                {
+                    data: 'plandate',
+                },
+
+                {
+                    data: 'actdate',
+                    render: function (data, type, row) {
+                        return data ? data.replace(/\n/g, '<br>') : '';
+                    }
+                },
+                {
+                    data: 'progressStatus',
+                    render: function (data, type, row) {
+                        return !data ? 'New' : data;
+                    }
+                },
+                {
+                    data: 'reportNo',
+                    render: function (data, type, row) {
+                        return !data ? 'New' : data;
+                    }
+                },
+                {
+                    data: 'teststatus'
+                },
+                {
+                    data: 'result'
+                },
+                {
+                    data: 'scrapdate'
+                }
+            ],
+            "columnDefs": [
+                // {
+                //     orderable: false,
+
+                //     targets: 0 },
+                // {
+                //     orderable: false,
+
+                //     targets: 1 }
+            ],//第一列与第二列禁止排序
+
+            // "dom": "<'row'<'col-xs-2'l><'col-xs-6'f><'col-xs-2'r><'#toolbar.col-xs-2'>>" +
+            //         "t" +
+            //         "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+            // initComplete: function () {
+            //     // $("#toolbar").append('<button id="datainit" type="button" class="btn btn-primary btn-sm">增加基础数据</button>&nbsp');
+            //     $("#toolbar").append('<button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Create Plan</button>');
+            //     // $("#datainit").on("click", initData);
+            // },
+            "buttons": [
+                'copy', 'excel', 'pdf'
+            ],
+
+            "sorting": [[4, "desc"]],
+            // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            // "displayLength": 10
+        });
+
+
+});
+
+// 添加邮箱
+var email = [];
+function addEmail(){
+
+    if(typeof($('#noticeTo option:selected').attr('value')) == 'undefined'){
+        layer.alert('请选择通知人员')
+    }else{
+        $.inArray($('#noticeTo option:selected').attr('value'),email) === -1 ?  email.push($('#noticeTo option:selected').attr('value')) : layer.alert('已添加，请勿重复添加')
+    }
+  var str='';
+    email.forEach(function (value) {   
+        str += value+';';
+    });
+
+    $('#emailbox').val(str);
+}
+
+$('#tstatus').on('click',function(){
+
+    if (dataView) {
+        dataView.destroy();
+    }
+
+    initdataView();
+
+})
+
+
+
+    var datatable2;
+
+    $('#history').on('click',function(){
+        $('#historyModal').modal('show');
+
+        var data2 = [
+            {
+                "id": "1",
+                "product": "CC-DA",
+                "group": "USS4",
+                "testType": "Q1",
+                "adjType": "Postpone(*)",
+                "reason": "no planing",
+                "week": "7",
+                "remark": "Qty adjusted from 1 to 8",
+                "creatby": "Allen",
+                "creatdate": "2018/03/29"
+            }, {
+                "id": "2",
+                "product": "CC-DA",
+                "group": "USS4",
+                "testType": "Q1",
+                "adjType": "Postpone(*)",
+                "reason": "no planing",
+                "week": "7",
+                "remark": "Qty adjusted from 1 to 8",
+                "creatby": "Allen",
+                "creatdate": "2018/03/29"
+            }
+        ];
+
+        if (datatable2) {
+            datatable2.destroy();
+        }
+
+        datatable2 = $('#table_2').DataTable({
+
+            lengthChange: false,//是否允许用户自定义显示数量
+            autoWidth: true,//自动宽度
+            deferRender: true, // 延迟渲染，加速界面加载.
+            searching: false,
+            // processing: true,
+            ordering: false,
+            info: false,
+            data: data2,
+            columns: [
+                {
+                    data: 'product'
+                },
+                {
+                    data: 'group',
+                    render: function (data, type, row) {
+                        return data;
+                    }
+                },
+                { data: 'testType' },
+                { data: 'adjType' },
+                { data: 'reason' },
+                { data: 'week' },
+                { data: 'remark' },
+                { data: 'creatby' },
+                { data: 'creatdate' }
+
+            ],
+            // dom:            "Bfrtip",
+            // scrollY:        false,
+            // scrollX:        true,
+            // scrollCollapse: true,
+            paging:         false
+            
+        });
+
+    })
+
+    var datatable3;
+    function compare() {
+
+        $('#compareModal').modal('show');
+
+        var data3 = [
+            {
+                "id": "1",
+                "year": "2018",
+                "product": "CC-DA",
+                "group": "USS4",
+                "testType": "Q",
+                "plannedVolume": "Postpone(*)",
+                "plannedQty": "3730",
+                "plannedPPM": "118.47",
+                "targetPPM": "100.0",
+                "YTDvolume": "7849943",
+                "ACTQty": "715",
+                "ytdPPM": "91.08",
+                "forecastPPM": "114.33"
+            }, {
+                "id": "2",
+                "year": "2018",
+                "product": "CC-DA",
+                "group": "USS4",
+                "testType": "Z",
+                "plannedVolume": "Postpone(*)",
+                "plannedQty": "3950",
+                "plannedPPM": "125.46",
+                "targetPPM": "100.0",
+                "YTDvolume": "7849943",
+                "ACTQty": "715",
+                "ytdPPM": "91.08",
+                "forecastPPM": "121.34"
+            }
+        ];
+
+        if (datatable3) {
+            datatable3.destroy();
+        }
+
+        datatable3 = $('#table_3').DataTable({
+
+            lengthChange: false,//是否允许用户自定义显示数量
+            autoWidth: true,//自动宽度
+            deferRender: true, // 延迟渲染，加速界面加载.
+            searching: false,
+            // processing: true,
+            ordering: false,
+            info: false,
+            paging: false,
+            data: data3,
+           // "ajax": {
+           //     "url": "../data.json",
+           //     //"dataSrc": "data",//默认为data
+           //     "type": "post",
+           //     "error":function(){alert("服务器未正常响应，请重试");}
+           // },
+            columns: [
+                {
+                    data: 'year'
+                },
+                {
+                    data: 'product'
+                },
+                {
+                    data: 'group',
+                    render: function (data, type, row) {
+                        return data;
+                    }
+                },
+                { data: 'testType' },
+                { data: 'plannedVolume' },
+                { data: 'plannedQty' },
+                { data: 'plannedPPM' },
+                { data: 'targetPPM' },
+                { data: 'YTDvolume' },
+                { data: 'ACTQty' },
+                { data: 'ytdPPM' },
+                { data: 'forecastPPM' }
+
+            ]
+            
+        });
+
+
+    }
+
+
+    function comments() {
+
+        $('#commentModal').modal('show')
+
+    }
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" value="" placeholder="1"></td><td style="vertical-align:middle">--></td><td><input type="text" value="" placeholder="53"></td><td><textarea name="" id="" cols="30"></textarea></td><td><select name="" id=""><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><input type="text" value=""></td><td><select name="" id=""><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><button type="button" class="btn btn-xs"><i class="fa fa-copy"></i></button><button type="button" class="btn btn-xs" onclick="deltr1(this)"><i class="fa fa-remove"></i></button></td></tr>'
+            );
+
+    })
+    // })
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+    
+
+    </script>

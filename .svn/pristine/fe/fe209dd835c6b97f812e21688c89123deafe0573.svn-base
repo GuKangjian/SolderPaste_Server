@@ -1,0 +1,79 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Solder_Request_WinFrm
+{
+    /// <summary>
+    /// 备份类
+    /// </summary>
+    public class RequestBackUp
+    {
+        public string LineNo { get; set; }
+
+        public string Path { get; set; }
+
+        public RequestBackUp(string _lineNo, string _path)
+        {
+            LineNo = _lineNo;
+            Path = _path;
+        }
+
+        public void ExeBackUp()
+        {
+            DirectoryInfo dic = new DirectoryInfo(Path);
+            FileInfo[] arrFi = dic.GetFiles("*.*");//获取指定目录下所有文件
+            if (arrFi.Length > 0)
+            {
+                for (int i = 0; i < arrFi.Length; i++)
+                {
+                    string newFile = Path + "\\" + arrFi[i];
+                    if (arrFi[i].Name.Contains("Request"))//解析
+                    {
+                        string fileTime = arrFi[i].LastWriteTime.ToString();//时间
+
+                        ReadXMLToDB.ReadRequestXMLToDB(newFile, fileTime, LineNo);//解析内容
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 执行读取已经可以访问的地址下面的最新一笔报文信息
+        /// </summary>
+        public void ExeLastestXML()
+        {
+            DirectoryInfo dic = new DirectoryInfo(Path);
+            FileInfo[] arrFi = dic.GetFiles("*.*");//获取指定目录下所有文件
+            SortAsFileLastWriteTime(ref arrFi);//所有文件通过创建时间排序
+            string fileTime = string.Empty;
+            string newFile = string.Empty;
+            if (arrFi.Length > 0)
+            {
+                for (int i = 0; i < arrFi.Length; i++)
+                {
+                    newFile = Path + "\\" + arrFi[i];
+                    if (arrFi[i].Name.IndexOf("Request") > -1)
+                    {
+                        fileTime = arrFi[i].LastWriteTime.ToString();
+                        break;
+                    }
+                }
+            }
+            ReadXMLToDB.ReadRequestXMLToDB(newFile, fileTime, LineNo);
+        }
+
+        /// <summary>
+        /// Sort By LastWriteTime
+        /// </summary>
+        /// <param name="arrFi"></param>
+        private static void SortAsFileLastWriteTime(ref FileInfo[] arrFi)
+        {
+            Array.Sort(arrFi, delegate (FileInfo x, FileInfo y) { return x.LastWriteTime.CompareTo(y.LastWriteTime); });
+        }
+
+    }
+}

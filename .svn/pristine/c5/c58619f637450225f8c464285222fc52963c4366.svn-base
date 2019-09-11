@@ -1,0 +1,1069 @@
+<style>
+
+    table.dataTable tbody td.select-checkbox, table.dataTable tbody th.select-checkbox {padding: 16px;}
+    table.dataTable tbody td.select-checkbox:before, table.dataTable tbody td.select-checkbox:after, table.dataTable tbody th.select-checkbox:before, table.dataTable tbody th.select-checkbox:after {top: 50%;}
+
+    .icon-link{padding: 13px 13px;display: inline-block;background: url(../../images/right.png) no-repeat 50% 50%;}
+
+    .table-toolbar{text-align: right}
+
+    #togglediv {display: none;}
+
+    /*table*/
+    table.dataTable tbody tr {
+        background-color: #ffffff;
+    }
+    /*table.dataTable tbody th, table.dataTable tbody td {
+        padding: 8px 10px;
+    }    */
+
+    table.dataTable {
+         margin-top: 0px !important; 
+         margin-bottom: 0px !important; 
+         max-width: none !important; 
+         border-collapse: separate !important; 
+    }
+
+    .table-bordered>thead>tr>td, .table-bordered>thead>tr>th { border-bottom-width: 1px;border: 1px solid #ddd;}
+    /*table end*/
+
+    /*.table-responsive{overflow: hidden;}*/
+    #table_1 td {
+        display: table-cell;
+        vertical-align: middle;
+        /*word-break: break-word;*/
+        text-align: center;
+    }
+    .table thead tr th{text-align: center;}
+
+    /*表头颜色*/
+    table#table_1.dataTable thead > tr > th{background: #153B63;color: #fff;}
+
+    table#table_1.dataTable thead .sorting:after{opacity: 1;}
+
+    table#table_1.dataTable thead .sorting:after, table#table_1.dataTable thead .sorting_asc:after, table#table_1.dataTable thead .sorting_desc:after{opacity: 1;}
+
+</style>
+
+    <!-- Main content -->
+    <section class="content">
+
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title"></h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+              </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+
+                <div class="row">
+                    <form id="searchform">
+                    <div class="form-group col-lg-12">
+                        <div class="row">
+                            
+                            <div class="form-group col-xs-2">
+                                <label for="">Product</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled="">-- All --</option>
+                                    <option value="1">ABS</option>
+                                    <option value="2">AS</option>
+                                    <option value="3">BE</option>
+                                    <option value="4">CC-DA</option>
+                                    <option value="5">CM-DCU</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Product Group</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled="">-- All --</option>
+                                    <option value="1">BK2A</option>
+                                    <option value="2">BK2C</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Customer</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="form-group col-xs-2">
+                                <label for="">PN</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Location</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled="">-- All --</option>
+                                    <option value="1">Suzhou</option>
+                                    <option value="2">Wujing</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Test Type</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled="">-- All --</option>
+                                    <option value="1">Z1</option>
+                                    <option value="2">Q2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <div class="row">
+                            
+                            <div class="form-group col-xs-2">
+                                <label for="">Year/Week</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled="">-- All --</option>
+                                    <option value="1">2016</option>
+                                    <option value="2">2017</option>
+                                    <option value="3">2018</option>
+                                    <option value="4">2019</option>
+                                    <option value="5">2020</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-3">
+                                <label for="">From Date</label>
+                                <div class="input-group date datetime">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-xs-1">
+                                <label for="">Week</label>
+                                <span class="form-control">13</span>
+                            </div>
+
+                            <div class="form-group col-xs-1">
+                                <label for=""></label>
+                                <div>~</div>
+                            </div>
+
+                            <div class="form-group col-xs-3">
+                                <label for="">To Date</label>
+                                <div class="input-group date datetime">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-xs-1">
+                                <label for="">Week</label>
+                                <span class="form-control">15</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-lg-12">
+                        <div class="row">
+                            <div class="form-group col-xs-2">
+                                <label for="">Test Consignation Nr.</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Consignation Status</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled="">-- All --</option>
+                                    <option value="1">Received</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Test Status</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled="">-- All --</option>
+                                    <option value="1">OnTesting</option>
+                                    <option value="2">TestDone</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-xs-2">
+                                <label for="">DMC</label>
+                                <input type="text" class="form-control" value="0110G">
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">PPM</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled="">-- All --</option>
+                                    <option value="1">In PPM</option>
+                                    <option value="2">Not In PPM</option>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+                    </form>
+                </div>
+
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <button class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>
+                                <button class="btn btn-default btn-flat"><span class="glyphicon glyphicon-export"></span> Export Report</button>
+                            </div>
+                            <!-- <div class="col-xs-2">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox"> In PPM
+                                  </label>
+                                </div>                   
+                            </div> -->
+                            <div class="col-xs-2">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" id="scrap"> Scrapped
+                                  </label>
+                                </div>                    
+                            </div>
+                            <div class="col-xs-2">
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" id="testResult"> Show Test Result
+                                  </label>
+                                </div>                 
+                            </div>
+
+                        </div>
+                    </div>
+              <!-- <a class="btn btn-sm btn-default btn-flat pull-left">Reset <i class="fa fa-refresh"></i></a>
+              <a class="btn btn-sm btn-info btn-flat pull-left">Query <span class="glyphicon glyphicon-search"></span></a> -->
+
+            </div><!-- /.box-footer -->
+          </div><!-- /.box -->
+
+        <!-- BEGIN PAGE CONTENT-->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                <!-- END EXAMPLE TABLE PORTLET-->
+                <div class="portlet box"> <!-- grey-cascade -->
+                    <!-- <div class="portlet-title">
+                        <div class="caption">
+                            <i class="fa fa-lightbulb-o"></i> Pending My Activity
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="collapse">
+                            </a>
+                        </div>
+                    </div> -->
+                    <div class="portlet-body">
+                        <!-- <div id="toolbar"></div> -->
+                        <div class="table-toolbar">
+
+                            <!-- <div class="btn-group">
+                                <a class="btn green btn-sm" id="button" onclick="mergeSubmit();"><i class="fa fa-plus"></i> New</a>
+                            </div> -->
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="table_1" width="100%" cellspacing="0" style="table-layout: auto;">
+                                <thead>
+                                    <tr style="white-space: nowrap;">
+                                        <th>
+                                            序号
+                                        </th> 
+                                        <th>
+                                            Week<br>周别
+                                        </th>                                
+                                        <th>
+                                            Sampling Date<br>抽样日期
+                                        </th>
+                                        <th>
+                                            Customer<br>客户
+                                        </th>
+                                        <th>
+                                            Product<br>产品
+                                        </th>
+                                        <th>
+                                            Family/Group<br>家族
+                                        </th>
+                                        <th>
+                                            Reference<br>PN
+                                        </th>                                           
+                                        <th>
+                                            Part No/Line<br>产品型号/线别
+                                        </th>                                            
+                                        <th>
+                                            DMC<br>序列号
+                                        </th>
+                                        <th>
+                                            Test Type<br>测试类型
+                                        </th>
+                                        <th>
+                                            Test Item<br>测试项目
+                                        </th>
+                                        <th style="background: #999999;color: #333;">
+                                            Quantity<br>数量
+                                        </th>
+                                        <th style="background: #999999;color: #333;">
+                                            Test Consigner<br>送样人
+                                        </th>
+                                        <th style="background: #999999;color: #333;">
+                                            Test Consignation Application Nr.<br>委托单编号
+                                        </th>
+                                        <th style="background: #FFFF66;color: #333;">
+                                            Request Status<br>委托单状态
+                                        </th>
+                                        <th style="background: #6699CC;color: #333;">
+                                            Plan Finished Date<br>计划完成日期
+                                        </th>  
+                                        <th style="background: #6699CC;color: #333;">
+                                            Act. Finished Date<br>实际完成日期
+                                        </th>
+                                        <th style="background: #FFFF66;color: #333;">
+                                            Progress Status<br>进度状态
+                                        </th>
+                                        <th style="background: #6699CC;color: #333;">
+                                            Test Report Nr.<br>报告编号
+                                        </th>
+                                        <th style="background: #FFFF66;color: #333;">
+                                            Test Status<br>测试状态
+                                        </th>
+                                        <th>
+                                            In PPM
+                                        </th>
+                                        <th>
+                                            Expect Scrap Date<br>计划报废日期
+                                        </th>
+                                        <th style="color: #FF9900;">
+                                            Actual Scrap Date<br>实际报废日期
+                                        </th>
+                                        <th style="color: #FF9900;">
+                                            8D Report
+                                        </th>
+                                        <th style="color: #FF9900;">
+                                            Remark<br>备注
+                                        </th>
+                                        <th>
+                                            Test Result<br>测试结果
+                                        </th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT-->
+
+    </section><!-- /.content -->
+
+    <!-- Alert（Modal） -->
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Alert status</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form role="form">            
+                        <!-- type -->
+                        <div class="form-group">
+                            <label for="">Type:</label>
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="type" id="optionsRadios1" value="option1">
+                                  1,no production
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="type" id="optionsRadios2" value="option2">
+                                  2,no planning
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="type" id="optionsRadios3" value="option3">
+                                  3,not produced QZ parts
+                                </label>
+                              </div>
+                        </div>
+
+                        <!-- action -->
+                        <div class="form-group" id="alert">
+                            <label for="">Alert action:</label>
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="action" id="action1" value="option1">
+                                  move to next week
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="action" id="action2" value="option2">
+                                  cancel
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="action" id="action3" value="option3">
+                                  pending confirm
+                                </label>
+                                <div id="togglediv" style="">
+                                    <label class="control-label">inform QMM engineer</label>
+                                      <select class="form-control" style="width: 250px;display: inline-block;">
+                                        <option>option 1</option>
+                                        <option selected>ATTD</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>                                            
+                                </div>
+
+                              </div>
+                        </div>
+
+                        <!-- <div class="form-group">
+                          <label class="control-label">inform QMM engineer</label>
+                              <select class="form-control" style="width: 250px;">
+                                <option>option 1</option>
+                                <option selected>ATTD</option>
+                                <option>option 3</option>
+                                <option>option 4</option>
+                                <option>option 5</option>
+                              </select>
+                        </div> -->
+                        <div class="form-group">
+                          <label class="control-label">Inspector Comment：</label>
+                              <textarea class="form-control" name="" id="" cols="30" rows="3" style="width: 72%"></textarea>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- Test information（Modal） -->
+    <div class="modal fade" id="testinfoModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" style="width: 1000px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Test Information 测试信息</h4>
+                </div>
+                <div class="modal-body">
+                <!-- <div class="row"> -->
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="" class="col-sm-2 control-label">Test Type 测试类型</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" placeholder="Z" disabled>
+                            </div>
+                            <label for="" class="col-sm-2 control-label">Test Place 测试地点</label>
+                              <div class="col-sm-4">
+                                <input type="text" class="form-control" id="" placeholder="AE/QMM8.1-CN" disabled>
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">Test Spec 测试规格</label>
+                          <div class="col-sm-10">
+                              <textarea class="form-control" rows="3" placeholder="QZ PV in BOM" disabled></textarea>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-sm-2 control-label">Test Item 测试项目</label>
+                          <div class="col-sm-10">
+                              <textarea class="form-control" rows="3" placeholder="Z test" disabled></textarea>
+                          </div>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Submit</button> -->
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- Reference（Modal） -->
+    <div class="modal fade" id="refModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" style="width: 800px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">reference</h4>
+                </div>
+                <div class="modal-body">
+                    
+                    <table class="table table-bordered table-hover" cellpadding="0" cellspacing="0" width="100%">
+                        <tbody>
+                            <tr>
+                                <th>Description</th>
+                                <th>Reference P/N</th>
+                                <th>Production Line</th>
+                                <th>priority</th>
+                            </tr>
+                            <tr>
+                                <td>SGM</td>
+                                <td>XXXX</td>
+                                <td>10</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>ADJ</td>
+                                <td>XXXX</td>
+                                <td>10</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr>
+                                <td>COM</td>
+                                <td>Fetchback</td>
+                                <td>5</td>
+                                <td>Low</td>
+                            </tr>
+                            <tr>
+                                <td>ACT</td>
+                                <td>Assigned</td>
+                                <td>3</td>
+                                <td>Low</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                    <button type="button" class="btn btn-primary">确 定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+<script type="text/javascript">
+
+var datatable;
+
+$(function () {
+
+    var data1 = [
+        {
+            "id": "1",
+            "week": "18",
+            "samplingdate": "2018/03/30",
+            "customer": "NON",
+            "product": "CC-DA",
+            "family": "USS4",
+            "PN": "USS4.0",
+            "noLine": "0263023633",
+            "DMC": "0112G",
+            "testtype": "Q1",
+            "quantity": "10",
+            "consigner": "Alen",
+            "consignationNr": "AE/QMM8.1-REQ201803-376",
+            "requeststatus": "Received",
+            "planfinish": "2018/04/06",
+            "actfinish": "2018/04/08",
+            "progress": "Ongoing",
+            "reportNr": "AE/QMM8.1-A201804-020",
+            "teststatus": "OnTesting",
+            "PPM": 'N',
+            "ExpectScrapdate": "2018-05-01",
+            "actScrapdate": "",
+            "8D": "AE/QMM8.1-A201804-020",
+            "remark": "remark",
+            "testItem": "1.2 Temperature Cycles(passive)",
+            "testResult": "通过"
+        }, {
+            "id": "2",
+            "week": "18",
+            "samplingdate": "2018/03/30",
+            "customer": "NON",
+            "product": "CC-DA",
+            "family": "USS4",
+            "PN": "USS4.5",
+            "noLine": "0263023633",
+            "DMC": "0112G",
+            "testtype": "Q2",
+            "quantity": "10",
+            "consigner": "Alen",
+            "consignationNr": "AE/QMM8.1-REQ201803-376",
+            "requeststatus": "Received",
+            "planfinish": "2018/04/06",
+            "actfinish": "2018/04/08",
+            "progress": "Ongoing",
+            "reportNr": "AE/QMM8.1-A201804-020",
+            "teststatus": "TestDone",
+            "PPM": 'Y',
+            "ExpectScrapdate": "2018/05/01",
+            "actScrapdate": "2018-04-29",
+            "8D": "AE/QMM8.1-A201804-020",
+            "remark": "remark",
+            "testItem": "1.2 Temperature Cycles(passive)",
+            "testResult": "不通过"
+        }, {
+            "id": "3",
+            "week": "18",
+            "samplingdate": "2018/03/30",
+            "customer": "NON",
+            "product": "CC-DA",
+            "family": "USS4",
+            "PN": "USS4.0",
+            "noLine": "0263023633",
+            "DMC": "0112G",
+            "testtype": "Z1",
+            "quantity": "10",
+            "consigner": "Alen",
+            "consignationNr": "AE/QMM8.1-REQ201803-376",
+            "requeststatus": "Received",
+            "planfinish": "2018/04/06",
+            "actfinish": "",
+            "progress": "Closed(Delay)",
+            "reportNr": "AE/QMM8.1-A201804-020",
+            "teststatus": "OnTesting",
+            "PPM": 'Y',
+            "ExpectScrapdate": "2018/05/01",
+            "actScrapdate": "2018-05-01",
+            "8D": "AE/QMM8.1-A201804-020",
+            "remark": "1.2 Visual inspection 1.3 Tightness test",
+            "testItem": "1.2 Temperature Cycles(passive)",
+            "testResult": "通过"
+        }
+
+    ];
+
+    if (datatable) {
+         //datatable.fnClearTable();    //清空数据
+         //datatable.fnDestroy();         //销毁datatable
+        //datatable.destory();
+        }
+    datatable = $('#table_1').DataTable({//在获取datatable的对象时，datatable的大小写字母要区分开，不然会报错：
+        lengthChange: false,//是否允许用户自定义显示数量
+        autoWidth: true,//自动宽度
+        deferRender: true, // 延迟渲染，加速界面加载.
+        // searching: false,
+        processing: true,
+        //"serverSide": true,
+        data: data1,
+        // select: {
+        //     style: 'multi'
+        // },
+        // select: {
+        //     style:    'multi',
+        //     selector: 'td:first-child'
+        // },
+        // select: true,
+        // "responsive": true,
+
+        // "ajax": {
+        //     type:"GET",
+        //     url:"../data.json",
+        //     // data: ajaxPara,
+        //     //async: true, //是否为异步请求，ture为异步请求，false为同步请求 
+        //     dataType: "json",
+        //     // success: function(res) {
+        //     //     console.log(res.data)
+        //     //     // data: res.data
+        //     //     // console.log(result.dataSource)
+        //     //     // currentPageDataSource = result.dataSource;
+        //     //     // itemsTotalCount = result.dataSource;
+        //     //     // params.success(currentPageDataSource, itemsTotalCount);
+        //     // },
+        //     // error:function(XMLHttpRequest, textStatus, errorThrown){  
+        //     //     alert(XMLHttpRequest.status);  
+        //     //     alert(XMLHttpRequest.readyState);  
+        //     //     alert(textStatus);  
+        //     // }  
+
+        //     data: function (d) {
+        //     }
+        // },
+        columns: [
+            {
+                data: 'id',visible: false
+            },
+            {
+                data: 'week'
+            },
+            {
+                data: 'samplingdate'
+            },
+            {
+                data: 'customer',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="color:#333;display: inline-block;margin-bottom:10px;">'+ data +'</label>' + '<br>' + 'GM/SGM';
+                }
+            },
+            {
+                data: 'product',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="color:#333;display: inline-block;margin-bottom:10px;">'+ data +'</label>';
+                }
+            },
+            {
+                data: 'family'
+            },
+            {
+                data: 'PN',
+                render: function (data, type, row) {
+                    return data;
+                }
+            },
+            {
+                data: 'noLine',
+                render: function (data, type, row) {
+                    return data +':' + 'FALine7';
+                }
+            },
+            {
+                data: 'DMC',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="color:#333;padding-left: 15px;padding-right: 15px;display: inline-block;margin-bottom:10px;">'+ data +'</label>' + '<br>' + '0100G';
+                }
+            },
+            {
+                data: 'testtype'
+            },
+            {
+                data: 'testItem'
+            },
+            {
+                data: 'quantity'
+            },
+            {
+                data: 'consigner'
+            },            
+            {
+                data: 'consignationNr',
+                render: function (data, type, row) {
+                    return '<a style="text-decoration: underline;">'+ data +'</a>';
+                }
+            },
+            {
+                data: 'requeststatus',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="background:#c0edfe;color:#333;padding-left: 15px;padding-right: 15px;display: inline-block;margin-bottom:10px;" onclick="testinfoshow();">'+ data +'</label>';
+                }
+            },
+
+            {
+                data: 'planfinish'
+            },            
+            {
+                data: 'actfinish'
+            },
+            {
+                data: 'progress',
+                render: function (data, type, row) {
+                    return '<label class="label label-xs" for="" style="background:#c0edfe;color:#333;padding-left: 15px;padding-right: 15px;display: inline-block;margin-bottom:10px;" onclick="testinfoshow();">'+ data +'</label>';
+                }
+            },
+            {
+                data: 'reportNr',
+                render: function (data, type, row) {
+                    return '<a style="text-decoration: underline;white-space: nowrap;">'+ data +'</a>';
+                }
+            }, 
+            {
+                data: 'teststatus'
+            },
+            {
+                data: 'PPM',
+                // render: function (data, type, row) {
+                //     if(data == true){
+                //         return '<input type="checkbox" checked />';
+                //     }else{
+                //         return '<input type="checkbox" />';
+                //     }
+                // }
+
+            },
+            {
+                data: 'ExpectScrapdate'
+            },            
+            {
+                data: 'actScrapdate',
+
+                render: function (data, type, row) {
+                    return '<input type="date" value="'+ data +'">';
+                }
+
+            },
+            {
+                data: '8D',
+                render: function (data, type, row) {
+                    return '<a style="text-decoration: underline;">'+ data +'</a>';
+                }
+            },
+
+            {
+                data: 'remark',
+                // render: function (data, type, row) {
+                //     if(data == true){
+                //         return '<input type="checkbox" checked />';
+                //     }else{
+                //         return '<input type="checkbox" />';
+                //     }
+                // }
+            },
+        
+            {
+                data: 'testResult',visible: false
+            }
+
+            // {
+            //     data: 'Actions',
+            //     render: function (data, type, row) {
+            //         // if (row.visible) {
+            //             var ret = '<div class="btn-group">';
+            //             ret += '<button type="button" class="btn btn-xs blue dropdown-toggle" data-toggle="dropdown">Actions <i class="fa fa-angle-down"></i></button>';
+            //             ret += '<ul class="dropdown-menu bottom-up" role="menu">';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Overview/' + data + '"><i class="fa fa-eye"></i> Overview</a></li>';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Export/' + data + '"><i class="fa fa-file-pdf-o"></i> Export to PDF</a></li>';
+            //             ret += '<li><a href="/eWorkflow/EForm/FormRequest/Copy/' + data + '"><i class="fa fa-copy"></i> Copy</a></li>';
+            //             if (row.CanEdit || row.CanApprove) {
+            //                 ret += '<li class="divider"></li><li><li><a href="/eWorkflow/EForm/FormRequest/Edit/' + data + '"><i class="fa fa-edit"></i> Edit</a></li>';
+            //             }
+            //             if (row.CanDelete && !row.WasFinished) {
+            //                 ret += '<li class="divider"></li><li><a href="javascript:;" onclick="TableManaged.remove(\'' + data + '\')"><i class="fa fa-times"></i> Delete</a></li>';
+            //             }
+            //             ret += '</ul>';
+            //             ret += '</div>'
+
+            //             return ret;
+            //         // } else {
+            //         //     return "";
+            //         // }
+            //     },
+            //     "sortable": false
+            // }
+        ],
+        columnDefs: [
+
+            // {
+            //     orderable: false,
+            //     className: 'select-checkbox',
+            //     targets:   0
+            // },
+            {
+                orderable: false,
+                targets:   24
+            },
+            {
+                orderable: false,
+
+                targets: 10 }
+            // {
+            //     orderable: false,
+
+            //     targets: 1 }
+        ],//第一列与第二列禁止排序
+        dom: 'Bfrtip',  //Buttons用字符 B代表
+        // "dom": "<'row'<'col-xs-2'l><'col-xs-6'f><'col-xs-2'r><'#toolbar.col-xs-2'>>" +
+        //         "t" +
+        //         "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+        initComplete: function () {
+
+            // $("#toolbar").append('<button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Create Plan</button>');
+            // $("#datainit").on("click", initData);
+        },
+
+        buttons: [  //不起作用
+            'copy', 'excel', 'pdf'
+        ],
+
+        // sorting: [[4, "desc"]],
+        // 
+        // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+        // "displayLength": 10
+    });
+
+
+    // datatable.on( 'user-select', function ( e, dt, type, cell, originalEvent ) {
+    //         if ( $(originalEvent.target).index() === 0 ) {
+    //             e.preventDefault();
+    //         }
+    //     } );
+
+    // $('#table_1 tbody').on( 'click', 'tr', function () {
+    //     $(this).toggleClass('selected');
+    // } );
+ 
+    // datatable.on( 'click', 'tr', function () {
+    //     $(this).toggleClass('selected');
+    // } );
+
+    $('#button').click( function () {
+        // console.log( datatable.rows('.selected').data() );
+    } );
+
+
+    // $('button').click(function () {
+    //     //单行删除
+    //     //Dtable.row('.selected').remove().draw(false);
+    //     //多行删除
+    //     Dtable.rows('.selected').remove().draw(false);
+    // });
+
+
+
+
+});
+
+
+$('#scrap').on('click',function(){
+    var val = $(this).prop("checked");
+
+
+var filteredData = datatable
+     .column( 21 )
+     .data()
+     .filter( function ( value, index ) {
+         return value !== '' ? true : false;
+     } );
+
+    console.log(filteredData)
+
+    datatable.draw();
+    // $.each(data,function(index,item){  
+    //     console.log(data[index])
+    // });
+    // datatable.column( 21 ).search( ' ' ).draw();
+})
+
+$('#testResult').on('click',function(){
+    if($(this).prop("checked") == true){
+        datatable.column( 23 ).visible( true );
+    }else{
+
+        datatable.column( 23 ).visible( false );
+    }
+
+})
+
+
+
+
+
+function mergeSubmit(){
+
+// console.log(datatable.rows( { selected: true } ).count())
+    
+    // var checkbox = $("input.checkchild:checked");
+    // var rowid = [];
+
+    // for(var i=0;i<checkbox.length;i++){
+    //     if(checkbox[i].checked){
+    //         rowid.push(checkbox[i].value);
+
+    //     }
+    // }
+    var rows = datatable.rows('.selected').data().length;
+    console.log(datatable.rows('.selected').data())
+    if(rows<2){
+        layer.alert('至少选择两个',{
+            title: '提示', //不显示标题
+        });
+
+    } else {
+
+        window.location.href = '../../pages/execute/consignerSheet.html';
+    }
+
+}
+
+
+// 调整表格宽度 解决datatable缩在一起
+// $('#detailModal').on('show.bs.modal', function (e) {
+//     setTimeout(
+//         function(){datatable2.columns.adjust().draw(); 
+//     }, 200); 
+  
+// })
+
+
+function testinfoshow(){
+
+    $('#testinfoModal').modal('show')
+
+}
+
+    $('#alert input[type="radio"]').click(function() {
+
+        if ($('#action3').is(':checked')) {
+            // $('#part1').slideDown();
+            $('#togglediv').slideDown().css('display','inline-block');
+
+        } else {
+            // $('#togglediv').slideUp();
+            $('#togglediv').slideUp();
+        }
+
+    })
+
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" class="form-control" value="" placeholder="1"></td><td>--</td><td><input type="text" class="form-control" value="" placeholder="53"></td><td><textarea name="" id="" cols="30" rows="2"></textarea></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><input type="text" class="form-control" value=""></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><i class="fa  fa-remove" onclick="deltr1(this)"></i></td></tr>'
+            );
+
+
+    })
+
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+
+
+    $(function() {
+
+        $('.datetime').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+        //Date range picker
+        $('#timeperiod').daterangepicker();
+
+    });
+</script>

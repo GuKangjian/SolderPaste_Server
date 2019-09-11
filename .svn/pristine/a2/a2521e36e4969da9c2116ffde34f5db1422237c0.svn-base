@@ -1,0 +1,1236 @@
+    <style>
+
+        .icon-link{padding: 13px 0;display: block;background: url(../../images/right.png) no-repeat 50% 50%;}
+        
+        .modal-dialog{ width: 1000px; }
+
+        .gc-column-header-cell, .gc-corner-header-cell{background: #337ab7;/*background: rgb(56, 146, 211);*/color: #fff;/*font-size: 1.2rem;*/white-space: normal;text-align: center;word-break: break-word;}
+        
+        .gc-column-header{line-height: 20px;}
+        /*表格bug*/
+        .gc-inline-editor-container{height: 45px;line-height: 43px;background: transparent;color: transparent;}
+
+        .form-horizontal .control-label{text-align: left;}
+
+        #SpreadViews {
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+    <!-- Main content -->
+    <section class="content">
+
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title"></h3>
+              <div class="box-tools pull-right">
+                <!-- <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button> -->
+              </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+
+                <!-- <div class="row">
+                    <div class="col-md-12"> -->
+
+                        <form class="form-horizontal" action="" method="post">
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="">Product</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" placeholder="ABS" type="text" name="" disabled>
+                                </div>
+                                <label class="col-md-1 control-label" for="">Family/Group</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" placeholder="BK2C" type="text" name="" disabled>
+                                </div>
+                                <label class="col-md-1 control-label" for="">Year</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" placeholder="2018" type="text" name="" disabled>
+                                </div>
+                                <label class="col-md-1 control-label" for="">Status</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" placeholder="Active" type="text" name="" disabled>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Approval Status</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" placeholder="Approved" type="text" name="" disabled>
+                                </div>
+                                <label class="col-md-1 control-label" for="">Location</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" placeholder="Suzhou" type="text" name="" disabled>
+                                </div>
+                                <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Effective Date</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" placeholder="2018/03/22" type="text" name="" disabled>
+                                </div>
+
+                                <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Expire Date</label>
+                                <div class="col-md-2">
+                                    <input class="form-control" placeholder="2018/03/29" type="text" name="" disabled>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    <!-- </div>
+                </div> -->
+
+            </div><!-- /.box-body -->
+
+          </div><!-- /.box -->
+
+
+          <!-- TABLE: LATEST ORDERS -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title"></h3>
+              <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <!-- <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+              </div>
+            </div><!-- /.box-header -->
+            <div class="box-body">
+
+                <form role="form" id="resetform">
+                    <!-- <div class="col-lg-12"> -->
+                        <div class="row">
+                            <form class="">
+                            <div class="form-group col-xs-2">
+                                <label for="">Family/Group</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled>-- All --</option>
+                                    <option value="1" selected>BK2A</option>
+                                    <option value="2">BK2C</option>
+                                    <option value="2">EPSc</option>
+                                    <option value="2">ESL3</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Test Type</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled>-- All --</option>
+                                    <option value="1" selected>BK2A</option>
+                                    <option value="2">BK2C</option>
+                                    <option value="2">EPSc</option>
+                                    <option value="2">ESL3</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Test Place</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">Suzhou</option>
+                                    <option value="2">Wujing</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Reference PN</label>
+                                <input class="form-control" placeholder="Reference PN" type="text" name="cvc">
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="" style="white-space: nowrap;">Sampling Type</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">Q1</option>
+                                    <option value="2">Z1</option>
+                                    <option value="3" selected>Q2</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-2">
+                                <label for="">Location</label>
+                                <select name="" class="form-control" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">Suzhou</option>
+                                    <option value="2">Wujin</option>
+                                </select>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </form>
+
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+              <button type="reset" class="btn btn-default btn-flat" form="resetform"><i class="fa fa-refresh"></i> Reset</button>
+              <button type="button" class="btn btn-info btn-flat"><span class="glyphicon glyphicon-search"></span> Query</button>
+
+              <!-- <a class="btn btn-sm btn-default btn-flat pull-left">Reset <i class="fa fa-refresh"></i></a>
+              <a class="btn btn-sm btn-info btn-flat pull-left">Query <span class="glyphicon glyphicon-search"></span></a> -->
+
+            </div><!-- /.box-footer -->
+          </div><!-- /.box -->
+
+        <div class="hor-menu hor-menu-light hidden-sm hidden-xs" style="float: right;margin-bottom: 15px;">
+            <ul class="nav navbar-nav">
+                <li style="margin-right: 10px;"><a class="btn bg-green btn-flat" data-toggle="modal" data-target="#createplan"><i class="fa fa-plus"></i> Create Plan</a></li>
+                <li class="classic-menu-dropdown active">
+                    <a id="btnAddNew" class="btn bg-green btn-flat" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-export"></span> Export</i></a>
+
+                        <ul class="dropdown-menu pull-left" style="left: -64px;">
+                            <li >
+                                <a href="../../pages/overview/myqzplan.html">
+                                    <i class="fa fa-file-pdf-o"></i>
+                                    Export PDF
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="../../pages/overview/myqzplan.html">
+                                    <i class="fa fa-file-excel-o"></i>
+                                    Export Excel
+                                </a>
+                            </li>
+                        </ul>
+
+                </li>
+            </ul>   
+        </div>
+
+<!--         <div class="btnbox">
+            <ul class="nav nav-tabs">
+                <li><a class="btn bg-green btn-flat" data-toggle="modal" data-target="#createplan"><i class="fa fa-plus"></i> Create Plan</a></li>
+                <li class="classic-menu-dropdown active">
+                    <a id="btnAddNew" class="btn bg-green btn-flat" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-export"></span> Export</i></a>
+
+                        <ul class="dropdown-menu pull-left">
+                            <li >
+                                <a href="../../pages/overview/myqzplan.html">
+                                    <i class="fa fa-file-pdf-o"></i>
+                                    Export PDF
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="../../pages/overview/myqzplan.html">
+                                    <i class="fa fa-file-excel-o"></i>
+                                    Export Excel
+                                </a>
+                            </li>
+                        </ul>
+
+                </li>
+            </ul>   
+        </div> -->
+
+        <div class="clearfix"></div>
+        <div id="SpreadViews">
+            <!-- SpreadJS -->
+
+            <div id="grid1" style="height:500px;outline:none"></div>
+            <div id="page-nav" class="container"></div>
+            
+            <div style="display: none;">
+                <span id="loadFailed"><%= loadFailed %></span>
+                <span id="addFailed"><%= addFailed %></span>
+                <span id="deleteFailed"><%= deleteFailed %></span>
+                <span id="updateFailed"><%= updateFailed %></span>
+                <span id="addNew">Create Plan</span>
+            </div>
+
+        </div>
+        <!-- BEGIN HORIZANTAL MENU -->
+        <!-- DOC: Remove "hor-menu-light" class to have a horizontal menu with theme background instead of white background -->
+        <!-- DOC: This is desktop version of the horizontal menu. The mobile version is defined(duplicated) in the responsive menu below along with sidebar menu. So the horizontal menu has 2 seperate versions -->
+
+        <div class="hor-menu hor-menu-light hidden-sm hidden-xs" style="margin-bottom: 15px;display: inline-block;width: 100%;">
+            <ul class="nav navbar-nav" style="background-color: #238BC2;width: 100%;color: #fff;">
+                <!-- <li >
+                    <a href="/eWorkflow/">
+                        <i class="fa fa-home"></i>
+                        <span class="title">Home</span>
+                    </a>
+                </li> -->
+                <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the horizontal opening on mouse hover -->
+                        <li class="classic-menu-dropdown">
+                            <a data-toggle="dropdown" href="javascript:;">
+                                    <i class="fa fa-cog"></i>
+                                <span class="title">Working Instruction</span>
+                                    <i class="fa fa-angle-down"></i>
+                                                            </a>
+                            <ul class="dropdown-menu pull-left" style="top: -63px;">
+                                        <li >
+                                            <a href="/eWorkflow/DocLib/DocumentRequest/Add">
+                                                    <i class="fa fa-angle-double-right"></i>
+                                                AS_EPSc_Plan_2017_1
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="/eWorkflow/DocLib/DocumentRequest">
+                                                    <i class="fa fa-angle-double-right"></i>
+                                                AS_BK2A_Plan_2017_2
+                                            </a>
+                                        </li>
+                            </ul>
+                        </li>
+                        <li class="classic-menu-dropdown">
+                            <a href="javascript:;" data-toggle="modal" data-target="#history">
+                                    <i class="fa fa-tasks"></i>
+                                <span class="title">Change Records</span>
+                                    <i class="fa fa-angle-down"></i>
+                                                            </a>
+                            <!-- <ul class="dropdown-menu pull-left">
+                                        <li >
+                                            <a href="/eWorkflow/EForm/Home/Dashboard">
+                                                    <i class="fa fa-home"></i>
+                                                Dashboard
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="/eWorkflow/EForm/Form">
+                                                    <i class="fa fa-folder"></i>
+                                                Form List
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="/eWorkflow/EForm/FormRequest">
+                                                    <i class="fa fa-folder"></i>
+                                                Form Request
+                                            </a>
+                                        </li>
+                                        <li >
+                                            <a href="/eWorkflow/EForm/UserSettings">
+                                                    <i class="fa fa-cogs"></i>
+                                                Settings
+                                            </a>
+                                        </li>
+                            </ul> -->
+                        </li>
+                        <li class="classic-menu-dropdown active">
+                            <a href="javascript:;" data-toggle="modal" data-target="#workflow">
+                                    <i class="fa fa-table"></i>
+                                <span class="title">Approval History</span>
+                                    <i class="fa fa-angle-down"></i>
+                                                                    <span class="selected"></span>
+                            </a>
+                            <!-- <ul class="dropdown-menu pull-left">
+                                        <li >
+                                            <a href="/eWorkflow/EForm/MetaDataTable">
+                                                    <i class="fa fa-folder"></i>
+                                                Meta Data
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="/eWorkflow/EForm/FormBuild">
+                                                    <i class="fa fa-folder"></i>
+                                                Form List
+                                            </a>
+                                        </li>
+                            </ul> -->
+                        </li>
+            </ul>
+        </div>
+        <!-- END HORIZANTAL MENU -->
+
+        <!-- PPM -->
+        <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Plan PPM</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_3" width="100%" cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Test Type
+                                    </th>
+                                    <th>
+                                        Product Family/Group
+                                    </th>
+                                    <th>
+                                        Target PPM
+                                    </th>
+                                    <th>
+                                        Planned Volume
+                                    </th>
+                                    <th>
+                                        Planned QZ Qty
+                                    </th> 
+                                    <th>
+                                        Planned PPM
+                                    </th>
+                                    <th>
+                                        Remark
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div>
+
+        <!-- comments -->
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="box-title">Comments</h3>
+                <textarea name="" id="" cols="30" rows="10" class="form-control" disabled></textarea>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+
+
+    </section><!-- /.content -->
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <!-- <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4> -->
+                </div>
+                <div class="modal-body">
+                    
+                        <!-- <form class="form-horizontal" action="" method="post"> -->
+                        <div class="col-md-12">
+                            <table id="list" class="table table-hover table-bordered" border="0" cellpadding="0" cellspacing="0" width="60%" align="center">
+                                <thead>
+                                <tr>
+                                    <th>From week</th>
+                                    <th width="10"></th>
+                                    <th>To week</th>
+                                    <th>Desciption</th>
+                                    <th>Priority</th>
+                                    <th>Reference PN</th>
+                                    <th>Production Line</th>
+                                    <!-- <td width="10%">Action</td> -->
+                                </tr>                                                
+
+                                </thead>
+
+                                <tbody>
+                                    <tr align="center">
+                                        <td>1</td>
+                                        <td>--</td>
+                                        <td>2</td>
+                                        <td>DesciptionDesciptionDesciptionDesciption</td>                           
+                                        <td>High</td>
+                                        <td>278005674324356</td>
+                                        <td>ABS9M Line</td>
+                                    </tr>              
+                                </tbody>
+                            </table>
+                            <!-- table -->
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确 定</button>
+                    <!-- <button type="button" class="btn btn-primary">确 定</button> -->
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!--New Plan Modal -->
+    <div class="modal fade" id="createplan" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">New Plan</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" action="" method="post">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="">Applicant</label>
+                            <div class="col-md-4">
+                                <select name="" class="form-control normal" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">ABS</option>
+                                    <option value="2">AS</option>
+                                    <option value="3">BE</option>
+                                    <option value="4">CC-DA</option>
+                                    <option value="5">CM-DCU</option>
+                                </select>
+                            </div>
+                            <label class="col-md-2 control-label" for="">Dept.</label>
+                            <div class="col-md-4">
+                                <select name="" class="form-control normal" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">ABS</option>
+                                    <option value="2">AS</option>
+                                    <option value="3">BE</option>
+                                    <option value="4">CC-DA</option>
+                                    <option value="5">CM-DCU</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="">Product</label>
+                            <div class="col-md-4">
+                                <select name="" class="form-control normal" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">ABS</option>
+                                    <option value="2">AS</option>
+                                    <option value="3">BE</option>
+                                    <option value="4">CC-DA</option>
+                                    <option value="5">CM-DCU</option>
+                                </select>
+                            </div>
+                            <label class="col-md-2 control-label" for="">Family/Group</label>
+                            <div class="col-md-4">
+                                <select name="" class="form-control normal" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">BK2A</option>
+                                    <option value="2">BK2C</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="">Year</label>
+                            <div class="col-md-4">
+                                <select name="" class="form-control normal" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">2015</option>
+                                    <option value="2">2016</option>
+                                    <option value="3">2017</option>
+                                    <option value="4">2018</option>
+                                    <option value="5">2019</option>
+                                    <option value="5">2020</option>
+                                </select>
+                            </div>
+                            <label class="col-md-2 control-label" for="">Location</label>
+                            <div class="col-md-4">
+                                <select name="" class="form-control normal" onchange="">
+                                    <option disabled>-- All --</option>
+                                    <option value="1">Suzhou</option>
+                                    <option value="2">Wujin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="">Type</label>
+                            <div class="col-md-4">
+                                <select name="" class="form-control normal" onchange="">
+                                    <option disabled selected>-- All --</option>
+                                    <option value="1">ABS</option>
+                                    <option value="2">AS</option>
+                                    <option value="3">BE</option>
+                                    <option value="4">CC-DA</option>
+                                    <option value="5">CM-DCU</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2" style="text-align: right;padding-top: 7px;">
+                                <input type="checkbox">
+                            </div>
+                             <label class="col-md-4" for="" style="padding-top: 7px;margin-bottom: 0;text-align: left;">Copy from last version</label> 
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <label for="exampleInputEmail1">Comment/ Change description</label>
+                                <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-info" id="initData">添加模拟数据</button> -->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="save" onclick="window.location.href='../../pages/planning/planedit.html'">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Working instruction Modal -->
+    <div class="modal fade" id="instruction" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Working Instruction</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_1" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Change Records Modal -->
+    <div class="modal fade" id="history" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Change Records</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_2" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Version
+                                    </th>
+                                    <th>
+                                        Change Records
+                                    </th>
+                                    <th>
+                                        Create Date
+                                    </th>                                    
+                                    <th>
+                                        Create By
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--workflow Modal -->
+    <div class="modal fade" id="workflow" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Workflow</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="table_4" width="100%" cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Account
+                                    </th>
+                                    <th>
+                                        Approver
+                                    </th>
+                                    <th>
+                                        Department
+                                    </th>
+                                    <th>
+                                        Approval Status
+                                    </th>
+                                    <th>
+                                        Approval Date/Time
+                                    </th> 
+                                    <th>
+                                        Comments
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+
+var loadFailedStr = document.getElementById('loadFailed').innerText;
+var addFailedStr = document.getElementById('addFailed').innerText;
+var deleteFailedStr = document.getElementById('deleteFailed').innerText;
+var updateFailedStr = document.getElementById('updateFailed').innerText;
+var addNewStr = document.getElementById('addNew').innerText;
+
+// var descriptionPresenter = '<a href="#" class="icon-link"></a>';
+
+var ProductPresenter = '<select class="form-control normal">{{~it.Product:value:index}}' +
+                            '<option value="{{=value.id}}">{{=value.option}}</option>' +
+                        '{{~}}</select>';
+
+var testtypePresenter = '<select class="form-control normal">{{~it.testtype:value:index}}' +
+                            '<option value="{{=value.id}}">{{=value.option}}</option>' +
+                        '{{~}}</select>';
+
+var TestplacePresenter = '<select class="form-control normal">{{~it.TestPlace:value:index}}' +
+                            '<option value="{{=value.id}}">{{=value.option}}</option>' +
+                        '{{~}}</select>';
+
+var FrequencyPresenter = '<select class="form-control normal">{{~it.Frequency:value:index}}' +
+                            '<option value="{{=value.id}}">{{=value.option}}</option>' +
+                        '{{~}}</select>';
+
+var columns = [{
+        id: 'Product', caption: 'Product Family/Group', dataField: 'Product', width: 120, pinned: 'left'
+    },  //visible: false 隐藏
+    { id: 'testtype', caption: 'Test Type', dataField: 'testtype', width: 80, pinned: 'left' }, 
+    { id: 'pn', caption: 'PN', dataField: 'PN', width: 100, pinned: 'left' },
+    { id: 'reference', caption: 'Reference', dataField: 'reference', width: 40, pinned: 'left' },
+    { id: 'sc', caption: 'S/C', dataField: 'sc', width: 50 , pinned: 'left'},
+    { id: 'Test Item', caption: 'Test Item', dataField: 'Test Item', width: 100, pinned: 'left' },
+    { id: 'TestSpec', caption: 'Test Spec', dataField: 'TestSpec', width: 120, pinned: 'left' },
+    { id: 'TestPlace', caption: 'Test Place', dataField: 'TestPlace', width: 100, pinned: 'left' },
+    { id: 'Frequency', caption: 'Sampling Frequency', dataField: 'Frequency', width: 80, pinned: 'left' },
+    { id: 'Sampling Plan', caption: 'Sampling Plan', dataField: 'Sampling Plan', width: 80, pinned: 'left' },
+    { id: 'Sampling Type', caption: 'Sampling Type', dataField: 'Sampling Type', width: 80, 
+    pinned: 'left'}, //footer: '<div>Comments: {{=it.eval("=average([price])", "0.0")}}</div>' 
+    { id: 'PPM', caption: 'In PPM', dataField: 'PPM', width: 50, pinned: 'left', allowEditing: false, dataType: 'boolean', presenter: '<input type="checkbox">' },
+    // { id: 'supplier', caption: 'Supplier', dataField: 'Supplier.CompanyName', width: 120 },
+    // { id: 'location', caption: 'Address', dataField: 'Supplier.Address' , width: 120 },
+    // { id: 'telephone', caption: 'Telephone', dataField: 'Supplier.Telephone', width: 120 },
+
+        { id: 'W01', caption: 'W01</br>0101</br>0107', dataField: 'W01', width: 40, dataType: 'string' },
+        { id: 'W02', caption: 'W02</br>0108</br>0114', dataField: 'W02', width: 40, dataType: 'string' },
+        { id: 'W03', caption: 'W03</br>0115</br>0121', dataField: 'W03', width: 40, dataType: 'string' },
+        { id: 'W04', caption: 'W04</br>0122</br>0128', dataField: 'W04', width: 40, dataType: 'string' },
+        { id: 'W05', caption: 'W05</br>0129</br>0204', dataField: 'W05', width: 40, dataType: 'string' },
+        { id: 'W06', caption: 'W06</br>0205</br>0211', dataField: 'W06', width: 40, dataType: 'string' },
+        { id: 'W07', caption: 'W07</br>0212</br>0218', dataField: 'W07', width: 40, dataType: 'string' },
+        { id: 'W08', caption: 'W08</br>0219</br>0225', dataField: 'W08', width: 40, dataType: 'string' },
+        { id: 'W09', caption: 'W09</br>0226</br>0304', dataField: 'W09', width: 40, dataType: 'string' },
+        { id: 'W10', caption: 'W10</br>0305</br>0311', dataField: 'W10', width: 40, dataType: 'string' },
+        { id: 'W11', caption: 'W11</br>0312</br>0318', dataField: 'W11', width: 40, dataType: 'string' },
+        { id: 'W12', caption: 'W12</br>0319</br>0325', dataField: 'W12', width: 40, dataType: 'string' },
+        { id: 'W13', caption: 'W13</br>0326</br>0401', dataField: 'W13', width: 40, dataType: 'string' },
+        { id: 'W14', caption: 'W14</br>0402</br>0408', dataField: 'W14', width: 40, dataType: 'string' },
+        { id: 'W15', caption: 'W15</br>0409</br>0415', dataField: 'W15', width: 40, dataType: 'string' },
+        { id: 'W16', caption: 'W16</br>0416</br>0422', dataField: 'W16', width: 40, dataType: 'string' },
+        { id: 'W17', caption: 'W17</br>0423</br>0429', dataField: 'W17', width: 40, dataType: 'string' },
+        { id: 'W18', caption: 'W18</br>0430</br>0506', dataField: 'W18', width: 40, dataType: 'string' },
+        { id: 'W19', caption: 'W19</br>0507</br>0513', dataField: 'W19', width: 40, dataType: 'string' },
+        { id: 'W20', caption: 'W20</br>0514</br>0520', dataField: 'W20', width: 40, dataType: 'string' },
+        { id: 'W21', caption: 'W21</br>0521</br>0527', dataField: 'W21', width: 40, dataType: 'string' },
+        { id: 'W22', caption: 'W22</br>0528</br>0603', dataField: 'W22', width: 40, dataType: 'string' },
+        { id: 'W23', caption: 'W23</br>0604</br>0610', dataField: 'W23', width: 40, dataType: 'string' },
+        { id: 'W24', caption: 'W24</br>0611</br>0617', dataField: 'W24', width: 40, dataType: 'string' },
+        { id: 'W25', caption: 'W25</br>0618</br>0624', dataField: 'W25', width: 40, dataType: 'string' },
+        { id: 'W26', caption: 'W26</br>0625</br>0701', dataField: 'W26', width: 40, dataType: 'string' },
+        { id: 'W27', caption: 'W27</br>0702</br>0708', dataField: 'W27', width: 40, dataType: 'string' },
+        { id: 'W28', caption: 'W28</br>0709</br>0715', dataField: 'W28', width: 40, dataType: 'string' },
+        { id: 'W29', caption: 'W29</br>0716</br>0722', dataField: 'W29', width: 40, dataType: 'string' },
+        { id: 'W30', caption: 'W30</br>0723</br>0729', dataField: 'W30', width: 40, dataType: 'string' },
+        { id: 'W31', caption: 'W31</br>0730</br>0805', dataField: 'W31', width: 40, dataType: 'string' },
+        { id: 'W32', caption: 'W32</br>0806</br>0812', dataField: 'W32', width: 40, dataType: 'string' },
+        { id: 'W33', caption: 'W33</br>0813</br>0819', dataField: 'W33', width: 40, dataType: 'string' },
+        { id: 'W34', caption: 'W34</br>0820</br>0826', dataField: 'W34', width: 40, dataType: 'string' },
+        { id: 'W35', caption: 'W35</br>0827</br>0902', dataField: 'W35', width: 40, dataType: 'string' },
+        { id: 'W36', caption: 'W36</br>0903</br>0909', dataField: 'W36', width: 40, dataType: 'string' },
+        { id: 'W37', caption: 'W37</br>0910</br>0916', dataField: 'W37', width: 40, dataType: 'string' },
+        { id: 'W38', caption: 'W38</br>0917</br>0923', dataField: 'W38', width: 40, dataType: 'string' },
+        { id: 'W39', caption: 'W39</br>0924</br>0930', dataField: 'W39', width: 40, dataType: 'string' },
+        { id: 'W40', caption: 'W40</br>1001</br>1007', dataField: 'W40', width: 40, dataType: 'string' },
+        { id: 'W41', caption: 'W41</br>1008</br>1014', dataField: 'W41', width: 40, dataType: 'string' },
+        { id: 'W42', caption: 'W42</br>1015</br>1021', dataField: 'W42', width: 40, dataType: 'string' },
+        { id: 'W43', caption: 'W43</br>1022</br>1028', dataField: 'W43', width: 40, dataType: 'string' },
+        { id: 'W44', caption: 'W44</br>1029</br>1104', dataField: 'W44', width: 40, dataType: 'string' },
+        { id: 'W45', caption: 'W45</br>1105</br>1111', dataField: 'W45', width: 40, dataType: 'string' },
+        { id: 'W46', caption: 'W46</br>1112</br>1118', dataField: 'W46', width: 40, dataType: 'string' },
+        { id: 'W47', caption: 'W47</br>1119</br>1125', dataField: 'W47', width: 40, dataType: 'string' },
+        { id: 'W48', caption: 'W48</br>1126</br>1202', dataField: 'W48', width: 40, dataType: 'string' },
+        { id: 'W49', caption: 'W49</br>1203</br>1209', dataField: 'W49', width: 40, dataType: 'string' },
+        { id: 'W50', caption: 'W50</br>1210</br>1216', dataField: 'W50', width: 40, dataType: 'string' },
+        { id: 'W51', caption: 'W51</br>1217</br>1223', dataField: 'W51', width: 40, dataType: 'string' },
+        { id: 'W52', caption: 'W52</br>1224</br>1230', dataField: 'W52', width: 40, dataType: 'string' },
+        { id: 'W53', caption: 'W53</br>1231</br>0106', dataField: 'W53', width: 40, dataType: 'string' },
+
+        // { id: 'total', caption: 'Total Leave', dataType: 'number', dataField: '=[Jan]+[Feb]+[Mar]+[Apr]+[May]+[Jun]+[Jul]+[Aug]+[Sep]+[Oct]+[Nov]+[Dec]', width: 120 }
+
+];
+
+var dataView;
+var currentPageDataSource;
+var itemsTotalCount;
+var baseUrl = '//spread.grapecity.com/remotedata/api/records';
+
+var dataSource = [
+    {
+        "Product": "BK2A",
+        "testtype": "Q+Z",
+        "PN": "0203214889520",
+        "sc": "/",
+        "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+        "TestSpec": "QZ spec in SAP",
+        "TestPlace": "AE/QMM1.9-CN",
+        "Frequency": "Monthly",
+        "W01": 18,
+        "W02": 1,
+        "W03": 0,
+        "W04": 0,
+        "W05": 3,
+        "W06": 0,
+        "W07": 0,
+        "W08": 1,
+        "W09": 0,
+        "W10": 1,
+        "W11": 2,
+        "W12": 0
+    },
+    {
+        "Product": "BK2A",
+        "testtype": "Q+Z",
+        "PN": "0203214889520",
+        "sc": "/",
+        "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+        "TestSpec": "QZ spec in SAP",
+        "TestPlace": "AE/QMM1.9-CN",
+        "Frequency": "Monthly",
+        "W01": 18,
+        "W02": 1,
+        "W03": 0,
+        "W04": 0,
+        "W05": 3,
+        "W06": 0,
+        "W07": 0,
+        "W08": 1,
+        "W09": 0,
+        "W10": 1,
+        "W11": 2,
+        "W12": 0
+    },
+    {
+        "Product": "BK2A",
+        "testtype": "Q+Z",
+        "PN": "0203214889520",
+        "sc": "/",
+        "Test Item": "Z I-A: Vibration testZ I-B: Temperature cycling passiveZ I-C: Humidity Constant Z I-D: Humidity Heat Cylic",
+        "TestSpec": "QZ spec in SAP",
+        "TestPlace": "AE/QMM1.9-CN",
+        "Frequency": "Monthly",
+        "W01": 18,
+        "W02": 1,
+        "W03": 0,
+        "W04": 0,
+        "W05": 3,
+        "W06": 0,
+        "W07": 0,
+        "W08": 1,
+        "W09": 0,
+        "W10": 1,
+        "W11": 2,
+        "W12": 0
+    }
+];
+
+// var dataSource = {
+//     loadRange: function(params) {
+//         $.ajax({
+//             type:"GET",
+//             url:"../data.json",
+//             //async: true, //是否为异步请求，ture为异步请求，false为同步请求 
+//             dataType: "json",
+//             crossDomain: true,
+//             success: function(result) {
+//                 // console.log(result.dataSource)
+//                 currentPageDataSource = result.dataSource;
+//                 itemsTotalCount = result.dataSource;
+//                 params.success(currentPageDataSource, itemsTotalCount);
+//             },
+//             error:function(XMLHttpRequest, textStatus, errorThrown){  
+//                 alert(XMLHttpRequest.status);  
+//                 alert(XMLHttpRequest.readyState);  
+//                 alert(textStatus);  
+//             }  
+//         });
+//     }
+//     // create: function(params) {
+//     //     var dataItem = _.clone(params.dataItem);
+//     //     $.ajax({
+//     //         url: baseUrl,
+//     //         type: 'POST',
+//     //         data: JSON.stringify(dataItem),
+//     //         success: function(data) {
+//     //             dataItem['Transaction_Id'] = data['Transaction_Id'];
+//     //             params.success(dataItem);
+//     //         },
+//     //         error: function(xhr, status) {
+//     //             params.failed();
+//     //             alert(addFailedStr);
+//     //         }
+//     //     });
+//     // },
+//     // delete: function(params) {
+//     //     $.ajax({
+//     //         url: baseUrl + '/' + params.dataItem['Transaction_Id'],
+//     //         type: 'DELETE',
+//     //         success: function(data) {
+//     //             params.success();
+//     //         },
+//     //         error: function(xhr, status) {
+//     //             params.failed();
+//     //             alert(deleteFailedStr);
+//     //         }
+//     //     });
+//     // },
+//     // update: function(params) {
+//     //     $.ajax({
+//     //         url: baseUrl + '/' + params.dataItem['Transaction_Id'],
+//     //         type: 'PUT',
+//     //         data: JSON.stringify(params.dataItem),
+//     //         success: function(data) {
+//     //             params.success();
+//     //         },
+//     //         error: function(xhr, status) {
+//     //             params.failed();
+//     //             alert(updateFailedStr);
+//     //         }
+//     //     });
+//     // }
+// };
+
+$(document).ready(function() {
+
+        dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+            rowHeight: 40,
+            colHeaderHeight: 60,
+            // footerRow: {            //添加一个摘要行在表格的底部
+            //     visible: true,
+            //     height: 40
+            // },
+            //allowEditing: true,
+            // editMode: 'popup',
+            autoAddRowPosition: 'top',
+            selectionMode: 'row',
+            // editUnit: 'cell',
+            //selectionUnit: 'cell',   //选中单元格
+            autoRowHeight: true,
+                // rowTemplate: '#rowTmpl',
+            // showColHeader: false,  //导航栏
+            showRowHeader: false,  //左侧边栏
+            // colHeaderTemplate: "#colHeaderTemplate",
+            // colHeaderHeight: 90,
+        }));
+
+});
+
+
+    // 表格重新加载事件
+    // $(window).resize(function() {
+    //     if (dataView) {
+    //         dataView.destroy();
+    //     }
+    //     dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+    //         rowHeight: 40,
+    //         colHeaderHeight: 60,
+    //         footerRow: {            //添加一个摘要行在表格的底部
+    //             visible: true,
+    //             height: 40
+    //         },
+    //         //allowEditing: true,
+    //         // editMode: 'popup',
+    //         autoAddRowPosition: 'top',
+    //         selectionMode: 'row',
+    //         // editUnit: 'cell',
+    //         //selectionUnit: 'cell',   //选中单元格
+    //         autoRowHeight: true,
+    //             // rowTemplate: '#rowTmpl',
+    //         // showColHeader: false,  //导航栏
+    //         showRowHeader: false,  //左侧边栏
+    //         // colHeaderTemplate: "#colHeaderTemplate",
+    //         // colHeaderHeight: 90,
+
+    //     }));
+    // });
+
+    $('.sidebar-toggle').on('click', function(){
+
+        setTimeout(function(){
+            if (dataView) {
+                dataView.destroy();
+            }
+
+            dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+                    rowHeight: 40,
+                    colHeaderHeight: 60,
+                    footerRow: {            //添加一个摘要行在表格的底部
+                        visible: true,
+                        height: 40
+                    },
+                    //allowEditing: true,
+                    // editMode: 'popup',
+                    autoAddRowPosition: 'top',
+                    selectionMode: 'row',
+                    // editUnit: 'cell',
+                    //selectionUnit: 'cell',   //选中单元格
+                    autoRowHeight: true,
+                        // rowTemplate: '#rowTmpl',
+                    // showColHeader: false,  //导航栏
+                    showRowHeader: false,  //左侧边栏
+                    // colHeaderTemplate: "#colHeaderTemplate",
+                    // colHeaderHeight: 90,
+
+            }));
+            // if($('.main-sidebar').width()>50){
+            // }
+        }, 300 )
+    });  
+
+
+
+//action column handler
+function deleteItem(args) {
+    var rowId = dataView.getRowId(args.hitInfo);
+    var dataItem = dataView.getItem(rowId);
+    if (dataItem && dataItem.item) {
+        var sourceIndex = dataItem.item.sourceIndex;
+        if (sourceIndex >= 0) {
+            dataView.data.removeDataItems(sourceIndex);
+        }
+    }
+}
+
+function getRecords(start, count) {
+    var result = [];
+    if (start != undefined) {
+        result.push('start=' + start);
+    }
+    if (count != undefined) {
+        result.push('count=' + count);
+    }
+
+    if (result.length > 0) {
+        return baseUrl + '?' + result.join('&');
+    }
+    return baseUrl;
+}
+
+
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" class="form-control" value=""></td><td><input type="text" class="form-control" value=""></td><td><textarea name="" id="" cols="30" rows="2"></textarea></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><select name="" id="" class="form-control"><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><a href="javascript:;" onclick="deltr1(this)">删除</a></td></tr>'
+            );
+
+        $('.plandate').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0,
+            initialDate: new Date(), //初始化当前日期
+            // startDate:new Date()
+        });
+        $("select").select2();
+    })
+    // })
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+
+    $("#sendback").click(function(){
+            layer.confirm("sendback,请确认操作？", function(index) {  //不通过服务器删除数据
+                // $.ajax({
+                //     url: '/url',
+                //     type: 'post',
+                //     data: { "id": id },
+                //     datatype: 'json',
+                //     success: function(result) {
+                //         jQuery("#actionList").trigger("reloadGrid"); //重新加载表格
+                //         layer.msg('修改成功');
+                //     }
+                // })
+                layer.close(index);
+            })
+    });
+
+    // layer.msg('添加一条task');
+    $("#reject").click(function(){
+            layer.confirm("reject,请确认操作？", function(index) {  //不通过服务器删除数据
+                // $.ajax({
+                //     url: '/url',
+                //     type: 'post',
+                //     data: { "id": id },
+                //     datatype: 'json',
+                //     success: function(result) {
+                //         jQuery("#actionList").trigger("reloadGrid"); //重新加载表格
+                //         layer.msg('修改成功');
+                //     }
+                // })
+                layer.close(index);
+            })
+    });
+
+    $("#approve").click(function(){
+            layer.confirm("approve,请确认操作？", function(index) {  //不通过服务器删除数据
+                // $.ajax({
+                //     url: '/url',
+                //     type: 'post',
+                //     data: { "id": id },
+                //     datatype: 'json',
+                //     success: function(result) {
+                //         jQuery("#actionList").trigger("reloadGrid"); //重新加载表格
+                //         layer.msg('修改成功');
+                //     }
+                // })
+                layer.close(index);
+            })
+    });
+
+
+$(function () {
+
+    var data1 = [
+        {
+            "id": "1",
+            "des": "AS_EPSc_Plan_2017_1",
+            "action": "InActive",
+            "ApprovalStatus": "Approved"
+        }, {
+
+            "id": "2",
+            "des": "AS_BK2A_Plan_2017_2",
+            "action": "InActive",
+            "ApprovalStatus": "Draft"
+        }
+    ];
+
+    var table1 = $('#table_1').DataTable({
+
+            "autoWidth": true,//自动宽度
+            //"deferRender": true, // 延迟渲染，加速界面加载.
+            "searching": false,
+            "data": data1,
+           // "ajax": {
+           //     "url": "../data.json",
+           //     //"dataSrc": "data",//默认为data
+           //     "type": "post",
+           //     "error":function(){alert("服务器未正常响应，请重试");}
+           // },
+            "columns": [
+                {
+                    data: 'des',
+                },
+                {
+                    data: 'action',
+                    render: function (data, type, row) {
+                        return '<button name="btnRemove" type="button" class="btn btn-xs blue"><i class="fa fa-eye"></i> View</button><button name="btnUp" type="button" class="btn bg-gry btn-xs"><i class="fa fa-cloud-download"></i> Download</button>';
+                    }
+                }
+            ]
+
+    });
+
+    var data2 = [
+        {
+            "id": "1",
+            "version": "1",
+            "records": "3/21/2018",
+            "date": "Allen",
+            "createby": "AE/MFE5.3-CN",
+        }, {
+
+            "id": "2",
+            "version": "2",
+            "records": "4/9/2018",
+            "date": "JEFF",
+            "createby": "AE/MFE5.3-CN",
+        }
+    ];
+
+    var table2 = $('#table_2').DataTable({
+
+            "autoWidth": true,//自动宽度
+            //"deferRender": true, // 延迟渲染，加速界面加载.
+            "searching": false,
+            "data": data2,
+        "select": {
+            style: 'multi'
+        },
+
+           // "ajax": {
+           //     "url": "../data.json",
+           //     //"dataSrc": "data",//默认为data
+           //     "type": "post",
+           //     "error":function(){alert("服务器未正常响应，请重试");}
+           // },
+            "columns": [
+                {
+                    data: 'version',
+                },
+                {
+                    data: 'records',
+                },
+                {
+                    data: 'date',
+                },
+                {
+                    data: 'createby',
+                }
+            ]
+
+    });
+
+    var table3 = $('#table_3').DataTable({
+            lengthChange: false,//是否允许用户自定义显示数量
+            //"bPaginate": true, //翻页功能
+            autoWidth: true,//自动宽度
+            //"deferRender": true, // 延迟渲染，加速界面加载.
+            searching: false,
+
+    });
+    var table4 = $('#table_4').DataTable({
+            //"bPaginate": true, //翻页功能
+            "autoWidth": true,//自动宽度
+            //"deferRender": true, // 延迟渲染，加速界面加载.
+            "searching": false,
+           // "ajax": {
+           //     "url": "../data.json",
+           //     //"dataSrc": "data",//默认为data
+           //     "type": "post",
+           //     "error":function(){alert("服务器未正常响应，请重试");}
+           // },
+
+
+    });
+
+
+});
+
+</script>

@@ -1,0 +1,1562 @@
+
+<style>
+
+    #toolbar .btn {
+        margin-left: 10px;
+        float: right;
+    }
+
+    /*.box-header{background: #f2f2f2;}*/
+
+    /*.form-inline .form-control{width: 100%;}*/
+
+    /*.dropdown-menu{left: -113px;}*/
+
+    .dropdown-menu.bottom-up{top:21px;bottom: auto;}
+
+    .gc-calc-cell, .gc-cell{overflow: inherit;}
+
+    .icon-link{padding: 13px 0;display: block;background: url(../../images/right.png) no-repeat 50% 50%;}
+    
+    .modal-dialog{ width: 1000px; }
+
+    .gc-column-header-cell, .gc-corner-header-cell{background: #008ecf;/*background: rgb(56, 146, 211);*/color: #fff;/*font-size: 1.2rem;*/white-space: normal;text-align: center;word-break: break-word;}
+    
+    .gc-column-header{line-height: 20px;}
+    /*表格bug*/
+    .gc-inline-editor-container{height: 45px;line-height: 43px;background: transparent;color: transparent;}  
+
+    .align-left{text-align: center;}
+
+    /*box*/
+
+    .box{border:none;}
+        
+    .btn-group .btn{margin-right: 5px;margin-top: 0px;margin-left: 0px;}
+    
+    .form-horizontal .control-label{text-align: left;}
+
+    #SpreadViews {
+        margin-bottom: 10px;
+    }
+
+    table#list th:last-child, table#list td:last-child {vertical-align: middle;}
+
+    /*.box-header{background: #95a5a6;}
+
+    .btn-box-tool{color: #fff;}
+
+    .open .btn-box-tool, .btn-box-tool:hover{color: #fff;}*/
+
+    #list input, #list select {
+        display: block;
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    #list textarea{border: none;}
+    #list>tbody>tr>td{padding: 0px;}
+
+</style>
+
+    <!-- Main content -->
+    <section class="content">
+
+            <form class="form-horizontal form-label-stripped" id="form_1" method="post">
+                <div class="row">
+                    <div class="col-md-12">
+
+                    <form class="form-horizontal" action="" method="post">
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="">Product</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="ABS" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="">Family/Group</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="BK2C" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="">Year</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="2018" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="">Status</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="InActive" type="text" name="" disabled>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Approval Status</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="Approved" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="">Location</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="Suzhou" type="text" name="" disabled>
+                            </div>
+                            <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Effective Date</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="2018/03/22" type="text" name="" disabled>
+                            </div>
+
+                            <label class="col-md-1 control-label" for="" style="white-space: nowrap;">Expire Date</label>
+                            <div class="col-md-2">
+                                <input class="form-control" placeholder="2018/03/29" type="text" name="" disabled>
+                            </div>
+
+                        </div>
+                    </form>
+                    </div>
+                </div>
+
+                <div class="btnbox">
+                    <ul >
+                        <li><a class="btn btn-primary btn-flat" data-toggle="modal" data-target="#importModal"><span class="glyphicon glyphicon-import"></span> Import</a></li>
+                        <li><a class="btn btn-primary btn-flat" data-toggle="modal" data-target="#exportModal"><span class="glyphicon glyphicon-export"></span> Export</a></li>
+                        <li><a id="btnAddNew" class="btn btn-primary btn-flat"><i class="fa fa-plus"> Add</i></a></li>
+                    </ul>   
+                </div>
+
+                <div class="clearfix"></div>
+                <div id="SpreadViews">
+                    <!-- SpreadJS -->
+                    <!-- <div id="grid1" style="width: 100%;height:500px;"></div> -->
+
+                    <div id="grid1" style="height:500px;outline:none"></div>
+                    <div id="page-nav" class="container"></div>
+                    
+                    <div style="display: none;">
+                        <span id="loadFailed"><%= loadFailed %></span>
+                        <span id="addFailed"><%= addFailed %></span>
+                        <span id="deleteFailed"><%= deleteFailed %></span>
+                        <span id="updateFailed"><%= updateFailed %></span>
+                        <span id="addNew">Create Plan</span>
+                    </div>
+                </div>
+                <!-- PPM -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="box-title">Plan PPM</h3>
+                        <div class="table-responsive">
+                            <table id="table_3" class="table table-striped table-bordered table-hover" width="100%" cellspacing="0" style="table-layout: auto; width: 100%;"></table>
+                        </div>
+                        </div><!-- /.col -->
+                </div><!-- /.row -->
+
+                <!-- comments -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="box-title">Comments</h3>
+                        <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+
+
+            <div class="form-actions fluid">
+                <div class="col-md-offset-3 col-md-9">
+                    <button class="btn btn-flat green" type="submit">
+                        <i class="fa fa-floppy-o"></i>
+                        Save
+                    </button>
+                    <button name="Submit" class="btn btn-flat green" type="submit" value="1">
+                        <i class="fa fa-floppy-o"></i>
+                        Submit
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+    </section><!-- /.content -->
+
+    <!-- reference（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <!-- <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4> -->
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+                            <div style="margin-bottom: 10px;">
+                                <a id="add" class="btn" style="background: #35aa47;color: #fff;"><i class="fa fa-plus "></i></a>
+                                <a id="" class="btn btn-primary"><i class="fa fa-download"></i></a>                                  
+                            </div>
+            <table id="list" class="table table-hover table-bordered" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>From week</th>
+                        <th width="5%"></th>
+                        <th>To week</th>
+                        <th>Desciption</th>
+                        <th>Priority</th>
+                        <th>Reference PN</th>
+                        <th>Production Line</th>
+                        <th width="10%">Action</th>
+                    </tr>                                
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" value="" placeholder="1">
+                        </td>
+                        <td style="vertical-align:middle">--></td>
+                        <td>
+                            <input type="text" value="" placeholder="53">
+                        </td>
+                        <td>
+                            <textarea name="" id="" cols="30"></textarea>
+                        </td>
+                        <td>
+                            <select name="" id="">
+                                <option disabled selected>-- All --</option>
+                                <option value="L1">High</option>
+                                <option value="L2">Medium</option>
+                                <option value="L2">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" value="">
+                        </td>                                               
+                        <td>
+                            <select name="" id="">
+                                <option disabled selected>-- All --</option>
+                                <option value="L1">ABS9M Line</option>
+                                <option value="L2">Dip Coating1</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-xs"><i class="fa fa-copy"></i></button>
+                            <button type="button" class="btn btn-xs" onclick="deltr1(this)"><i class="fa fa-remove"></i></button>
+                        </td>
+                    </tr>                                
+
+                </tbody>
+
+            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                    <button type="button" class="btn btn-primary">确 定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="WIModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">WI 导入</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="upload " id="uploadfile_div">
+                            <div class="col-md-2">
+                                <div id="filepicker">选择文件</div>
+                            </div>
+                            <div class="col-md-10">
+                                <div id="filelist" class="uploaddiv uploader-list"></div>
+                                <!--用来存放文件信息-->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+                    <button type="button" class="btn btn-primary">开始上传</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!-- 导入 -->
+    <div class="modal fade" id="importModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel"> Import</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <a class="btn btn-primary btn-flat"><i class="fa fa-download"></i> Import EQZ Plan <input type="file"></a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="btn btn-primary btn-flat"><i class="fa fa-download"></i> Import Reference PN <input type="file"></a>
+                    </div>                                    
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- 导出 -->
+    <div class="modal fade" id="exportModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel"> 导出</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;overflow: hidden;">
+                        <div class="col-xs-6">
+                            <input type="radio" name="extype"><label for="">PDF</label>
+                        </div>
+                        <div class="col-xs-6">
+                            <input type="radio" name="extype"><label for="">Excel</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Export</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <!-- Approver -->
+    <div class="modal fade" id="newapprover" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel"> New Approver</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" id="form_2" method="post">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4">Account <span class="required">*</span></label>
+                                    <div class="col-xs-8">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <input autocomplete="off" class="form-control" id="Entity_Applicant" maxlength="50" name="Entity.Applicant" required="required" type="text" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4">Approver <span class="required">*</span></label>
+                                    <div class="col-xs-8">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <select name="" id="" class="form-control">
+                                                <option disabled selected>-- All --</option>
+                                                <option value="L1">ABS9M Line</option>
+                                                <option value="L2">Dip Coating1</option>
+                                            </select>
+                                            <!-- <input autocomplete="off" class="form-control" id="Entity_EmployeeNumber" maxlength="50" name="Entity.EmployeeNumber" required="required" type="text" value="" /> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4">Department <span class="required">*</span></label>
+                                    <div class="col-xs-8">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <select name="" id="" class="form-control">
+                                                <option disabled selected>-- All --</option>
+                                                <option value="L1">ABS9M Line</option>
+                                                <option value="L2">Dip Coating1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label class="control-label col-xs-4">Telphone <span class="required">*</span></label>
+                                    <div class="col-xs-8">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <input autocomplete="off" class="form-control" id="Entity_Telphone" maxlength="50" name="Entity.Telphone" required="required" type="text" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Save</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+
+    <script type="text/javascript">
+
+
+var columns = [
+    {
+        id: 'Product', caption: 'Product Family/Group', dataField: 'Product', width: 100, pinned: 'left', editor: productEditor 
+    },  //visible: false 隐藏
+    { id: 'testtype', caption: 'Test Type', dataField: 'testtype', width: 80, pinned: 'left', editor: typeEditor }, 
+    { id: 'pn', caption: 'PN', dataField: 'PN', width: 80, pinned: 'left', editor: pnEditor },
+    { id: 'reference', caption: 'Reference', dataField: 'reference', width: 40, pinned: 'left',allowEditing: false, presenter: '<a class="icon-link" data-toggle="modal" data-target="#myModal"></a>' },
+    { id: 'sc', caption: 'S/C', dataField: 'sc', width: 50 , pinned: 'left', editor: scEditor},
+    { id: 'Test Item', caption: 'Test Item', dataField: 'Test Item', width: 100, pinned: 'left',editor: testItemEditor },
+    { id: 'TestSpec', caption: 'Test Spec', dataField: 'TestSpec', width: 120, pinned: 'left', editor: testSpecEditor },
+    { id: 'TestPlace', caption: 'Test Place', dataField: 'TestPlace', width: 100, pinned: 'left',editor: testPlaceEditor },
+    { id: 'Frequency', caption: 'Sampling Frequency', dataField: 'Frequency', width: 80, pinned: 'left',editor: FrequencyEditor },
+    { id: 'Sampling Plan', caption: 'Sampling Plan', dataField: 'Sampling Plan', width: 80, pinned: 'left',editor: planEditor },
+    { id: 'Sampling Type', caption: 'Sampling Type', dataField: 'Sampling Type', width: 80, pinned: 'left' },  //footer: '<div>Comments: {{=it.eval("=average([price])", "0.0")}}</div>'
+    { id: 'PPM', caption: 'In PPM', dataField: 'PPM', width: 50, pinned: 'left', allowEditing: false, presenter: '<input type="checkbox">' },
+
+    {id: 'action',caption: 'Actions',dataField: 'action', width: 100,   //delete
+        action: [{
+            name: 'delete',
+            presenter: '<div class="btn-group"><button name="btnRemove" type="button" class="btn btn-xs"  data-action="delete"><i class="fa fa-remove"></i></button><button name="btnUp" type="button" class="btn btn-xs" disabled="disabled"><i class="fa fa-arrow-up"></i></button><button name="btnDown" type="button" class="btn btn-xs" disabled="disabled"><i class="fa fa-arrow-down"></i></button></div>',
+            // presenter: '<button class="delete-btn action-btn" data-action="delete"><span>✖</span></button>',
+            handler: deleteItem
+        }]
+    },
+
+    { id: 'W01', caption: 'W01</br>0101</br>0107', dataField: 'W01', width: 40, dataType: 'string' },
+    { id: 'W02', caption: 'W02</br>0108</br>0114', dataField: 'W02', width: 40, dataType: 'string' },
+    { id: 'W03', caption: 'W03</br>0115</br>0121', dataField: 'W03', width: 40, dataType: 'string' },
+    { id: 'W04', caption: 'W04</br>0122</br>0128', dataField: 'W04', width: 40, dataType: 'string' },
+    { id: 'W05', caption: 'W05</br>0129</br>0204', dataField: 'W05', width: 40, dataType: 'string' },
+    { id: 'W06', caption: 'W06</br>0205</br>0211', dataField: 'W06', width: 40, dataType: 'string' },
+    { id: 'W07', caption: 'W07</br>0212</br>0218', dataField: 'W07', width: 40, dataType: 'string' },
+    { id: 'W08', caption: 'W08</br>0219</br>0225', dataField: 'W08', width: 40, dataType: 'string' },
+    { id: 'W09', caption: 'W09</br>0226</br>0304', dataField: 'W09', width: 40, dataType: 'string' },
+    { id: 'W10', caption: 'W10</br>0305</br>0311', dataField: 'W10', width: 40, dataType: 'string' },
+    { id: 'W11', caption: 'W11</br>0312</br>0318', dataField: 'W11', width: 40, dataType: 'string' },
+    { id: 'W12', caption: 'W12</br>0319</br>0325', dataField: 'W12', width: 40, dataType: 'string' },
+    { id: 'W13', caption: 'W13</br>0326</br>0401', dataField: 'W13', width: 40, dataType: 'string' },
+    { id: 'W14', caption: 'W14</br>0402</br>0408', dataField: 'W14', width: 40, dataType: 'string' },
+    { id: 'W15', caption: 'W15</br>0409</br>0415', dataField: 'W15', width: 40, dataType: 'string' },
+    { id: 'W16', caption: 'W16</br>0416</br>0422', dataField: 'W16', width: 40, dataType: 'string' },
+    { id: 'W17', caption: 'W17</br>0423</br>0429', dataField: 'W17', width: 40, dataType: 'string' },
+    { id: 'W18', caption: 'W18</br>0430</br>0506', dataField: 'W18', width: 40, dataType: 'string' },
+    { id: 'W19', caption: 'W19</br>0507</br>0513', dataField: 'W19', width: 40, dataType: 'string' },
+    { id: 'W20', caption: 'W20</br>0514</br>0520', dataField: 'W20', width: 40, dataType: 'string' },
+    { id: 'W21', caption: 'W21</br>0521</br>0527', dataField: 'W21', width: 40, dataType: 'string' },
+    { id: 'W22', caption: 'W22</br>0528</br>0603', dataField: 'W22', width: 40, dataType: 'string' },
+    { id: 'W23', caption: 'W23</br>0604</br>0610', dataField: 'W23', width: 40, dataType: 'string' },
+    { id: 'W24', caption: 'W24</br>0611</br>0617', dataField: 'W24', width: 40, dataType: 'string' },
+    { id: 'W25', caption: 'W25</br>0618</br>0624', dataField: 'W25', width: 40, dataType: 'string' },
+    { id: 'W26', caption: 'W26</br>0625</br>0701', dataField: 'W26', width: 40, dataType: 'string' },
+    { id: 'W27', caption: 'W27</br>0702</br>0708', dataField: 'W27', width: 40, dataType: 'string' },
+    { id: 'W28', caption: 'W28</br>0709</br>0715', dataField: 'W28', width: 40, dataType: 'string' },
+    { id: 'W29', caption: 'W29</br>0716</br>0722', dataField: 'W29', width: 40, dataType: 'string' },
+    { id: 'W30', caption: 'W30</br>0723</br>0729', dataField: 'W30', width: 40, dataType: 'string' },
+    { id: 'W31', caption: 'W31</br>0730</br>0805', dataField: 'W31', width: 40, dataType: 'string' },
+    { id: 'W32', caption: 'W32</br>0806</br>0812', dataField: 'W32', width: 40, dataType: 'string' },
+    { id: 'W33', caption: 'W33</br>0813</br>0819', dataField: 'W33', width: 40, dataType: 'string' },
+    { id: 'W34', caption: 'W34</br>0820</br>0826', dataField: 'W34', width: 40, dataType: 'string' },
+    { id: 'W35', caption: 'W35</br>0827</br>0902', dataField: 'W35', width: 40, dataType: 'string' },
+    { id: 'W36', caption: 'W36</br>0903</br>0909', dataField: 'W36', width: 40, dataType: 'string' },
+    { id: 'W37', caption: 'W37</br>0910</br>0916', dataField: 'W37', width: 40, dataType: 'string' },
+    { id: 'W38', caption: 'W38</br>0917</br>0923', dataField: 'W38', width: 40, dataType: 'string' },
+    { id: 'W39', caption: 'W39</br>0924</br>0930', dataField: 'W39', width: 40, dataType: 'string' },
+    { id: 'W40', caption: 'W40</br>1001</br>1007', dataField: 'W40', width: 40, dataType: 'string' },
+    { id: 'W41', caption: 'W41</br>1008</br>1014', dataField: 'W41', width: 40, dataType: 'string' },
+    { id: 'W42', caption: 'W42</br>1015</br>1021', dataField: 'W42', width: 40, dataType: 'string' },
+    { id: 'W43', caption: 'W43</br>1022</br>1028', dataField: 'W43', width: 40, dataType: 'string' },
+    { id: 'W44', caption: 'W44</br>1029</br>1104', dataField: 'W44', width: 40, dataType: 'string' },
+    { id: 'W45', caption: 'W45</br>1105</br>1111', dataField: 'W45', width: 40, dataType: 'string' },
+    { id: 'W46', caption: 'W46</br>1112</br>1118', dataField: 'W46', width: 40, dataType: 'string' },
+    { id: 'W47', caption: 'W47</br>1119</br>1125', dataField: 'W47', width: 40, dataType: 'string' },
+    { id: 'W48', caption: 'W48</br>1126</br>1202', dataField: 'W48', width: 40, dataType: 'string' },
+    { id: 'W49', caption: 'W49</br>1203</br>1209', dataField: 'W49', width: 40, dataType: 'string' },
+    { id: 'W50', caption: 'W50</br>1210</br>1216', dataField: 'W50', width: 40, dataType: 'string' },
+    { id: 'W51', caption: 'W51</br>1217</br>1223', dataField: 'W51', width: 40, dataType: 'string' },
+    { id: 'W52', caption: 'W52</br>1224</br>1230', dataField: 'W52', width: 40, dataType: 'string' },
+    { id: 'W53', caption: 'W53</br>1231</br>0106', dataField: 'W53', width: 40, dataType: 'string' }
+    // {id: 'editCol',caption: 'Edit',width: 70,
+    //     action: [{
+    //         name: 'edit',
+    //         presenter: '<button class="edit-btn action-btn" data-action="edit"><i class="fa fa-edit"></i></button>'
+    //     }]
+    // },
+
+];
+
+var dataView;
+var currentPageDataSource;
+var itemsTotalCount;
+var baseUrl = '//spread.grapecity.com/remotedata/api/records';
+
+var dataSource = [{}];
+
+// var dataSource = [
+//     {
+//         // "Product": '',
+//         "testtype": '',
+//         "PN": 0203214889520,
+//         "reference": '<a class="icon-link" data-toggle="modal" data-target="#myModal"></a>',
+//         "sc": '',
+//         "Test Item": 'Electrical testing (temperature dependent)Visual check Plugibility checkX-Ray check',
+//         "TestSpec": 'QZ spec in SAP',
+//         "TestPlace": '',
+//         "Frequency": '',
+//         // "PPM": '',
+//         "W01": 18,
+//         "W02": 1,
+//         "W03": 0,
+//         "W04": 0,
+//         "W05": 3,
+//         "W06": 0,
+//         "W07":0,
+//         "W08":1,
+//         "W09":0,
+//         "W10":1,
+//         "W11":2,
+//         "W12":0,
+//     },
+//     {
+//         // "Product": '',
+//         "testtype": '',
+//         "PN": 0203214889521,
+//         "reference": '<a class="icon-link" data-toggle="modal" data-target="#myModal"></a>',
+//         "sc": '',
+//         "Test Item": '',
+//         "TestSpec": 'QZ spec in SAP',
+//         "TestPlace": '',
+//         "Frequency": '',
+//         // "PPM": '',
+//         "Jan": 3,
+//         "Feb": 0,
+//         "Mar": 0,
+//         "Apr": 0,
+//         "May": 1,
+//         "Jun": 0,
+//         "Jul":5,
+//         "Aug":1,
+//         "Sep":0,
+//         "Oct":0,
+//         "Nov":0,
+//         "Dec":0
+//     }
+
+// ];
+
+function initdataView(){
+
+        dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+            rowHeight: 40,
+            colHeaderHeight: 60,
+            // footerRow: {            //添加一个摘要行在表格的底部
+            //     visible: true,
+            //     height: 40
+            // },
+            allowEditing: true,
+            //editMode: 'popup',
+            //allowAutoAddRow: true,  //helps you input new data quickly on the interface.
+            autoAddRowPosition: 'bottom',
+            selectionMode: 'row',
+            editUnit: 'cell',
+            //selectionUnit: 'cell',   //选中单元格
+            //autoRowHeight: true,   //导致错误Cannot read property 'node' of null
+            // rowTemplate: '#rowTmpl',
+            // showColHeader: false,  //导航栏
+            showRowHeader: false,  //左侧边栏
+            // colHeaderTemplate: "#colHeaderTemplate",
+            // colHeaderHeight: 90,
+        }));
+
+        dataView.editing.addHandler(function(sender, args) {
+            if (args.status === 'endEditing' && args.isNewRow || args.status === 'cancelEditing') {
+
+                if (dataView.options.allowAutoAddRow) {
+                    dataView.options.allowAutoAddRow = false;
+                    dataView.invalidate();
+                }
+            }
+        });
+
+        $('#btnAddNew').on('click', function() {
+            var isEditing = !!document.getElementById(dataView.uid + '-inline-editing-area');
+            if (!isEditing) {
+                dataView.options.allowAutoAddRow = true;
+                dataView.invalidate();
+                var autoRow = $('#' + dataView.uid + '-autorow');
+                // autoRow.find('[data-action="save"]').css('display', 'inline-block');
+                // autoRow.find('[data-action="cancel"]').css('display', 'inline-block');
+                // autoRow.find('[data-action="edit"]').css('display', 'none');
+                // autoRow.find('[data-action="delete"]').css('display', 'none');
+                dataView.startEditing(0);
+            }
+        });
+
+    // var pageController = dataView.data.pageController;
+    // var pager = new PageUI('#page-nav', pageController.getStatus());
+
+    // pager.goToFirstEvent.addHandler(function() {
+    //     pageController.first();
+    // });
+
+    // pager.goToPreviousEvent.addHandler(function() {
+    //     pageController.previous();
+    // });
+
+    // pager.goToNextEvent.addHandler(function() {
+    //     pageController.next();
+    // });
+
+    // pager.goToLastEvent.addHandler(function() {
+    //     pageController.last();
+    // });
+
+    // pager.goToPageEvent.addHandler(function(e) {
+    //     pageController.goToPage(e.newPage);
+    // });
+
+    // pageController.statusChanged.addHandler(function(sender, newStatus) {
+    //     pager.updateStatus(newStatus);
+    // });
+    
+}
+
+$(document).ready(function() {
+
+    initdataView();
+
+});
+
+
+    // 表格重新加载事件
+    // $(window).resize(function() {
+    //     if (dataView) {
+    //         dataView.destroy();
+    //     }
+    //     dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+    //             rowHeight: 40,
+    //             colHeaderHeight: 60,
+    //             footerRow: {
+    //                 visible: true,
+    //                 height: 40
+    //             },
+    //             allowEditing: true,
+    //             // editMode: 'popup',
+    //             autoAddRowPosition: 'bottom',
+    //             selectionMode: 'row',
+    //             editUnit: 'cell',
+    //             //autoRowHeight: true,
+    //                 // rowTemplate: '#rowTmpl',
+    //             // showColHeader: false,  //导航栏
+    //             showRowHeader: false,  //左侧边栏
+    //             // colHeaderTemplate: "#colHeaderTemplate",
+    //             // colHeaderHeight: 90,
+
+    //     }));
+    // });
+
+    $('.sidebar-toggle, .nav-tabs li').click(function(){
+        setTimeout(function(){
+            if (dataView) {
+                dataView.destroy();
+            }
+
+            initdataView();
+            // dataView = new GC.Spread.Views.DataView(document.getElementById('grid1'), dataSource, columns, new GC.Spread.Views.Plugins.GridLayout({
+            //     rowHeight: 40,
+            //     colHeaderHeight: 60,
+            //     // footerRow: {            //添加一个摘要行在表格的底部
+            //     //     visible: true,
+            //     //     height: 40
+            //     // },
+            //     allowEditing: true,
+            //     //editMode: 'popup',
+            //     //allowAutoAddRow: true,  //helps you input new data quickly on the interface.
+            //     autoAddRowPosition: 'bottom',
+            //     selectionMode: 'row',
+            //     editUnit: 'cell',
+            //     //selectionUnit: 'cell',   //选中单元格
+            //     //autoRowHeight: true,   //导致错误Cannot read property 'node' of null
+            //     // rowTemplate: '#rowTmpl',
+            //     // showColHeader: false,  //导航栏
+            //     showRowHeader: false,  //左侧边栏
+            //     // colHeaderTemplate: "#colHeaderTemplate",
+            //     // colHeaderHeight: 90,
+
+            // }));
+        }, 300 )
+    });  
+
+//action column handler
+function startEditing(args) {
+    var hitInfo = args.hitInfo;
+    var isEditing = !!document.getElementById(dataView.uid + '-inline-editing-area');
+    var elementId = dataView.getRowId(hitInfo);
+    if (!isEditing) {
+        var row = $('#' + elementId);
+        row.find('[data-action="save"]').css('display', 'inline-block');
+        row.find('[data-action="cancel"]').css('display', 'inline-block');
+        row.find('[data-action="edit"]').css('display', 'none');
+        row.find('[data-action="delete"]').css('display', 'none');
+        dataView.startEditing();
+    }
+}
+
+//action column handler
+function deleteItem(args) {
+    var rowId = dataView.getRowId(args.hitInfo);
+    var dataItem = dataView.getItem(rowId);
+    if (dataItem && dataItem.item) {
+        var sourceIndex = dataItem.item.sourceIndex;
+        if (sourceIndex >= 0) {
+            dataView.data.removeDataItems(sourceIndex);
+        }
+    }
+}
+
+function getRecords(start, count) {
+    var result = [];
+    if (start != undefined) {
+        result.push('start=' + start);
+    }
+    if (count != undefined) {
+        result.push('count=' + count);
+    }
+
+    if (result.length > 0) {
+        return baseUrl + '?' + result.join('&');
+    }
+    return baseUrl;
+}
+
+
+// 行编辑
+function pnEditor(options) {
+    this.options = options;
+}
+
+pnEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var pn = options.value;
+        container.innerHTML = '<input type="text" class="pn form-control gc-inline-editor" value="' + pn + '">';
+        this.pnInput = container.querySelector("input.pn");
+        this.focus();
+    },
+
+    focus: function() {
+        this.pnInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.pnInput.value)
+        return this.pnInput.value;
+    }
+};
+
+function productEditor(options) {
+    this.options = options;
+}
+
+productEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['ABS', 'AS', 'BE', 'CC-DA', 'CM', 'DCU', 'EC', 'ED'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="product form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.product = container.querySelector("select.product");
+        // this.focus();
+    },
+
+    focus: function() {
+        this.product.focus();
+    },
+
+    serialize: function() {
+
+        return this.product.value;
+    }
+};
+
+function typeEditor(options) {
+    this.options = options;
+}
+
+typeEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['Q', 'Q+Z'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="type form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.type = container.querySelector("select.type");
+        // this.focus();
+    },
+
+    focus: function() {
+        this.type.focus();
+    },
+
+    serialize: function() {
+
+        return this.type.value;
+    }
+};
+
+function scEditor(options) {
+    this.options = options;
+}
+
+scEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var sc = options.value;
+        container.innerHTML = '<input type="text" class="sc form-control gc-inline-editor" value="' + sc + '">';
+        this.scInput = container.querySelector("input.sc");
+        this.focus();
+    },
+
+    focus: function() {
+        this.scInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.scInput.value)
+        return this.scInput.value;
+    }
+};
+
+function testItemEditor(options) {
+    this.options = options;
+}
+
+testItemEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var testItem = options.value;
+        container.innerHTML = '<textarea id="" cols="30" rows="2" class="testItem form-control gc-inline-editor">' + testItem + '</textarea>';
+        this.testItemInput = container.querySelector("textarea.testItem");
+        this.focus();
+    },
+
+    focus: function() {
+        this.testItemInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.scInput.value)
+        return this.testItemInput.value;
+    }
+};
+
+function testSpecEditor(options) {
+    this.options = options;
+}
+
+testSpecEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var spec = options.value;
+        container.innerHTML = '<textarea id="" cols="30" rows="2" class="spec form-control gc-inline-editor">' + spec + '</textarea>';
+        this.specInput = container.querySelector("textarea.spec");
+        this.focus();
+    },
+
+    focus: function() {
+        this.specInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.scInput.value)
+        return this.specInput.value;
+    }
+};
+
+function testPlaceEditor(options) {
+    this.options = options;
+}
+
+testPlaceEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['AE/QMM1.9-CN', 'AE/QMS-CN'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="place form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.place = container.querySelector("select.place");
+        // this.focus();
+    },
+
+    focus: function() {
+        this.place.focus();
+    },
+
+    serialize: function() {
+
+        return this.place.value;
+    }
+};
+
+function FrequencyEditor(options) {
+    this.options = options;
+}
+
+FrequencyEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var list = ['Daily', 'Half yearly', 'Monthly', 'One time', 'Weekly', 'Yearly'];  //后台获取
+        var len = list.length;
+        var InnerHTML = '';
+        for(i=0;i<len;i++){
+            InnerHTML += '<option value="'+ list[i] +'">'+ list[i] +'</option>'
+        }
+        container.innerHTML = '<select id="" class="freq form-control gc-inline-editor">'+InnerHTML+'</select>';
+        this.freq = container.querySelector("select.freq");
+        this.focus();
+    },
+
+    focus: function() {
+        this.freq.focus();
+    },
+
+    serialize: function() {
+
+        return this.freq.value;
+    }
+};
+
+function planEditor(options) {
+    this.options = options;
+}
+
+planEditor.prototype = {
+    init: function() {
+        var options = this.options;
+        var container = options.container;
+        var plan = options.value;
+        container.innerHTML = '<input type="text" class="plan form-control gc-inline-editor" value="' + plan + '">';
+        this.planInput = container.querySelector("input.plan");
+        this.focus();
+    },
+
+    focus: function() {
+        this.planInput.focus();
+    },
+
+    serialize: function() {
+        // console.log(this.pnInput.value)
+        return this.planInput.value;
+    }
+};
+
+    // 动态表格1
+    // $(document).ready(function(){
+    //<tr/>居中
+    $("#list tr").attr("align", "center");
+
+    //增加<tr/>
+    $("#add").click(function() {
+        var _len1 = $("#list tr").length;
+        $("#list").append(
+            '<tr align="center"><td><input type="text" value="" placeholder="1"></td><td style="vertical-align:middle">--></td><td><input type="text" value="" placeholder="53"></td><td><textarea name="" id="" cols="30"></textarea></td><td><select name="" id=""><option disabled selected>-- All --</option><option value="L1">High</option><option value="L2">Medium</option><option value="L2">Low</option></select></td><td><input type="text" value=""></td><td><select name="" id=""><option disabled selected>-- All --</option><option value="L1">ABS9M Line</option><option value="L2">Dip Coating1</option></select></td><td><button type="button" class="btn btn-xs"><i class="fa fa-copy"></i></button><button type="button" class="btn btn-xs" onclick="deltr1(this)"><i class="fa fa-remove"></i></button></td></tr>'
+            );
+
+        // $('.plandate').datetimepicker({
+        //     format: 'yyyy-mm-dd',
+        //     language: 'en',
+        //     weekStart: 1,
+        //     todayBtn: 1,
+        //     autoclose: 1,
+        //     todayHighlight: 1,
+        //     startView: 2,
+        //     minView: 2,
+        //     forceParse: 0,
+        //     initialDate: new Date(), //初始化当前日期
+        // });
+    })
+    // })
+
+    //删除<tr/>
+    var deltr1 = function(obj) {
+        var item1 = $(obj).closest('tr');
+        item1.remove(); //删除当前行
+
+        // var _len1 = $("#list tr").length;
+        // for (var i = 1; i < _len1; i++) {
+        //     $("#list tr").eq(i).children('td').eq(0).text(i);
+        //     console.log($("#list tr").eq(i).children('td').eq(0).html());
+        // }
+
+    }
+    // ---------------------------动态表格 END----------------
+
+
+
+
+// -----------------------------------------------------
+var table3;
+
+    $(function() {
+        $('.datetime').datetimepicker({
+            format: 'yyyy-mm-dd',
+            language: 'en',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+
+    var data1 = [
+        {
+            "id": "1",
+            "des": "AS_EPSc_Plan_2017_1",
+            "action": "InActive",
+            "ApprovalStatus": "Approved"
+        }, {
+
+            "id": "2",
+            "des": "AS_BK2A_Plan_2017_2",
+            "action": "InActive",
+            "ApprovalStatus": "Draft"
+        }
+    ];
+
+
+
+
+        //object可以如下初始化表格
+    var table1 = $('#table_1').DataTable({
+        lengthChange: false,//是否允许用户自定义显示数量
+        searching: false,
+        data: data1,
+        //使用对象数组，一定要配置columns，告诉 DataTables 每列对应的属性
+        //data 这里是固定不变的，name，position，salary，office 为你数据里对应的属性
+        columns: [
+               // { "data": "id", "title":"序号","defaultContent":""},
+               { "data": "des", "title":"Description","defaultContent":""},
+               // { "data": "phone", "title":"Priority","defaultContent":""},
+               // { "data": "phone", "title":"Reference PN","defaultContent":""},
+               // { "data": "phone", "title":"Production Line","defaultContent":""},
+               { "data": null, "title":"Action","defaultContent": '<button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#WIModal"><i class="fa fa-upload"></i> Import</button><button class="edit-btn btn btn-xs blue" type="button"><i class="fa fa-eye"></i> View</button><button class="delete-btn btn btn-warning btn-xs" type="button"><i class="fa fa-remove"></i> delete</button>'}
+        ],
+
+        "dom": "<'row'<'col-xs-2'l><'col-xs-6'f><'col-xs-2'r><'#toolbar.col-xs-2'>>" +
+                            "t" +
+                "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+        initComplete: function () {
+            // $("#toolbar").append('<button id="datainit" type="button" class="btn btn-primary btn-sm">增加基础数据</button>&nbsp');
+            $("#toolbar").append('<button type="button" class="btn green btn-sm" id="addwi"><i class="fa fa-plus"></i> New WI</button>');
+            // $("#toolbar").append('<button type="button" class="btn green btn-sm" data-toggle="modal" data-target="#WIModal">import <i class="fa fa-arrow-circle-down"></i></button>');
+
+        }
+
+    });
+
+        $('#table_1 tbody').on( 'click', '.delete-btn', function () {
+            table1
+                .row( $(this).parents('tr') )
+                .remove()
+                .draw();
+        } );
+    
+        $('#table_1_wrapper').on( 'click', '#addwi', function () {
+            table1.row.add([]).draw();
+        } );
+
+    var data2 = [
+        {
+            "id": "1",
+            "version": "1",
+            "records": "3/21/2018",
+            "date": "Allen",
+            "createby": "AE/MFE5.3-CN",
+        }, {
+
+            "id": "2",
+            "version": "2",
+            "records": "4/9/2018",
+            "date": "JEFF",
+            "createby": "AE/MFE5.3-CN",
+        }
+    ];
+    var table2 = $('#table_2').DataTable({
+
+            "autoWidth": true,//自动宽度
+            //"deferRender": true, // 延迟渲染，加速界面加载.
+            "searching": false,
+            "data": data2,
+           // "ajax": {
+           //     "url": "../data.json",
+           //     //"dataSrc": "data",//默认为data
+           //     "type": "post",
+           //     "error":function(){alert("服务器未正常响应，请重试");}
+           // },
+            "columns": [
+                {
+                    data: 'version',
+                },
+                {
+                    data: 'records',
+                },
+                {
+                    data: 'date',
+                },
+                {
+                    data: 'createby',
+                }
+                // ,
+                // { "data": null, "title":"Action","defaultContent": '<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#WIModal"><i class="fa fa-upload"></i> Import</button><button class="edit-btn btn btn-default btn-xs" type="button"><i class="fa fa-eye"></i> View</button><button class="delete-btn btn btn-default btn-xs" type="button"><i class="fa fa-remove"></i> delete</button>'
+                // }
+            ]
+
+    });
+
+    var data3 = [
+        {
+            "id": "1",
+            "testtype": "1",
+            "family": "4/29/2018",
+            "target": "Allen",
+            "volume": "AE/MFE5.3-CN",
+            "qty": "AE/MFE5.3-CN",
+            "planned": "AE/MFE5.3-CN",
+            "remark": "AE/MFE5.3-CN"
+        }, {
+
+            "id": "2",
+            "testtype": "2",
+            "family": "3/21/2018",
+            "target": "Allen",
+            "volume": "AE/MFE5.3-CN",
+            "qty": "AE/MFE5.3-CN",
+            "planned": "AE/MFE5.3-CN",
+            "remark": "AE/MFE5.3-CN"
+        }
+    ];
+
+        table3 = $('#table_3').DataTable({
+            //"lengthChange": false,//是否允许用户自定义显示数量
+            //"bPaginate": true, //翻页功能
+            "autoWidth": true,//自动宽度
+            //"deferRender": true, // 延迟渲染，加速界面加载.
+            "searching": false,
+            select: true,
+            rowReorder: true,
+            "data": data3,
+            //"processing": true,
+            //"serverSide": true,
+
+           // "ajax": {
+           //     "url": "../data.json",
+           //     //"dataSrc": "data",//默认为data
+           //     "type": "post",
+           //     "error":function(){alert("服务器未正常响应，请重试");}
+           // },
+           "columns": [
+               // { "data": "id", "title":"序号","defaultContent":""},
+               { "data": "testtype", "title":"Test Type","defaultContent":""},
+               { "data": "family", "title":"Product Family/Group","defaultContent":""},
+               { "data": "target", "title":"Target PPM","defaultContent":""},
+               { "data": "volume", "title":"Planned Volume","defaultContent":""},
+               { "data": "qty", "title":"Planned QZ Qty","defaultContent":""},
+               { "data": "planned", "title":"Planned PPM","defaultContent":""},
+               { "data": "remark", "title":"Remark","defaultContent":""},
+                { "data": null, "title":"Action","defaultContent": '<button name="btnRemove" type="button" class="btn delete-btn btn-xs"><i class="fa fa-remove"></i></button><button name="btnUp" type="button" class="btn up btn-xs" onclick="Previous();"><i class="fa fa-arrow-up"></i></button><button name="btnDown" type="button" class="btn down btn-xs" onclick="Next();"><i class="fa fa-arrow-down"></i></button>'}
+           ],
+            "dom": "<'row'<'col-xs-2'l><'col-xs-6'f><'col-xs-2'r><'#toolbar.col-xs-2'>>" +
+                                "t" +
+                    "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+            initComplete: function () {
+                // $("#toolbar").append('<button id="datainit" type="button" class="btn btn-primary btn-sm">增加基础数据</button>&nbsp');
+                $("#table_3_wrapper #toolbar").append('<button type="button" class="btn green btn-sm" id="addPPM"><i class="fa fa-plus"></i> New PPM</button>');
+
+            }
+
+       });
+
+
+
+//  // 初始化上升按钮
+//     $('#table_3 tbody').on('click', '.up', function(e) {
+//         var index = table3.row($(this).parents('tr')).index();
+//         if ((index - 1) >= 0) {
+//             var data = table3.data();
+//             var originData = data[index];
+//             var targetData = data[index-1];
+//             var exchangeList = [];
+//             exchangeList.push(originData.relation_id+','+targetData.priority);
+//             exchangeList.push(targetData.relation_id+','+originData.priority);
+//             console.log(exchangeList)
+//             reOrder(exchangeList);
+//             table3.draw();
+//         } else {
+//             layer.msg('亲，已经到顶了',{icon:5});
+//         }
+
+//     });
+
+//     // 初始化下降按钮
+//     $('#table_3 tbody').on('click', '.down', function(e) {
+//         var index = table3.row($(this).parents('tr')).index();
+//         var max = table3.rows().data().length;
+//         if ((index + 1) < max) {
+//             var data = table3.data();
+//             var originData = data[index];
+//             var targetData = data[index+1];
+//             var exchangeList = [];
+//             exchangeList.push(originData.relation_id+','+targetData.priority);
+//             exchangeList.push(targetData.relation_id+','+originData.priority);
+//             reOrder(exchangeList);
+//             table3.draw();
+//         } else {
+//             layer.msg('亲，已经到底了',{icon:5});
+//         }
+//     });
+
+
+// function reOrder(param) {
+//     $.ajax({
+//         type: "POST",
+//         url:  '/admin/baseCategoryArticle/exchange',
+//         dataType: "json",
+//         data:{"exchangeList":param},
+//         "statusCode": {
+//             404: function() {layer.msg("您访问的链接不存在",{icon:5});},
+//             500: function() {layer.msg("未知错误，请稍后再试",{icon:5});}
+//         },
+//         "dataFilter": function(result, type){
+//             var json = jQuery.parseJSON( result );
+//             if(json.status !=10000){
+//                 layer.msg(json.message,{icon:5});
+//                 return false;
+//             }
+//             return result;
+//         },
+
+//         success: function (msg) {
+//             if (msg.status == 10000) {
+//                 layer.msg('优先级重排成功',{icon:6});
+//             }
+//             else {
+//                 layer.msg('优先级重排失败',{icon:5});
+//             }
+//             //console.info(msg);
+
+//         }
+//     });
+// }
+
+       $("#table_3 tbody").on("click",".edit-btn",function(){
+           var tds=$(this).parents("tr").children();
+           $.each(tds, function(i,val){
+               var jqob=$(val);
+               if(i < 1 || jqob.has('button').length ){return true;}//跳过第1项 序号,按钮
+               var txt=jqob.text();
+               var put=$("<input type='text' class='form-control'>");
+               put.val(txt);
+               jqob.html(put);
+           });
+           $(this).html("保存");
+           $(this).toggleClass("edit-btn");
+           $(this).toggleClass("save-btn");
+       });
+ 
+       $("#table_3 tbody").on("click",".save-btn",function(){
+           var row=table3.row($(this).parents("tr"));
+           var tds=$(this).parents("tr").children();
+           $.each(tds, function(i,val){
+               var jqob=$(val);
+               //把input变为字符串
+               if(!jqob.has('button').length){
+                   var txt=jqob.children("input").val();
+                   jqob.html(txt);
+                   table3.cell(jqob).data(txt);//修改DataTables对象的数据
+               }
+           });
+           var data=row.data();
+           // $.ajax({
+           //     "url":"/example/resources/user_share/inline_edit_no_plugin/edit.php",
+           //     "data":data,
+           //     "type":"post",
+           //     "error":function(){
+           //         alert("服务器未正常响应，请重试");
+           //     },
+           //     "success":function(response){
+           //         alert(response);
+           //     }
+           // });
+           $(this).html("编辑");
+           $(this).toggleClass("edit-btn");
+           $(this).toggleClass("save-btn");
+       });
+ 
+       //批量点击编辑按钮
+       // $("#batch-edit-btn").click(function(){
+       //     $(".edit-btn").click();
+       // });
+       // $("#batch-save-btn").click(function(){
+       //     $(".save-btn").click();
+       // });
+
+        $('#table_3_wrapper').on( 'click', '#addPPM', function () {
+            table3.row.add( {
+
+                } ).draw();
+        } );
+
+
+    var data4 = [
+        {
+            "id": "1",
+            "account": "AS_EPSc_Plan_2017_1",
+            "dept": "InActive",
+            "status": "Approved",
+            "dateTime": "Approved",
+            "Comments": ""
+        }, {
+            "id": "2",
+            "account": "AS_EPSc_Plan_2017_1",
+            "dept": "InActive",
+            "status": "Approved",
+            "dateTime": "Approved",
+            "Comments": ""
+        }
+    ];
+
+        var table4 = $('#table_4').DataTable({
+            //lengthChange: false,//是否允许用户自定义显示数量
+            "searching": false,
+            "data": data4,
+            //使用对象数组，一定要配置columns，告诉 DataTables 每列对应的属性
+            //data 这里是固定不变的，name，position，salary，office 为你数据里对应的属性
+            "columns": [
+                   // { "data": "id", "title":"序号","defaultContent":""},
+                   { "data": "account", "title":"Account","defaultContent":""},
+                   { "data": "approver", "title":"Approver","defaultContent":""},
+                   { "data": "dept", "title":"Department","defaultContent":""},
+                   { "data": "status", "title":"Approval Status","defaultContent":""},
+                   { "data": "dateTime", "title":"Approval Date/Time","defaultContent":""},
+                   { "data": "comment", "title":"Comments","defaultContent":""},
+                   { "data": null, "title":"Action","defaultContent": '<button name="btnRemove" type="button" class="btn delete-btn btn-xs"><i class="fa fa-remove"></i></button><button name="btnUp" type="button" class="btn btn-xs"><i class="fa fa-arrow-up"></i></button><button name="btnDown" type="button" class="btn btn-xs"><i class="fa fa-arrow-down"></i></button>'}
+            ],
+            "dom": "<'row'<'col-xs-2'l><'col-xs-6'f><'col-xs-2'r><'#toolbar.col-xs-2'>>" +
+                                "t" +
+                    "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+            initComplete: function () {
+                $("#table_4_wrapper #toolbar").append('<a class="btn green btn-sm" data-toggle="modal" data-target="#newapprover"><i class="fa fa-plus"></i> Add</a>');
+            }          
+        });
+
+        // $('#table_4 tbody').on( 'click', '.delete-btn', function () {
+        //     table4
+        //         .row( $(this).parents('tr') )
+        //         .remove()
+        //         .draw();
+        // } );
+    
+        // $('#table_4_wrapper').on( 'click', '#addApprover', function () {
+
+        //     table4.row.add([]).draw();
+        // } );
+
+
+        // 文件上传
+        // iniFileUploader();
+        // 下拉选择select2
+        //$("select:not('.normal')").select2(); //select2与selectator会有冲突
+
+        //Date range picker
+        //$('#timeperiod').daterangepicker();
+
+    });
+
+
+//获取列表选择集合  
+function SixGetDataChecked(table3) {  
+    var SamNodes = [];  
+    var check = table3.rows('.selected').data();  
+    for (var i = 0; i < check.length; i++) {  
+        SamNodes.push(check[i]);  
+    }  
+    return SamNodes;  
+} 
+
+//获取列表所有数据  
+function SixGetData(table3) {  
+    var SamNodes = [];  
+    var check = table3.rows().data();  
+    for (var i = 0; i < check.length; i++) {  
+        SamNodes.push(check[i]);  
+    }  
+    return SamNodes;  
+}  
+
+    //上移一行  
+    function Previous(){
+        var node = SixGetDataChecked(table3);
+        if (node.length != 1) {  
+            layer.msg("请选择一行！");  
+            return false;  
+        }  
+        //选中的行对象  
+        var select_row = node[0];
+        //所有数据对象  
+        var data = SixGetData(table3);
+        for (var i = 0; i < data.length; i++) {  
+            var item = data[i];  
+            if (select_row.id == item.id) { 
+            // console.log(select_row.id) 
+                if (i === 0 || i > data.length - 1) {  
+                    break ;  
+                }  
+                var t = data[i - 1];  
+                data[i - 1] = data[i];  
+                data[i] = t;  
+                break;  
+            }  
+        }  
+  
+        table3.clear();  
+  
+        table3.rows.add(data).draw();  
+  
+    } 
+
+    //下移一行  
+    function Next(){  
+        var node = SixGetDataChecked(table3);  
+        if (node.length != 1) {  
+            layer.msg("请选择一行！");  
+            return false;  
+        }  
+        //选中的行对象  
+        var select_row = node[0];  
+        //所有数据对象  
+        var data = SixGetData(table3);  
+        for (var i = 0; i < data.length; i++) {  
+            var item = data[i];  
+            if (select_row.Id == item.Id) {  
+                if (i ==(data.length - 1) || i <0 ) {  
+                    break;  
+                }  
+                var t = data[i + 1];  
+                data[i + 1] = data[i];  
+                data[i] = t;  
+                break;  
+            }  
+        }  
+  
+        table3.clear();  
+  
+        table3.rows.add(data).draw();  
+  
+    }  
+
+</script>
+
+    <script type="text/javascript">
+    $(function() {
+
+        iniFileUploader();
+    });
+
+
+    function iniFileUploader() {
+        // 文件上传
+        var fileuploader = WebUploader.create({
+
+            // 选完文件后，是否自动上传。
+            auto: false,
+            swf: 'http://localhost:8080' + '/js/Uploader.swf',
+            server: 'http://webuploader.duapp.com/server/fileupload.php',
+            pick: '#filepicker',
+            //限5个文件
+            fileNumLimit: 8,
+            fileSizeLimit: 10485760,
+            accept: {
+                extensions: 'txt,pdf,doc,docx,xls,xlsx,ppt,pptx,rar,zip,dwg,gif,jpg,jpeg,bmp,png,avi,rmvb',
+            },
+        });
+        $(".webuploader-pick").css("background", " rgb(68, 87, 126)");
+        fileuploader.on('error', function(type) {
+            if (type == 'Q_EXCEED_NUM_LIMIT') {
+                toastr.error("仅限8个文件");
+            } else if (type == 'Q_EXCEED_SIZE_LIMIT') {
+                toastr.error("文件不能超过10m");
+            } else if (type == 'Q_TYPE_DENIED') {
+                toastr.error("不支持的文件类型");
+            }
+        });
+        // 当有文件添加进来的时候
+        fileuploader.on('fileQueued', function(file) {
+            var $li = $(
+                '<div id="' + file.id + '" style="overflow:hidden" class="file-item thumbnail myfileitem">' +
+                '<div class="deletefile" onclick="deletefile(this)">X</div>' +
+                '<input name="fileids" type="text" style="display:none">' +
+                '<a class="fileinfo" download="">' + file.name + '</a>' +
+                '</div>'
+            );
+
+            // $list为容器jQuery实例
+            $("#filelist").append($li);
+        });
+        fileuploader.on('uploadSuccess', function(file, response) {
+            $("#" + file.id).find('input').val(response.qattachid);
+            $("#" + file.id).find('a').attr('href', response.qattachpath);
+            $("#" + file.id).find('a').html(response.qattachname);
+        });
+    }
+
+    function deletefile(obj) {
+        $(obj).parent().remove();
+    }
+
+
+
+    </script>

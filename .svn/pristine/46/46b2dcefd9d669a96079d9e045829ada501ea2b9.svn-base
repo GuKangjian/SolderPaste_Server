@@ -1,0 +1,585 @@
+<style>
+
+    /*表头颜色*/
+    table.table thead > tr > th{background: #153B63;color: #fff;}
+</style>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- echart1 -->
+    <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">AE-CN Q/Z Test Monthly Report-2018-3 PPM YTD Overview: AS,ESL3,Q,All</h3>
+        </div>
+        <div class="box-body">
+
+            <div id="esl3q" style="width: 100%; height:300px;"></div>
+
+        </div><!-- /.box-body -->
+    </div>
+
+    <!-- echart2 -->
+    <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">AE-CN Q/Z Test Monthly Report-2018-3 PPM YTD Overview: AS,ESL3,Z,All</h3>
+        </div>
+        <div class="box-body">
+
+            <div id="esl3z" style="width: 100%; height:300px;"></div>
+
+        </div><!-- /.box-body -->
+    </div>
+
+
+                    <!-- BEGIN PAGE CONTENT-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                            <!-- END EXAMPLE TABLE PORTLET-->
+                            <div class="portlet box"> <!-- grey-cascade -->
+                                <!-- <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="fa fa-lightbulb-o"></i> Pending My Activity
+                                    </div>
+                                    <div class="tools">
+                                        <a href="javascript:;" class="collapse">
+                                        </a>
+                                    </div>
+                                </div> -->
+                                <div class="portlet-body">
+                                    <div class="table-toolbar">
+                                        <!-- <div class="btn-group">
+                                        </div> -->
+                                    </div>
+                                    <div class="table-responsive">
+                                
+                                        <table class="table  table-bordered table-hover" width="100%" border="0" cellpadding="0" cellspacing="0" style="table-layout: auto;">
+                                            <thead>
+                                                
+                                              <tr>
+                                                <th rowspan="2">Product</th>
+                                                <th rowspan="2">Product Family/Group</th>
+                                                <th rowspan="2">Month</th>
+                                                <th rowspan="2">January</th>
+                                                <th rowspan="2">February</th>
+                                                <th rowspan="2">March</th>
+                                                <th rowspan="2">April</th>
+                                                <th rowspan="2">May</th>
+                                                <th rowspan="2">June</th>
+                                                <th rowspan="2">July</th>
+                                                <th rowspan="2">August</th>
+                                                <th rowspan="2">September</th>
+                                                <th rowspan="2">October</th>
+                                                <th rowspan="2">November</th>
+                                                <th rowspan="2">December</th>
+                                                <th rowspan="2" style="font-weight:600">YTD</th>
+                                                <th colspan="3">Hyperlink</th>
+                                              </tr>
+                                              <tr>
+                                                <th colspan="3" style="white-space: nowrap;">Failure-Documentation</th>
+                                              </tr>
+
+                                            </thead>
+
+                                          <tr>
+                                            <td rowspan="5">AS</td>
+                                            <td rowspan="5">ESL3</td>
+                                            <td>Production quantity [kpcs]</td>
+                                            <td>80.208</td>
+                                            <td>90.576</td>
+                                            <td>86.544</td>
+                                            <td>60.116</td>
+                                            <td>67.968</td>
+                                            <td>69.054</td>
+                                            <td>79.2</td>
+                                            <td>68.976</td>
+                                            <td>80.064</td>
+                                            <td>88.416</td>
+                                            <td>69.425</td>
+                                            <td>46.944</td>
+                                            <td>887.491</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Q_YTD_pcs</td>
+                                            <td>19</td>
+                                            <td>22</td>
+                                            <td>20</td>
+                                            <td>14</td>
+                                            <td>11</td>
+                                            <td>9</td>
+                                            <td>9</td>
+                                            <td>9</td>
+                                            <td>8</td>
+                                            <td>10</td>
+                                            <td>7</td>
+                                            <td>9</td>
+                                            <td>147</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Q_failure_pcs</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Z_YTD_pcs</td>
+                                            <td>16</td>
+                                            <td>16</td>
+                                            <td>29</td>
+                                            <td>16</td>
+                                            <td>12</td>
+                                            <td>10</td>
+                                            <td>8</td>
+                                            <td>8</td>
+                                            <td>10</td>
+                                            <td>8</td>
+                                            <td>8</td>
+                                            <td>8</td>
+                                            <td>149</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Z_failure_pcs</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>0</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                                          </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END PAGE CONTENT-->
+
+</section><!-- /.content -->
+
+<script type="text/javascript">
+
+            // $.ajax({
+            //     url: '/QS/mergeHighscore',
+            //     type: 'post',
+            //     data: { allid: '@Request.QueryString["allid"]' },
+            //     datatype: 'json',
+            //     success: function (result) {
+            //         //console.log(result);
+            //         var choiceinfo = result.choiceinfo;
+            //         var totala = result.totala;
+            //         var totalb = result.totalb;
+            //         var totalc = result.totalc;
+            //         // 基于准备好的dom，初始化echarts实例
+            //         var myChart = echarts.init(document.getElementById('stackchat1'));
+            //         // 基于准备好的dom，初始化echarts实例
+            //         //app.title = '堆叠条形图';
+
+            //         option = {
+
+            //             title: {
+            //                 text: 'ECharts High score top5',
+            //                 textStyle: {
+            //                     color: '#FFFFFF',
+            //                     fontSize: 16
+            //                 },
+            //                 backgroundColor: '#507796',
+            //             },
+            //             tooltip: {
+            //                 trigger: 'axis',
+            //                 axisPointer: { // 坐标轴指示器，坐标轴触发有效
+            //                     type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            //                 }
+            //             },
+            //             legend: {
+            //                 x: 'right',
+            //                 data: ['满意', '不确定', '不满意']
+            //             },
+            //             grid: {
+            //                 left: '40%',
+            //                 right: '2%',
+            //                 bottom: '10%',
+            //                 //width: '100%',
+            //                 containLabel: false
+            //             },
+            //             xAxis: {
+            //                 type: 'value',
+            //                 axisLabel: {
+            //                     formatter: '{value} %'
+            //                 }
+            //             },
+            //             yAxis: {
+            //                 axisLabel: {
+            //                     show: true,
+            //                     margin: 390,
+            //                     textStyle: {
+            //                         align: 'left',
+            //                         fontSize: 14
+            //                     },
+            //                     formatter: function (c) {
+            //                         for (i in c) {
+            //                             return c.substring(0, 80);
+            //                         }
+            //                     }
+            //                 },
+            //                 //offset:200,
+            //                 type: 'category',
+            //                 data: choiceinfo
+            //             },
+            //             series: [{
+            //                 name: '满意',
+            //                 type: 'bar',
+            //                 stack: '总量',
+            //                 label: {
+            //                     normal: {
+            //                         show: true,
+            //                         position: 'insideRight',
+            //                         formatter: '{c}%'
+            //                     }
+            //                 },
+            //                 itemStyle: {
+            //                     normal: { color: 'green' }
+            //                 },
+            //                 data: totala,
+            //                 barWidth: 30
+            //             }, {
+            //                 name: '不确定',
+            //                 type: 'bar',
+            //                 stack: '总量',
+            //                 label: {
+            //                     normal: {
+            //                         show: true,
+            //                         position: 'insideRight',
+            //                         formatter: '{c}%'
+            //                     }
+            //                 },
+            //                 itemStyle: {
+            //                     normal: { color: 'gray' }
+            //                 },
+            //                 data: totalb,
+            //                 barWidth: 30
+            //             }, {
+            //                 name: '不满意',
+            //                 type: 'bar',
+            //                 stack: '总量',
+            //                 label: {
+            //                     normal: {
+            //                         show: true,
+            //                         position: 'insideRight',
+            //                         formatter: '{c}%'
+            //                     }
+            //                 },
+            //                 itemStyle: {
+            //                     normal: { color: 'red' }
+            //                 },
+            //                 data: totalc,
+            //                 barWidth: 30
+            //             }]
+            //         };
+
+            //         // 使用刚指定的配置项和数据显示图表。
+            //         myChart.setOption(option);
+            //     }
+            // });
+
+        // 基于准备好的dom，初始化echarts实例
+        var esl3qChart = echarts.init(document.getElementById('esl3q'));
+
+        // 指定图表的配置项和数据
+        var option1 = {
+
+    // title: {
+    //     text: 'AE-CN Q/Z Test Monthly Report-2018-3 PPM YTD Overview:CC-DA',
+    //     textStyle: {
+    //         // color: '#FFFFFF',
+    //         fontSize: 16
+    //     },
+    //     // backgroundColor: '#507796',
+    // },
+
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            crossStyle: {
+                color: '#999'
+            }
+        }
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    legend: {
+        bottom: 10,
+        left: 'center',
+        data:['Plan PPM','Actual PPM','Target PPM']
+    },
+    grid: {
+        left: '3%',
+        right: '3%',
+        bottom: '25%',
+        // width: '100%',
+        containLabel: false
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+            axisPointer: {
+                type: 'shadow'
+            },
+            // axisLabel: {
+            //     interval:0,
+            //     rotate:45,
+            //     margin:2
+            // }
+        }
+    ],
+    yAxis: {
+        
+            type: 'value',
+            name: 'Plan PPM',
+            min: 0,
+            max: 200,
+            interval: 50,
+    //         axisLabel: {
+                // textStyle: {
+                //  color: '#6287ad'
+                //     fontSize: 14
+                // },
+    //             formatter: '{value} ml'
+    //         }
+    },
+    series: [
+        {
+            name:'Plan PPM',
+            type:'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    // formatter: '{c}%'
+                }
+            },
+            itemStyle: {
+                normal: { color: '#9a9a9a' }
+            },            
+            data:[101, 101, 101, 0, 0, 0, 0, 0, 0, 0, 0, 0],  //变量接收
+            barWidth: 20,
+            barMaxWidth: 50,  //解决问题：在柱子数量少的时候，剩下的柱子不要太粗
+            // barGap:'10%'
+        },
+        {
+            name:'Actual PPM',
+            type:'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    // formatter: '{c}%'
+                }
+            },
+            itemStyle: {
+                normal: { color: '#08427e' }
+            },
+            data:[124, 135, 119, 0, 0, 0, 0, 0, 0, 0, 0, 0],  //变量接收
+            barWidth: 20,
+            barMaxWidth: 50,  //解决问题：在柱子数量少的时候，剩下的柱子不要太粗
+            // barGap:'10%'
+        },
+        {
+            name:'Target PPM',
+            type:'line',
+            yAxisIndex: 0,   //使用的 y 轴的 index，在单个图表实例中存在多个 y轴的时候有用。[ default: 0 ]
+            data:[102, 102, 101]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        esl3qChart.setOption(option1);
+
+        //根据窗口大小调整图表
+        window.onresize = esl3qChart.resize; //解决问题：如果窗口大小变化，图表可以自动进行调整；
+
+// -------------------------------------------------------------------- //
+        // 基于准备好的dom，初始化echarts实例
+        var esl3zChart = echarts.init(document.getElementById('esl3z'));
+
+        // 指定图表的配置项和数据
+        var option2 = {
+
+    // title: {
+    //     text: 'AE-CN Q/Z Test Monthly Report-2018-3 PPM YTD Overview:CC-DA',
+    //     textStyle: {
+    //         // color: '#FFFFFF',
+    //         fontSize: 16
+    //     },
+    //     // backgroundColor: '#507796',
+    // },
+
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            crossStyle: {
+                color: '#999'
+            }
+        }
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    legend: {
+        bottom: 10,
+        left: 'center',
+        data:['Plan PPM','Actual PPM','Target PPM']
+    },
+    grid: {
+        left: '3%',
+        right: '3%',
+        bottom: '25%',
+        // width: '100%',
+        containLabel: false
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+            axisPointer: {
+                type: 'shadow'
+            },
+            // axisLabel: {
+            //     interval:0,
+            //     rotate:45,
+            //     margin:2
+            // }
+        }
+    ],
+    yAxis: {
+        
+            type: 'value',
+            name: 'Plan PPM',
+            min: 0,
+            max: 200,
+            interval: 50,
+    //         axisLabel: {
+                // textStyle: {
+                //  color: '#6287ad'
+                //     fontSize: 14
+                // },
+    //             formatter: '{value} ml'
+    //         }
+    },
+    series: [
+        {
+            name:'Plan PPM',
+            type:'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    // formatter: '{c}%'
+                }
+            },
+            itemStyle: {
+                normal: { color: '#9a9a9a' }
+            },            
+            data:[107, 107, 107, 0, 0, 0, 0, 0, 0, 0, 0, 0],  //变量接收
+            barWidth: 20,
+            barMaxWidth: 50,  //解决问题：在柱子数量少的时候，剩下的柱子不要太粗
+            // barGap:'10%'
+        },
+        {
+            name:'Actual PPM',
+            type:'bar',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    // formatter: '{c}%'
+                }
+            },
+            itemStyle: {
+                normal: { color: '#08427e' }
+            },
+            data:[110, 193, 164, 0, 0, 0, 0, 0, 0, 0, 0, 0],  //变量接收
+            barWidth: 20,
+            barMaxWidth: 50,  //解决问题：在柱子数量少的时候，剩下的柱子不要太粗
+            // barGap:'10%'
+        },
+        {
+            name:'Target PPM',
+            type:'line',
+            yAxisIndex: 0,   //使用的 y 轴的 index，在单个图表实例中存在多个 y轴的时候有用。[ default: 0 ]
+            data:[107, 107, 106]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        esl3zChart.setOption(option2);
+
+        //根据窗口大小调整图表
+        window.onresize = esl3zChart.resize; //解决问题：如果窗口大小变化，图表可以自动进行调整；
+
+
+        $(document).on('click', '.sidebar-toggle', function(){
+            var tempWidth = document.documentElement.clientWidth;  
+            var sideWidth = $(".main-sidebar").width();
+
+            if (sideWidth == "265") {//侧边栏为伸出状态
+                $("#esl3q").width(tempWidth - 50 - 30);  
+                $("#esl3z").width(tempWidth - 50 - 30);  
+            } else {//侧边栏为收缩状态  
+                $("#esl3q").width(tempWidth - 250 - 30);  
+                $("#esl3z").width(tempWidth - 250 - 30);  
+            }
+            esl3qChart.resize();
+            esl3zChart.resize();
+        })
+
+</script>
